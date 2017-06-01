@@ -7,6 +7,7 @@
  * @since Expanse 1.0
  */
 $id = get_the_ID();
+$number = $id;
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
 $shadow = get_field('shadow', $id);
 $bgc = get_field('background_color', $id);
@@ -73,11 +74,13 @@ $tracking = get_field('tracking');
 		<?php }
 	}
 	if ($type=='recent'){
-		query_posts(array( 
-			'post_type' => $recent_posts,
-			'showposts' => $number_of_posts
-		) );
-		while (have_posts()) : the_post(); ?>
+		$recent_query = new WP_Query(
+			array( 
+				'post_type' => $recent_posts,
+				'showposts' => $number_of_posts
+			)
+		);
+		while ($recent_query->have_posts()) : $recent_query->the_post(); ?>
 			<div>
 				<?php if ( $featured && $circle && has_post_thumbnail() ){
 				 	the_post_thumbnail('mediumsquared', ['class' => 'round']);
@@ -103,7 +106,7 @@ $tracking = get_field('tracking');
 				<?php } ?>
 			</div>
 		<?php endwhile;
-		wp_reset_query();
+		wp_reset_postdata();
 	} ?>
 	</div>
 	<?php if ( $extra_text&&$text_underneath ) {
@@ -119,7 +122,7 @@ $tracking = get_field('tracking');
 			),
 			'<footer class="entry-footer"><span class="edit-link">',
 			'</span></footer><!-- .entry-footer -->',
-			$id
+			$number
 		);
 	?>
 </section><!-- section -->

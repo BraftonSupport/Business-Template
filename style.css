@@ -794,6 +794,7 @@ a:active,
 
 .site-header-main.scrolled .site-header-menu {
     text-align: right;
+    margin: auto;
 }
 
 .scrolled.below .below { display: none; }
@@ -1782,7 +1783,7 @@ article .latest.icon img {
 }
 
 .has-sidebar .site-content, .site-content {
-	margin: 50px auto 0;
+	margin: 25px auto 0;
 }
 
 .page-template-full-width .site-content {
@@ -2179,7 +2180,6 @@ a.post-thumbnail:focus {
 }
 
 h1, h2, h3, h4, h5, h6{
-	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }

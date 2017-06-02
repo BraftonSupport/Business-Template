@@ -15,20 +15,24 @@
 }
 
 /* visual Template*/
-/* line 19, ../sass/partials/_base.scss */
+/* line 21, ../sass/partials/_base.scss */
 .visual {
   text-align: center;
+}
+/* line 23, ../sass/partials/_base.scss */
+.visual #vidpause {
+  display: none;
 }
 
 /**
  * 11.31 - List Template
  */
-/* line 27, ../sass/partials/_base.scss */
+/* line 32, ../sass/partials/_base.scss */
 .list {
   text-align: center;
 }
 
-/* line 31, ../sass/partials/_base.scss */
+/* line 36, ../sass/partials/_base.scss */
 .round {
   border-radius: 50%;
 }
@@ -36,7 +40,7 @@
 /**
  * 11.32 - Slider Template
  */
-/* line 38, ../sass/partials/_base.scss */
+/* line 43, ../sass/partials/_base.scss */
 .quotes {
   font-size: 6em;
   line-height: 0;
@@ -45,22 +49,22 @@
   opacity: .2;
   font-family: Times, serif;
 }
-/* line 45, ../sass/partials/_base.scss */
+/* line 50, ../sass/partials/_base.scss */
 .quotes:last-of-type {
   right: 0;
 }
 
-/* line 50, ../sass/partials/_base.scss */
+/* line 55, ../sass/partials/_base.scss */
 .slick h4 {
   font-weight: 400;
   text-transform: inherit;
 }
-/* line 54, ../sass/partials/_base.scss */
+/* line 59, ../sass/partials/_base.scss */
 .slick .slick-slide:focus {
   outline: none;
 }
 
-/* line 59, ../sass/partials/_base.scss */
+/* line 64, ../sass/partials/_base.scss */
 .toolbar {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -74,7 +78,7 @@
   margin-top: 15px;
 }
 
-/* line 72, ../sass/partials/_base.scss */
+/* line 77, ../sass/partials/_base.scss */
 .slick-arrow {
   padding: 0 11px 0 9px;
   margin: 0 5px;
@@ -89,11 +93,11 @@
   -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-/* line 85, ../sass/partials/_base.scss */
+/* line 90, ../sass/partials/_base.scss */
 .slick-arrow:hover {
   opacity: 1;
 }
-/* line 88, ../sass/partials/_base.scss */
+/* line 93, ../sass/partials/_base.scss */
 .slick-arrow.fa-angle-right {
   -webkit-order: 3;
   -ms-flex-order: 3;
@@ -101,17 +105,17 @@
   padding: 0 9px 0 11px;
 }
 
-/* line 96, ../sass/partials/_base.scss */
+/* line 101, ../sass/partials/_base.scss */
 .slick-dots {
   list-style: none;
   margin: 0;
   line-height: 0;
 }
-/* line 100, ../sass/partials/_base.scss */
+/* line 105, ../sass/partials/_base.scss */
 .slick-dots li {
   display: inline;
 }
-/* line 103, ../sass/partials/_base.scss */
+/* line 108, ../sass/partials/_base.scss */
 .slick-dots button {
   border-radius: 50%;
   padding: 0;
@@ -126,13 +130,13 @@
   -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-/* line 116, ../sass/partials/_base.scss */
+/* line 121, ../sass/partials/_base.scss */
 .slick-dots button:hover {
   opacity: 1;
 }
 
 /* Service List Template */
-/* line 124, ../sass/partials/_base.scss */
+/* line 129, ../sass/partials/_base.scss */
 .list .container > div {
   max-width: 350px;
   margin: 0 auto 5%;
@@ -140,13 +144,13 @@
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
 }
-/* line 130, ../sass/partials/_base.scss */
+/* line 135, ../sass/partials/_base.scss */
 .list .container > div img {
   margin-bottom: 15px;
 }
 
 /* Footer */
-/* line 137, ../sass/partials/_base.scss */
+/* line 142, ../sass/partials/_base.scss */
 .site-footer .widget {
   -webkit-flex: 1 0 100%;
   -ms-flex: 1 0 100%;

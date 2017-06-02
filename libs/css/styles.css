@@ -1,27 +1,34 @@
+/* Header */
 /**
  * 11.0 - Content
  */
-/* line 5, ../sass/partials/_base.scss */
+/* line 8, ../sass/partials/_base.scss */
 .site-main > section {
   padding: 75px 0;
 }
 
-/* line 9, ../sass/partials/_base.scss */
+/* line 12, ../sass/partials/_base.scss */
 .container {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
+/* visual Template*/
+/* line 19, ../sass/partials/_base.scss */
+.visual {
+  text-align: center;
+}
+
 /**
  * 11.31 - List Template
  */
-/* line 19, ../sass/partials/_base.scss */
+/* line 27, ../sass/partials/_base.scss */
 .list {
   text-align: center;
 }
 
-/* line 23, ../sass/partials/_base.scss */
+/* line 31, ../sass/partials/_base.scss */
 .round {
   border-radius: 50%;
 }
@@ -29,7 +36,7 @@
 /**
  * 11.32 - Slider Template
  */
-/* line 30, ../sass/partials/_base.scss */
+/* line 38, ../sass/partials/_base.scss */
 .quotes {
   font-size: 6em;
   line-height: 0;
@@ -38,22 +45,22 @@
   opacity: .2;
   font-family: Times, serif;
 }
-/* line 37, ../sass/partials/_base.scss */
+/* line 45, ../sass/partials/_base.scss */
 .quotes:last-of-type {
   right: 0;
 }
 
-/* line 42, ../sass/partials/_base.scss */
+/* line 50, ../sass/partials/_base.scss */
 .slick h4 {
   font-weight: 400;
   text-transform: inherit;
 }
-/* line 46, ../sass/partials/_base.scss */
+/* line 54, ../sass/partials/_base.scss */
 .slick .slick-slide:focus {
   outline: none;
 }
 
-/* line 51, ../sass/partials/_base.scss */
+/* line 59, ../sass/partials/_base.scss */
 .toolbar {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -67,7 +74,7 @@
   margin-top: 15px;
 }
 
-/* line 64, ../sass/partials/_base.scss */
+/* line 72, ../sass/partials/_base.scss */
 .slick-arrow {
   padding: 0 11px 0 9px;
   margin: 0 5px;
@@ -82,11 +89,11 @@
   -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-/* line 77, ../sass/partials/_base.scss */
+/* line 85, ../sass/partials/_base.scss */
 .slick-arrow:hover {
   opacity: 1;
 }
-/* line 80, ../sass/partials/_base.scss */
+/* line 88, ../sass/partials/_base.scss */
 .slick-arrow.fa-angle-right {
   -webkit-order: 3;
   -ms-flex-order: 3;
@@ -94,17 +101,17 @@
   padding: 0 9px 0 11px;
 }
 
-/* line 88, ../sass/partials/_base.scss */
+/* line 96, ../sass/partials/_base.scss */
 .slick-dots {
   list-style: none;
   margin: 0;
   line-height: 0;
 }
-/* line 92, ../sass/partials/_base.scss */
+/* line 100, ../sass/partials/_base.scss */
 .slick-dots li {
   display: inline;
 }
-/* line 95, ../sass/partials/_base.scss */
+/* line 103, ../sass/partials/_base.scss */
 .slick-dots button {
   border-radius: 50%;
   padding: 0;
@@ -119,13 +126,13 @@
   -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-/* line 108, ../sass/partials/_base.scss */
+/* line 116, ../sass/partials/_base.scss */
 .slick-dots button:hover {
   opacity: 1;
 }
 
 /* Service List Template */
-/* line 116, ../sass/partials/_base.scss */
+/* line 124, ../sass/partials/_base.scss */
 .list .container > div {
   max-width: 350px;
   margin: 0 auto 5%;
@@ -133,13 +140,13 @@
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
 }
-/* line 122, ../sass/partials/_base.scss */
+/* line 130, ../sass/partials/_base.scss */
 .list .container > div img {
   margin-bottom: 15px;
 }
 
 /* Footer */
-/* line 129, ../sass/partials/_base.scss */
+/* line 137, ../sass/partials/_base.scss */
 .site-footer .widget {
   -webkit-flex: 1 0 100%;
   -ms-flex: 1 0 100%;
@@ -218,20 +225,16 @@
     flex: 0 0 30%;
     max-width: 250px;
   }
-  /* line 54, ../sass/partials/_769.scss */
-  .list .container > div img {
-    margin-bottom: 15px;
-  }
 
   /* Footer */
-  /* line 62, ../sass/partials/_769.scss */
+  /* line 59, ../sass/partials/_769.scss */
   .site-footer .widget {
     margin-right: 5%;
-    -webkit-flex: 1 0 auto;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
   }
-  /* line 67, ../sass/partials/_769.scss */
+  /* line 64, ../sass/partials/_769.scss */
   .site-footer .widget:last-of-type {
     margin-right: 0;
   }

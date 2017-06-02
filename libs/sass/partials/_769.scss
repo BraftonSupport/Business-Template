@@ -51,9 +51,6 @@
 	-ms-flex: 0 0 30%;
 	flex: 0 0 30%;
 	max-width: 250px;
-	& img {
-		margin-bottom: 15px;
-	}
 }
 
 
@@ -61,9 +58,9 @@
 
 .site-footer .widget {
 	margin-right: 5%;
-	-webkit-flex: 1 0 auto;
-	-ms-flex: 1 0 auto;
-	flex: 1 0 auto;
+	-webkit-flex: 1 1 100%;
+	-ms-flex: 1 1 100%;
+	flex: 1 1 100%;
 	&:last-of-type {
 		margin-right: 0;
 	}

@@ -13,9 +13,11 @@
 	</div><!-- .site-content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php if ( is_active_sidebar( 'footer' ) ) :
+		<?php if ( is_active_sidebar( 'footer-left' )||is_active_sidebar( 'footer-middle' )||is_active_sidebar( 'footer-right' ) ) :
 			echo '<div class="site-inner container">';
-			dynamic_sidebar( 'footer' );
+			dynamic_sidebar( 'footer-left' );
+			dynamic_sidebar( 'footer-middle' );
+			dynamic_sidebar( 'footer-right' );
 			echo '</div><br class="clear"/>';
 		endif; ?>
 			

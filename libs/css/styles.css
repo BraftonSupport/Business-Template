@@ -6,23 +6,30 @@
   padding: 75px 0;
 }
 
+/* line 9, ../sass/partials/_base.scss */
+.container {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 /**
  * 11.31 - List Template
  */
-/* line 13, ../sass/partials/_base.scss */
+/* line 19, ../sass/partials/_base.scss */
 .list {
   text-align: center;
 }
 
-/* line 17, ../sass/partials/_base.scss */
+/* line 23, ../sass/partials/_base.scss */
 .round {
-  clip-path: circle(125px at center);
+  border-radius: 50%;
 }
 
 /**
  * 11.32 - Slider Template
  */
-/* line 24, ../sass/partials/_base.scss */
+/* line 30, ../sass/partials/_base.scss */
 .quotes {
   font-size: 6em;
   line-height: 0;
@@ -31,22 +38,22 @@
   opacity: .2;
   font-family: Times, serif;
 }
-/* line 31, ../sass/partials/_base.scss */
+/* line 37, ../sass/partials/_base.scss */
 .quotes:last-of-type {
   right: 0;
 }
 
-/* line 36, ../sass/partials/_base.scss */
+/* line 42, ../sass/partials/_base.scss */
 .slick h4 {
   font-weight: 400;
   text-transform: inherit;
 }
-/* line 40, ../sass/partials/_base.scss */
+/* line 46, ../sass/partials/_base.scss */
 .slick .slick-slide:focus {
   outline: none;
 }
 
-/* line 45, ../sass/partials/_base.scss */
+/* line 51, ../sass/partials/_base.scss */
 .toolbar {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -60,7 +67,7 @@
   margin-top: 15px;
 }
 
-/* line 58, ../sass/partials/_base.scss */
+/* line 64, ../sass/partials/_base.scss */
 .slick-arrow {
   padding: 0 11px 0 9px;
   margin: 0 5px;
@@ -75,11 +82,11 @@
   -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-/* line 71, ../sass/partials/_base.scss */
+/* line 77, ../sass/partials/_base.scss */
 .slick-arrow:hover {
   opacity: 1;
 }
-/* line 74, ../sass/partials/_base.scss */
+/* line 80, ../sass/partials/_base.scss */
 .slick-arrow.fa-angle-right {
   -webkit-order: 3;
   -ms-flex-order: 3;
@@ -87,17 +94,17 @@
   padding: 0 9px 0 11px;
 }
 
-/* line 82, ../sass/partials/_base.scss */
+/* line 88, ../sass/partials/_base.scss */
 .slick-dots {
   list-style: none;
   margin: 0;
   line-height: 0;
 }
-/* line 86, ../sass/partials/_base.scss */
+/* line 92, ../sass/partials/_base.scss */
 .slick-dots li {
   display: inline;
 }
-/* line 89, ../sass/partials/_base.scss */
+/* line 95, ../sass/partials/_base.scss */
 .slick-dots button {
   border-radius: 50%;
   padding: 0;
@@ -112,18 +119,36 @@
   -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-/* line 102, ../sass/partials/_base.scss */
+/* line 108, ../sass/partials/_base.scss */
 .slick-dots button:hover {
   opacity: 1;
 }
 
-@media only screen and (min-width: 481px) {
-  /* line 1, ../sass/partials/_481.scss */
-  .round {
-    clip-path: circle(150px at center);
-  }
+/* Service List Template */
+/* line 116, ../sass/partials/_base.scss */
+.list .container > div {
+  max-width: 350px;
+  margin: 0 auto 5%;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+}
+/* line 122, ../sass/partials/_base.scss */
+.list .container > div img {
+  margin-bottom: 15px;
+}
 
-  /* line 5, ../sass/partials/_481.scss */
+/* Footer */
+/* line 129, ../sass/partials/_base.scss */
+.site-footer .widget {
+  -webkit-flex: 1 0 100%;
+  -ms-flex: 1 0 100%;
+  flex: 1 0 100%;
+  padding-top: 3em;
+}
+
+@media only screen and (min-width: 481px) {
+  /* line 2, ../sass/partials/_481.scss */
   .slick h4 {
     font-weight: 700;
     text-transform: uppercase;
@@ -131,6 +156,13 @@
 }
 @media only screen and (min-width: 769px) {
   /* line 2, ../sass/partials/_769.scss */
+  .container {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  /* line 8, ../sass/partials/_769.scss */
   .slider {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -140,7 +172,7 @@
     flex-wrap: wrap;
   }
 
-  /* line 10, ../sass/partials/_769.scss */
+  /* line 16, ../sass/partials/_769.scss */
   .slick {
     max-width: 65%;
     margin: auto;
@@ -148,19 +180,19 @@
     -ms-flex: 1 1 65%;
     flex: 1 1 65%;
   }
-  /* line 16, ../sass/partials/_769.scss */
+  /* line 22, ../sass/partials/_769.scss */
   .slick h4 {
     font-size: 1.25em;
   }
 
-  /* line 20, ../sass/partials/_769.scss */
+  /* line 26, ../sass/partials/_769.scss */
   .toolbar {
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
   }
 
-  /* line 25, ../sass/partials/_769.scss */
+  /* line 31, ../sass/partials/_769.scss */
   .quotes {
     margin-top: .25em;
     font-size: 12em;
@@ -173,9 +205,35 @@
     position: inherit;
     z-index: inherit;
   }
-  /* line 36, ../sass/partials/_769.scss */
+  /* line 42, ../sass/partials/_769.scss */
   .quotes:first-of-type {
     text-align: right;
+  }
+
+  /* Service List Template */
+  /* line 49, ../sass/partials/_769.scss */
+  .list .container > div {
+    -webkit-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 250px;
+  }
+  /* line 54, ../sass/partials/_769.scss */
+  .list .container > div img {
+    margin-bottom: 15px;
+  }
+
+  /* Footer */
+  /* line 62, ../sass/partials/_769.scss */
+  .site-footer .widget {
+    margin-right: 5%;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+  }
+  /* line 67, ../sass/partials/_769.scss */
+  .site-footer .widget:last-of-type {
+    margin-right: 0;
   }
 }
 @media only screen and (min-width: 1025px) {

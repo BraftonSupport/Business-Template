@@ -1823,15 +1823,15 @@ article .latest.icon img {
     -ms-flex-align: stretch;
     align-items: stretch;
 }
-section div {
+section .container {
 	background-position: center;
 	background-size: cover;
 	-webkit-flex: 1 1 auto;
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
-	align-items: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
+	align-items: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: flex-start;
 }
 .row > div > div {
 	padding: 15px 0;
@@ -1843,11 +1843,6 @@ section div {
 	padding: 75px 0;
 }
 
-.container { 
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-}
 
 .row .container { display: block; }
 
@@ -2781,12 +2776,6 @@ article:not(.hero):nth-of-type(2n+1) {
 	font-size: inherit;
 	font-weight: 400;
 }
-.site-footer .widget {
-	-webkit-flex: 1 0 100%;
-    -ms-flex: 1 0 100%;
-    flex: 1 0 100%;
-	padding-top: 3em;
-}
 
 /**
  * 12.0 - Media
@@ -3244,11 +3233,6 @@ p > video {
 	body:not(.search-results) .entry-summary li > ol,
 	body:not(.search-results) .entry-summary blockquote > ol {
 		margin-left: 1.473684211em;
-	}
-	.site-footer .widget {
-		-webkit-flex: 1 0 0;
-		-ms-flex: 1 0 0;
-		flex: 1 0 0;
 	}
 	.row .container {
 		display: -ms-flexbox;

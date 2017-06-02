@@ -1,9 +1,15 @@
 
+.container { 
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+}
+
 .slider {
-		display: -ms-flexbox;
+	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-		-webkit-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
@@ -35,5 +41,30 @@
 	z-index: inherit;
 	&:first-of-type {
 		text-align: right;
+	}
+}
+
+/* Service List Template */
+
+.list .container > div {
+	-webkit-flex: 0 0 30%;
+	-ms-flex: 0 0 30%;
+	flex: 0 0 30%;
+	max-width: 250px;
+	& img {
+		margin-bottom: 15px;
+	}
+}
+
+
+/* Footer */
+
+.site-footer .widget {
+	margin-right: 5%;
+	-webkit-flex: 1 0 auto;
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto;
+	&:last-of-type {
+		margin-right: 0;
 	}
 }

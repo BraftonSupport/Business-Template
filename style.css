@@ -1842,11 +1842,6 @@ section .container {
 }
 .row { padding: 50px 0; }
 
-.site-main > section {
-	padding: 75px 0;
-}
-
-
 .row .container { display: block; }
 
 footer .container,

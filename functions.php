@@ -5,6 +5,7 @@ URL: http://yvonnetse.com/
 Version: Expanse 1.0
 */
 define("expanse", dirname(__FILE__));
+include_once get_template_directory().'/custom-fields/fields.php';
 include expanse.'/inc/themesettings.php';
 include expanse.'/inc/themewidgets.php';
 include expanse.'/inc/template-tags.php';

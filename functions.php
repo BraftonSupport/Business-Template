@@ -629,8 +629,8 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
  //filter posts_results 
  function post_res($posts, $query){
 	 $required_fields = array( //array of fields to check for to determine if this is a section page
-		 'acf_frontpage-sections'
-	 );
+		'subsections_templates'
+	);
 	 if($query->is_search()){ //Is this a search query
 		 for($i=0;$i<count($posts);$i++){
 			 $post = $posts[$i];
@@ -640,7 +640,7 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
 				
 				if(array_intersect_key($meta, array_flip($required_fields))){ //is this a section page
 					$parent = get_post($post->post_parent);				
-					$parent->post_excerpt = "fresh parent hell";
+					$parent->post_excerpt = $post->excerpt;
 					$posts[$i] = $parent;	
 				}
 			}

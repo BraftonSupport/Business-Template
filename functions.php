@@ -151,9 +151,27 @@ function expanse_widgets_init() {
 	}
 	if ( $options['es_footer'] ) {
 		register_sidebar( array(
-			'name'		  => __( 'Footer', 'expanse' ),
-			'id'			=> 'footer',
-			'description'   => 'This is located in the footer. Use up to 4 widgets.',
+			'name'		  => __( 'Footer Left Widget', 'expanse' ),
+			'id'			=> 'footer-left',
+			'description'   => 'This is located in the footer. Use only 1 widget.',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+		register_sidebar( array(
+			'name'		  => __( 'Footer Middle Widget', 'expanse' ),
+			'id'			=> 'footer-middle',
+			'description'   => 'This is located in the footer. Use only 1 widget.',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+		register_sidebar( array(
+			'name'		  => __( 'Footer Right Widget', 'expanse' ),
+			'id'			=> 'footer-right',
+			'description'   => 'This is located in the footer. Use only 1 widget.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h3 class="widget-title">',

@@ -15,7 +15,7 @@
 
 	<?php expanse_post_thumbnail(); ?>
 
-	<?php expanse_excerpt(); ?>
+	<?php echo get_the_excerpt(); ?>
 
 	<?php if ( 'post' === get_post_type() ) : ?>
 

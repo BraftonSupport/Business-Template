@@ -59,7 +59,29 @@
 				),
 				'default_value' => '',
 				'toolbar' => 'full',
-				'media_upload' => 'no',
+				'media_upload' => 'yes',
+			),
+			array (
+				'key' => 'field_593825bebc0bb',
+				'label' => 'Button?',
+				'name' => 'visual_button',
+				'type' => 'checkbox',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'visual',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'choices' => array (
+					'Show button' => 'Show button',
+				),
+				'default_value' => '',
+				'layout' => 'horizontal',
 			),
 			array (
 				'key' => 'field_59234671b70d7',
@@ -73,6 +95,11 @@
 							'field' => 'field_592324b7840bb',
 							'operator' => '==',
 							'value' => 'visual',
+						),
+						array (
+							'field' => 'field_593825bebc0bb',
+							'operator' => '==',
+							'value' => 'Show button',
 						),
 					),
 					'allorany' => 'all',
@@ -96,6 +123,11 @@
 							'field' => 'field_592324b7840bb',
 							'operator' => '==',
 							'value' => 'visual',
+						),
+						array (
+							'field' => 'field_593825bebc0bb',
+							'operator' => '==',
+							'value' => 'Show button',
 						),
 					),
 					'allorany' => 'all',
@@ -477,13 +509,13 @@
 		),
 		'location' => array (
 			array (
-				array (
-					'param' => 'parent_page_template',
-					'operator' => '==',
-					'value' => 'front-page.php',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
+				// array (
+				// 	'param' => 'parent_page_template',
+				// 	'operator' => '==',
+				// 	'value' => 'parent-page.php',
+				// 	'order_no' => 0,
+				// 	'group_no' => 0,
+				// ),
 				array (
 					'param' => 'page_type',
 					'operator' => '==',
@@ -492,6 +524,15 @@
 					'group_no' => 0,
 				),
 			),
+			// array (
+			// 	array (
+			// 		'param' => 'post_type',
+			// 		'operator' => '==',
+			// 		'value' => 'services',
+			// 		'order_no' => 0,
+			// 		'group_no' => 1,
+			// 	),
+			// ),
 		),
 		'options' => array (
 			'position' => 'acf_after_title',

@@ -1913,7 +1913,7 @@ footer .container,
 .top .w2 section:first-of-type { text-align: left; }
 
 .site-branding {
-	margin: auto 0;
+	margin: auto 15px auto 0;
 }
 .site-header-main .container {
 	-webkit-align-items: flex-end;

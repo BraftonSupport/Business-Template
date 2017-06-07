@@ -42,6 +42,17 @@
 				'maxlength' => '',
 			),
 			array (
+				'key' => 'field_59387dfe68d79',
+				'label' => 'Title',
+				'name' => 'show_title',
+				'type' => 'checkbox',
+				'choices' => array (
+					'Show Title?' => 'Show Title?',
+				),
+				'default_value' => '',
+				'layout' => 'horizontal',
+			),
+			array (
 				'key' => 'field_59234d988808d',
 				'label' => 'Intro Text',
 				'name' => 'visual_intro_text',

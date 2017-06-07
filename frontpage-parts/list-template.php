@@ -13,7 +13,9 @@ $shadow = get_field('shadow', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
+$title = get_field('show_title');
 $visual_intro_text = get_field('visual_intro_text');
+
 $type = get_field('type');
 $custom_post = get_field('custom_post');
 $recent_posts = get_field('recent_posts');
@@ -36,7 +38,7 @@ $tracking = get_field('tracking');
 	if ( !empty($bgc) ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; } ?>">
 
-	<?php the_title( '<h1>', '</h1>' );
+	<?php if ( $title ) {  the_title( '<h1>', '</h1>' ); }
 	if ( $visual_intro_text ) { echo $visual_intro_text; } ?>
 	<div class="container">
 	<?php if ( $type=='choose' && $custom_post ) {

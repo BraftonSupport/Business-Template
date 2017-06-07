@@ -13,7 +13,10 @@ $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
 $video = get_field('video');
+
+$title = get_field('show_title');
 $visual_intro_text = get_field('visual_intro_text');
+
 $visual_button = get_field('visual_button');
 $visual_button_text = get_field('visual_button_text');
 $visual_button_link = get_field('visual_button_link');
@@ -71,7 +74,7 @@ $tracking = get_field('tracking');
 			</video>
 		<?php }
 	} ?>
-	<?php the_title( '<h1>', '</h1>' );
+	<?php if ( $title ) {  the_title( '<h1>', '</h1>' ); }
 	if ( $visual_intro_text ) { echo $visual_intro_text; }
 	if ( $visual_button ) {
 		echo '<a href="'.$visual_button_link.'" class="button">'.$visual_button_text.'</a>';

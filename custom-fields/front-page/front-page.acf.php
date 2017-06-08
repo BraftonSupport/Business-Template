@@ -47,7 +47,7 @@
 				'name' => 'show_title',
 				'type' => 'checkbox',
 				'choices' => array (
-					'Show Title?' => 'Show Title?',
+					'show' => 'Show Title?',
 				),
 				'default_value' => '',
 				'layout' => 'horizontal',

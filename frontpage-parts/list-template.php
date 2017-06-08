@@ -38,7 +38,7 @@ $tracking = get_field('tracking');
 	if ( !empty($bgc) ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; } ?>">
 
-	<?php if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+	<?php if ( $title=='show'||$title ) {  the_title( '<h1>', '</h1>' ); }
 	if ( $visual_intro_text ) { echo $visual_intro_text; } ?>
 	<div class="container">
 	<?php if ( $type=='choose' && $custom_post ) {

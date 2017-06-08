@@ -612,7 +612,7 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
  */
 
  function post_res($posts, $query){
-	 $required_fields = array( //array of fields to check for to determine if this is a section page
+	$required_fields = array( //array of fields to check for to determine if this is a section page
 		'subsections_templates'
 	);
 	 if($query->is_search()){ //Is this a search query

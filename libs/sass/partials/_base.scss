@@ -1,9 +1,42 @@
+/* Header */
+
+
 /**
  * 11.0 - Content
  */
 
 .site-main > section {
 	padding: 75px 0;
+}
+
+.container { 
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+/* visual Template*/
+#video {
+	position: absolute;
+    top: 15%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.visual {
+	text-align: center;
+	overflow: hidden;
+	#vidpause {
+		display: none;
+	}
 }
 
 /**
@@ -15,7 +48,7 @@
 }
 
 .round {
-	clip-path: circle(125px at center);
+	border-radius: 50%;
 }
 
 /**
@@ -103,4 +136,26 @@
 			opacity: 1;
 		}
 	}
+}
+
+/* Service List Template */
+
+.list .container > div {
+	max-width: 350px;
+	margin: 0 auto 5%;
+	-webkit-flex: 1 1 100%;
+	-ms-flex: 1 1 100%;
+	flex: 1 1 100%;
+	img {
+		margin-bottom: 15px;
+	}
+}
+
+/* Footer */
+
+.site-footer .widget {
+	-webkit-flex: 1 0 100%;
+	-ms-flex: 1 0 100%;
+	flex: 1 0 100%;
+	padding-top: 3em;
 }

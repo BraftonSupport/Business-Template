@@ -115,15 +115,19 @@ if(is_single()) {
 						<?php }	?>
 					</div><!-- .site-branding -->
 
-					<div class="next">
 
-					<?php if ( is_active_sidebar( 'header' ) ) {
-						dynamic_sidebar( 'header' );
-					}
-					?>
-
-					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'expanse' ); ?></button>
-
+					<div id="site-header-menu" class="site-header-menu">
+						<?php if ( has_nav_menu( 'primary' ) ) : ?>
+							<nav id="site-navigation" class="main-navigation<?php if ($options['nav'] == 'below') { echo " container site-inner"; } ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'expanse' ); ?>">
+								<?php
+									wp_nav_menu( array(
+										'theme_location' => 'primary',
+										'menu_class'     => 'primary-menu',
+									 ) );
+								?>
+							</nav><!-- .main-navigation -->
+						<?php endif; ?>
+					</div><!-- .site-header-menu -->
 					
 				<?php if ($options['nav'] == 'below') { ?>
 				<div id="site-header-menu" class="site-header-menu">
@@ -140,19 +144,16 @@ if(is_single()) {
 					</div><!-- .site-header-menu -->
 				</div></div>
 				<?php } ?>
+				
 
-					<div id="site-header-menu" class="site-header-menu">
-						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation<?php if ($options['nav'] == 'below') { echo " container site-inner"; } ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'expanse' ); ?>">
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'primary',
-										'menu_class'     => 'primary-menu',
-									 ) );
-								?>
-							</nav><!-- .main-navigation -->
-						<?php endif; ?>
-					</div><!-- .site-header-menu -->
+					<div class="next">
+
+					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'expanse' ); ?></button>	
+
+					<?php if ( is_active_sidebar( 'header' ) ) {
+						dynamic_sidebar( 'header' );
+					}
+					?>
 				<?php if ($options['nav'] == 'next') { echo '</div></div>'; } ?>
 
 			</div><!-- .site-header-main -->

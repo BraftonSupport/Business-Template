@@ -13,14 +13,11 @@
 	</div><!-- .site-content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php if ( is_active_sidebar( 'footer' ) ) :
+		<?php if ( is_active_sidebar( 'footer-left' )||is_active_sidebar( 'footer-middle' )||is_active_sidebar( 'footer-right' ) ) :
 			echo '<div class="site-inner container">';
-			echo '<a href="'.esc_url( home_url( '/' ) ).'" rel="home" class="footer-title widget">';
-				$image_url = esc_url( get_theme_mod( 'expanse_logo' ) );
-				$image_id = expanse_get_image_id($image_url);
-				$image_thumb = wp_get_attachment_image_src($image_id, 'medium');
-			echo '<img src='.$image_thumb[0].' alt='.esc_attr( get_bloginfo( 'name', 'display' ) ).' class="site-title"></a>';
-			dynamic_sidebar( 'footer' );
+			dynamic_sidebar( 'footer-left' );
+			dynamic_sidebar( 'footer-middle' );
+			dynamic_sidebar( 'footer-right' );
 			echo '</div><br class="clear"/>';
 		endif; ?>
 			

@@ -5,6 +5,7 @@ URL: http://yvonnetse.com/
 Version: Expanse 1.0
 */
 define("expanse", dirname(__FILE__));
+include_once get_template_directory().'/custom-fields/fields.php';
 include expanse.'/inc/themesettings.php';
 include expanse.'/inc/themewidgets.php';
 include expanse.'/inc/template-tags.php';
@@ -150,9 +151,27 @@ function expanse_widgets_init() {
 	}
 	if ( $options['es_footer'] ) {
 		register_sidebar( array(
-			'name'		  => __( 'Footer', 'expanse' ),
-			'id'			=> 'footer',
-			'description'   => 'This is located in the footer. Use up to 4 widgets.',
+			'name'		  => __( 'Footer Left Widget', 'expanse' ),
+			'id'			=> 'footer-left',
+			'description'   => 'This is located in the footer. Use only 1 widget.',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+		register_sidebar( array(
+			'name'		  => __( 'Footer Middle Widget', 'expanse' ),
+			'id'			=> 'footer-middle',
+			'description'   => 'This is located in the footer. Use only 1 widget.',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+		register_sidebar( array(
+			'name'		  => __( 'Footer Right Widget', 'expanse' ),
+			'id'			=> 'footer-right',
+			'description'   => 'This is located in the footer. Use only 1 widget.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -586,3 +605,31 @@ function ea_acf_rule_match_parent_page_template( $match, $rule, $options ) {
 	return $match;
 }
 add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_parent_page_template', 10, 3 );
+
+/*
+ * Function for ommiting sections from search and only returning the parent
+ */
+
+ function post_res($posts, $query){
+	 $required_fields = array( //array of fields to check for to determine if this is a section page
+		'subsections_templates'
+	);
+	 if($query->is_search()){ //Is this a search query
+		 for($i=0;$i<count($posts);$i++){
+			 $post = $posts[$i];
+			if($post->post_parent){ //Does this post have a parent
+				//Query for value of the template field
+				$meta = get_post_meta($post->ID);
+				
+				if(array_intersect_key($meta, array_flip($required_fields))){ //is this a section page
+					$parent = get_post($post->post_parent);				
+					$parent->post_excerpt = $post->excerpt;
+					$posts[$i] = $parent;	
+				}
+			}
+		 }
+		//replace the content of the post parent with the child content that match the search term
+	 }
+	 return $posts;
+ }
+ add_filter('posts_results', 'post_res', 10, 2);

@@ -609,24 +609,7 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
 /*
  * Function for ommiting sections from search and only returning the parent
  */
- function search_filter($query){
-	echo '<pre>';
-	var_dump($query);
-	echo '</pre>';
-	die();
- }
- //add_filter("pre_get_posts", "search_filter");
-  function search_filter_1($query){
-	echo '<pre>';
-	var_dump($query);
-	echo '</pre>';
-	die();
- }
- //add_filter("posts_selection", "search_filter_1");
 
- //split_the_query filter if set to true will return just the ids of the posts
-
- //filter posts_results 
  function post_res($posts, $query){
 	 $required_fields = array( //array of fields to check for to determine if this is a section page
 		'subsections_templates'

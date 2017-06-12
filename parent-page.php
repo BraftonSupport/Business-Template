@@ -39,7 +39,11 @@ get_header(); ?>
 			} elseif ($template=='slider'){
 				get_template_part( 'frontpage-parts/slider', 'template' );
 			} elseif ($template=='half'){
-				get_template_part( 'frontpage-parts/slider', 'halfnhalf' );
+				get_template_part( 'frontpage-parts/halfnhalf', 'template' );
+			} elseif ($template=='full'){
+				get_template_part( 'frontpage-parts/full', 'template' );
+			} elseif ($template=='cta'){
+				get_template_part( 'frontpage-parts/cta', 'template' );
 			}
 
 		endwhile; ?>

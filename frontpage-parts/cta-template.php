@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying halfnhalf subsection of page.
+ * The template used for displaying cta subsection of page.
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
@@ -13,33 +13,28 @@ $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
 $title = get_field('show_title');
+$visual_intro_text = get_field('visual_intro_text');
 
-$left = get_field('half_text');
-$right = get_field('half_image');
-$text_position = get_field('text_position');
+$visual_button = get_field('visual_button');
+$visual_button_text = get_field('visual_button_text');
+$visual_button_link = get_field('visual_button_link');
 
 $tracking = get_field('tracking');
 ?>
-<section id="post-<?php the_ID(); ?>" <?php post_class('half'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class('cta'); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
 	?>">
 
 	<?php
-	if ( $title ) {  the_title( '<h1>', '</h1>' ); } ?>
-	<div class="container">
-	<?php if ( $left && !$text_position=='left' ) { 
-		echo $left;
+	if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+	if ( $visual_intro_text ) { echo $visual_intro_text; }
+	if ( $visual_button ) {
+		echo '<a href="'.$visual_button_link.'" class="button">'.$visual_button_text.'</a>';
 	}
-	if ( $right ) {
-		echo $right;
-	}
-	if ( $left && $text_position=='left' ) { 
-		echo $left;
-	} ?>
-	</div>
-	<?php wp_link_pages( array(
+
+	wp_link_pages( array(
 		'before'	  => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'expanse' ) . '</span>',
 		'after'	   => '</div>',
 		'link_before' => '<span>',

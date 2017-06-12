@@ -1,11 +1,11 @@
 <?php
 	register_field_group(array (
-		'id' => 'acf_frontpage-sections',
-		'title' => 'Frontpage Sections',
+		'id' => 'acf_page-sections',
+		'title' => 'Page Sections',
 		'fields' => array (
 			array (
 				'key' => 'field_592324b7840bb',
-				'label' => 'Front page subsections',
+				'label' => 'Page subsections',
 				'name' => 'subsections_templates',
 				'type' => 'select',
 				'instructions' => 'Pick a template.',

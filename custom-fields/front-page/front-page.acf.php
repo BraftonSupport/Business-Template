@@ -291,6 +291,7 @@
 				'label' => 'Show',
 				'name' => 'custom_show',
 				'type' => 'checkbox',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -506,10 +507,94 @@
 				'layout' => 'horizontal',
 			),
 			array (
+				'key' => 'field_593ec173437f2',
+				'label' => 'Text',
+				'name' => 'half_text',
+				'type' => 'wysiwyg',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'half',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'toolbar' => 'full',
+				'media_upload' => 'yes',
+			),
+			array (
+				'key' => 'field_593ec263437f3',
+				'label' => 'Image',
+				'name' => 'half_image',
+				'type' => 'image',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'half',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'save_format' => 'id',
+				'preview_size' => 'large',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_593ed342a9ba0',
+				'label' => 'Text Position',
+				'name' => 'text_position',
+				'type' => 'radio',
+				'instructions' => 'Default is on the right.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'half',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'choices' => array (
+					'left' => 'left',
+					'right' => 'right',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => 'right',
+				'layout' => 'horizontal',
+			),
+			array (
 				'key' => 'field_59246d9212495',
 				'label' => 'Tracking',
 				'name' => 'tracking',
 				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '!=',
+							'value' => 'half',
+						),
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '!=',
+							'value' => 'slider',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',

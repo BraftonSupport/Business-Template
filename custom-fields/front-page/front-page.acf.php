@@ -13,6 +13,7 @@
 					'visual' => 'Visual',
 					'list' => 'Services or List',
 					'slider' => 'Validation',
+					'half' => 'Half',
 				),
 				'default_value' => '',
 				'allow_null' => 1,
@@ -42,10 +43,41 @@
 				'maxlength' => '',
 			),
 			array (
+				'key' => 'field_59387dfe68d79',
+				'label' => 'Title',
+				'name' => 'show_title',
+				'type' => 'checkbox',
+				'choices' => array (
+					'Show Title?' => 'Show Title?',
+				),
+				'default_value' => '',
+				'layout' => 'horizontal',
+			),
+			array (
 				'key' => 'field_59234d988808d',
 				'label' => 'Intro Text',
 				'name' => 'visual_intro_text',
 				'type' => 'wysiwyg',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '!=',
+							'value' => 'half',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'toolbar' => 'full',
+				'media_upload' => 'no',
+			),
+			array (
+				'key' => 'field_593825bebc0bb',
+				'label' => 'Button?',
+				'name' => 'visual_button',
+				'type' => 'checkbox',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -57,9 +89,11 @@
 					),
 					'allorany' => 'all',
 				),
+				'choices' => array (
+					'Show button' => 'Show button',
+				),
 				'default_value' => '',
-				'toolbar' => 'full',
-				'media_upload' => 'no',
+				'layout' => 'horizontal',
 			),
 			array (
 				'key' => 'field_59234671b70d7',
@@ -73,6 +107,11 @@
 							'field' => 'field_592324b7840bb',
 							'operator' => '==',
 							'value' => 'visual',
+						),
+						array (
+							'field' => 'field_593825bebc0bb',
+							'operator' => '==',
+							'value' => 'Show button',
 						),
 					),
 					'allorany' => 'all',
@@ -96,6 +135,11 @@
 							'field' => 'field_592324b7840bb',
 							'operator' => '==',
 							'value' => 'visual',
+						),
+						array (
+							'field' => 'field_593825bebc0bb',
+							'operator' => '==',
+							'value' => 'Show button',
 						),
 					),
 					'allorany' => 'all',
@@ -248,6 +292,7 @@
 				'label' => 'Show',
 				'name' => 'custom_show',
 				'type' => 'checkbox',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -463,10 +508,94 @@
 				'layout' => 'horizontal',
 			),
 			array (
+				'key' => 'field_593ec173437f2',
+				'label' => 'Text',
+				'name' => 'half_text',
+				'type' => 'wysiwyg',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'half',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'toolbar' => 'full',
+				'media_upload' => 'yes',
+			),
+			array (
+				'key' => 'field_593ec263437f3',
+				'label' => 'Image',
+				'name' => 'half_image',
+				'type' => 'image',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'half',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'save_format' => 'id',
+				'preview_size' => 'large',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_593ed342a9ba0',
+				'label' => 'Text Position',
+				'name' => 'text_position',
+				'type' => 'radio',
+				'instructions' => 'Default is on the right.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'half',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'choices' => array (
+					'left' => 'left',
+					'right' => 'right',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => 'right',
+				'layout' => 'horizontal',
+			),
+			array (
 				'key' => 'field_59246d9212495',
 				'label' => 'Tracking',
 				'name' => 'tracking',
 				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '!=',
+							'value' => 'half',
+						),
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '!=',
+							'value' => 'slider',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
@@ -478,17 +607,10 @@
 		'location' => array (
 			array (
 				array (
-					'param' => 'parent_page_template',
-					'operator' => '==',
-					'value' => 'front-page.php',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-				array (
 					'param' => 'page_type',
 					'operator' => '==',
 					'value' => 'child',
-					'order_no' => 1,
+					'order_no' => 0,
 					'group_no' => 0,
 				),
 			),

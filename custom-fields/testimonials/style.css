@@ -1,0 +1,9 @@
+p.testimonial {
+	text-align: right;
+}
+.testimonial span:after{
+	content: ', ';
+}
+.testimonial span:last-of-type:after{
+	content: '';
+}

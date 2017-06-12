@@ -13,6 +13,7 @@
 					'visual' => 'Visual',
 					'list' => 'Services or List',
 					'slider' => 'Validation',
+					'half' => 'Half',
 				),
 				'default_value' => '',
 				'allow_null' => 1,
@@ -47,7 +48,7 @@
 				'name' => 'show_title',
 				'type' => 'checkbox',
 				'choices' => array (
-					'show' => 'Show Title?',
+					'Show Title?' => 'Show Title?',
 				),
 				'default_value' => '',
 				'layout' => 'horizontal',
@@ -62,15 +63,15 @@
 					'rules' => array (
 						array (
 							'field' => 'field_592324b7840bb',
-							'operator' => '==',
-							'value' => 'visual',
+							'operator' => '!=',
+							'value' => 'half',
 						),
 					),
 					'allorany' => 'all',
 				),
 				'default_value' => '',
 				'toolbar' => 'full',
-				'media_upload' => 'yes',
+				'media_upload' => 'no',
 			),
 			array (
 				'key' => 'field_593825bebc0bb',
@@ -605,30 +606,14 @@
 		),
 		'location' => array (
 			array (
-				// array (
-				// 	'param' => 'parent_page_template',
-				// 	'operator' => '==',
-				// 	'value' => 'parent-page.php',
-				// 	'order_no' => 0,
-				// 	'group_no' => 0,
-				// ),
 				array (
 					'param' => 'page_type',
 					'operator' => '==',
 					'value' => 'child',
-					'order_no' => 1,
+					'order_no' => 0,
 					'group_no' => 0,
 				),
 			),
-			// array (
-			// 	array (
-			// 		'param' => 'post_type',
-			// 		'operator' => '==',
-			// 		'value' => 'services',
-			// 		'order_no' => 0,
-			// 		'group_no' => 1,
-			// 	),
-			// ),
 		),
 		'options' => array (
 			'position' => 'acf_after_title',

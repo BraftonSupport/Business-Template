@@ -1,11 +1,11 @@
 <?php
-	register_field_group(array (
-		'id' => 'acf_page-sections',
-		'title' => 'Page Sections',
+register_field_group(array (
+		'id' => 'acf_frontpage-sections',
+		'title' => 'Frontpage Sections',
 		'fields' => array (
 			array (
 				'key' => 'field_592324b7840bb',
-				'label' => 'Page subsections',
+				'label' => 'Front page subsections',
 				'name' => 'subsections_templates',
 				'type' => 'select',
 				'instructions' => 'Pick a template.',
@@ -14,6 +14,8 @@
 					'list' => 'Services or List',
 					'slider' => 'Validation',
 					'half' => 'Half',
+					'Full' => 'Full',
+					'cta' => 'CTA',
 				),
 				'default_value' => '',
 				'allow_null' => 1,
@@ -67,7 +69,7 @@
 							'value' => 'half',
 						),
 					),
-					'allorany' => 'all',
+					'allorany' => 'any',
 				),
 				'default_value' => '',
 				'toolbar' => 'full',
@@ -86,8 +88,13 @@
 							'operator' => '==',
 							'value' => 'visual',
 						),
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'cta',
+						),
 					),
-					'allorany' => 'all',
+					'allorany' => 'any',
 				),
 				'choices' => array (
 					'Show button' => 'Show button',
@@ -103,11 +110,6 @@
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
-						array (
-							'field' => 'field_592324b7840bb',
-							'operator' => '==',
-							'value' => 'visual',
-						),
 						array (
 							'field' => 'field_593825bebc0bb',
 							'operator' => '==',
@@ -131,11 +133,6 @@
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
-						array (
-							'field' => 'field_592324b7840bb',
-							'operator' => '==',
-							'value' => 'visual',
-						),
 						array (
 							'field' => 'field_593825bebc0bb',
 							'operator' => '==',
@@ -624,3 +621,4 @@
 		),
 		'menu_order' => 0,
 	));
+?>

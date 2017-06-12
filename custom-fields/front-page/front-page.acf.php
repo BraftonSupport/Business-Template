@@ -605,7 +605,7 @@
 			),
 		),
 		'location' => array (
-			array (
+			array ( 
 				array (
 					'param' => 'page_type',
 					'operator' => '==',

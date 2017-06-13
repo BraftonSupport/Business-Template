@@ -20,7 +20,7 @@ $text_position = get_field('text_position');
 
 $tracking = get_field('tracking');
 ?>
-<section id="post-<?php the_ID(); ?>" <?php post_class('half'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class('halfnhalf'); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
@@ -31,7 +31,7 @@ $tracking = get_field('tracking');
 	<div class="container">
 	<?php
 	if ( $text && $text_position=='left' ) { 
-		echo $text;
+		echo '<div class="half">'.$text.'</div>';
 	}
 	if( !empty($image) ): 
 
@@ -39,30 +39,21 @@ $tracking = get_field('tracking');
 		$url = $image['url'];
 		$title = $image['title'];
 		$alt = $image['alt'];
-		$caption = $image['caption'];
 
 		// thumbnail
 		$size = 'thumbnail';
 		$thumb = $image['sizes'][ $size ];
 		$width = $image['sizes'][ $size . '-width' ];
-		$height = $image['sizes'][ $size . '-height' ];
+		$height = $image['sizes'][ $size . '-height' ]; ?>
 
-		if( $caption ): ?>
-
-			<div class="wp-caption">
-
-		<?php endif; ?>
-
-		<a href="<?php echo $url; ?>" title="<?php echo $title; ?>">
-			<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
-		</a>
-
-		<?php if( $caption ): ?>
-			<p class="wp-caption-text"><?php echo $caption; ?></p>
+		<div class="half">
+			<a href="<?php echo $url; ?>" title="<?php echo $title; ?>">
+				<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+			</a>
 		</div>
 
-		<?php endif;
-	endif;
+	<?php endif;
+
 	if ( $text && $text_position=='right' ) { 
 		echo $text;
 	} ?>

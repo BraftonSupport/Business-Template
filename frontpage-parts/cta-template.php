@@ -25,7 +25,7 @@ $tracking = get_field('tracking');
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
-	?>"><div class="site-inner">
+	?>"><div class="container site-inner">
 
 	<?php
 	if ( $title ) {  the_title( '<h1>', '</h1>' ); }

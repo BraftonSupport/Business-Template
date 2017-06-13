@@ -1710,7 +1710,7 @@ footer .container,
 }
 
 .half {
-	width: 49%;
+	width: 48%;
 }
 .third {
 	width: 32%;
@@ -1729,17 +1729,14 @@ footer .container,
 .compact {
 	max-width: 100%;
 }
-
-.half, .third, .fourth, .twothirds, .threefourths {
+.half {
+	margin-right: 4%;
+}
+.third, .fourth, .twothirds, .threefourths {
 	margin-right: 2%;
 }
 .half:last-child, .third:last-child, .fourth:last-child, .twothirds:last-child, .threefourths:last-child {
 	margin-right: 0;
-}
-
-.half > *, .third >* , .fourth > * {
-	padding-right: 15px;
-	padding-left: 15px;
 }
 
 /* Do not show the outline on the skip link target. */

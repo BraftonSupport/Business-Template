@@ -14,8 +14,8 @@ $tc = get_field('text_color', $id);
 
 $title = get_field('show_title');
 
-$left = get_field('half_text');
-$right = get_field('half_image');
+$text = get_field('half_text');
+$image = get_field('half_image');
 $text_position = get_field('text_position');
 
 $tracking = get_field('tracking');
@@ -30,15 +30,41 @@ $tracking = get_field('tracking');
 	if ( $title ) {  the_title( '<h1>', '</h1>' ); } ?>
 	<div class="container">
 	<?php
-	var_dump($text_position);
-	if ( $left && $text_position=='right' ) { 
-		echo $left;
+	if ( $text && $text_position=='left' ) { 
+		echo $text;
 	}
-	if ( $right ) {
-		echo $right;
-	}
-	if ( $left && $text_position=='left' ) { 
-		echo $left;
+	if( !empty($image) ): 
+
+		// vars
+		$url = $image['url'];
+		$title = $image['title'];
+		$alt = $image['alt'];
+		$caption = $image['caption'];
+
+		// thumbnail
+		$size = 'thumbnail';
+		$thumb = $image['sizes'][ $size ];
+		$width = $image['sizes'][ $size . '-width' ];
+		$height = $image['sizes'][ $size . '-height' ];
+
+		if( $caption ): ?>
+
+			<div class="wp-caption">
+
+		<?php endif; ?>
+
+		<a href="<?php echo $url; ?>" title="<?php echo $title; ?>">
+			<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+		</a>
+
+		<?php if( $caption ): ?>
+			<p class="wp-caption-text"><?php echo $caption; ?></p>
+		</div>
+
+		<?php endif;
+	endif;
+	if ( $text && $text_position=='right' ) { 
+		echo $text;
 	} ?>
 	</div>
 	<?php wp_link_pages( array(

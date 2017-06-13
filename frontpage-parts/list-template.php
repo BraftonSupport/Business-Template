@@ -36,7 +36,7 @@ $tracking = get_field('tracking');
 <section id="post-<?php the_ID(); ?>" <?php post_class('list'); ?> style="<?php
 	if ( !empty($url) ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) ) { echo ' background-color:'. $bgc .';'; }
-	if ( !empty($tc) ) { echo ' color:'. $tc .';'; } ?>">
+	if ( !empty($tc) ) { echo ' color:'. $tc .';'; } ?>"><div class="site-inner">
 
 	<?php if ( $title=='show'||$title ) {  the_title( '<h1>', '</h1>' ); }
 	if ( $visual_intro_text ) { echo $visual_intro_text; } ?>
@@ -129,5 +129,5 @@ $tracking = get_field('tracking');
 			$number
 		);
 	?>
-</section><!-- section -->
+</div></section><!-- section -->
 <?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>

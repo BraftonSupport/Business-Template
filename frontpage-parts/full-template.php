@@ -21,7 +21,7 @@ $tracking = get_field('tracking');
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
-	?>">
+	?>"><div class="site-inner">
 
 	<?php
 	if ( $title ) {  the_title( '<h1>', '</h1>' ); }
@@ -45,5 +45,5 @@ $tracking = get_field('tracking');
 		'<footer class="entry-footer"><span class="edit-link">',
 		'</span></footer><!-- .entry-footer -->'
 	); ?>
-</section><!-- section -->
+</div></section><!-- section -->
 <?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>

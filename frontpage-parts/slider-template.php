@@ -30,9 +30,10 @@ $tracking = get_field('tracking');
 	if ( !empty($url) ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
-	?>">
-	<?php if ( $title ) {  the_title( '<h1>', '</h1>' ); }
-	if ( $visual_intro_text ) { echo $visual_intro_text; } ?>
+	?>"><div class="site-inner">
+
+<?php if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+if ( $visual_intro_text ) { echo $visual_intro_text; } ?>
 <div class="slider">
 	<span class="quotes">&ldquo;</span>
 	<div class="slick">
@@ -116,5 +117,5 @@ $tracking = get_field('tracking');
 			$number
 		);
 	?>
-</section><!-- section -->
+</div></section><!-- section -->
 <?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>

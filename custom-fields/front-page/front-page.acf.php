@@ -1,5 +1,5 @@
 <?php
-register_field_group(array (
+	register_field_group(array (
 		'id' => 'acf_frontpage-sections',
 		'title' => 'Frontpage Sections',
 		'fields' => array (
@@ -60,7 +60,7 @@ register_field_group(array (
 					),
 					'allorany' => 'all',
 				),
-				'save_format' => 'id',
+				'save_format' => 'object',
 				'preview_size' => 'large',
 				'library' => 'all',
 			),

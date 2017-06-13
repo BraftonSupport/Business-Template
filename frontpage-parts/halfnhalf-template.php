@@ -35,10 +35,11 @@ $tracking = get_field('tracking');
 	<div class="container">
 	<?php
 	if ( $text && $text_position=='left' ) { 
-		echo '<div class="half">'.$text.'</div>';
+		echo '<div class="half">'.$text;
 		if ( $visual_button ) {
 			echo '<a href="'.$visual_button_link.'" class="button">'.$visual_button_text.'</a>';
 		}
+		echo '</div>';
 	}
 	if( !empty($image) ): 
 
@@ -59,10 +60,11 @@ $tracking = get_field('tracking');
 	<?php endif;
 
 	if ( $text && $text_position=='right' ) { 
-		echo '<div class="half">'.$text.'</div>';
+		echo '<div class="half">'.$text;
 		if ( $visual_button ) {
 			echo '<a href="'.$visual_button_link.'" class="button">'.$visual_button_text.'</a>';
 		}
+		echo '</div>';
 	} ?>
 	</div>
 	<?php wp_link_pages( array(

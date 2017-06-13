@@ -83,6 +83,18 @@
 	}
 }
 
+/* cta */
+.cta {
+	.container {
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+	.button {
+		margin: 0 0 0 auto;
+	}
+}
+
 /**
  * 11.31 - List Template
  */

@@ -42,6 +42,7 @@ $tracking = get_field('tracking');
 		'pagelink'	=> '<span class="screen-reader-text">' . __( 'Page', 'expanse' ) . ' </span>%',
 		'separator'   => '<span class="screen-reader-text">, </span>',
 	) ); ?>
+	</div>
 
 	<?php edit_post_link(
 		sprintf(
@@ -51,6 +52,5 @@ $tracking = get_field('tracking');
 		),
 		'<footer class="entry-footer"><span class="edit-link">',
 		'</span></footer><!-- .entry-footer -->'
-	); ?>
-</div></section><!-- section -->
+	); ?></section><!-- section -->
 <?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>

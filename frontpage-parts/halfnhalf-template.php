@@ -14,13 +14,13 @@ $tc = get_field('text_color', $id);
 
 $title = get_field('show_title');
 
-$left = get_field('half_text');
-$right = get_field('half_image');
+$text = get_field('half_text');
+$image = get_field('half_image');
 $text_position = get_field('text_position');
 
 $tracking = get_field('tracking');
 ?>
-<section id="post-<?php the_ID(); ?>" <?php post_class('half'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class('halfnhalf'); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
@@ -30,15 +30,32 @@ $tracking = get_field('tracking');
 	if ( $title ) {  the_title( '<h1>', '</h1>' ); } ?>
 	<div class="container">
 	<?php
-	var_dump($text_position);
-	if ( $left && $text_position=='right' ) { 
-		echo $left;
+	if ( $text && $text_position=='left' ) { 
+		echo '<div class="half">'.$text.'</div>';
 	}
-	if ( $right ) {
-		echo $right;
-	}
-	if ( $left && $text_position=='left' ) { 
-		echo $left;
+	if( !empty($image) ): 
+
+		// vars
+		$url = $image['url'];
+		$title = $image['title'];
+		$alt = $image['alt'];
+
+		// thumbnail
+		$size = 'thumbnail';
+		$thumb = $image['sizes'][ $size ];
+		$width = $image['sizes'][ $size . '-width' ];
+		$height = $image['sizes'][ $size . '-height' ]; ?>
+
+		<div class="half">
+			<a href="<?php echo $url; ?>" title="<?php echo $title; ?>">
+				<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+			</a>
+		</div>
+
+	<?php endif;
+
+	if ( $text && $text_position=='right' ) { 
+		echo $text;
 	} ?>
 	</div>
 	<?php wp_link_pages( array(

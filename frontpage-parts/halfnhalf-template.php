@@ -30,12 +30,12 @@ $tracking = get_field('tracking');
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
 	?>"><div class="site-inner">
 
-	<?php
-	if ( $title ) {  the_title( '<h1>', '</h1>' ); } ?>
 	<div class="container">
 	<?php
-	if ( $text && $text_position=='left' ) { 
-		echo '<div class="half">'.$text;
+	if ( $text && $text_position=='left' ) {
+		echo '<div class="half">';
+		if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+		echo $text;
 		if ( $visual_button ) {
 			echo '<a href="'.$visual_button_link.'" class="button">'.$visual_button_text.'</a>';
 		}
@@ -60,7 +60,9 @@ $tracking = get_field('tracking');
 	<?php endif;
 
 	if ( $text && $text_position=='right' ) { 
-		echo '<div class="half">'.$text;
+		echo '<div class="half">';
+		if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+		echo $text;
 		if ( $visual_button ) {
 			echo '<a href="'.$visual_button_link.'" class="button">'.$visual_button_text.'</a>';
 		}

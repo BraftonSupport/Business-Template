@@ -178,6 +178,11 @@
 							'operator' => '==',
 							'value' => 'cta',
 						),
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'half',
+						),
 					),
 					'allorany' => 'any',
 				),

@@ -103,6 +103,7 @@ $tracking = get_field('tracking');
 	</div><span class="quotes">&rdquo;</span>
 	<div class="toolbar"></div>
 
+</div>
 	<?php
 		edit_post_link(
 			sprintf(
@@ -115,6 +116,5 @@ $tracking = get_field('tracking');
 			$number
 		);
 	?>
-</div>
 </section><!-- section -->
 <?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>

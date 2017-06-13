@@ -44,6 +44,8 @@ get_header(); ?>
 				get_template_part( 'frontpage-parts/full', 'template' );
 			} elseif ($template=='cta'){
 				get_template_part( 'frontpage-parts/cta', 'template' );
+			} elseif ($template=='map'){
+				get_template_part( 'frontpage-parts/map', 'template' );
 			}
 
 		endwhile; ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying halfnhalf subsection of page.
+ * The template used for displaying full subsection of page.
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
@@ -12,36 +12,33 @@ $shadow = get_field('shadow', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
-$title = get_field('show_title');
-
-$left = get_field('half_text');
-$right = get_field('half_image');
-$text_position = get_field('text_position');
-
-$tracking = get_field('tracking');
+$address = get_field('map_address');
+$phone = get_field('map_phone');
+$email = get_field('map_email');
+$api = get_field('google_api');
 ?>
-<section id="post-<?php the_ID(); ?>" <?php post_class('half'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class('map'); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
 	?>"><div class="site-inner">
 
 	<?php
-	if ( $title ) {  the_title( '<h1>', '</h1>' ); } ?>
-	<div class="container">
-	<?php
-	var_dump($text_position);
-	if ( $left && $text_position=='right' ) { 
-		echo $left;
+	if ( $api ) {
+		echo '<div class="container"><p>';
+		if ( $address ) {
+			echo '<i class="fa fa-map-marker" aria-hidden="true"></i> '.$address;
+		} if ( $phone ) {
+			echo '<a tel="'.$phone.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone.'</a>';
+		} if ( $email ) {
+			echo '<a href="mailto:'.$email.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email.'</a>';
+		}
+		echo '</p><iframe src="//www.google.com/maps/embed/v1/place?q='.$address.'&zoom=17
+			&key='.$api.'"></iframe>';
+		echo '</div>';
 	}
-	if ( $right ) {
-		echo $right;
-	}
-	if ( $left && $text_position=='left' ) { 
-		echo $left;
-	} ?>
-	</div>
-	<?php wp_link_pages( array(
+
+	wp_link_pages( array(
 		'before'	  => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'expanse' ) . '</span>',
 		'after'	   => '</div>',
 		'link_before' => '<span>',

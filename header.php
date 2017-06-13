@@ -160,4 +160,4 @@ if(is_single()) {
 		</header>
 
 
-	<div id="content" class="site-content site-inner">
+	<div id="content" class="site-content">

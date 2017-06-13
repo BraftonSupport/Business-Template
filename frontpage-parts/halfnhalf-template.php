@@ -55,7 +55,7 @@ $tracking = get_field('tracking');
 	<?php endif;
 
 	if ( $text && $text_position=='right' ) { 
-		echo $text;
+		echo '<div class="half">'.$text.'</div>';
 	} ?>
 	</div>
 	<?php wp_link_pages( array(

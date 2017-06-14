@@ -1709,9 +1709,6 @@ footer .container,
 	margin: auto;
 }
 
-.half {
-	width: 48%;
-}
 .third {
 	width: 32%;
 }
@@ -1729,13 +1726,10 @@ footer .container,
 .compact {
 	max-width: 100%;
 }
-.half {
-	margin-right: 4%;
-}
 .third, .fourth, .twothirds, .threefourths {
 	margin-right: 2%;
 }
-.half:last-child, .third:last-child, .fourth:last-child, .twothirds:last-child, .threefourths:last-child {
+.third:last-child, .fourth:last-child, .twothirds:last-child, .threefourths:last-child {
 	margin-right: 0;
 }
 

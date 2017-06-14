@@ -40,7 +40,13 @@ $tracking = get_field('tracking');
 
 	<?php if ( $title=='show' ) {  the_title( '<h1>', '</h1>' ); }
 	if ( $visual_intro_text ) { echo $visual_intro_text; } ?>
-	<div class="container">
+	<div class="container<?php
+	if ( $type=='choose' && $custom_post ) :
+		echo ' count'.count($custom_post);
+	elseif ($type=='recent'):
+		echo ' count'.$number_of_posts;
+	endif;
+	?>">
 	<?php if ( $type=='choose' && $custom_post ) {
 		foreach( $custom_post as $post ) { ?>
 			<div>

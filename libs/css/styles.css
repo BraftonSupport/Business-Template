@@ -232,7 +232,7 @@
 /* line 207, ../sass/partials/_base.scss */
 .list .container > div {
   max-width: 350px;
-  margin: 0 auto 5%;
+  margin: 0 auto 2%;
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;

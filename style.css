@@ -1744,10 +1744,6 @@ footer .container,
 	outline: 0;
 }
 
-.site-main {
-	margin-bottom: 3.5em;
-}
-
 .site-main > :last-child {
 	margin-bottom: 0;
 }
@@ -2939,10 +2935,6 @@ p > video {
 		bottom: 0;
 	}
 
-	.site-main {
-		margin-bottom: 5.25em;
-	}
-
 	.site-title {
 		font-size: 28px;
 		font-size: 1.75rem;
@@ -3480,9 +3472,6 @@ p > video {
 	.row .container {
 		max-width: 1000px;
 	}
-	.site-main {
-		margin-bottom: 7.0em;
-	}
 
 	.image-navigation {
 		margin-bottom: 3.230769231em;
@@ -3981,10 +3970,6 @@ p > video {
 	.pingback .comment-body > a {
 		box-shadow: none;
 		border-bottom: 1px solid #007acc !important; /* Make sure color schemes don't affect to print */
-	}
-
-	.site-main {
-		margin-bottom: 3.5em;
 	}
 
 	.entry-header,

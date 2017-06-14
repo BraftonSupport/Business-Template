@@ -22,7 +22,8 @@ get_header(); ?>
 		    'post_parent' => $post->ID,
 		    'post_type' => 'page',
 		    'orderby' => 'menu_order',
-		    'order' => 'ASC'
+		    'order' => 'ASC',
+		    'posts_per_page' => -1
 		);
 
 		$child_query = new WP_Query( $args );

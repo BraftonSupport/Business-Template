@@ -1,5 +1,6 @@
 /* Header */
 .header {
+  margin-top: 25px;
   padding: 75px 0;
   text-align: center;
   background-position: center; 
@@ -100,6 +101,11 @@
 		-webkit-align-items: stretch;
 		-ms-flex-align: stretch;
 		align-items: stretch;
+	}
+	i.fa {
+		width: 15px;
+		margin-right: 10px;
+		text-align: center;
 	}
 }
 

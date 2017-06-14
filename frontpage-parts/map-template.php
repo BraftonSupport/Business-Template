@@ -25,17 +25,15 @@ $api = get_field('google_api');
 
 	<?php
 	if ( $api ) {
-		echo '<div class="container"><p>';
+		echo '<div class="container"><div class="half">';
 		if ( $address ) {
-			echo '<i class="fa fa-map-marker" aria-hidden="true"></i> '.$address;
+			echo '<p><i class="fa fa-map-marker" aria-hidden="true"></i> '.$address.'</p>';
 		} if ( $phone ) {
-			echo '<a tel="'.$phone.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone.'</a>';
+			echo '<p><a tel="'.$phone.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone.'</a></p>';
 		} if ( $email ) {
-			echo '<a href="mailto:'.$email.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email.'</a>';
+			echo '<p><a href="mailto:'.$email.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email.'</a></p>';
 		}
-		echo '</p><iframe src="//www.google.com/maps/embed/v1/place?q='.$address.'&zoom=17
-			&key='.$api.'"></iframe>';
-		echo '</div>';
+		echo '</div><iframe src="//www.google.com/maps/embed/v1/place?q='.$address.'&zoom=12&key='.$api.'" class="half" style="border:none;"></iframe></div>';
 	}
 
 	wp_link_pages( array(

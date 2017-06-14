@@ -95,6 +95,14 @@
 	}
 }
 
+.map{
+	.container {
+		-webkit-align-items: stretch;
+		-ms-flex-align: stretch;
+		align-items: stretch;
+	}
+}
+
 /**
  * 11.31 - List Template
  */

@@ -519,14 +519,6 @@ function expanse_get_color_scheme_css( $colors ) {
 	}
 
 	/* Link Color */
-
-	.latest h5, .teammiddle .fa-spinner {
-		background: {$colors['secondlink_color']};
-	}
-	.latest a:hover h5, .rich .entry-content {
-		background: {$colors['secondlink_hover_color']};
-	}
-
 	a,
 	.menu-toggle:hover,
 	.menu-toggle:focus,
@@ -575,10 +567,6 @@ function expanse_get_color_scheme_css( $colors ) {
 	.widget_calendar tbody a,
 	.page-links a:hover,
 	.page-links a:focus,
-	.team .container:first-of-type .previous.button,
-	.team .container:last-of-type .next.button,
-	.team .container:first-of-type .previous.button:hover,
-	.team .container:last-of-type .next.button:hover,
 	.simple .entry-header,
 	.full {
 		background-color: {$colors['link_color']};
@@ -1020,13 +1008,6 @@ function expanse_link_color_css() {
 	$secondlink_hover_color = vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.75)', $link_color_rgb );
 
 	$css = '
-		.latest h5, .teammiddle .fa-spinner {
-		background-color: %2$s;
-		}
-		.latest a:hover h5, .rich .entry-content {
-		background-color: %3$s;
-		}
-
 		/* Custom Link Color */
 		a,
 		.menu-toggle:hover,
@@ -1073,10 +1054,6 @@ function expanse_link_color_css() {
 		.menu-toggle.toggled-on:hover,
 		.menu-toggle.toggled-on:focus,
 		.widget_calendar tbody a,
-		.team .container:first-of-type .previous.button,
-		.team .container:last-of-type .next.button,
-		.team .container:first-of-type .previous.button:hover,
-		.team .container:last-of-type .next.button:hover,
 		.simple .entry-header {
 			background-color: %1$s;
 		}

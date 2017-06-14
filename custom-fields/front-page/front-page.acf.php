@@ -14,7 +14,7 @@
 					'list' => 'Services or List',
 					'slider' => 'Validation',
 					'half' => 'Half',
-					'Full' => 'Full',
+					'full' => 'Full',
 					'cta' => 'CTA',
 					'map' => 'Map',
 				),

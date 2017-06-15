@@ -96,6 +96,14 @@
 	}
 }
 
+/* slider */
+.slider {
+	background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 70%);
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.5) 0%,rgba(255,255,255,0) 70%);
+	background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%,rgba(255,255,255,0) 70%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00ffffff',GradientType=1 );
+}
+
 /* cta */
 .cta {
 	.container {
@@ -108,6 +116,7 @@
 	}
 }
 
+/* map */
 .map{
 	.container {
 		-webkit-align-items: stretch;

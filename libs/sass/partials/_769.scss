@@ -1,8 +1,15 @@
-
 .container { 
 	-webkit-flex-wrap: nowrap;
 	-ms-flex-wrap: nowrap;
 	flex-wrap: nowrap;
+}
+
+.half {
+	width: 48%;
+	margin-right: 4%;
+	&:last-child {
+		margin-right: 0;
+	}
 }
 
 .slider {
@@ -52,6 +59,11 @@
 	-ms-flex: 0 1 auto;
 	flex: 0 1 auto;
 	max-width: 250px;
+	}
+	&.count2 div {
+		-webkit-flex: 0 1 50%;
+		-ms-flex: 0 1 50%;
+		flex: 0 1 50%;
 	}
 	&.count3 div {
 		-webkit-flex: 0 1 33%;

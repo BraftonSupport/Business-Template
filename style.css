@@ -1624,9 +1624,8 @@ article .latest.icon img {
  * 11.0 - Content
  */
 
-
 .site-inner {
-	max-width: 92%; margin: 0 auto; clear: both;
+	margin: 0 auto; clear: both;
 	position: relative;
 }
 
@@ -3459,7 +3458,6 @@ p > video {
 
 @media screen and (min-width: 61.5625em) {
 
-	.site-inner { max-width: 1000px; }
 	.compact {
 		max-width: 75%;
 	}
@@ -3635,8 +3633,6 @@ p > video {
  */
 
 @media screen and (min-width: 75em) {
-	.site-inner { width: inherit; }
-
 	.compact {
 		max-width: 55%;
 	}

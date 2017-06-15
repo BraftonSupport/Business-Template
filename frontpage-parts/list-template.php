@@ -24,7 +24,7 @@ $number_of_posts = get_field('number_of_posts');
 $custom_show = get_field('custom_show');
 	if( $custom_show && in_array('featured', $custom_show) ) { $featured = 1; } else { $featured = 0; }
 	if( $custom_show && in_array('circle', $custom_show) ) { $circle = 1; } else { $circle = 0; }
-	if( $custom_show && in_array('title', $custom_show) ) { $title = 1; } else { $title = 0; }
+	if( $custom_show && in_array('title', $custom_show) ) { $titlepost = 1; } else { $titlepost = 0; }
 	if( $custom_show && in_array('excerpt', $custom_show) ) { $excerpt = 1; } else { $excerpt = 0; }
 	if( $custom_show && in_array('button', $custom_show) ) { $button = 1; } else { $button = 0; }
 
@@ -38,7 +38,7 @@ $tracking = get_field('tracking');
 	if ( !empty($bgc) ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; } ?>"><div class="site-inner">
 
-	<?php if ( $title=='show' ) {  the_title( '<h1>', '</h1>' ); }
+	<?php if ( $title ) {  the_title( '<h1>', '</h1>' ); }
 	if ( $visual_intro_text ) { echo $visual_intro_text; } ?>
 	<div class="container<?php
 	if ( $type=='choose' && $custom_post ) :
@@ -65,7 +65,7 @@ $tracking = get_field('tracking');
 						}
 					}
 				}
-				if ( $title ){ ?>
+				if ( $titlepost ){ ?>
 					<h3><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post); ?></a></h3>
 				<?php }
 				if ( $excerpt ){
@@ -97,7 +97,7 @@ $tracking = get_field('tracking');
 				} elseif($featured && has_post_thumbnail()){
 					the_post_thumbnail('mediumsquared');
 				}
-				if ( $title ){ ?>
+				if ( $titlepost ){ ?>
 					<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
 				<?php }
 				if ( $excerpt ){

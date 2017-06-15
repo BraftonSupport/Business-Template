@@ -1681,9 +1681,9 @@ article .latest.icon img {
 section .container {
 	background-position: center;
 	background-size: cover;
-	-webkit-flex: 1 1 auto;
+/*	-webkit-flex: 1 1 auto;
 	-ms-flex: 1 1 auto;
-	flex: 1 1 auto;
+	flex: 1 1 auto;*/
 	align-items: flex-start;
 	-webkit-align-items: flex-start;
 	-ms-flex-align: flex-start;

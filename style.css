@@ -3151,11 +3151,6 @@ p > video {
 		border-bottom-width: 0;
 	}
 
-	.main-navigation ul ul a {
-		white-space: normal;
-		width: 12.75em;
-	}
-
 	.main-navigation ul ul:before,
 	.main-navigation ul ul:after {
 		border-style: solid;

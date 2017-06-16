@@ -643,6 +643,19 @@ function expanse_get_color_scheme_css( $colors ) {
 		color: {$colors['link_hover_color']};
 	}
 
+	.button:hover,
+	button:hover,
+	button:focus,
+	input[type="button"]:hover,
+	input[type="button"]:focus,
+	input[type="reset"]:hover,
+	input[type="reset"]:focus,
+	input[type="submit"]:hover,
+	input[type="submit"]:focus {
+		background-color: {$colors['link_hover_color']};
+		color: {$colors['link_color']};
+	}
+
 	/* Main Text Color */
 	body,
 	input,
@@ -1083,7 +1096,7 @@ function expanse_link_hover_color_css() {
 	}
 
 	$css = '
-		/* Custom Link Color */
+		/* Custom Link Hover Color */
 		.post-password-form label,
 		a:hover,
 		a:focus,
@@ -1164,9 +1177,9 @@ function expanse_link_hover_color_css() {
 		}
 	';
 
-	wp_add_inline_style( 'expanse-style', sprintf( $css, $link_color ) );
+	wp_add_inline_style( 'expanse-style', sprintf( $css, $link_hover_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_link_color_css', 11 );
+add_action( 'wp_enqueue_scripts', 'expanse_link_hover_color_css', 11 );
 
 /**
  * Enqueues front-end CSS for the secondary background color.

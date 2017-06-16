@@ -766,11 +766,6 @@ function expanse_get_color_scheme_css( $colors ) {
 	}
 
 	@media screen and (min-width: 56.875em) {
-		.main-navigation li:hover > a,
-		.main-navigation li.focus > a {
-			color: {$colors['link_color']};
-		}
-
 		.main-navigation ul ul,
 		.main-navigation ul ul li {
 			border-color: {$colors['border_color']};
@@ -1071,13 +1066,6 @@ function expanse_link_color_css() {
 		.menu-toggle:focus {
 			border-color: %1$s;
 		}
-
-		@media screen and (min-width: 56.875em) {
-			.main-navigation li:hover > a,
-			.main-navigation li.focus > a {
-				color: %1$s;
-			}
-		}
 	';
 
 	wp_add_inline_style( 'expanse-style', sprintf( $css, $link_color, $secondlink_color, $secondlink_hover_color ) );
@@ -1173,13 +1161,6 @@ function expanse_link_hover_color_css() {
 		.page-links a:hover,
 		.page-links a:focus {
 			background-color: %1$s;
-		}
-
-		@media screen and (min-width: 56.875em) {
-			.main-navigation li:hover > a,
-			.main-navigation li.focus > a {
-				color: %1$s;
-			}
 		}
 	';
 

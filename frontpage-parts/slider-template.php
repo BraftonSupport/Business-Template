@@ -26,7 +26,7 @@ $slide_number = get_field('slider_number_of_posts');
 $tracking = get_field('tracking');
 ?>
 
-<section id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class('slidercontainer'); ?> style="<?php
 	if ( !empty($url) ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
@@ -86,7 +86,7 @@ $tracking = get_field('tracking');
 							} else {
 								echo strip_tags($excerpt);
 							}
-							echo '</h4><p class="testimonial">';
+							echo '</h4><p class="testimonial-cite">';
 							if ($name) { echo '<span class="testimonial-name">'.$name.'</span>'; }
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }

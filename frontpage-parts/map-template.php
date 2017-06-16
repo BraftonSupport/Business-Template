@@ -12,7 +12,9 @@ $shadow = get_field('shadow', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
-$address = get_field('map_address');
+$address1 = get_field('map_address_1');
+$address2 = get_field('map_address_2');
+$address3 = get_field('map_address_3');
 $phone = get_field('map_phone');
 $email = get_field('map_email');
 $api = get_field('google_api');
@@ -26,8 +28,15 @@ $api = get_field('google_api');
 	<?php
 	if ( $api ) {
 		echo '<div class="container"><div class="half">';
-		if ( $address ) {
-			echo '<p><strong>Address:</strong><br/><i class="fa fa-map-marker" aria-hidden="true"></i> '.$address.'</p>';
+		if ( $address1 ) {
+			echo '<p><strong>Address:</strong><br/><i class="fa fa-map-marker" aria-hidden="true"></i> '.$address1;
+			if ( $address2 ) {
+				echo '<br/>'.$address2.;
+			}
+			if ( $address3 ) {
+				echo '<br/>'.$address3;
+			}
+			echo '</p>';
 		} if ( $phone ) {
 			echo '<p><strong>Phone:</strong><br/><a tel="'.$phone.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone.'</a></p>';
 		} if ( $email ) {

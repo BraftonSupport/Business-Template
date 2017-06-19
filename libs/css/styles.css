@@ -1,7 +1,7 @@
 /* Typography */
 /* line 2, ../sass/partials/_base.scss */
 section ul {
-  list-style: disc;
+  list-style: none;
 }
 /* line 4, ../sass/partials/_base.scss */
 section ul li:before {

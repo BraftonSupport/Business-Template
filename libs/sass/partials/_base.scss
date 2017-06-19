@@ -123,10 +123,18 @@
 		-ms-flex-align: stretch;
 		align-items: stretch;
 	}
+	p {
+		margin-left: 35px;
+	}
 	i.fa {
-		width: 15px;
-		margin-right: 10px;
-		text-align: center;
+		width: 0;
+		height: 0;
+		text-indent: -35px;
+		line-height: 1.75;
+	}
+	strong {
+		display: inline-block;
+		text-indent: -35px;
 	}
 }
 

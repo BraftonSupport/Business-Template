@@ -38,7 +38,7 @@ $api = get_field('google_api');
 			}
 			echo '</p>';
 		} if ( $phone ) {
-			echo '<p><strong>Phone:</strong><br/><a tel="'.$phone.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone.'</a></p>';
+			echo '<p><strong>Phone:</strong><br/><a href="tel:'.$phone.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone.'</a></p>';
 		} if ( $email ) {
 			echo '<p><strong>Email:</strong><br/><a href="mailto:'.$email.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email.'</a></p>';
 		}

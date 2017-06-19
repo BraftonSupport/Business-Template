@@ -111,13 +111,16 @@
 		-ms-flex-align: center;
 		align-items: center;
 	}
+	.hasbutton {
+		width: 75%;
+	}
 	.button {
 		margin: 0 0 0 auto;
 	}
 }
 
 /* map */
-.map{
+.map {
 	.container {
 		-webkit-align-items: stretch;
 		-ms-flex-align: stretch;
@@ -135,6 +138,9 @@
 	strong {
 		display: inline-block;
 		text-indent: -35px;
+	}
+	iframe {
+		margin: 0;
 	}
 }
 

@@ -2955,12 +2955,6 @@ p > video {
 		margin-bottom: 5.25em;
 	}
 
-	.post-navigation .post-title {
-		font-size: 23px;
-		font-size: 1.4375rem;
-		line-height: 1.25;
-	}
-
 	/* restore screen-reader-text */
 	.pagination .current .screen-reader-text {
 		position: absolute !important;
@@ -3235,10 +3229,7 @@ p > video {
 	.post-thumbnail {
 		margin-left: 0;
 	}
-	.post-navigation .post-title{
-		font-size: 28px;
-		font-size: 1.75rem;
-	}
+	
 	.sidebar {
 		float: left;
 		margin-left: 75%;

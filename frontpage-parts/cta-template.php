@@ -29,7 +29,11 @@ $tracking = get_field('tracking');
 
 	<?php
 	if ( $title ) {  the_title( '<h1>', '</h1>' ); }
-	if ( $visual_intro_text ) { echo $visual_intro_text; }
+	if ( $visual_intro_text ) {
+		if ( $visual_button ) { echo '<div class="hasbutton">'; }
+		echo $visual_intro_text;
+		if ( $visual_button ) { echo '</div>'; }
+	}
 	if ( $visual_button ) {
 		echo '<a href="'.$visual_button_link.'" class="button">'.$visual_button_text.'</a>';
 	}

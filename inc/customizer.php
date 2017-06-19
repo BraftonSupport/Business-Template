@@ -688,24 +688,6 @@ function expanse_get_color_scheme_css( $colors ) {
 		background-color: {$colors['main_text_color']};
 	}
 
-	.button:hover,
-	button:hover,
-	button:focus,
-	input[type="button"]:hover,
-	input[type="button"]:focus,
-	input[type="reset"]:hover,
-	input[type="reset"]:focus,
-	input[type="submit"]:hover,
-	input[type="submit"]:focus,
-	.pagination .prev:hover,
-	.pagination .prev:focus,
-	.pagination .next:hover,
-	.pagination .next:focus,
-	.page-links a {
-		background-color: {$colors['link_hover_color']};
-		color: {$colors['link_color']};
-	}
-
 	.hero .more-link:hover {
 		color: {$colors['secondary_text_color']};
 	}
@@ -1066,7 +1048,26 @@ function expanse_link_color_css() {
 		.simple .entry-header {
 			background-color: %1$s;
 		}
-
+		mark,
+		ins,
+		.button:hover,
+		button:hover,
+		button:focus,
+		input[type="button"]:hover,
+		input[type="button"]:focus,
+		input[type="reset"]:hover,
+		input[type="reset"]:focus,
+		input[type="submit"]:hover,
+		input[type="submit"]:focus,
+		.pagination .prev:hover,
+		.pagination .prev:focus,
+		.pagination .next:hover,
+		.pagination .next:focus,
+		.widget_calendar tbody a,
+		.page-links a:hover,
+		.page-links a:focus {
+			color: %1$s;
+		}
 		input[type="text"]:focus,
 		input[type="email"]:focus,
 		input[type="url"]:focus,

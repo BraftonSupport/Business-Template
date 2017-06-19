@@ -1,4 +1,16 @@
+/* Typography */
+section ul {
+	list-style: disc;
+	li:before {
+		content: "\f054";
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		margin-right: 15px;
+	}
+}
+
 /* Header */
+
 .header {
   margin-top: 25px;
   padding: 75px 0;
@@ -6,6 +18,7 @@
   background-position: center; 
   background-size: cover; 
 }
+
 .header,
 .site-main > section:first-of-type {
 	h1 {
@@ -13,21 +26,22 @@
 		color: #fff;
 	}
 }
+
 .main-navigation ul ul a {
 	white-space: normal;
-    width: 17em;
-    font-size: 15px;
+	width: 17em;
+	font-size: 15px;
 }
 
 .scrolled .main-navigation .primary-menu > li > a {
-	font-size: 12px;
+	font-size: 13px;
 }
 
 /**
  * 11.0 - Content
  */
 .site-inner {
-    max-width: 90%;
+	max-width: 90%;
 }
 .site-main > section {
 	padding: 75px 0;

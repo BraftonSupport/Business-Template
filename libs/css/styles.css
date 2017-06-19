@@ -135,11 +135,11 @@
 }
 /* line 114, ../sass/partials/_base.scss */
 .cta .hasbutton {
-  width: 75%;
+  width: 100%;
 }
 /* line 117, ../sass/partials/_base.scss */
 .cta .button {
-  margin: 0 0 0 auto;
+  margin: 0 auto;
 }
 
 /* map */
@@ -655,15 +655,25 @@ footer .logo img {
     flex: 0 1 19%;
   }
 
-  /* Footer */
+  /* cta */
   /* line 102, ../sass/partials/_769.scss */
+  .cta .button {
+    margin: 0 0 0 auto;
+  }
+  /* line 105, ../sass/partials/_769.scss */
+  .cta .hasbutton {
+    width: 75%;
+  }
+
+  /* Footer */
+  /* line 112, ../sass/partials/_769.scss */
   .site-footer .widget {
     margin-right: 2%;
     -webkit-flex: 1 1 32%;
     -ms-flex: 1 1 32%;
     flex: 1 1 32%;
   }
-  /* line 107, ../sass/partials/_769.scss */
+  /* line 117, ../sass/partials/_769.scss */
   .site-footer .widget:last-of-type {
     margin-right: 0;
   }

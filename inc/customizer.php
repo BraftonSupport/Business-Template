@@ -703,6 +703,7 @@ function expanse_get_color_scheme_css( $colors ) {
 	.pagination .next:focus,
 	.page-links a {
 		background-color: {$colors['link_hover_color']};
+		color: {$colors['link_color']};
 	}
 
 	.hero .more-link:hover {

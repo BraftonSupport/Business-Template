@@ -23,8 +23,12 @@ $visual_button_text = get_field('visual_button_text');
 $visual_button_link = get_field('visual_button_link');
 
 $tracking = get_field('tracking');
+$classes = array('halfnhalf');
+if (!$url) {
+	$classes[] = "gradient";
+}
 ?>
-<section id="post-<?php the_ID(); ?>" <?php post_class('halfnhalf'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }

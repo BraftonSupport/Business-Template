@@ -16,8 +16,12 @@ $title = get_field('show_title');
 $visual_intro_text = get_field('visual_intro_text');
 
 $tracking = get_field('tracking');
+$classes = array('full');
+if (!$url) {
+	$classes[] = "gradient";
+}
 ?>
-<section id="post-<?php the_ID(); ?>" <?php post_class('full'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }

@@ -323,7 +323,7 @@ h6 {
 }
 
 p:not(:last-of-type) {
-	margin: 0 0 1.75em;
+	margin: 0 0 1em;
 }
 
 dfn,

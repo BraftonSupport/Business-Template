@@ -32,7 +32,7 @@ $extra_text = get_field('extra_text');
 $text_underneath = get_field('text_underneath');
 $tracking = get_field('tracking');
 $classes = array('list');
-if (!$url) {
+if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
 ?>

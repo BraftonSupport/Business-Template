@@ -23,7 +23,7 @@ $visual_button_link = get_field('visual_button_link');
 $tracking = get_field('tracking');
 
 $classes = array('cta');
-if (!$url) {
+if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
 ?>

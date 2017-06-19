@@ -17,7 +17,7 @@ $visual_intro_text = get_field('visual_intro_text');
 
 $tracking = get_field('tracking');
 $classes = array('full');
-if (!$url) {
+if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
 ?>

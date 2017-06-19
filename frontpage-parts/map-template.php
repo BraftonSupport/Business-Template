@@ -20,7 +20,7 @@ $email = get_field('map_email');
 $api = get_field('google_api');
 
 $classes = array('map');
-if (!$url) {
+if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
 ?>

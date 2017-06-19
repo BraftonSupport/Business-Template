@@ -25,7 +25,7 @@ $slide_number = get_field('slider_number_of_posts');
 
 $tracking = get_field('slidercontainer');
 $classes = array('cta');
-if (!$url) {
+if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
 ?>

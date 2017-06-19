@@ -33,7 +33,7 @@ section ul:not(.slick-dots) {
 		font-size: 3em;
 		color: #fff;
 		border-bottom: 1px solid;
-		display: inline;
+		display: inline-block;
 		margin-bottom: .65em;
 	}
 }
@@ -57,10 +57,10 @@ section ul:not(.slick-dots) {
 .site-main > section {
 	padding: 75px 0;
 	&.gradient {
-		background: -moz-linear-gradient(-45deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
-		background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0.25) 0%,rgba(0,0,0,0.25) 100%);
-		background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%,rgba(0,0,0,0.25) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40ffffff', endColorstr='#40000000',GradientType=1 );
+		background: -moz-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%);
+		background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%);
+		background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#1a000000',GradientType=1 );
 	}
 }
 

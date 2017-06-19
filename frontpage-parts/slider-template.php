@@ -23,10 +23,13 @@ $recent_slider = get_field('recent_slider_posts');
 $slider_button = get_field('slider_read_more');
 $slide_number = get_field('slider_number_of_posts');
 
-$tracking = get_field('tracking');
+$tracking = get_field('slidercontainer');
+$classes = array('cta');
+if (!$url) {
+	$classes[] = "gradient";
+}
 ?>
-
-<section id="post-<?php the_ID(); ?>" <?php post_class('slidercontainer'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }

@@ -18,8 +18,13 @@ $address3 = get_field('map_address_3');
 $phone = get_field('map_phone');
 $email = get_field('map_email');
 $api = get_field('google_api');
+
+$classes = array('map');
+if (!$url) {
+	$classes[] = "gradient";
+}
 ?>
-<section id="post-<?php the_ID(); ?>" <?php post_class('map'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }

@@ -6,6 +6,7 @@
  * @subpackage Twenty_Sixteen
  * @since Expanse 1.0
  */
+
 $id = get_the_ID();
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
 $shadow = get_field('shadow', $id);
@@ -20,8 +21,13 @@ $visual_button_text = get_field('visual_button_text');
 $visual_button_link = get_field('visual_button_link');
 
 $tracking = get_field('tracking');
+
+$classes = array('cta');
+if (!$url) {
+	$classes[] = "gradient";
+}
 ?>
-<section id="post-<?php the_ID(); ?>" <?php post_class('cta'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }

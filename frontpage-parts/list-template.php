@@ -31,9 +31,12 @@ $custom_show = get_field('custom_show');
 $extra_text = get_field('extra_text');
 $text_underneath = get_field('text_underneath');
 $tracking = get_field('tracking');
+$classes = array('list');
+if (!$url) {
+	$classes[] = "gradient";
+}
 ?>
-
-<section id="post-<?php the_ID(); ?>" <?php post_class('list'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; } ?>"><div class="site-inner">

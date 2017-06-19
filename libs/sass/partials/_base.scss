@@ -1,11 +1,19 @@
 /* Typography */
-section ul {
+section ul:not(.slick-dots) {
 	list-style: none;
 	li:before {
 		content: "\f054";
 		display: inline-block;
 		font: normal normal normal 14px/1 FontAwesome;
 		margin-right: 15px;
+		-webkit-transition: all .25s ease-in-out;
+		-moz-transition: all .25s ease-in-out;
+		-o-transition: all .25s ease-in-out;
+		transition: all .25s ease-in-out;
+	}
+	li:hover :before {
+		margin-right: 10px;
+		margin-left: 5px;
 	}
 }
 
@@ -24,6 +32,9 @@ section ul {
 	h1 {
 		font-size: 3em;
 		color: #fff;
+		border-bottom: 1px solid;
+		display: inline;
+		margin-bottom: .65em;
 	}
 }
 
@@ -45,6 +56,12 @@ section ul {
 }
 .site-main > section {
 	padding: 75px 0;
+	&.gradient {
+		background: -moz-linear-gradient(-45deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+		background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0.25) 0%,rgba(0,0,0,0.25) 100%);
+		background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%,rgba(0,0,0,0.25) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40ffffff', endColorstr='#40000000',GradientType=1 );
+	}
 }
 
 .container { 
@@ -144,10 +161,10 @@ section ul {
 		padding-left: 35px;
 	}
 	i.fa {
-		width: 0;
-		height: 0;
-		text-indent: -35px;
+		text-indent: 10px;
 		line-height: 1.75;
+		position: absolute;
+		left: 0;
 	}
 	strong {
 		display: inline-block;
@@ -321,27 +338,38 @@ p.testimonial-cite {
 }
 /* Footer */
 
-.site-footer .widget {
-	padding-top: 3em;
-	margin-bottom: 0;
-	-webkit-flex: 1 0 100%;
-	-ms-flex: 1 0 100%;
-	flex: 1 0 100%;
-}
-footer .container {
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;	
-}
-footer .logo {	
-	-webkit-flex: 0 0 50%;
-	-ms-flex: 0 0 50%;
-	flex: 0 0 50%;
-	img {
-		width: 75px;
-		margin-top: 10px;
+.site-footer {
+	.widget {
+		padding-top: 3em;
+		margin-bottom: 0;
+		-webkit-flex: 1 0 100%;
+		-ms-flex: 1 0 100%;
+		flex: 1 0 100%;
+	}
+	.widget-title {
+		margin-bottom: 0;
+		border-bottom: 1px solid;
+		display: inline-block;
 	}
 }
+
+footer {
+	.container {
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;	
+	}
+	.logo {	
+		-webkit-flex: 0 0 50%;
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		img {
+			width: 75px;
+			margin-top: 10px;
+		}
+	}
+}
+
 .menu-social-media-container {
 	margin: auto;
 	-webkit-flex: 0 0 50%;

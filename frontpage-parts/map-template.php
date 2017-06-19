@@ -42,7 +42,10 @@ $api = get_field('google_api');
 		} if ( $email ) {
 			echo '<p><strong>Email:</strong><br/><a href="mailto:'.$email.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email.'</a></p>';
 		}
-		echo '</div><iframe src="//www.google.com/maps/embed/v1/place?q='.$address.'&zoom=12&key='.$api.'" class="half" style="border:none;"></iframe></div>';
+		echo '</div><iframe src="//www.google.com/maps/embed/v1/place?q='.$address1;
+			if ( $address2 ) { echo ', '.$address2; }
+			if ( $address3 ) { echo ', '.$address3; }
+		echo $address3.'&zoom=12&key='.$api.'" class="half" style="border:none;"></iframe></div>';
 	}
 
 	wp_link_pages( array(

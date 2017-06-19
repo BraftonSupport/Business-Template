@@ -31,7 +31,7 @@ $api = get_field('google_api');
 		if ( $address1 ) {
 			echo '<p><strong>Address:</strong><br/><i class="fa fa-map-marker" aria-hidden="true"></i> '.$address1;
 			if ( $address2 ) {
-				echo '<br/>'.$address2.;
+				echo '<br/>'.$address2;
 			}
 			if ( $address3 ) {
 				echo '<br/>'.$address3;

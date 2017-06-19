@@ -653,7 +653,7 @@
 			array (
 				'key' => 'field_59443c9e3b126',
 				'label' => 'Address Line 2',
-				'name' => 'address_line_3',
+				'name' => 'map_address_2',
 				'type' => 'text',
 				'conditional_logic' => array (
 					'status' => 1,
@@ -676,7 +676,7 @@
 			array (
 				'key' => 'field_59443c943b125',
 				'label' => 'Address Line 3',
-				'name' => 'address_line_3',
+				'name' => 'map_address_3',
 				'type' => 'text',
 				'conditional_logic' => array (
 					'status' => 1,

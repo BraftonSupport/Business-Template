@@ -70,6 +70,17 @@ section ul:not(.slick-dots) {
 	flex-wrap: wrap;
 }
 
+
+.shadow {
+	height: 0;
+	&:before {
+		display: block;
+		background: url(../wp-content/themes/Business-Theme/img/shadow.png) center 75% no-repeat transparent;
+		height: 25px;
+		content: " ";
+	}
+}
+
 .half {
 	width: 100%;
 	margin-right: 0;

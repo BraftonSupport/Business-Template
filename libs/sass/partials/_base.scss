@@ -73,6 +73,7 @@ section ul:not(.slick-dots) {
 
 .shadow {
 	height: 0;
+	position: relative;
 	&:before {
 		display: block;
 		background: url(../../../Business-Theme/img/shadow.png) center 75% no-repeat transparent;

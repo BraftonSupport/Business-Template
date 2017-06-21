@@ -11,7 +11,7 @@ section ul:not(.slick-dots) {
 		-o-transition: all .25s ease-in-out;
 		transition: all .25s ease-in-out;
 	}
-	li:hover :before {
+	li:hover:before {
 		margin-right: 10px;
 		margin-left: 5px;
 	}
@@ -75,7 +75,7 @@ section ul:not(.slick-dots) {
 	height: 0;
 	&:before {
 		display: block;
-		background: url(../wp-content/themes/Business-Theme/img/shadow.png) center 75% no-repeat transparent;
+		background: url(../../../Business-Theme/img/shadow.png) center 75% no-repeat transparent;
 		height: 25px;
 		content: " ";
 	}

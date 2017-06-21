@@ -15,7 +15,7 @@ section ul:not(.slick-dots) li:before {
   transition: all .25s ease-in-out;
 }
 /* line 14, ../sass/partials/_base.scss */
-section ul:not(.slick-dots) li:hover :before {
+section ul:not(.slick-dots) li:hover:before {
   margin-right: 10px;
   margin-left: 5px;
 }
@@ -86,7 +86,7 @@ section ul:not(.slick-dots) li:hover :before {
 /* line 76, ../sass/partials/_base.scss */
 .shadow:before {
   display: block;
-  background: url(../wp-content/themes/Business-Theme/img/shadow.png) center 75% no-repeat transparent;
+  background: url(../../../Business-Theme/img/shadow.png) center 75% no-repeat transparent;
   height: 25px;
   content: " ";
 }

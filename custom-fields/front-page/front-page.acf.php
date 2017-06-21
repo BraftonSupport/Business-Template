@@ -302,11 +302,13 @@
 					0 => 'all',
 				),
 				'filters' => array (
-					0 => 'post_type',
+					0 => 'search',
+					1 => 'post_type',
 				),
 				'result_elements' => array (
-					0 => 'post_type',
-					1 => 'post_title',
+					0 => 'featured_image',
+					1 => 'post_type',
+					2 => 'post_title',
 				),
 				'max' => 5,
 			),
@@ -475,7 +477,7 @@
 				'label' => 'Custom Post',
 				'name' => 'custom_slider_post',
 				'type' => 'relationship',
-				'instructions' => 'For best results use only 3.',
+				'instructions' => 'For best results, choose 3.',
 				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
@@ -501,11 +503,13 @@
 					0 => 'all',
 				),
 				'filters' => array (
-					0 => 'post_type',
+					0 => 'search',
+					1 => 'post_type',
 				),
 				'result_elements' => array (
-					0 => 'post_type',
-					1 => 'post_title',
+					0 => 'featured_image',
+					1 => 'post_type',
+					2 => 'post_title',
 				),
 				'max' => 5,
 			),

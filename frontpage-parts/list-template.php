@@ -54,6 +54,8 @@ if (!$url && !$bgc ) {
 		foreach( $custom_post as $post ) { ?>
 			<div>
 				<?php if ( $featured ){
+					?>
+					<div class="list-featured-image"><?php
 					if ( has_post_thumbnail( $post ) ){
 						if ( $circle ) {
 							echo get_the_post_thumbnail( $post, 'mediumsquared', array( 'class' => 'round' ) );
@@ -67,6 +69,7 @@ if (!$url && !$bgc ) {
 							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'">';
 						}
 					}
+					?></div><?php
 				}
 				if ( $titlepost ){ ?>
 					<h3><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post); ?></a></h3>

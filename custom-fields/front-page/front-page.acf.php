@@ -158,7 +158,7 @@
 				),
 				'default_value' => '',
 				'toolbar' => 'full',
-				'media_upload' => 'no',
+				'media_upload' => 'yes',
 			),
 			array (
 				'key' => 'field_593825bebc0bb',
@@ -209,6 +209,29 @@
 					'allorany' => 'all',
 				),
 				'default_value' => 'Read More',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_594aa23b8d8b9',
+				'label' => 'Add Classes',
+				'name' => 'visual_button_classes',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_593825bebc0bb',
+							'operator' => '==',
+							'value' => 'Show button',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
 				'append' => '',

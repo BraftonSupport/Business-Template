@@ -9,6 +9,7 @@
 
 $id = get_the_ID();
 $number = $id;
+
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
 $shadow = get_field('shadow', $id);
 $bgc = get_field('background_color', $id);
@@ -28,6 +29,7 @@ $classes = array('cta');
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
+$classes[] = str_replace(" ", "-", get_the_title());
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) ) { echo 'background-image: url('. $url .');'; }

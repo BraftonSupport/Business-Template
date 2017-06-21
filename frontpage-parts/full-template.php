@@ -20,6 +20,7 @@ $classes = array('full');
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
+$classes[] = str_replace(" ", "-", get_the_title());
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }

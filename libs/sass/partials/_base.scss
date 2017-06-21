@@ -70,7 +70,6 @@ section ul:not(.slick-dots) {
 	flex-wrap: wrap;
 }
 
-
 .shadow {
 	height: 0;
 	position: relative;
@@ -85,6 +84,12 @@ section ul:not(.slick-dots) {
 .half {
 	width: 100%;
 	margin-right: 0;
+}
+
+.fa.fa-5x {
+	float: left;
+	margin: 15px 25px 15px 0;
+	width: 90px;
 }
 
 /* Blog */

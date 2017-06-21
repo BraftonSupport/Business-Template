@@ -97,7 +97,7 @@ if (!$url && !$bgc ) {
 			)
 		);
 		while ($recent_query->have_posts()) : $recent_query->the_post(); ?>
-			<div>
+			<div class="recent-posts list-template">
 				<?php if ( $featured && $circle && has_post_thumbnail() ){
 					?><div class="list-post-featured-image"><?php
 				 	the_post_thumbnail('mediumsquared', ['class' => 'round']);

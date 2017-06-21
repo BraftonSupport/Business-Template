@@ -16,12 +16,12 @@
 	max-width: 1000px;
 }
 .list .container {
-	&.count4 div {
+	&.count4>div {
 		-webkit-flex: 0 1 24%;
 		-ms-flex: 0 1 24%;
 		flex: 0 1 24%;
 	}
-	&.count5 div {
+	&.count5>div {
 		-webkit-flex: 0 1 19%;
 		-ms-flex: 0 1 19%;
 		flex: 0 1 19%;

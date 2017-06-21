@@ -782,7 +782,7 @@ a:active,
 
 .scrolled img.site-title { max-width: 25px; height: auto; }
 .scrolled .site-title { display: block; font-size: 16px; }
-.scrolled .site-branding { margin: 3px auto 3px 0; width: 10%; }
+.scrolled .site-branding { margin: 3px auto 3px 0; width: 25%; }
 .scrolled .site-description, .scrolled .widget { display: none; }
 .scrolled .main-navigation .menu-main-menu-container { margin-top: 6px; }
 .scrolled .main-navigation a { font-size: 12px; }

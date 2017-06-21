@@ -216,6 +216,29 @@
 				'maxlength' => '',
 			),
 			array (
+				'key' => 'field_59234671b70d7aw43',
+				'label' => 'Add Classes',
+				'name' => 'visual_button_classes',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_593825bebc0bb',
+							'operator' => '==',
+							'value' => 'Show button',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
 				'key' => 'field_59234699b70d8',
 				'label' => 'Link',
 				'name' => 'visual_button_link',

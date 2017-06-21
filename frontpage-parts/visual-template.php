@@ -20,6 +20,7 @@ $visual_intro_text = get_field('visual_intro_text');
 $visual_button = get_field('visual_button');
 $visual_button_text = get_field('visual_button_text');
 $visual_button_link = get_field('visual_button_link');
+$visual_button_class = get_field('visual_button_classes');
 
 $tracking = get_field('tracking');
 $classes = array('visual');
@@ -81,7 +82,7 @@ if (!$url && !$bgc ) {
 	if ( $title ) {  the_title( '<h1>', '</h1>' ); }
 	if ( $visual_intro_text ) { echo $visual_intro_text; }
 	if ( $visual_button ) {
-		echo '<a href="'.$visual_button_link.'" class="button">'.$visual_button_text.'</a>';
+		echo '<a href="'.$visual_button_link.'" class="button '.$visual_button_class.'">'.$visual_button_text.'</a>';
 	}
 
 	wp_link_pages( array(

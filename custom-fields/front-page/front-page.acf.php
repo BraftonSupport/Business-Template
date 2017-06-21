@@ -158,7 +158,7 @@
 				),
 				'default_value' => '',
 				'toolbar' => 'full',
-				'media_upload' => 'no',
+				'media_upload' => 'yes',
 			),
 			array (
 				'key' => 'field_593825bebc0bb',

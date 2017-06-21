@@ -86,12 +86,6 @@ section ul:not(.slick-dots) {
 	margin-right: 0;
 }
 
-.fa.fa-5x {
-	float: left;
-	margin: 15px 25px 15px 0;
-	width: 90px;
-}
-
 /* Blog */
 
 .blog article,
@@ -317,27 +311,30 @@ p.testimonial-cite {
 /* Service List Template */
 
 .list .container {
-	&.count1 div {
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	&.count1>div {
 		-webkit-flex: 0 1 100%;
 		-ms-flex: 0 1 100%;
 		flex: 0 1 100%;
 	}
-	&.count2 div {
+	&.count2>div {
 		-webkit-flex: 0 1 100%;
 		-ms-flex: 0 1 100%;
 		flex: 0 1 100%;
 	}
-	&.count3 div {
+	&.count3>div {
 		-webkit-flex: 0 1 100%;
 		-ms-flex: 0 1 100%;
 		flex: 0 1 100%;
 	}
-	&.count4 div {
+	&.count4>div {
 		-webkit-flex: 0 1 100%;
 		-ms-flex: 0 1 100%;
 		flex: 0 1 100%;
 	}
-	&.count5 div {
+	&.count5>div {
 		-webkit-flex: 0 1 100%;
 		-ms-flex: 0 1 100%;
 		flex: 0 1 100%;
@@ -345,14 +342,38 @@ p.testimonial-cite {
 	> div {
 		max-width: 350px;
 		margin: 0 auto 2%;
-		-webkit-flex: 1 1 100%;
-		-ms-flex: 1 1 100%;
-		flex: 1 1 100%;
 		img {
 			margin-bottom: 15px;
 		}
 	}
 }
+
+.list-template.recent-posts {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	a.button {
+		margin: auto auto 0 auto;
+		-webkit-align-self: flex-end;
+		-ms-flex-item-align: end;
+		align-self: flex-end;
+		-webkit-align-items: stretch;
+		-ms-flex-align: stretch;
+		align-items: stretch;
+	}
+}
+.list-post-featured-image {
+	height: 160px;
+    overflow: hidden;
+	-webkit-flex: 1 1 100%;
+	-ms-flex: 1 1 100%;
+	flex: 1 1 100%;
+}
+
+
 /* Footer */
 
 .site-footer {

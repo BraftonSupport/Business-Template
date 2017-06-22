@@ -57,11 +57,13 @@ if (!$url && !$bgc ) {
 					?>
 					<div class="list-featured-image"><?php
 					if ( has_post_thumbnail( $post ) ){
+						echo '<a href="'.get_permalink($post->ID).'">';
 						if ( $circle ) {
 							echo get_the_post_thumbnail( $post, 'mediumsquared', array( 'class' => 'round' ) );
 						} else {
 							echo get_the_post_thumbnail( $post, 'mediumsquared' );
 						}
+						echo '</a>';
 					} elseif ( wp_attachment_is_image( $post ) ) {
 						if ( $circle ) {
 							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'" class="round">';

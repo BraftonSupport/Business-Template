@@ -121,14 +121,14 @@ section ul:not(.slick-dots) li:hover:before {
   font-size: 1.5rem;
 }
 /* line 106, ../sass/partials/_base.scss */
-.blog article:last-of-type,
-.archive article:last-of-type {
-  margin-bottom: 10em;
-}
-/* line 109, ../sass/partials/_base.scss */
 .blog article:nth-of-type(3n+1),
 .archive article:nth-of-type(3n+1) {
   margin-right: 0;
+}
+/* line 109, ../sass/partials/_base.scss */
+.blog article:nth-of-type(3n+2),
+.archive article:nth-of-type(3n+2) {
+  clear: both;
 }
 /* line 112, ../sass/partials/_base.scss */
 .blog article .entry-title,

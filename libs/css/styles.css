@@ -797,9 +797,9 @@ footer .logo img {
   /* line 116, ../sass/partials/_769.scss */
   .blog article .post-thumbnail,
   .archive article .post-thumbnail {
-    float: left;
-    width: 33%;
-    margin-right: 1em;
+    float: none;
+    width: 100%;
+    margin-right: 0;
   }
 
   /* Footer */

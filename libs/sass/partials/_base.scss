@@ -1,5 +1,5 @@
 /* Typography */
-section ul:not(.slick-dots) {
+section ul:not(.slick-dots):not(.gform_fields) {
 	list-style: none;
 	li {
 		display: -ms-flexbox;

@@ -23,3 +23,17 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
 
 #features img { max-width: 100%; height: auto; display: block; }
 /*#features .hide { display: none; }*/
+
+/* ACF */
+#acf-map_phone_field, #acf-map_email2_field, #acf-map_email3_field {
+    float: left;
+    width: 49%;
+}
+
+#acf-map_other_phone, #acf-map_email2, #acf-map_email3 {
+    float: right;
+    width: 49%;
+}
+#acf-map_other_phone label, #acf-map_email2 label, #acf-map_email3 label {
+	text-indent: 9000px;
+}

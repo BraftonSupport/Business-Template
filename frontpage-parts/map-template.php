@@ -15,8 +15,19 @@ $tc = get_field('text_color', $id);
 $address1 = get_field('map_address_1');
 $address2 = get_field('map_address_2');
 $address3 = get_field('map_address_3');
+
 $phone = get_field('map_phone');
+$tollfree = get_field('map_tollfree');
+$fax = get_field('map_fax');
+$other_phone_label = get_field('map_phone_field');
+$other_phone = get_field('map_other_phone');
+
 $email = get_field('map_email');
+$email2_field = get_field('map_email2_field');
+$email2 = get_field('map_email2');
+$email3_field = get_field('map_email3_field');
+$email3 = get_field('map_email3');
+
 $api = get_field('google_api');
 
 $classes = array('map');
@@ -44,8 +55,18 @@ if (!$url && !$bgc ) {
 			echo '</p>';
 		} if ( $phone ) {
 			echo '<p><strong>Phone:</strong><br/><a href="tel:'.$phone.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone.'</a></p>';
+		} if ( $tollfree ) {
+			echo '<p><strong>Toll Free:</strong><br/><a href="tel:'.$tollfree.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$tollfree.'</a></p>';
+		} if ( $fax ) {
+			echo '<p><strong>Fax:</strong><br/><a href="tel:'.$fax.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$fax.'</a></p>';
+		} if ( $other_phone ) {
+			echo '<p><strong>'.$other_phone_label.':</strong><br/><a href="tel:'.$other_phone.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$other_phone.'</a></p>';
 		} if ( $email ) {
 			echo '<p><strong>Email:</strong><br/><a href="mailto:'.$email.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email.'</a></p>';
+		} if ( $email2 ) {
+			echo '<p><strong>'.$email2_field.':</strong><br/><a href="mailto:'.$email2.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email2.'</a></p>';
+		} if ( $email3 ) {
+			echo '<p><strong>'.$email3_field.':</strong><br/><a href="mailto:'.$email3.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email3.'</a></p>';
 		}
 		echo '</div><iframe src="//www.google.com/maps/embed/v1/place?q='.$address1;
 			if ( $address2 ) { echo ', '.$address2; }

@@ -71,8 +71,14 @@ if (!$url && !$bgc ) {
 					}
 					?></div><?php
 				}
-				if ( $titlepost ){ ?>
-					<h3><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post); ?></a></h3>
+				if ( $titlepost ){?>
+					<h3><a href="<?php echo get_permalink($post->ID); ?>"><?php 
+					$titlestring = get_the_title($post);
+					if (strlen($titlestring) > 65){
+						$titlestring = implode(' ', array_slice(explode(' ', $titlestring), 0, 10)).'...';
+					}
+					echo $titlestring;
+					?></a></h3>
 				<?php }
 				if ( $excerpt ){
 					$content= get_post_field('post_content', $post);
@@ -108,7 +114,13 @@ if (!$url && !$bgc ) {
 					?></div><?php
 				}
 				if ( $titlepost ){ ?>
-					<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+					<h3><a href="<?php the_permalink() ?>"><?php
+					$titlestring = get_the_title($post);
+					if (strlen($titlestring) > 65){
+						$titlestring = implode(' ', array_slice(explode(' ', $titlestring), 0, 10)).'...';
+					}
+					echo $titlestring;
+					?></a></h3>
 				<?php }
 				if ( $excerpt ){
 					echo '<p>';

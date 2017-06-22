@@ -38,7 +38,7 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
     width: 49%;
 }
 #acf-map_other_phone label, #acf-map_email2 label, #acf-map_email3 label {
-	width: 0; height: 0; color: #f1f1f1;
+	color: #f1f1f1;
     text-shadow: none;
 }
 #acf-map_email, #acf-google_api, #acf-map_email3_field {

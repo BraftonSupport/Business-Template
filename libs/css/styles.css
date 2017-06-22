@@ -1,16 +1,16 @@
 /* Typography */
 /* line 2, ../sass/partials/_base.scss */
-section ul:not(.slick-dots):not(.gform_fields) {
+section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) {
   list-style: none;
 }
 /* line 4, ../sass/partials/_base.scss */
-section ul:not(.slick-dots):not(.gform_fields) li {
+section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) li {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
 }
 /* line 9, ../sass/partials/_base.scss */
-section ul:not(.slick-dots):not(.gform_fields) li:before {
+section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) li:before {
   content: "\f054";
   line-height: 2em;
   display: inline-block;
@@ -22,7 +22,7 @@ section ul:not(.slick-dots):not(.gform_fields) li:before {
   transition: all .25s ease-in-out;
 }
 /* line 20, ../sass/partials/_base.scss */
-section ul:not(.slick-dots):not(.gform_fields) li:hover:before {
+section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) li:hover:before {
   margin-right: 10px;
   margin-left: 5px;
 }

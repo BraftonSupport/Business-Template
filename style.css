@@ -1416,6 +1416,13 @@ aside, section {
 	height: inherit;
 	overflow: inherit;
 }
+
+.icon .thumb {
+	margin-bottom: 1em;
+	height: 200px;
+	overflow: hidden;
+}
+
 .latest.roll .post a {
 	height: 250px;
 }
@@ -1889,16 +1896,11 @@ img.site-title {
 	position: relative;
 }
 
-article:first-of-type .entry-header {
-	margin-bottom: .5em;
-}
-
 .entry-title {
 	font-weight: 700;
 	line-height: 1.25;
 	margin-bottom: 1em;
 }
-
 
 .entry-title a {
 	color: #1a1a1a;
@@ -1910,6 +1912,7 @@ article:first-of-type .entry-header {
 }
 
 .post-thumbnail {
+	margin-bottom: 1em;
 	display: block;
 	-webkit-transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
@@ -3483,10 +3486,6 @@ p > video {
 		font-size: 1.4375em;
 		line-height: 1.304347826;
 		margin-bottom: 1.826086957em;
-	}
-
-	.post-thumbnail {
-		margin-bottom: 1em;
 	}
 
 	.entry-content h1,

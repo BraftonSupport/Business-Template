@@ -59,16 +59,16 @@ if (!$url && !$bgc ) {
 					if ( has_post_thumbnail( $post ) ){
 						echo '<a href="'.get_permalink($post->ID).'">';
 						if ( $circle ) {
-							echo get_the_post_thumbnail( $post, 'mediumsquared', array( 'class' => 'round' ) );
+							echo get_the_post_thumbnail( $post, 'full', array( 'class' => 'round' ) );
 						} else {
-							echo get_the_post_thumbnail( $post, 'mediumsquared' );
+							echo get_the_post_thumbnail( $post, 'full' );
 						}
 						echo '</a>';
 					} elseif ( wp_attachment_is_image( $post ) ) {
 						if ( $circle ) {
-							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'" class="round">';
+							echo '<img src="'.wp_get_attachment_image_src( $post, 'full', true )[0].'" class="round">';
 						} else {
-							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'">';
+							echo '<img src="'.wp_get_attachment_image_src( $post, 'full', true )[0].'">';
 						}
 					}
 					?></div><?php

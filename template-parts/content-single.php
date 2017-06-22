@@ -76,7 +76,7 @@ $options = get_option( 'expanse_options' );
 					if ( $options['featured_style']=="rollover" ) {
 						echo '<div class="thumb" style="background-image: url('.$url[0].')"></div>';
 					} else if ( get_post_thumbnail_id( get_the_ID() ) ) {
-						echo '<img src="'.$url[0].'" alt="'.get_the_title().'">';
+						echo '<div class="thumb"><img src="'.$url[0].'" alt="'.get_the_title().'"></div>';
 					}
 					echo '<h5>'.get_the_title().'<br/><span class="tiny">'.get_the_date('M j, Y').'</span></h5>';
 				echo '</a>';

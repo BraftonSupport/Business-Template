@@ -107,6 +107,20 @@
 	}
 }
 
+/* Blog */
+.blog article,
+.archive article {
+	width: 32%;
+	float: left;
+	margin-right: 2%;
+	.post-thumbnail {
+		float: left;
+		width: 33%;
+		margin-right: 1em;
+	}
+}
+
+
 /* Footer */
 
 .site-footer .widget {

@@ -1006,6 +1006,7 @@ header section {
 	font-size: 1.1875rem;
 	min-height: 56px;
 	position: relative;
+	padding-bottom: 3em;
 }
 
 .pagination:before,
@@ -1035,6 +1036,7 @@ header section {
 .pagination .nav-links {
 	padding-right: 106px;
 	position: relative;
+	height: 50px;
 }
 
 .pagination .nav-links:before,
@@ -1883,7 +1885,7 @@ img.site-title {
  */
 
 .site-main > article {
-	margin-bottom: 3.5em;
+	margin-bottom: 2.5em;
 	position: relative;
 }
 
@@ -2964,11 +2966,6 @@ p > video {
 	.pagination .page-numbers {
 		display: inline-block;
 	}
-
-	.site-main > article {
-		margin-bottom: 5.25em;
-	}
-
 	.entry-title {
 		font-size: 33px;
 		font-size: 2.0625rem;
@@ -3468,10 +3465,6 @@ p > video {
 		margin-bottom: 4.307692308em;
 	}
 
-	.site-main > article {
-		margin-bottom: 3.0em;
-	}
-
 	.entry-title {
 		line-height: 1.225;
 		margin-bottom: .5em;
@@ -3961,8 +3954,7 @@ p > video {
 		margin-left: 0;
 	}
 
-	.post-thumbnail,
-	.site-main > article {
+	.post-thumbnail {
 		margin-bottom: 3.5em;
 	}
 

@@ -96,14 +96,6 @@ template {
 	display: none;
 }
 
-a {
-	background-color: transparent;
-	-webkit-transition: all .5s ease-in-out;
-	-moz-transition: all .5s ease-in-out;
-	-o-transition: all .5s ease-in-out;
-	transition: all .5s ease-in-out;
-}
-
 abbr[title] {
 	border-bottom: 1px dotted;
 }

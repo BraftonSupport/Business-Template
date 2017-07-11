@@ -40,7 +40,12 @@ section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) {
 		color: #fff;
 		border-bottom: 1px solid;
 		display: inline-block;
-		margin-bottom: .65em;
+		margin-bottom: .5em;
+		padding-bottom: .5em;
+		line-height: 1.3em;
+	}
+	p {
+		font-size: 1.3em;
 	}
 }
 
@@ -163,6 +168,9 @@ section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) {
 
 /* cta */
 .cta {
+	p {
+		font-size: 1.3em;
+	}
 	.container {
 		-webkit-align-items: center;
 		-ms-flex-align: center;

@@ -8,9 +8,8 @@ section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) {
 	}
 	li:before {
 		content: "\f054";
-		line-height: 2em;
 		display: inline-block;
-		font: normal normal normal 14px/1 FontAwesome;
+		font: normal normal normal .95em/1.95 FontAwesome;
 		margin-right: 15px;
 		-webkit-transition: all .25s ease-in-out;
 		-moz-transition: all .25s ease-in-out;

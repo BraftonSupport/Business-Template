@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Front page
+* Template Name: Parent page
  * The template for displaying pages
  *
  * This is the template that displays all pages by default.
@@ -22,7 +22,8 @@ get_header(); ?>
 		    'post_parent' => $post->ID,
 		    'post_type' => 'page',
 		    'orderby' => 'menu_order',
-		    'order' => 'ASC'
+		    'order' => 'ASC',
+		    'posts_per_page' => -1
 		);
 
 		$child_query = new WP_Query( $args );
@@ -38,6 +39,14 @@ get_header(); ?>
 				get_template_part( 'frontpage-parts/list', 'template' );
 			} elseif ($template=='slider'){
 				get_template_part( 'frontpage-parts/slider', 'template' );
+			} elseif ($template=='half'){
+				get_template_part( 'frontpage-parts/halfnhalf', 'template' );
+			} elseif ($template=='full'){
+				get_template_part( 'frontpage-parts/full', 'template' );
+			} elseif ($template=='cta'){
+				get_template_part( 'frontpage-parts/cta', 'template' );
+			} elseif ($template=='map'){
+				get_template_part( 'frontpage-parts/map', 'template' );
 			}
 
 		endwhile; ?>

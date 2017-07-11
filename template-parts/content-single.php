@@ -10,11 +10,11 @@ $options = get_option( 'expanse_options' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php expanse_post_thumbnail('full'); ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
-	<?php expanse_post_thumbnail('full'); ?>
 
 	<footer class="entry-footer">
 		<?php expanse_entry_meta(); ?>
@@ -76,7 +76,7 @@ $options = get_option( 'expanse_options' );
 					if ( $options['featured_style']=="rollover" ) {
 						echo '<div class="thumb" style="background-image: url('.$url[0].')"></div>';
 					} else if ( get_post_thumbnail_id( get_the_ID() ) ) {
-						echo '<img src="'.$url[0].'" alt="'.get_the_title().'">';
+						echo '<div class="thumb"><img src="'.$url[0].'" alt="'.get_the_title().'"></div>';
 					}
 					echo '<h5>'.get_the_title().'<br/><span class="tiny">'.get_the_date('M j, Y').'</span></h5>';
 				echo '</a>';

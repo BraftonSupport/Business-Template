@@ -28,9 +28,6 @@ function expanse_setup() {
 
 	add_theme_support( 'title-tag' );
 
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1200, 9999 );
-
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'expanse' ),
@@ -206,7 +203,8 @@ function expanse_posttypes_init() {
 			'capability_type'	=> 'page',
 			'taxonomies'		=> array('services'),
 			'has_archive'		=> true,
-			'supports'			=> array( 'title', 'editor', 'thumbnail', 'revisions' )
+			'hierarchical'		=> true,
+			'supports'			=> array( 'title', 'page-attributes', 'editor', 'thumbnail', 'revisions' )
 		);
 		register_post_type('services', $services_args);
 	}
@@ -611,7 +609,7 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
  */
 
  function post_res($posts, $query){
-	 $required_fields = array( //array of fields to check for to determine if this is a section page
+	$required_fields = array( //array of fields to check for to determine if this is a section page
 		'subsections_templates'
 	);
 	 if($query->is_search()){ //Is this a search query

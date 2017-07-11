@@ -1,8 +1,29 @@
+/* header */
+.main-navigation .primary-menu > li > a {
+    padding: 0.75em 0 0 0.5em;
+    font-size: 14px;
+    font-size: .875em;
+}
+.site-title {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.25;
+}
+
+/* content */
 
 .container { 
 	-webkit-flex-wrap: nowrap;
 	-ms-flex-wrap: nowrap;
 	flex-wrap: nowrap;
+}
+
+.half {
+	width: 48%;
+	margin-right: 4%;
+	&:last-child {
+		margin-right: 0;
+	}
 }
 
 .slider {
@@ -46,22 +67,71 @@
 
 /* Service List Template */
 
-.list .container > div {
-	-webkit-flex: 0 0 30%;
-	-ms-flex: 0 0 30%;
-	flex: 0 0 30%;
+.list .container {
+	 > div {
+	-webkit-flex: 0 1 auto;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
 	max-width: 250px;
+	}
+	&.count2>div {
+		-webkit-flex: 0 1 50%;
+		-ms-flex: 0 1 50%;
+		flex: 0 1 50%;
+	}
+	&.count3>div {
+		-webkit-flex: 0 1 33%;
+		-ms-flex: 0 1 33%;
+		flex: 0 1 33%;
+	}
+	&.count4>div {
+		-webkit-flex: 0 1 50%;
+		-ms-flex: 0 1 50%;
+		flex: 0 1 50%;
+	}
+	&.count5>div {
+		-webkit-flex: 0 1 33%;
+		-ms-flex: 0 1 33%;
+		flex: 0 1 19%;
+	}
+}
+
+
+/* cta */
+.cta {
+	.button {
+		margin: 0 0 0 auto;
+	}
+	.hasbutton {
+		width: 75%;
+	}
+}
+
+/* Blog */
+.blog article,
+.archive article {
+	width: 32%;
+	float: left;
+	margin-right: 2%;
+	.post-thumbnail {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+	}
 }
 
 
 /* Footer */
 
 .site-footer .widget {
-	margin-right: 5%;
-	-webkit-flex: 1 1 100%;
-	-ms-flex: 1 1 100%;
-	flex: 1 1 100%;
+	margin-right: 2%;
+	-webkit-flex: 0 1 32%;
+	-ms-flex: 0 1 32%;
+	flex: 0 1 32%;
 	&:last-of-type {
-		margin-right: 0;
+		margin: 0 0 0 auto;
+		-webkit-flex: 0 1 20%;
+		-ms-flex: 0 1 20%;
+		flex: 0 1 20%;
 	}
 }

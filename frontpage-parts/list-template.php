@@ -13,6 +13,9 @@ $shadow = get_field('shadow', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
+$title = get_field('show_title');
+$visual_intro_text = get_field('visual_intro_text');
+
 $type = get_field('type');
 $custom_post = get_field('custom_post');
 $recent_posts = get_field('recent_posts');
@@ -21,32 +24,46 @@ $number_of_posts = get_field('number_of_posts');
 $custom_show = get_field('custom_show');
 	if( $custom_show && in_array('featured', $custom_show) ) { $featured = 1; } else { $featured = 0; }
 	if( $custom_show && in_array('circle', $custom_show) ) { $circle = 1; } else { $circle = 0; }
-	if( $custom_show && in_array('title', $custom_show) ) { $title = 1; } else { $title = 0; }
+	if( $custom_show && in_array('title', $custom_show) ) { $titlepost = 1; } else { $titlepost = 0; }
 	if( $custom_show && in_array('excerpt', $custom_show) ) { $excerpt = 1; } else { $excerpt = 0; }
 	if( $custom_show && in_array('button', $custom_show) ) { $button = 1; } else { $button = 0; }
 
 $extra_text = get_field('extra_text');
 $text_underneath = get_field('text_underneath');
 $tracking = get_field('tracking');
+$classes = array('list');
+if (!$url && !$bgc ) {
+	$classes[] = "gradient";
+}
 ?>
-
-<section id="post-<?php the_ID(); ?>" <?php post_class('list'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) ) { echo ' background-color:'. $bgc .';'; }
-	if ( !empty($tc) ) { echo ' color:'. $tc .';'; } ?>">
+	if ( !empty($tc) ) { echo ' color:'. $tc .';'; } ?>"><div class="site-inner">
 
-	<?php the_title( '<h1>', '</h1>' ); ?>
-	<div class="container">
+	<?php if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+	if ( $visual_intro_text ) { echo $visual_intro_text; } ?>
+	<div class="container<?php
+	if ( $type=='choose' && $custom_post ) :
+		echo ' count'.count($custom_post);
+	elseif ($type=='recent'):
+		echo ' count'.$number_of_posts;
+	endif;
+	?>">
 	<?php if ( $type=='choose' && $custom_post ) {
 		foreach( $custom_post as $post ) { ?>
 			<div>
 				<?php if ( $featured ){
+					?>
+					<div class="list-featured-image"><?php
 					if ( has_post_thumbnail( $post ) ){
+						echo '<a href="'.get_permalink($post->ID).'">';
 						if ( $circle ) {
 							echo get_the_post_thumbnail( $post, 'mediumsquared', array( 'class' => 'round' ) );
 						} else {
 							echo get_the_post_thumbnail( $post, 'mediumsquared' );
 						}
+						echo '</a>';
 					} elseif ( wp_attachment_is_image( $post ) ) {
 						if ( $circle ) {
 							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'" class="round">';
@@ -54,9 +71,16 @@ $tracking = get_field('tracking');
 							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'">';
 						}
 					}
+					?></div><?php
 				}
-				if ( $title ){ ?>
-					<h3><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post); ?></a></h3>
+				if ( $titlepost ){?>
+					<h3><a href="<?php echo get_permalink($post->ID); ?>"><?php 
+					$titlestring = get_the_title($post);
+					if (strlen($titlestring) > 65){
+						$titlestring = implode(' ', array_slice(explode(' ', $titlestring), 0, 10)).'...';
+					}
+					echo $titlestring;
+					?></a></h3>
 				<?php }
 				if ( $excerpt ){
 					$content= get_post_field('post_content', $post);
@@ -81,14 +105,24 @@ $tracking = get_field('tracking');
 			)
 		);
 		while ($recent_query->have_posts()) : $recent_query->the_post(); ?>
-			<div>
+			<div class="recent-posts list-template">
 				<?php if ( $featured && $circle && has_post_thumbnail() ){
+					?><div class="list-post-featured-image"><?php
 				 	the_post_thumbnail('mediumsquared', ['class' => 'round']);
+					 ?></div><?php
 				} elseif($featured && has_post_thumbnail()){
+					?><div class="list-post-featured-image"><?php
 					the_post_thumbnail('mediumsquared');
+					?></div><?php
 				}
-				if ( $title ){ ?>
-					<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+				if ( $titlepost ){ ?>
+					<h3><a href="<?php the_permalink() ?>"><?php
+					$titlestring = get_the_title($post);
+					if (strlen($titlestring) > 65){
+						$titlestring = implode(' ', array_slice(explode(' ', $titlestring), 0, 10)).'...';
+					}
+					echo $titlestring;
+					?></a></h3>
 				<?php }
 				if ( $excerpt ){
 					echo '<p>';
@@ -125,5 +159,5 @@ $tracking = get_field('tracking');
 			$number
 		);
 	?>
-</section><!-- section -->
+</div></section><!-- section -->
 <?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>

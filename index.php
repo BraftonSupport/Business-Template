@@ -3,16 +3,10 @@
  * The main template file
  */
 get_header(); ?>
-
 	<div id="primary" class="content-area site-inner">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
-			<?php // if ( is_home() && ! is_front_page() ) : ?><!-- <header class="entry-header">
-				<h1 class="entry-title">Latest Posts</h1>
-			</header> --><!-- .page-header -->
-			<?php // endif; ?>
-
 			<?php
 			// Start the loop.
 			while ( have_posts() ) : the_post();

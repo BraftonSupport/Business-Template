@@ -13,18 +13,26 @@ $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
 $video = get_field('video');
+
+$title = get_field('show_title');
 $visual_intro_text = get_field('visual_intro_text');
+
+$visual_button = get_field('visual_button');
 $visual_button_text = get_field('visual_button_text');
 $visual_button_link = get_field('visual_button_link');
+$visual_button_class = get_field('visual_button_classes');
 
 $tracking = get_field('tracking');
+$classes = array('visual');
+if (!$url && !$bgc ) {
+	$classes[] = "gradient";
+}
 ?>
-<section id="post-<?php the_ID(); ?>" <?php post_class('visual'); ?> style="<?php
+<section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
-	?>">
-
+	?>"><div class="site-inner">
 
 	<?php if ( $video ) {
 		if (strpos($video, 'youtube.com') == true || strpos($video, '.webm') == false && strpos($video, '.mp4') == false) {
@@ -70,10 +78,11 @@ $tracking = get_field('tracking');
 			</video>
 		<?php }
 	} ?>
-	<?php the_title( '<h1>', '</h1>' );
+	<?php
+	if ( $title ) {  the_title( '<h1>', '</h1>' ); }
 	if ( $visual_intro_text ) { echo $visual_intro_text; }
-	if ( $visual_button_text && $visual_button_link ) {
-		echo '<a href="'.$visual_button_link.'" class="button">'.$visual_button_text.'</a>';
+	if ( $visual_button ) {
+		echo '<a href="'.$visual_button_link.'" class="button '.$visual_button_class.'">'.$visual_button_text.'</a>';
 	}
 
 	wp_link_pages( array(
@@ -94,7 +103,7 @@ $tracking = get_field('tracking');
 		'<footer class="entry-footer"><span class="edit-link">',
 		'</span></footer><!-- .entry-footer -->'
 	); ?>
-</section><!-- section -->
+</div></section><!-- section -->
 <?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>
 <?php if ( $video ) { ?>
 	<script>
@@ -120,4 +129,4 @@ $tracking = get_field('tracking');
 		}
 	})
 	</script>
-<?php }
+<?php } ?>

@@ -519,14 +519,6 @@ function expanse_get_color_scheme_css( $colors ) {
 	}
 
 	/* Link Color */
-
-	.latest h5, .teammiddle .fa-spinner {
-		background: {$colors['secondlink_color']};
-	}
-	.latest a:hover h5, .rich .entry-content {
-		background: {$colors['secondlink_hover_color']};
-	}
-
 	a,
 	.menu-toggle:hover,
 	.menu-toggle:focus,
@@ -575,10 +567,6 @@ function expanse_get_color_scheme_css( $colors ) {
 	.widget_calendar tbody a,
 	.page-links a:hover,
 	.page-links a:focus,
-	.team .container:first-of-type .previous.button,
-	.team .container:last-of-type .next.button,
-	.team .container:first-of-type .previous.button:hover,
-	.team .container:last-of-type .next.button:hover,
 	.simple .entry-header,
 	.full {
 		background-color: {$colors['link_color']};
@@ -655,6 +643,19 @@ function expanse_get_color_scheme_css( $colors ) {
 		color: {$colors['link_hover_color']};
 	}
 
+	.button:hover,
+	button:hover,
+	button:focus,
+	input[type="button"]:hover,
+	input[type="button"]:focus,
+	input[type="reset"]:hover,
+	input[type="reset"]:focus,
+	input[type="submit"]:hover,
+	input[type="submit"]:focus {
+		background-color: {$colors['link_hover_color']};
+		color: {$colors['link_color']};
+	}
+
 	/* Main Text Color */
 	body,
 	input,
@@ -685,23 +686,6 @@ function expanse_get_color_scheme_css( $colors ) {
 
 	.pagination:before, .pagination:after {
 		background-color: {$colors['main_text_color']};
-	}
-
-	.button:hover,
-	button:hover,
-	button:focus,
-	input[type="button"]:hover,
-	input[type="button"]:focus,
-	input[type="reset"]:hover,
-	input[type="reset"]:focus,
-	input[type="submit"]:hover,
-	input[type="submit"]:focus,
-	.pagination .prev:hover,
-	.pagination .prev:focus,
-	.pagination .next:hover,
-	.pagination .next:focus,
-	.page-links a {
-		background-color: {$colors['link_hover_color']};
 	}
 
 	.hero .more-link:hover {
@@ -778,11 +762,6 @@ function expanse_get_color_scheme_css( $colors ) {
 	}
 
 	@media screen and (min-width: 56.875em) {
-		.main-navigation li:hover > a,
-		.main-navigation li.focus > a {
-			color: {$colors['link_color']};
-		}
-
 		.main-navigation ul ul,
 		.main-navigation ul ul li {
 			border-color: {$colors['border_color']};
@@ -1020,13 +999,6 @@ function expanse_link_color_css() {
 	$secondlink_hover_color = vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.75)', $link_color_rgb );
 
 	$css = '
-		.latest h5, .teammiddle .fa-spinner {
-		background-color: %2$s;
-		}
-		.latest a:hover h5, .rich .entry-content {
-		background-color: %3$s;
-		}
-
 		/* Custom Link Color */
 		a,
 		.menu-toggle:hover,
@@ -1073,14 +1045,29 @@ function expanse_link_color_css() {
 		.menu-toggle.toggled-on:hover,
 		.menu-toggle.toggled-on:focus,
 		.widget_calendar tbody a,
-		.team .container:first-of-type .previous.button,
-		.team .container:last-of-type .next.button,
-		.team .container:first-of-type .previous.button:hover,
-		.team .container:last-of-type .next.button:hover,
 		.simple .entry-header {
 			background-color: %1$s;
 		}
-
+		mark,
+		ins,
+		.button:hover,
+		button:hover,
+		button:focus,
+		input[type="button"]:hover,
+		input[type="button"]:focus,
+		input[type="reset"]:hover,
+		input[type="reset"]:focus,
+		input[type="submit"]:hover,
+		input[type="submit"]:focus,
+		.pagination .prev:hover,
+		.pagination .prev:focus,
+		.pagination .next:hover,
+		.pagination .next:focus,
+		.widget_calendar tbody a,
+		.page-links a:hover,
+		.page-links a:focus {
+			color: %1$s;
+		}
 		input[type="text"]:focus,
 		input[type="email"]:focus,
 		input[type="url"]:focus,
@@ -1093,13 +1080,6 @@ function expanse_link_color_css() {
 		.menu-toggle:hover,
 		.menu-toggle:focus {
 			border-color: %1$s;
-		}
-
-		@media screen and (min-width: 56.875em) {
-			.main-navigation li:hover > a,
-			.main-navigation li.focus > a {
-				color: %1$s;
-			}
 		}
 	';
 
@@ -1118,7 +1098,7 @@ function expanse_link_hover_color_css() {
 	}
 
 	$css = '
-		/* Custom Link Color */
+		/* Custom Link Hover Color */
 		.post-password-form label,
 		a:hover,
 		a:focus,
@@ -1197,18 +1177,11 @@ function expanse_link_hover_color_css() {
 		.page-links a:focus {
 			background-color: %1$s;
 		}
-
-		@media screen and (min-width: 56.875em) {
-			.main-navigation li:hover > a,
-			.main-navigation li.focus > a {
-				color: %1$s;
-			}
-		}
 	';
 
-	wp_add_inline_style( 'expanse-style', sprintf( $css, $link_color ) );
+	wp_add_inline_style( 'expanse-style', sprintf( $css, $link_hover_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_link_color_css', 11 );
+add_action( 'wp_enqueue_scripts', 'expanse_link_hover_color_css', 11 );
 
 /**
  * Enqueues front-end CSS for the secondary background color.

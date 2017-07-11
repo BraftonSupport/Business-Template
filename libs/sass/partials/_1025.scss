@@ -1,3 +1,32 @@
+/* header */
+.main-navigation .primary-menu > li > a {
+    padding: 0.65625em 0 0 0.875em;
+    font-size: 16px;
+	font-size: 1rem;
+}
+.site-title {
+    font-size: 28px;
+    font-size: 1.75rem;
+    line-height: 1.25;
+}
+
+/* content */
+
+.site-inner {
+	max-width: 1000px;
+}
+.list .container {
+	&.count4>div {
+		-webkit-flex: 0 1 24%;
+		-ms-flex: 0 1 24%;
+		flex: 0 1 24%;
+	}
+	&.count5>div {
+		-webkit-flex: 0 1 19%;
+		-ms-flex: 0 1 19%;
+		flex: 0 1 19%;
+	}
+}
 .quotes {
 	margin-top: .35em;
 	font-size: 18em;

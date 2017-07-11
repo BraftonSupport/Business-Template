@@ -124,13 +124,14 @@ class hohlist extends WP_Widget {
 					</div>
 				<?php endif;
 			endif;
+			echo '<div class="text">';
 			the_title(); ?></a><br />
 			<?php if ($byline==true): ?><?php echo "by ".get_the_author()."<br />";?> <?php endif; ?>
 			<?php if ($date==true): ?><time datetime="<?php echo date(DATE_W3C); ?>" pubdate ><?php the_time('F jS, Y') ?></time><?php endif; ?>
 			<?php if($excerpt==true):?>
 				<p class="excerpt"><?php echo substr(get_the_excerpt(),0,105); ?></p>
 			<?php endif;
-		echo'</li>';
+		echo'</div></li>';
 	endwhile;
 
 	echo '</ul>';

@@ -115,7 +115,7 @@
 			),
 			array (
 				'key' => 'field_59387dfe68d79',
-				'label' => 'Title',
+				'label' => 'Show Title',
 				'name' => 'show_title',
 				'type' => 'checkbox',
 				'conditional_logic' => array (
@@ -134,6 +134,29 @@
 				),
 				'default_value' => '',
 				'layout' => 'horizontal',
+			),
+			array (
+				'key' => 'field_5967d139eb418',
+				'label' => 'Title',
+				'name' => 'subsection_title',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_59387dfe68d79',
+							'operator' => '==',
+							'value' => 'Show Title?',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
 			),
 			array (
 				'key' => 'field_59234d988808d',

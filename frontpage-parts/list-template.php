@@ -1,4 +1,5 @@
 <?php
+if(!session_id()) session_start();
 /**
  * The template used for displaying custom post type subsection of page.
  *
@@ -14,6 +15,7 @@ $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
 $title = get_field('show_title');
+$titletext = ($template_count==0)?'<h1>'.get_field('subsection_title').'</h1>':'<h2>'.get_field('subsection_title').'</h2>';
 $visual_intro_text = get_field('visual_intro_text');
 
 $type = get_field('type');
@@ -41,7 +43,7 @@ if (!$url && !$bgc ) {
 	if ( !empty($bgc) ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; } ?>"><div class="site-inner">
 
-	<?php if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+	<?php if ( $title ) { echo $titletext; }
 	if ( $visual_intro_text ) { echo $visual_intro_text; } ?>
 	<div class="container<?php
 	if ( $type=='choose' && $custom_post ) :

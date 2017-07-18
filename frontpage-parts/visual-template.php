@@ -1,4 +1,5 @@
 <?php
+$template_count = $_SESSION['template_count'];
 /**
  * The template used for displaying visual subsection of page.
  *
@@ -15,6 +16,7 @@ $tc = get_field('text_color', $id);
 $video = get_field('video');
 
 $title = get_field('show_title');
+$titletext = ($template_count==0)?'<h1>'.get_field('subsection_title').'</h1>':'<h2>'.get_field('subsection_title').'</h2>';
 $visual_intro_text = get_field('visual_intro_text');
 
 $visual_button = get_field('visual_button');
@@ -79,7 +81,7 @@ if (!$url && !$bgc ) {
 		<?php }
 	} ?>
 	<?php
-	if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+	if ( $title ) { echo $titletext; }
 	if ( $visual_intro_text ) { echo $visual_intro_text; }
 	if ( $visual_button ) {
 		echo '<a href="'.$visual_button_link.'" class="button '.$visual_button_class.'">'.$visual_button_text.'</a>';

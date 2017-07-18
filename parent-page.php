@@ -1,4 +1,5 @@
 <?php
+if(!session_id()) session_start();
 /**
 * Template Name: Parent page
  * The template for displaying pages
@@ -27,12 +28,13 @@ get_header(); ?>
 		);
 
 		$child_query = new WP_Query( $args );
+		$template_count = 0;
 		?>
 
 		<?php while ( $child_query->have_posts() ) : $child_query->the_post();
 
 			$template = get_field('subsections_templates', get_the_ID() );
-
+			$_SESSION['template_count']=$template_count;
 			if ($template=='visual'){
 				get_template_part( 'frontpage-parts/visual', 'template' );
 			} elseif ($template=='list'){
@@ -48,7 +50,8 @@ get_header(); ?>
 			} elseif ($template=='map'){
 				get_template_part( 'frontpage-parts/map', 'template' );
 			}
-
+			
+			$template_count++;
 		endwhile; ?>
 
 	</main><!-- .site-main -->

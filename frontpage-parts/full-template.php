@@ -1,4 +1,5 @@
 <?php
+if(!session_id()) session_start();
 /**
  * The template used for displaying full subsection of page.
  *
@@ -13,6 +14,7 @@ $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
 $title = get_field('show_title');
+$titletext = ($template_count==0)?'<h1>'.get_field('subsection_title').'</h1>':'<h2>'.get_field('subsection_title').'</h2>';
 $visual_intro_text = get_field('visual_intro_text');
 
 $tracking = get_field('tracking');
@@ -28,7 +30,7 @@ if (!$url && !$bgc ) {
 	?>"><div class="site-inner">
 
 	<?php
-	if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+	if ( $title ) { echo $titletext; }
 	if ( $visual_intro_text ) { echo $visual_intro_text; }
 
 	wp_link_pages( array(

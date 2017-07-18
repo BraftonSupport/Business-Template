@@ -1,4 +1,5 @@
 <?php
+if(!session_id()) session_start();
 /**
  * The template used for displaying halfnhalf subsection of page.
  *
@@ -13,6 +14,7 @@ $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
 $title = get_field('show_title');
+$titletext = ($template_count==0)?'<h1>'.get_field('subsection_title').'</h1>':'<h2>'.get_field('subsection_title').'</h2>';
 
 $text = get_field('half_text');
 $image = get_field('half_image');
@@ -39,7 +41,7 @@ if (!$url && !$bgc ) {
 	<?php
 	if ( $text && $text_position=='left' ) {
 		echo '<div class="half">';
-		if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+		if ( $title ) { echo $titletext; }
 		echo $text;
 		if ( $visual_button ) {
 			echo '<a href="'.$visual_button_link.'" class="button '.$visual_button_class.'">'.$visual_button_text.'</a>';
@@ -66,7 +68,7 @@ if (!$url && !$bgc ) {
 
 	if ( $text && $text_position=='right' ) { 
 		echo '<div class="half">';
-		if ( $title ) {  the_title( '<h1>', '</h1>' ); }
+		if ( $title ) { echo $titletext; }
 		echo $text;
 		if ( $visual_button ) {
 			echo '<a href="'.$visual_button_link.'" class="button">'.$visual_button_text.'</a>';

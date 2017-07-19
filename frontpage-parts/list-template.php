@@ -11,6 +11,7 @@ $id = get_the_ID();
 $number = $id;
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
 $shadow = get_field('shadow', $id);
+$section_class = get_field('section_class', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
@@ -36,6 +37,9 @@ $tracking = get_field('tracking');
 $classes = array('list');
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
+}
+if ($section_class){
+	$classes[] = $section_class;
 }
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php

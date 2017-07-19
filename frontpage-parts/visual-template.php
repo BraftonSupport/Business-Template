@@ -27,11 +27,11 @@ $visual_button_class = get_field('visual_button_classes');
 
 $tracking = get_field('tracking');
 $classes = array('visual');
-if (!$url && !$bgc ) {
-	$classes[] = "gradient";
-}
 if ($section_class){
 	$classes[] = $section_class;
+}
+if (!$url && !$bgc ) {
+	$classes[] = "gradient";
 }
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php

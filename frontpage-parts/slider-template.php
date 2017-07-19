@@ -28,11 +28,11 @@ $slide_number = get_field('slider_number_of_posts');
 
 $tracking = get_field('slidercontainer');
 $classes = array('cta');
-if (!$url && !$bgc ) {
-	$classes[] = "gradient";
-}
 if ($section_class){
 	$classes[] = $section_class;
+}
+if (!$url && !$bgc ) {
+	$classes[] = "gradient";
 }
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php

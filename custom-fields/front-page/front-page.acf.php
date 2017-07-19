@@ -1005,6 +1005,13 @@
 					'order_no' => 0,
 					'group_no' => 0,
 				),
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'subsection.php',
+					'order_no' => 1,
+					'group_no' => 0,
+				),
 			),
 		),
 		'options' => array (

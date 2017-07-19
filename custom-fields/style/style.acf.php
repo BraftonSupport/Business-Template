@@ -28,6 +28,18 @@ register_field_group(array (
 				'default_value' => '',
 				'layout' => 'horizontal',
 			),
+			array (
+				'key' => 'field_596f8a5f349c6',
+				'label' => 'Class',
+				'name' => 'section_class',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
 		),
 		'location' => array (
 			array (

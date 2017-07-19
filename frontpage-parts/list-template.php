@@ -35,11 +35,11 @@ $extra_text = get_field('extra_text');
 $text_underneath = get_field('text_underneath');
 $tracking = get_field('tracking');
 $classes = array('list');
-if (!$url && !$bgc ) {
-	$classes[] = "gradient";
-}
 if ($section_class){
 	$classes[] = $section_class;
+}
+if (!$url && !$bgc ) {
+	$classes[] = "gradient";
 }
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php

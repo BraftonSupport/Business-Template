@@ -27,11 +27,11 @@ $visual_button_class = get_field('visual_button_classes');
 $tracking = get_field('tracking');
 
 $classes = array('cta');
-if (!$url && !$bgc ) {
-	$classes[] = "gradient";
-}
 if ($section_class){
 	$classes[] = $section_class;
+}
+if (!$url && !$bgc ) {
+	$classes[] = "gradient";
 }
 
 ?>

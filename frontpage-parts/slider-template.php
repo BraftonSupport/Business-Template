@@ -12,6 +12,7 @@ $id = get_the_ID();
 $number = $id;
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
 $shadow = get_field('shadow', $id);
+$section_class = get_field('section_class', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
@@ -27,6 +28,9 @@ $slide_number = get_field('slider_number_of_posts');
 
 $tracking = get_field('slidercontainer');
 $classes = array('cta');
+if ($section_class){
+	$classes[] = $section_class;
+}
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }

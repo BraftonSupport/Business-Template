@@ -10,6 +10,7 @@ $template_count = $_SESSION['template_count'];
 $id = get_the_ID();
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
 $shadow = get_field('shadow', $id);
+$section_class = get_field('section_class', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
@@ -26,6 +27,9 @@ $visual_button_class = get_field('visual_button_classes');
 
 $tracking = get_field('tracking');
 $classes = array('visual');
+if ($section_class){
+	$classes[] = $section_class;
+}
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }

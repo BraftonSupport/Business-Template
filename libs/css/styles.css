@@ -190,7 +190,7 @@ section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) li:hover:before {
   overflow: hidden;
 }
 /* line 160, ../sass/partials/_base.scss */
-.visual .site-inner {
+.visual:first-of-type .site-inner {
   padding: 25px 0;
 }
 /* line 163, ../sass/partials/_base.scss */

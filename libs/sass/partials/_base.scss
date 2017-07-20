@@ -157,7 +157,7 @@ section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) {
 .visual {
 	text-align: center;
 	overflow: hidden;
-	.site-inner {
+	&:first-of-type .site-inner {
 		padding: 25px 0;
 	}
 	#vidpause {

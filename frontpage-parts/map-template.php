@@ -6,7 +6,10 @@
  * @subpackage Twenty_Sixteen
  * @since Expanse 1.0
  */
+if(!session_id()) session_start();
+$template_count = $_SESSION['template_count'];
 $id = get_the_ID();
+
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
 $shadow = get_field('shadow', $id);
 $section_class = get_field('section_class', $id);

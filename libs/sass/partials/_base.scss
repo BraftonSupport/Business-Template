@@ -33,6 +33,11 @@ section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) {
 }
 
 .page-template-parent-page {
+	&.has-sidebar .content-area {
+		float: none;
+		margin-right: 0;
+		width: 100%;
+	}
 	.header,
 	.site-main > section:first-of-type {
 		h1 {

@@ -9,7 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+	<?php expanse_post_thumbnail('full'); ?>
 	<div class="entry-content">
 		<?php
 		the_title( '<h1>', '</h1>' );

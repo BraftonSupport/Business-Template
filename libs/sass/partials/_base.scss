@@ -32,19 +32,21 @@ section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) {
   background-size: cover; 
 }
 
-.header,
-.site-main > section:first-of-type {
-	h1 {
-		font-size: 3em;
-		color: #fff;
-		border-bottom: 1px solid;
-		display: inline-block;
-		margin-bottom: .5em;
-		padding-bottom: .5em;
-		line-height: 1.3em;
-	}
-	p {
-		font-size: 1.5em;
+.page-template-parent-page {
+	.header,
+	.site-main > section:first-of-type {
+		h1 {
+			font-size: 3em;
+			color: #fff;
+			border-bottom: 1px solid;
+			display: inline-block;
+			margin-bottom: .5em;
+			padding-bottom: .5em;
+			line-height: 1.3em;
+		}
+		p {
+			font-size: 1.5em;
+		}
 	}
 }
 

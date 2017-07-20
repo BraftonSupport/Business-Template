@@ -160,4 +160,4 @@ if(is_single()) {
 		</header>
 
 
-	<div id="content" class="site-content<?php if ( is_home() || is_archive() || is_single() ) {echo ' site-inner';} ?>">
+	<div id="content" class="site-content<?php if ( !is_page_template( 'parent-page.php' ) || is_home() || is_archive() || is_single() ) {echo ' site-inner';} ?>">

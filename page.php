@@ -23,7 +23,7 @@ get_header(); ?>
 			style="<?php
 			if ( $bg ) { echo 'background-color: ' . $bg . ';'; }
 			if ( $color ) { echo 'color: ' . $color . ';'; }
-			} ?>" >
+			?>" >
 		<?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();

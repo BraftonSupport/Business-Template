@@ -1,11 +1,6 @@
 /* Typography */
 section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) {
 	list-style: none;
-	li {
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
-	}
 	li:before {
 		content: "\f054";
 		display: inline-block;

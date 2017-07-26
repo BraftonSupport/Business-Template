@@ -19,7 +19,7 @@ $thumbnail = get_the_post_thumbnail_url();
 			<span class="sticky-post"><?php _e( 'Featured', 'expanse' ); ?></span>
 		<?php endif; ?>
 
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark" target="_blank">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
 	<footer class="entry-footer">

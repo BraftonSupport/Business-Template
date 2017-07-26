@@ -10,6 +10,7 @@ if(!session_id()) session_start();
 $template_count = $_SESSION['template_count'];
 $id = get_the_ID();
 
+$number = $id;
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
 $shadow = get_field('shadow', $id);
 $section_class = get_field('section_class', $id);
@@ -98,7 +99,8 @@ if (!$url && !$bgc ) {
 			get_the_title()
 		),
 		'<footer class="entry-footer"><span class="edit-link">',
-		'</span></footer><!-- .entry-footer -->'
+		'</span></footer><!-- .entry-footer -->',
+		$number
 	); ?>
 </div></section><!-- section -->
 <?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>

@@ -109,7 +109,8 @@ if (!$url && !$bgc ) {
 			get_the_title()
 		),
 		'<footer class="entry-footer"><span class="edit-link">',
-		'</span></footer><!-- .entry-footer -->'
+		'</span></footer><!-- .entry-footer -->',
+		$id
 	); ?>
 </div></section><!-- section -->
 <?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>

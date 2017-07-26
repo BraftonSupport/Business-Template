@@ -60,7 +60,7 @@ if (!$url && !$bgc ) {
 	?>">
 	<?php if ( $type=='choose' && $custom_post ) {
 		foreach( $custom_post as $post ) { ?>
-			<div>
+			<div class="list-item">
 				<?php if ( $featured ){
 					?>
 					<div class="list-featured-image"><?php

@@ -52,7 +52,9 @@ get_header(); ?>
 			}
 			
 			$template_count++;
-		endwhile; ?>
+		endwhile;
+		wp_reset_query();
+		?>
 
 	</main><!-- .site-main -->
 

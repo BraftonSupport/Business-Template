@@ -119,6 +119,7 @@ if (!$url && !$bgc ) {
 
 </div><!-- /site-inner -->
 	<?php
+		wp_reset_query();
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Name of current post */

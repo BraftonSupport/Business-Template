@@ -5,8 +5,17 @@
 		'fields' => array (
 			array (
 				'key' => 'field_5925f6ba0e510',
-				'label' => 'Date',
-				'name' => 'date',
+				'label' => 'Start Date',
+				'name' => 'start_date',
+				'type' => 'date_picker',
+				'date_format' => 'yymmdd',
+				'display_format' => 'mm/dd/yy',
+				'first_day' => 0,
+			),
+			array (
+				'key' => 'field_597a6e194269f',
+				'label' => 'End Date',
+				'name' => 'end_date',
 				'type' => 'date_picker',
 				'date_format' => 'yymmdd',
 				'display_format' => 'mm/dd/yy',

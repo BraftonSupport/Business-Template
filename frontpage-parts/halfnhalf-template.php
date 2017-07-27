@@ -90,7 +90,10 @@ if (!$url && !$bgc ) {
 		'link_after'  => '</span>',
 		'pagelink'	=> '<span class="screen-reader-text">' . __( 'Page', 'expanse' ) . ' </span>%',
 		'separator'   => '<span class="screen-reader-text">, </span>',
-	) ); ?>
+	) );
+
+	wp_reset_query();
+	?>
 
 	<?php edit_post_link(
 		sprintf(

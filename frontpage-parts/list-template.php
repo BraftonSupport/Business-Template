@@ -149,6 +149,7 @@ if (!$url && !$bgc ) {
 			</div>
 		<?php endwhile;
 		wp_reset_postdata();
+		wp_reset_query();
 	} ?>
 	</div>
 	<?php if ( $extra_text&&$text_underneath ) {

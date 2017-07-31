@@ -2605,6 +2605,7 @@ article:not(.hero):nth-of-type(2n+1) {
 	font-weight: 400;
 }
 
+.site-footer .site-title { width: 100%; }
 /**
  * 12.0 - Media
  */

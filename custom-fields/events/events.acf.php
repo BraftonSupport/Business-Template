@@ -8,6 +8,7 @@
 				'label' => 'Start Date',
 				'name' => 'start_date',
 				'type' => 'date_picker',
+				'instructions' => 'If both start date and end date are left blank, you have the choice of "TBD" or "Various Dates".',
 				'date_format' => 'yymmdd',
 				'display_format' => 'mm/dd/yy',
 				'first_day' => 0,
@@ -20,6 +21,18 @@
 				'date_format' => 'yymmdd',
 				'display_format' => 'mm/dd/yy',
 				'first_day' => 0,
+			),
+			array (
+				'key' => 'field_597f75fe4d7bd',
+				'label' => 'Date Text',
+				'name' => 'date_text',
+				'type' => 'checkbox',
+				'choices' => array (
+					'tbd' => 'TBD',
+					'various' => 'Various Dates',
+				),
+				'default_value' => '',
+				'layout' => 'horizontal',
 			),
 			array (
 				'key' => 'field_5925f7ba0e511',

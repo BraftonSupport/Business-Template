@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Custom Expanse template tags
  *
@@ -62,7 +60,7 @@ endif;
 /**
  * What it says on the tin.
  */
-if ( ! function_exists( 'social_sharing_buttons' ) ) :
+if (!function_exists( 'social_sharing_buttons' ) ) :
 	$options = get_option( 'expanse_options' );
 	if ( $options['ssbutton']=="on" ) {
 		function social_sharing_buttons() {

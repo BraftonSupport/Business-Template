@@ -33,10 +33,10 @@
 				<p><strong><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></strong></p>
 			<?php }
 
-			wp_nav_menu( array(
-				'theme_location' => 'social',
-				'menu_class'     => 'social-navigation',
-			) );
+			// wp_nav_menu( array(
+			// 	'theme_location' => 'social',
+			// 	'menu_class'     => 'social-navigation',
+			// ) );
 
 			dynamic_sidebar( 'footer-left' );
 			dynamic_sidebar( 'footer-middle' );

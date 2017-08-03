@@ -112,7 +112,7 @@ section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) li:hover:before {
 /* line 102, ../sass/partials/_base.scss */
 .shadow:before {
   display: block;
-  background: url(../../../Business-Theme/img/shadow.png) center 75% no-repeat transparent;
+  background: url(../../../business-theme/img/shadow.png) center 75% no-repeat transparent;
   height: 25px;
   content: " ";
 }

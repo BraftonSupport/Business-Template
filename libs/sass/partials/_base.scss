@@ -429,9 +429,48 @@ p.testimonial-cite {
 
 /* Footer */
 
-.site-footer {
+footer {
+	display: grid;
+    grid-template-columns: 1fr 500px 500px 1fr;
+	.logo {
+		grid-column: 2 / 3;
+    	grid-row: 1;
+		img {
+			width: 75px;
+			margin-top: 10px;
+		}
+	}
+	.social-navigation {
+		grid-column: 3 / 4;
+		grid-row: 1;
+	}
+	.container {
+	    grid-column: 2 / 4;
+	    grid-row: 2;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.site-info {
+		grid-column: 1 / 5;
+		grid-row: 3;
+		background: rgba(0,0,0,.25);
+		color: #686868;
+		font-size: 13px;
+		font-size: 0.8125rem;
+		line-height: 1.6153846154;
+		margin: 20px auto auto;
+		padding: 5px 0;
+		font-size: inherit;
+		font-weight: 400;
+		width: 100%;
+	}
+	.site-title {
+		margin: auto;
+		padding: 5px 0;
+		font-size: 12px;
+	}
 	.widget {
-		padding-top: 3em;
 		margin-bottom: 0;
 		-webkit-flex: 1 0 100%;
 		-ms-flex: 1 0 100%;
@@ -441,23 +480,6 @@ p.testimonial-cite {
 		margin-bottom: 0;
 		border-bottom: 1px solid;
 		display: inline-block;
-	}
-}
-
-footer {
-	.container {
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;	
-	}
-	.logo {	
-		-webkit-flex: 0 0 50%;
-		-ms-flex: 0 0 50%;
-		flex: 0 0 50%;
-		img {
-			width: 75px;
-			margin-top: 10px;
-		}
 	}
 }
 

@@ -4,25 +4,6 @@
 		'title' => 'Frontpage Sections',
 		'fields' => array (
 			array (
-				'key' => 'field_592324b7840bb',
-				'label' => 'Front page subsections',
-				'name' => 'subsections_templates',
-				'type' => 'select',
-				'instructions' => 'Pick a template.',
-				'choices' => array (
-					'visual' => 'Visual',
-					'list' => 'Services or List',
-					'slider' => 'Validation',
-					'half' => 'Half',
-					'full' => 'Full',
-					'cta' => 'CTA',
-					'map' => 'Map',
-				),
-				'default_value' => '',
-				'allow_null' => 1,
-				'multiple' => 0,
-			),
-			array (
 				'key' => 'field_593ec173437f2',
 				'label' => 'Text',
 				'name' => 'half_text',

@@ -84,80 +84,56 @@ if(is_single()) {
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'expanse' ); ?></a>
 
 		<header id="masthead" class="site-header" role="banner">
-			<div class="site-header-main">
-				<?php if ( is_active_sidebar( 'top' ) ) {
-					echo '<div class="top"><div class="site-inner container">';
-					dynamic_sidebar( 'top' );
-					echo '</div></div>';
-				} ?>
-				<div class="site-inner container">
-					<div class="site-branding">
+			<?php if ( is_active_sidebar( 'top' ) ) {
+				echo '<div class="top"><div class="site-inner">';
+				dynamic_sidebar( 'top' );
+				echo '</div></div>';
+			} ?>
+			<div class="container site-inner site-header-main<?php if (!empty($options['nav'])) { echo ' '.$options['nav']; } ?>">
+				<div class="site-branding">
+					<?php if ( get_theme_mod( 'expanse_logo' ) ) { ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<?php
+							// set the image url
+							$image_url = esc_url( get_theme_mod( 'expanse_logo' ) );
+						 
+							// store the image ID in a var
+							$image_id = expanse_get_image_id($image_url);
+									 
+							// retrieve the thumbnail size of our image
+							$image_thumb = wp_get_attachment_image_src($image_id, 'medium'); ?>
 
-						<?php if ( get_theme_mod( 'expanse_logo' ) ) { ?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-								<?php
-								// set the image url
-								$image_url = esc_url( get_theme_mod( 'expanse_logo' ) );
-								 
-								// store the image ID in a var
-								$image_id = expanse_get_image_id($image_url);
-								 
-								// retrieve the thumbnail size of our image
-								$image_thumb = wp_get_attachment_image_src($image_id, 'medium'); ?>
+							<img src='<?php echo $image_thumb[0]; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title">
+							<?php if ( has_site_icon() ){ ?>
+								<img src='<?php echo get_site_icon_url( 32 ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-icon">
+							<?php } ?>
+						</a>
+					<?php } else { ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php }	?>
+				</div><!-- .site-branding -->
 
-								<img src='<?php echo $image_thumb[0]; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title">
-								<?php if ( has_site_icon() ){ ?>
-									<img src='<?php echo get_site_icon_url( 32 ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-icon">
-								<?php } ?>
-							</a>
-						<?php } else { ?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php }	?>
-					</div><!-- .site-branding -->
-
-
-					<div id="site-header-menu" class="site-header-menu">
-						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation<?php if ($options['nav'] == 'below') { echo " container site-inner"; } ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'expanse' ); ?>">
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'primary',
-										'menu_class'     => 'primary-menu',
-									 ) );
-								?>
-							</nav><!-- .main-navigation -->
-						<?php endif; ?>
-					</div><!-- .site-header-menu -->
-					
-				<?php if ($options['nav'] == 'below') { ?>
-				<div id="site-header-menu" class="site-header-menu">
-						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation below" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'expanse' ); ?>">
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'primary',
-										'menu_class'     => 'primary-menu',
-									 ) );
-								?>
-							</nav><!-- .main-navigation -->
-						<?php endif; ?>
-					</div><!-- .site-header-menu -->
-				</div></div>
-				<?php } ?>
-				
-
-					<div class="next">
-
+				<div class="nextwidget">
 					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'expanse' ); ?></button>	
-
 					<?php if ( is_active_sidebar( 'header' ) ) {
 						dynamic_sidebar( 'header' );
-					}
-					?>
-				<?php if ($options['nav'] == 'next') { echo '</div></div>'; } ?>
+					} ?>
+				</div>
 
+				<div id="site-header-menu" class="site-header-menu">
+					<?php if ( has_nav_menu( 'primary' ) ) : ?>
+						<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'expanse' ); ?>">
+							<?php
+								wp_nav_menu( array(
+									'theme_location' => 'primary',
+									'menu_class'     => 'primary-menu',
+								 ) );
+							?>
+						</nav><!-- .main-navigation -->
+					<?php endif; ?>
+				</div><!-- .site-header-menu -->
 			</div><!-- .site-header-main -->
 		</header>
 
 
-	<div id="content" class="site-content<?php if ( !is_page_template( 'parent-page.php' ) || is_home() || is_archive() || is_single() ) {echo ' site-inner';} ?>">
+		<div id="content" class="site-content<?php if ( !is_page_template( 'parent-page.php' ) || is_home() || is_archive() || is_single() ) {echo ' site-inner';} ?>">

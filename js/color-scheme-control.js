@@ -13,6 +13,8 @@
 			'link_hover_color',
 			'main_text_color',
 			'secondary_text_color',
+			'secondary_link_color',
+			'secondary_link_hover_color'
 		],
 		colorSettings = [
 			'background_color',
@@ -21,6 +23,8 @@
 			'link_hover_color',
 			'main_text_color',
 			'secondary_text_color',
+			'secondary_link_color',
+			'secondary_link_hover_color'
 		];
 
 	api.controlConstructor.select = api.Control.extend( {

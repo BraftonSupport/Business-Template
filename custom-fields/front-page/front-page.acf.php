@@ -1028,6 +1028,6 @@
 				0 => 'the_content',
 			),
 		),
-		'menu_order' => 0,
+		'menu_order' => 0, 
 	));
 ?>

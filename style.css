@@ -757,7 +757,7 @@ a:active,
 
 /* -- Sticky Nav!!!! -- */
 
-.site-header-main.scrolled {
+.scrolled {
 	-webkit-transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
 	-o-transition: all .5s ease-in-out;
@@ -778,19 +778,12 @@ a:active,
 .scrolled .main-navigation .menu-main-menu-container { margin-top: 6px; }
 .scrolled .main-navigation a { font-size: 12px; }
 
-.scrolled > .site-header-menu {display: none;}
-.site-header .scrolled .below {display: block;}
-.site-header .below {display: none;}
+.scrolled .menu-item-has-children > a:after { top: inherit; }
 
-.site-header-main.scrolled .menu-item-has-children > a:after { top: inherit; }
-
-.site-header-main.scrolled .site-header-menu {
+.scrolled .site-header-menu {
     text-align: right;
     margin: auto;
 }
-
-.scrolled.below .below { display: none; }
-.scrolled.below .next .hide { display: block; }
 
 .site-icon { display: none; }
 
@@ -1621,7 +1614,7 @@ article .latest.icon img {
  */
 
 .site-inner {
-	margin: 0 auto; clear: both;
+	clear: both;
 	position: relative;
 }
 
@@ -1733,10 +1726,6 @@ footer .container,
 	outline: 0;
 }
 
-.site-main > :last-child {
-	margin-bottom: 0;
-}
-
 
 /**
  * 11.1 - Header
@@ -1768,8 +1757,8 @@ footer .container,
 	padding: 0.769230769em;
 }
 
-.site-header-main.scrolled .site-branding { float: left; }
-.site-header-main.scrolled .menu-toggle { float: right; margin: 2px 0 2px auto; padding: 0.5em; }
+.scrolled .site-branding { float: left; }
+.scrolled .menu-toggle { float: right; margin: 2px 0 2px auto; padding: 0.5em; }
 
 .site-title {
 	font-size: 23px;

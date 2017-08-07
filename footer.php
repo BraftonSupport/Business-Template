@@ -14,7 +14,8 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php if ( is_active_sidebar( 'footer-left' )||is_active_sidebar( 'footer-middle' )||is_active_sidebar( 'footer-right' ) ) :
-				if ( get_theme_mod( 'expanse_logo' ) ) { ?>
+			echo '<div class="container site-inner">';
+			if ( get_theme_mod( 'expanse_logo' ) ) { ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
 				<?php
 					// set the image url
@@ -35,9 +36,11 @@
 			wp_nav_menu( array(
 				'theme_location' => 'social',
 				'menu_class'     => 'social-navigation',
+				'container'=> '',
 			) );
+			echo '</div>';
 			
-			echo '<div class="container">';
+			echo '<div class="container site-inner">';
 			dynamic_sidebar( 'footer-left' );
 			dynamic_sidebar( 'footer-middle' );
 			dynamic_sidebar( 'footer-right' );

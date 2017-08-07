@@ -111,6 +111,9 @@ section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) {
 	width: 100%;
 	margin-right: 0;
 }
+main > section:last-child {
+	margin-bottom: 75px;
+}
 
 /* Blog */
 
@@ -433,20 +436,17 @@ footer {
 	display: grid;
     grid-template-columns: 1fr 500px 500px 1fr;
 	.logo {
-		grid-column: 2 / 3;
-    	grid-row: 1;
+		margin-right: auto;
 		img {
 			width: 75px;
 			margin-top: 10px;
 		}
 	}
 	.social-navigation {
-		grid-column: 3 / 4;
-		grid-row: 1;
+		margin-left: auto;
 	}
 	.container {
 	    grid-column: 2 / 4;
-	    grid-row: 2;
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;

@@ -773,26 +773,15 @@ a:active,
 
 .scrolled img.site-title { max-width: 25px; height: auto; }
 .scrolled .site-title { display: block; font-size: 16px; }
-.scrolled .site-branding { margin: 3px auto 3px 0; width: 25%; }
-.scrolled .site-description, .scrolled .widget { display: none; }
+
+.scrolled .site-description { display: none; }
 .scrolled .main-navigation .menu-main-menu-container { margin-top: 6px; }
 .scrolled .main-navigation a { font-size: 12px; }
 
 .scrolled .menu-item-has-children > a:after { top: inherit; }
 
-.scrolled .site-header-menu {
-    text-align: right;
-    margin: auto;
-}
-
 .site-icon { display: none; }
 
-.site-header-menu {
-	display: none;
-}
-.menu-nav-container {
-	width: 100%;
-}
 
 .site-header-main .widget {
 	margin-bottom: 0;
@@ -809,8 +798,8 @@ a:active,
 	-ms-flex-order: 3;
 	order: 3;
 }
-.next .site-header-menu.toggled-on,
-.next .no-js .site-header-menu {
+.nextwidget .site-header-menu.toggled-on,
+.nextwidget .no-js .site-header-menu {
 	position: absolute;
 	width: 100%;
 	z-index: 999;
@@ -1736,9 +1725,6 @@ footer .container,
 .top ul li { display: inline; margin: 0 2px; }
 .top .w2 section:first-of-type { text-align: left; }
 
-.site-branding {
-	margin: auto 15px auto 0;
-}
 .site-header-main .container {
 	-webkit-align-items: flex-end;
 	-ms-flex-align: end;
@@ -1757,7 +1743,6 @@ footer .container,
 	padding: 0.769230769em;
 }
 
-.scrolled .site-branding { float: left; }
 .scrolled .menu-toggle { float: right; margin: 2px 0 2px auto; padding: 0.5em; }
 
 .site-title {
@@ -3049,13 +3034,6 @@ p > video {
 
 @media screen and (min-width: 56.875em) {
 
-	.site-header-menu {
-		display: block;
-		-webkit-flex: 1 1 100%;
-		-ms-flex: 1 1 100%;
-		flex: 1 1 100%;
-	}
-
 	.main-navigation .primary-menu,
 	.main-navigation .primary-menu > li {
 		border: 0;
@@ -3140,7 +3118,6 @@ p > video {
 	.main-navigation .menu-item-has-children > a:after {
 		content: "\f431";
 		position: absolute;
-		top: 0.8125em;
 	}
 
 	.main-navigation ul ul .menu-item-has-children > a {

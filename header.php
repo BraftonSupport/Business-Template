@@ -85,11 +85,11 @@ if(is_single()) {
 
 		<header id="masthead" class="site-header" role="banner">
 			<?php if ( is_active_sidebar( 'top' ) ) {
-				echo '<div class="top"><div class="site-inner container">';
+				echo '<div class="top"><div class="site-inner">';
 				dynamic_sidebar( 'top' );
 				echo '</div></div>';
 			} ?>
-			<div class="site-header-main container site-inner<?php if (!empty($options['nav'])) { echo ' '.$options['nav']; } ?>">
+			<div class="container site-inner site-header-main<?php if (!empty($options['nav'])) { echo ' '.$options['nav']; } ?>">
 				<div class="site-branding">
 					<?php if ( get_theme_mod( 'expanse_logo' ) ) { ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -113,7 +113,7 @@ if(is_single()) {
 					<?php }	?>
 				</div><!-- .site-branding -->
 
-				<div class="next">
+				<div class="nextwidget">
 					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'expanse' ); ?></button>	
 					<?php if ( is_active_sidebar( 'header' ) ) {
 						dynamic_sidebar( 'header' );

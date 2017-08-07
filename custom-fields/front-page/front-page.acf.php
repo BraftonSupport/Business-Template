@@ -1002,7 +1002,7 @@
 				0 => 'the_content',
 			),
 		),
-		'menu_order' => 0,
+		'menu_order' => 1,
 	));
 	//hides content on parent page
 	register_field_group(array (
@@ -1028,6 +1028,6 @@
 				0 => 'the_content',
 			),
 		),
-		'menu_order' => 1, 
+		'menu_order' => 0, 
 	));
 ?>

@@ -670,7 +670,7 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
 					'param' => 'page_template',
 					'operator' => '==',
 					'value' => 'subsection.php',
-					'order_no' => 1,
+					'order_no' => 0,
 					'group_no' => 0,
 				),
 			),
@@ -682,31 +682,31 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
 				0 => 'the_content',
 			),
 		),
-		'menu_order' => 0,
+		'menu_order' => 25,
 	));
 	//hides content on parent page
-	register_field_group(array (
-		'id' => 'acf_parent',
-		'title' => 'parent',
-		'fields' => array (
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'parent-page.php',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-				0 => 'the_content',
-			),
-		),
-		'menu_order' => 0,
-	));
+	// register_field_group(array (
+	// 	'id' => 'acf_parent',
+	// 	'title' => 'parent',
+	// 	'fields' => array (
+	// 	),
+	// 	'location' => array (
+	// 		array (
+	// 			array (
+	// 				'param' => 'page_template',
+	// 				'operator' => '==',
+	// 				'value' => 'parent-page.php',
+	// 				'order_no' => 0,
+	// 				'group_no' => 0,
+	// 			),
+	// 		),
+	// 	),
+	// 	'options' => array (
+	// 		'position' => 'normal',
+	// 		'layout' => 'no_box',
+	// 		'hide_on_screen' => array (
+	// 			0 => 'the_content',
+	// 		),
+	// 	),
+	// 	'menu_order' => 0,
+	// ));

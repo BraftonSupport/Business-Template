@@ -783,7 +783,7 @@ footer .widget-title {
   .site-header-main.container {
     grid-column: 2/3;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto; 
   }
   /* line 672, ../sass/partials/_base.scss */
   .site-header-main.container .site-branding {

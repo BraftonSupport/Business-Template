@@ -632,6 +632,14 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
  }
  add_filter('posts_results', 'post_res', 10, 2);
 
+
+function prefix_reset_metabox_positions(){
+  delete_user_meta( 1, 'meta-box-order_post' );
+  delete_user_meta( 1, 'meta-box-order_page' );
+  delete_user_meta( 1, 'meta-box-order_custom_post_type' );
+}
+add_action( 'admin_init', 'prefix_reset_metabox_positions' );
+
  // adding dropdown for subsection templates
  	register_field_group(array (
 		'id' => 'acf_subsections',

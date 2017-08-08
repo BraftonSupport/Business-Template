@@ -996,7 +996,7 @@
 			),
 		),
 		'options' => array (
-			'position' => 'normal',
+			'position' => 'side',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
 				0 => 'the_content',
@@ -1022,7 +1022,7 @@
 			),
 		),
 		'options' => array (
-			'position' => 'normal',
+			'position' => 'side',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
 				0 => 'the_content',

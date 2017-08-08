@@ -199,6 +199,25 @@ main > section:last-child {
 	overflow: hidden;
 }
 
+.ctaimage {
+	background: url(http://design.brafton.com/ketch/wp-content/uploads/2017/06/cta.jpg) center;
+	background-size: cover;
+	display: block;
+	padding: 15px;
+	text-align: center;
+	font-size: 1.5em;
+	color: #fff;
+	opacity: .85;
+	&:hover {
+		opacity:1;
+	}
+}
+
+/* Widget */
+.hoh li {
+	display: flex;
+}
+
 /* visual Template*/
 #video {
 	position: absolute;
@@ -462,20 +481,6 @@ p.testimonial-cite {
 	flex: 1 1 100%;
 }
 
-/* Blog */
-.ctaimage {
-	background: url(http://design.brafton.com/ketch/wp-content/uploads/2017/06/cta.jpg) center;
-	background-size: cover;
-	display: block;
-	padding: 15px;
-	text-align: center;
-	font-size: 1.5em;
-	color: #fff;
-	opacity: .85;
-	&:hover {
-		opacity:1;
-	}
-}
 
 /* Footer */
 
@@ -647,6 +652,9 @@ footer {
 @supports (display: grid) {
 	.site-inner {
 		margin: 0;
+	}
+	section > .site-inner {
+		margin: 0 auto;
 	}
 	.top {
 		grid-column: 1/5;

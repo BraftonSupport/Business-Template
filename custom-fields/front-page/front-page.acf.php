@@ -996,13 +996,13 @@
 			),
 		),
 		'options' => array (
-			'position' => 'side',
+			'position' => 'normal',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
 				0 => 'the_content',
 			),
 		),
-		'menu_order' => 2,
+		'menu_order' => 1,
 	));
 	//hides content on parent page
 	register_field_group(array (
@@ -1022,12 +1022,12 @@
 			),
 		),
 		'options' => array (
-			'position' => 'side',
+			'position' => 'normal',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
 				0 => 'the_content',
 			),
 		),
-		'menu_order' => 2, 
+		'menu_order' => 1, 
 	));
 ?>

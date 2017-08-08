@@ -996,10 +996,10 @@
 			),
 		),
 		'options' => array (
-			'position' => 'acf_after_title',
+			'position' => 'normal',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
-				1 => 'the_content',
+				0 => 'the_content',
 			),
 		),
 		'menu_order' => 2,
@@ -1025,7 +1025,7 @@
 			'position' => 'normal',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
-				1 => 'the_content',
+				0 => 'the_content',
 			),
 		),
 		'menu_order' => 2, 

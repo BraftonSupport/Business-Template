@@ -4,60 +4,6 @@ Author: Yvonne Tse
 URL: http://yvonnetse.com/
 Version: Expanse 1.0
 */
-
- // adding dropdown for subsection templates
- 	register_field_group(array (
-		'id' => 'acf_subsections',
-		'title' => 'Subsections',
-		'fields' => array (
-			array (
-				'key' => 'field_592324b7840bb',
-				'label' => 'Front page subsections',
-				'name' => 'subsections_templates',
-				'type' => 'select',
-				'instructions' => 'Pick a template.',
-				'choices' => array (
-					'visual' => 'Visual',
-					'list' => 'Services or List',
-					'slider' => 'Validation',
-					'half' => 'Half',
-					'full' => 'Full',
-					'cta' => 'CTA',
-					'map' => 'Map',
-				),
-				'default_value' => '',
-				'allow_null' => 1,
-				'multiple' => 0,
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'page_type',
-					'operator' => '==',
-					'value' => 'child',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'subsection.php',
-					'order_no' => 1,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'acf_after_title',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-				0 => 'the_content',
-			),
-		),
-		'menu_order' => 0,
-	));
-
 define("expanse", dirname(__FILE__));
 include_once get_template_directory().'/custom-fields/fields.php';
 include expanse.'/inc/themesettings.php';
@@ -686,14 +632,58 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
  }
  add_filter('posts_results', 'post_res', 10, 2);
 
-function prefix_reset_metabox_positions(){
-  delete_user_meta( wp_get_current_user()->ID, 'meta-box-order_post' );
-  delete_user_meta( wp_get_current_user()->ID, 'meta-box-order_page' );
-  delete_user_meta( wp_get_current_user()->ID, 'meta-box-order_custom_post_type' );
-}
-add_action( 'admin_init', 'prefix_reset_metabox_positions' );
-
-
+ // adding dropdown for subsection templates
+ 	register_field_group(array (
+		'id' => 'acf_subsections',
+		'title' => 'Subsections',
+		'fields' => array (
+			array (
+				'key' => 'field_592324b7840bb',
+				'label' => 'Front page subsections',
+				'name' => 'subsections_templates',
+				'type' => 'select',
+				'instructions' => 'Pick a template.',
+				'choices' => array (
+					'visual' => 'Visual',
+					'list' => 'Services or List',
+					'slider' => 'Validation',
+					'half' => 'Half',
+					'full' => 'Full',
+					'cta' => 'CTA',
+					'map' => 'Map',
+				),
+				'default_value' => '',
+				'allow_null' => 1,
+				'multiple' => 0,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_type',
+					'operator' => '==',
+					'value' => 'child',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'subsection.php',
+					'order_no' => 1,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+				0 => 'the_content',
+			),
+		),
+		'menu_order' => 0,
+	));
 	//hides content on parent page
 	// register_field_group(array (
 	// 	'id' => 'acf_parent',

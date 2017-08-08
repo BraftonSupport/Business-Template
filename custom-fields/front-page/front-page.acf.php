@@ -999,10 +999,10 @@
 			'position' => 'acf_after_title',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
-				0 => 'the_content',
+				1 => 'the_content',
 			),
 		),
-		'menu_order' => 1,
+		'menu_order' => 2,
 	));
 	//hides content on parent page
 	register_field_group(array (
@@ -1025,9 +1025,9 @@
 			'position' => 'normal',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
-				0 => 'the_content',
+				1 => 'the_content',
 			),
 		),
-		'menu_order' => 0, 
+		'menu_order' => 2, 
 	));
 ?>

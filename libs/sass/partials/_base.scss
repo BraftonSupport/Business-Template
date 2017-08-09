@@ -490,12 +490,18 @@ p.testimonial-cite {
 /* Testimonials */
 
 .testimonials {
-	.testimonial span {
-		&:after {
-			content: ', ';
+	.testimonial {
+		text-align: right;
+		&:before {
+			content: '- ';
 		}
-		&:last-child:after {
-			content: '';
+		span {
+			&:after {
+				content: ', ';
+			}
+			&:last-child:after {
+				content: '';
+			}
 		}
 	}
 }

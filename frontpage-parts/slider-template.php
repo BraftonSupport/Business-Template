@@ -29,7 +29,7 @@ $slider_button = get_field('slider_read_more');
 $slide_number = get_field('slider_number_of_posts');
 
 $tracking = get_field('slidercontainer');
-$classes = array('cta');
+$classes = array('testimonals');
 if ($section_class){
 	$classes[] = $section_class;
 }

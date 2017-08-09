@@ -2288,11 +2288,6 @@ body.search-no-results .page-header {
 	float: right;
 }
 
-.page .entry-footer {
-	clear: both;
-	text-align: center;
-}
-
 /* Blog Format Types*/
 
 article:not(.hero):not(:first-of-type) {

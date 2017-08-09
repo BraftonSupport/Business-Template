@@ -95,6 +95,12 @@ header {
   background-size: cover; 
 }
 
+.page .entry-footer {
+	display: block;
+	clear: both;
+	text-align: center;
+}
+
 .page-template-parent-page {
 	&.has-sidebar .content-area {
 		float: none;
@@ -481,6 +487,18 @@ p.testimonial-cite {
 	flex: 1 1 100%;
 }
 
+/* Testimonials */
+
+.testimonials {
+	.testimonial span {
+		&:after {
+			content: ', ';
+		}
+		&:last-child:after {
+			content: '';
+		}
+	}
+}
 
 /* Footer */
 

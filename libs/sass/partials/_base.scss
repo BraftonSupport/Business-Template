@@ -486,25 +486,6 @@ p.testimonial-cite {
 	flex: 1 1 100%;
 }
 
-/* Testimonials */
-
-.testimonials {
-	.testimonial {
-		text-align: right;
-		&:before {
-			content: '- ';
-		}
-		span {
-			&:after {
-				content: ', ';
-			}
-			&:last-child:after {
-				content: '';
-			}
-		}
-	}
-}
-
 /* Footer */
 
 .site-footer {

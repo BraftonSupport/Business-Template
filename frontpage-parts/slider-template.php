@@ -28,7 +28,7 @@ $recent_slider = get_field('recent_slider_posts');
 $slider_button = get_field('slider_read_more');
 $slide_number = get_field('slider_number_of_posts');
 
-$tracking = get_field('slidercontainer');
+$tracking = get_field('tracking');
 $classes = array('testimonals');
 if ($section_class){
 	$classes[] = $section_class;
@@ -56,7 +56,8 @@ if (!$url && !$bgc ) {
 							$position = get_field('position', $post);
 							$company = get_field('company', $post);
 							$location = get_field('location', $post);
-							$excerpt= get_post_field('post_content', $post);
+							$website = get_field('website', $post);
+							$excerpt= get_post_field('post_excerpt', $post);
 
 							echo '<h4>';
 							if (strlen($excerpt) > 135){
@@ -69,6 +70,7 @@ if (!$url && !$bgc ) {
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }
 							if ($location) { echo '<span class="testimonial-location">'.$location.'</span>'; }
+							if ($website) { echo '<br/><span class="testimonial-website">'.$website.'</span>'; }
 							echo '</p>';
 
 						if ( $slider_button ){ ?>
@@ -102,6 +104,7 @@ if (!$url && !$bgc ) {
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }
 							if ($location) { echo '<span class="testimonial-location">'.$location.'</span>'; }
+							if ($website) { echo '<br/><span class="testimonial-website">'.$website.'</span>'; }
 							echo '</p>';
 
 					if ( $slider_button ){ ?>

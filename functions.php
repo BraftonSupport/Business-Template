@@ -261,7 +261,7 @@ function expanse_posttypes_init() {
 			'capability_type'	=> 'post',
 			'taxonomies'		=> array('testimonials'),
 			'has_archive'		=> true,
-			'supports'			=> array( 'title', 'editor', 'thumbnail', 'revisions' )
+			'supports'			=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' )
 		);
 		register_post_type('testimonials', $testimonials_args);
 	}

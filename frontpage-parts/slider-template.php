@@ -70,7 +70,7 @@ if (!$url && !$bgc ) {
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }
 							if ($location) { echo '<span class="testimonial-location">'.$location.'</span>'; }
-							if ($website) { echo '<br/><span class="testimonial-website">'.$website.'</span>'; }
+							if ($website) { echo '<br/><a href="http://'.$website.'" target="_blank"><span class="testimonial-website">'.$website.'</span></a>'; }
 							echo '</p>';
 
 						if ( $slider_button ){ ?>
@@ -104,7 +104,7 @@ if (!$url && !$bgc ) {
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }
 							if ($location) { echo '<span class="testimonial-location">'.$location.'</span>'; }
-							if ($website) { echo '<br/><span class="testimonial-website">'.$website.'</span>'; }
+							if ($website) { echo '<br/><a href="http://'.$website.'" target="_blank"><span class="testimonial-website">'.$website.'</span></a>'; }
 							echo '</p>';
 
 					if ( $slider_button ){ ?>

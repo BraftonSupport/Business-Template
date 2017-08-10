@@ -87,7 +87,7 @@
 
 // Add News Shortcode
 function testimonials_shortcode() {
-	$q = new WP_Query( array('post_type' =>'testimonials', 'order' => 'DESC' ));
+	$q = new WP_Query( array('post_type' =>'testimonials', 'order' => 'DESC','posts_per_page' => -1 ));
 	if( $q->have_posts() ) {
 		while( $q->have_posts() ) {
 			$name = get_field('name', $post);
@@ -97,7 +97,7 @@ function testimonials_shortcode() {
 			$website = get_field('website', $post);
 
 			$q->the_post();
-			$output .= '<p>'get_the_content().'</p>';
+			$output .= '<p>'.get_the_content().'</p>';
 			$output .= '<p class="testimonial">- ';
 				if (!empty($name)){ $output .= $name; }
 				if (!empty($position)){ $output .= ', '.$position; }

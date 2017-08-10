@@ -109,4 +109,4 @@ function testimonials_shortcode() {
 	}
 	return $output;
 }
-add_shortcode( 'news', 'news_shortcode' );
+add_shortcode( 'testimonials', 'testimonials_shortcode' );

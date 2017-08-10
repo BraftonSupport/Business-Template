@@ -52,6 +52,18 @@
 				'formatting' => 'html',
 				'maxlength' => '',
 			),
+			array (
+				'key' => 'field_website',
+				'label' => 'Website',
+				'name' => 'website',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
 		),
 		'location' => array (
 			array (
@@ -72,3 +84,29 @@
 		),
 		'menu_order' => 0,
 	));
+
+// Add News Shortcode
+function testimonials_shortcode() {
+	$q = new WP_Query( array('post_type' =>'testimonials', 'order' => 'DESC' ));
+	if( $q->have_posts() ) {
+		while( $q->have_posts() ) {
+			$name = get_field('name', $post);
+			$position = get_field('position', $post);
+			$company = get_field('company', $post);
+			$location = get_field('location', $post);
+			$website = get_field('website', $post);
+
+			$q->the_post();
+			$output .= '<p>'get_the_content().'</p>';
+			$output .= '<p class="testimonial">- ';
+				if (!empty($name)){ $output .= $name; }
+				if (!empty($position)){ $output .= ', '.$position; }
+				if (!empty($company)){ $output .= ', '.$company; }
+				if (!empty($location)){ $output .= ', '.$location; }
+				if (!empty($website)){ $output .= '<br/>'.$website; }
+			$output .= '</p>';
+	    }
+	}
+	return $output;
+}
+add_shortcode( 'testimonials', 'testimonials_shortcode' );

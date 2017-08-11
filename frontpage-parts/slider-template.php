@@ -57,7 +57,7 @@ if (!$url && !$bgc ) {
 							$company = get_field('company', $post);
 							$location = get_field('location', $post);
 							$website = get_field('website', $post);
-							$excerpt= get_post_field('post_excerpt', $post);
+							$excerpt= get_the_excerpt();
 
 							echo '<h4>';
 							if (strlen($excerpt) > 135){
@@ -65,7 +65,7 @@ if (!$url && !$bgc ) {
 							} else {
 								echo strip_tags($excerpt);
 							}
-							echo '</h4><p class="testimonial">';
+							echo '</h4><p class="testimonial-meta">';
 							if ($name) { echo '<span class="testimonial-name">'.$name.'</span>'; }
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }
@@ -82,7 +82,7 @@ if (!$url && !$bgc ) {
 			elseif ($slider_type=='recent'){
 				query_posts(array(
 					'post_type' => $recent_slider,
-					'showposts' => $slide_number
+					'posts_per_page' => $slide_number
 				) );  
 				while (have_posts()) : the_post(); ?>
 					<div><?php
@@ -90,7 +90,8 @@ if (!$url && !$bgc ) {
 							$position = get_field('position', $post);
 							$company = get_field('company', $post);
 							$location = get_field('location', $post);
-							$excerpt= get_post_field('post_content', $post);
+							$website = get_field('website', $post);
+							$excerpt= get_the_excerpt();
 
 							echo '<h4>';
 							$excerpt= get_the_content();
@@ -99,7 +100,7 @@ if (!$url && !$bgc ) {
 							} else {
 								echo strip_tags($excerpt);
 							}
-							echo '</h4><p class="testimonial-cite">';
+							echo '</h4><p class="testimonial-meta">';
 							if ($name) { echo '<span class="testimonial-name">'.$name.'</span>'; }
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }

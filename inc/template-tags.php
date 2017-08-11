@@ -42,7 +42,7 @@ function expanse_entry_meta() {
 	}
 
 	$options = get_option( 'expanse_options' );
-	if ( $options['ssbutton']=="on" ) {
+	if ( isset($options['ssbutton']) && $options['ssbutton']=="on" ) {
 		social_sharing_buttons();
 	}
 	// if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
@@ -62,7 +62,7 @@ endif;
  */
 if (!function_exists( 'social_sharing_buttons' ) ) :
 	$options = get_option( 'expanse_options' );
-	if ( $options['ssbutton']=="on" ) {
+	if ( isset($options['ssbutton']) && $options['ssbutton']=="on" ) {
 		function social_sharing_buttons() {
 			// Get current page URL 
 			$ssbURL = get_permalink();

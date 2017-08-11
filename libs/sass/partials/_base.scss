@@ -345,20 +345,6 @@ main > section:last-child {
 }
 
 
-/* Testimonials */
-p.testimonial-cite {
-	text-align: right;
-	&:before {
-		content: '- ';
-	}
-	span:after{
-		content: ', ';
-	}
-	span:last-of-type:after{
-		content: '';
-	}
-}
-
 .toolbar {
 	display: -ms-flexbox;
 	display: -webkit-flex;
@@ -373,7 +359,7 @@ p.testimonial-cite {
 }
 
 .slick-arrow {
-	padding: 4px 11px 5px 9px;
+	padding: 0 0 0 9px;
 	margin: 0 5px;
 	font-size: 2em;
 	cursor: pointer;
@@ -381,6 +367,8 @@ p.testimonial-cite {
 	color: #fff;
 	border-radius: 50%;
 	opacity: .25;
+	width: 32px;
+	height: 32px;
 	-webkit-transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
 	-o-transition: all .5s ease-in-out;
@@ -392,7 +380,7 @@ p.testimonial-cite {
 		-webkit-order: 3;
 		-ms-flex-order: 3;
 		order: 3;
-		padding: 4px 9px 5px 11px;
+		padding: 0 0 0 12px;
 	}
 
 }

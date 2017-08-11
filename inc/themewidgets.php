@@ -45,8 +45,11 @@ class hohlist extends WP_Widget {
 
 	// constructor
 	function __construct() {
-	    $widget_ops = array('classname' => 'hoh', 'description' => __('Recent Posts but with more options.', 'wp_widget_hoh'));
-	    parent::WP_Widget(false, $name = __('Headlines on Hompage', 'wp_widget_hoh'), $widget_ops, $control_ops );
+		parent::__construct(
+		'hoh', 
+		__('Headlines on Hompage', 'wp_widget_hoh'), 
+		array( 'description' => __( 'Recent Posts but with more options.', 'wp_widget_hoh' ), ) 
+		);
 	}
 	// widget form creation
 	function form($instance) {
@@ -146,90 +149,90 @@ add_action('widgets_init', create_function('', 'return register_widget("hohlist"
 
 
 //-- Ah yes, the Features widget by Yvonne, the Features widget made especially by Yvonne, Yvonne's Features widget. That widget?
+// Man, I don't even use this.
+// class feature extends WP_Widget {
+// 	// constructor
+// 	public function __construct() {
+// 		$widget_ops = array(
+// 			'classname' => 'feature',
+// 			'description' => 'Widget that goes into featured widget area. THIS WORKS, YOU JUST GOTTA UPLOAD AN IMAGE & SAVE THEM ONE AT A TIME.'
+// 		);
+// 		parent::__construct( 'feature', 'Feature', $widget_ops );
 
-class feature extends WP_Widget {
-	// constructor
-	public function __construct() {
-		$widget_ops = array(
-			'classname' => 'feature',
-			'description' => 'Widget that goes into featured widget area. THIS WORKS, YOU JUST GOTTA UPLOAD AN IMAGE & SAVE THEM ONE AT A TIME.'
-		);
-		parent::__construct( 'feature', 'Feature', $widget_ops );
+// 		add_action('admin_enqueue_scripts', array($this, 'upload_scripts'));
+// 	}
+// 	public function upload_scripts() {
+// 		wp_enqueue_media();
+// 		wp_enqueue_script('upload_media_widget', get_stylesheet_directory_uri() . '/inc/upload-media.js', array('jquery'));
+// 	}
 
-		add_action('admin_enqueue_scripts', array($this, 'upload_scripts'));
-	}
-	public function upload_scripts() {
-		wp_enqueue_media();
-		wp_enqueue_script('upload_media_widget', get_stylesheet_directory_uri() . '/inc/upload-media.js', array('jquery'));
-	}
+// 	// widget form creation
+// 	public function form($instance) {
 
-	// widget form creation
-	public function form($instance) {
+// 	// Check values
+// 		if( $instance) {
+// 			$title = $instance['title'];
+// 			$textarea = $instance['textarea'];
+// 			$image = $instance['image'];
+// 		} else {
+// 			$title = '';
+// 		} ?>
 
-	// Check values
-		if( $instance) {
-			$title = $instance['title'];
-			$textarea = $instance['textarea'];
-			$image = $instance['image'];
-		} else {
-			$title = '';
-		} ?>
-
-	<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'wp_widget_feature'); ?></label>
- 	<textarea id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" class="widefat title" rows="1"><?php echo $title; ?></textarea></p>
-	<textarea id="<?php echo $this->get_field_id('textarea'); ?>" name="<?php echo $this->get_field_name('textarea'); ?>" class="widefat" rows="5"><?php echo $textarea; ?></textarea>
+<!-- <p><label for="<?php // echo $this->get_field_id('title'); ?>"><?php // _e('Title:', 'wp_widget_feature'); ?></label>
+ 	<textarea id="<?php // echo $this->get_field_id('title'); ?>" name="<?php // echo $this->get_field_name('title'); ?>" class="widefat title" rows="1"><?php // echo $title; ?></textarea></p>
+	<textarea id="<?php // echo $this->get_field_id('textarea'); ?>" name="<?php // echo $this->get_field_name('textarea'); ?>" class="widefat" rows="5"><?php // echo $textarea; ?></textarea>
 	<p>
-		<?php if (!$image) :?><img src="" > <?php endif; ?>
-		<?php echo wp_get_attachment_image( intval( $image ) , "thumbnail" );  ?>
-	<input class="upload_image_button" type="button" 
-		<?php if ($image) :?> value="Change Image"
-		<?php else:?> value="Upload Image"
-		<?php endif; ?>
+		<?php // if (!$image) :?><img src="" > <?php // endif; ?>
+		<?php // echo wp_get_attachment_image( intval( $image ) , "thumbnail" );  ?>
+ 	<input class="upload_image_button" type="button" 
+		<?php // if ($image) :?> value="Change Image"
+		<?php // else:?> value="Upload Image"
+		<?php // endif; ?>
 	/>
- 	<input class="hide" name="<?php echo $this->get_field_name( 'image' ); ?>" id="<?php echo $this->get_field_id( 'image' ); ?>" class="widefat" type="text" size="36" value="<?php echo $image; ?>" placeholder="Image URL" />
-    </p>
-	<?php }
+ 	<input class="hide" name="<?php // echo $this->get_field_name( 'image' ); ?>" id="<?php // echo $this->get_field_id( 'image' ); ?>" class="widefat" type="text" size="36" value="<?php // echo $image; ?>" placeholder="Image URL" />
+    </p> -->
+	<?php // }
 
-	// update widget
-	public function update($new_instance, $old_instance) {
-		$instance = $old_instance;
-		// Fields
-		$instance['title'] = $new_instance['title'];
-		$instance['textarea'] = $new_instance['textarea'];
-		$instance['image'] = $new_instance['image'];
+// 	// update widget
+// 	public function update($new_instance, $old_instance) {
+// 		$instance = $old_instance;
+// 		// Fields
+// 		$instance['title'] = $new_instance['title'];
+// 		$instance['textarea'] = $new_instance['textarea'];
+// 		$instance['image'] = $new_instance['image'];
 
-		return $instance;
-	}
+// 		return $instance;
+// 	}
 
 
-	function widget($args, $instance) {
-		extract( $args );
-		// these are the widget options
-		$title = $instance['title'];
-		$textarea = $instance['textarea'];
-		$image = $instance['image'];
-		$options = get_option( 'expanse_options' );
+// 	function widget($args, $instance) {
+// 		extract( $args );
+// 		// these are the widget options
+// 		$title = $instance['title'];
+// 		$textarea = $instance['textarea'];
+// 		$image = $instance['image'];
+// 		$options = get_option( 'expanse_options' );
 
-		echo $before_widget;
-		// Display the widget
-		echo '<div class="widget-text wp_widget_feature"';
-			if ( $image && $options['featured_style']=="rollover" ) {
-				echo 'style="background-image:url('.$image.');"';
-			} 
-		echo '>';
+// 		echo $before_widget;
+// 		// Display the widget
+// 		echo '<div class="widget-text wp_widget_feature"';
+// 			if ( $image && $options['featured_style']=="rollover" ) {
+// 				echo 'style="background-image:url('.$image.');"';
+// 			} 
+// 		echo '>';
 
-		// Check if title is set
-		if ( $image && $options['featured_style']=="icon" ) { echo '<img src="'.$image.'" class="img">'; }
-		echo '<div class="inside">';
-		if ( $title ) { echo $before_title . $title . $after_title; }
-		if ( $textarea ) { echo $textarea; }
-		echo '<br class="clear"/></div></div>';
-		echo $after_widget;
-	}
-}
+// 		// Check if title is set
+// 		if ( $image && $options['featured_style']=="icon" ) { echo '<img src="'.$image.'" class="img">'; }
+// 		echo '<div class="inside">';
+// 		if ( $title ) { echo $before_title . $title . $after_title; }
+// 		if ( $textarea ) { echo $textarea; }
+// 		echo '<br class="clear"/></div></div>';
+// 		echo $after_widget;
+// 	}
+// }
 
-// register widget
-add_action('widgets_init', create_function('', 'return register_widget("feature");'));
+// // register widget
+// add_action('widgets_init', create_function('', 'return register_widget("feature");'));
 
 
 

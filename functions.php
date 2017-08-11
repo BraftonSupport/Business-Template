@@ -69,7 +69,7 @@ add_action( 'after_setup_theme', 'expanse_content_width', 0 );
  */
 function expanse_widgets_init() {
 	$options = get_option( 'expanse_options' );
-	if ( $options['es_home'] ) {
+	if ( !empty($options['es_home']) ) {
 		register_sidebar( array(
 			'name'		  => __( 'Home Sidebar', 'expanse' ),
 			'id'			=> 'home-sidebar',
@@ -80,7 +80,7 @@ function expanse_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 	}
-	if ( $options['es_page'] ) {
+	if ( !empty($options['es_page']) ) {
 		register_sidebar( array(
 			'name'		  => __( 'Pages Sidebar', 'expanse' ),
 			'id'			=> 'pages-sidebar',
@@ -91,7 +91,7 @@ function expanse_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 	}
-	if ( $options['es_blog'] ) {
+	if ( !empty($options['es_blog']) ) {
 		register_sidebar( array(
 			'name'		  => __( 'Blog Sidebar', 'expanse' ),
 			'id'			=> 'blog-sidebar',
@@ -102,7 +102,7 @@ function expanse_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 	}
-	if ( $options['es_contact'] ) {
+	if ( !empty($options['es_contact']) ) {
 		register_sidebar( array(
 			'name'		  => __( 'Contact Page Sidebar', 'expanse' ),
 			'id'			=> 'contact-sidebar',
@@ -113,7 +113,7 @@ function expanse_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 	}
-	if ( $options['es_header'] ) {
+	if ( !empty($options['es_header']) ) {
 		register_sidebar( array(
 			'name'		  => __( 'Header', 'expanse' ),
 			'id'			=> 'header',
@@ -124,7 +124,7 @@ function expanse_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 	}
-	if ( $options['es_above'] ) {
+	if ( !empty($options['es_above']) ) {
 		register_sidebar( array(
 			'name'		  => __( 'Above Header', 'expanse' ),
 			'id'			=> 'top',
@@ -135,7 +135,7 @@ function expanse_widgets_init() {
 			'after_title'   => '</p>',
 		) );
 	}
-	if ( $options['es_features'] ) {
+	if ( !empty($options['es_features']) ) {
 		register_sidebar( array(
 			'name'		  => __( 'Features', 'expanse' ),
 			'id'			=> 'features',
@@ -146,7 +146,7 @@ function expanse_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 	}
-	if ( $options['es_footer'] ) {
+	if ( !empty($options['es_footer']) ) {
 		register_sidebar( array(
 			'name'		  => __( 'Footer Left Widget', 'expanse' ),
 			'id'			=> 'footer-left',
@@ -183,13 +183,8 @@ add_action( 'widgets_init', 'expanse_widgets_init' );
  */
 function expanse_posttypes_init() {
 	$options = get_option( 'expanse_options' );
-	$options['es_services'];
-	$options['es_team'];
-	$options['es_team'];
-	$options['es_events'];
-	$options['es_testimonials'];
 
-	if ( $options['es_services'] ) {
+	if ( !empty($options['es_services']) ) {
 		$services_labels = array(
 			'name'				=> 'Services',
 			'singular_name'		=> 'Service',
@@ -209,7 +204,7 @@ function expanse_posttypes_init() {
 		register_post_type('services', $services_args);
 	}
 
-	if ( $options['es_team'] ) {
+	if ( !empty($options['es_team']) ) {
 		$team_labels = array(
 			'name'				=> 'Team',
 			'singular_name'		=> 'Team Member',
@@ -228,7 +223,7 @@ function expanse_posttypes_init() {
 		register_post_type('team', $team_args);
 	}
 
-	if ( $options['es_events'] ) {
+	if ( !empty($options['es_events']) ) {
 		$events_labels = array(
 			'name'				=> 'Events',
 			'singular_name'		=> 'Event',
@@ -247,7 +242,7 @@ function expanse_posttypes_init() {
 		register_post_type('events', $events_args);
 	}
 
-	if ( $options['es_testimonials'] ) {
+	if ( !empty($options['es_testimonials']) ) {
 		$testimonials_labels = array(
 			'name'				=> 'Testimonials',
 			'singular_name'		=> 'Testimonial',
@@ -394,7 +389,7 @@ function expanse_enqueuingallthethings() {
 	) );
 
 	$options = get_option( 'expanse_options' );
-	if ( $options['stickynav'] ) {
+	if ( !empty($options['stickynav']) ) {
 		wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/sticky.js', array(), '1.0.0', true );
 	}
 }

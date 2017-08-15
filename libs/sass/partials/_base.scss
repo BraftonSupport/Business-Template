@@ -17,6 +17,7 @@ section:not(.widget_hoh) ul:not(.slick-dots):not(.gform_fields) {
 	}
 }
 
+
 /* Header */
 header {
 	.top {
@@ -220,8 +221,26 @@ header {
 }
 
 /* Widget */
-.hoh li {
-	display: flex;
+.widget_hoh {
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+	li {
+		display: flex;
+		clear: both;
+		margin: 0 0 6px;
+		padding: 0 0 6px;
+		border-bottom: 2px groove rgba(175,175,175,0.25);
+		&:last-of-type {
+			border: none;
+		}
+	}
+	.entry-thumbnail {
+		float: left;
+		width: 43px;
+		margin-right: 10px;
+	}
 }
 
 /* visual Template*/

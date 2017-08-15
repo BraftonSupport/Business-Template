@@ -1,10 +1,10 @@
 /* Typography */
 /* line 2, ../sass/partials/_base.scss */
-section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) {
+section:not(.widget_hoh) ul:not(.slick-dots):not(.gform_fields) {
   list-style: none;
 }
 /* line 4, ../sass/partials/_base.scss */
-section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) li:before {
+section:not(.widget_hoh) ul:not(.slick-dots):not(.gform_fields) li:before {
   content: "\f054";
   display: inline-block;
   font: normal normal normal .95em/1.95 FontAwesome;
@@ -15,7 +15,7 @@ section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) li:before {
   transition: all .25s ease-in-out;
 }
 /* line 14, ../sass/partials/_base.scss */
-section:not(.hoh) ul:not(.slick-dots):not(.gform_fields) li:hover:before {
+section:not(.widget_hoh) ul:not(.slick-dots):not(.gform_fields) li:hover:before {
   margin-right: 10px;
   margin-left: 5px;
 }
@@ -46,7 +46,7 @@ header .top p, header .top * {
   -webkit-flex: 1 0 30%;
   -ms-flex: 1 0 30%;
   flex: 1 0 30%;
-  margin: auto auto auto 0;
+  margin: 0;
 }
 
 /* line 46, ../sass/partials/_base.scss */
@@ -411,7 +411,7 @@ header .top p, header .top * {
 }
 
 /* line 362, ../sass/partials/_base.scss */
-.slick-arrow {
+.fa.slick-arrow {
   padding: 0 0 0 9px;
   margin: 0 5px;
   font-size: 2em;
@@ -428,11 +428,11 @@ header .top p, header .top * {
   transition: all .5s ease-in-out;
 }
 /* line 377, ../sass/partials/_base.scss */
-.slick-arrow:hover {
+.fa.slick-arrow:hover {
   opacity: 1;
 }
 /* line 380, ../sass/partials/_base.scss */
-.slick-arrow.fa-angle-right {
+.fa.slick-arrow.fa-angle-right {
   -webkit-order: 3;
   -ms-flex-order: 3;
   order: 3;

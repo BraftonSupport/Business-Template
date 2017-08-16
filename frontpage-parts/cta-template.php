@@ -53,7 +53,7 @@ if (!$url && !$bgc ) {
 	}
 	if ( $visual_button ) {
 		echo '<a href="'.$visual_button_link.'" class="button '.$visual_button_class;
-		if ( $title || $visual_intro_text ) {
+		if ( !$title || !$visual_intro_text ) {
 			echo ' centered';
 		}
 		echo '">'.$visual_button_text.'</a>';

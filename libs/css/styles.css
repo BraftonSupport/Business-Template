@@ -1087,7 +1087,7 @@ header .top p, header .top * {
     }
     /* line 89, ../sass/partials/_1025.scss */
     .scrolled .site-header-main.container.next .site-branding {
-      grid-row: 1;
+      grid-row: auto;
     }
     /* line 92, ../sass/partials/_1025.scss */
     .scrolled .next .site-header-menu {

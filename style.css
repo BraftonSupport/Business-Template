@@ -1477,7 +1477,7 @@ article .latest.icon img {
 	font-size: 1rem;
 	letter-spacing: 0.046875em;
 	line-height: 1.3125;
-	margin: 0 0 1.75em;
+	margin: 1em 0 .5em;
 	text-transform: uppercase;
 }
 
@@ -3149,10 +3149,6 @@ p > video {
 		font-size: 13px;
 		font-size: 0.8125rem;
 		line-height: 1.6153846154;
-	}
-
-	.widget .widget-title {
-		margin-bottom: 1.3125em;
 	}
 
 	.widget p,

@@ -1574,28 +1574,6 @@ article .latest.icon img {
 	outline: 0;
 }
 
-.hoh ul {
-	list-style: none;
-	margin: 0;
-}
-
-.hoh .entry-thumbnail {
-	float: left;
-	width: 43px;
-	margin-right: 10px;
-}
-
-.hoh li {
-	clear: both;
-	margin: 0 0 6px;
-	padding: 0 0 6px;
-	border-bottom: 2px groove rgba(175,175,175,0.25)
-}
-
-.hoh li:last-of-type {
-	border: none;
-}
-
 .widget_contact .fa {text-align: center; width: 15px;}
 
 /**

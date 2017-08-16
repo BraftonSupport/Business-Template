@@ -58,6 +58,7 @@
 	}
 
 	.site-header-main.container {
+		min-width: 1000px;
 		grid-column: 2/3;
 		display: grid;
 		grid-template-columns: auto auto;
@@ -83,6 +84,12 @@
 .scrolled {
 	.below .site-header-menu {
 		grid-column: 2;
+		grid-row: 1;
+	}
+	.site-header-main.container.next .site-branding {
+		grid-row: 1;
+	}
+	.next .site-header-menu{
 		grid-row: 1;
 	}
 }

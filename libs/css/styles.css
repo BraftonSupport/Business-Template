@@ -935,19 +935,23 @@ header .top p, header .top * {
     margin: 0 0 0 auto;
   }
   /* line 111, ../sass/partials/_769.scss */
+  .cta .button.centered {
+    margin: auto;
+  }
+  /* line 114, ../sass/partials/_769.scss */
   .cta .hasbutton {
     width: 75%;
   }
 
   /* Blog */
-  /* line 117, ../sass/partials/_769.scss */
+  /* line 120, ../sass/partials/_769.scss */
   .blog article,
   .archive article {
     width: 32%;
     float: left;
     margin-right: 2%;
   }
-  /* line 122, ../sass/partials/_769.scss */
+  /* line 125, ../sass/partials/_769.scss */
   .blog article .post-thumbnail,
   .archive article .post-thumbnail {
     float: none;
@@ -956,14 +960,14 @@ header .top p, header .top * {
   }
 
   /* Footer */
-  /* line 132, ../sass/partials/_769.scss */
+  /* line 135, ../sass/partials/_769.scss */
   .site-footer .widget {
     margin-right: 2%;
     -webkit-flex: 0 1 32%;
     -ms-flex: 0 1 32%;
     flex: 0 1 32%;
   }
-  /* line 137, ../sass/partials/_769.scss */
+  /* line 140, ../sass/partials/_769.scss */
   .site-footer .widget:last-of-type {
     margin: 0 0 0 auto;
     -webkit-flex: 0 1 20%;

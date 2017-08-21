@@ -56,7 +56,9 @@
 		display: grid;
 		grid-template-columns: 1fr 1000px 1fr;
 	}
-
+	.site-header-main {
+		grid-column: 2;
+	}
 	.site-header-main.container {
 		min-width: 1000px;
 		grid-column: 2/3;

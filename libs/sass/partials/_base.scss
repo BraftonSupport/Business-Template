@@ -43,21 +43,35 @@ header {
     flex: 1 0 30%;
 	margin: 0;
 }
+
 .nextwidget {
     -webkit-flex: 1 0 70%;
     -ms-flex: 1 0 70%;
     flex: 1 0 70%;
 }
+
 .next .site-header-menu {
 	text-align: right;
     -webkit-flex: 1 0 70%;
     -ms-flex: 1 0 70%;
     flex: 1 0 70%;
 }
+
 .below .site-header-menu {
     -webkit-flex: 1 0 100%;
     -ms-flex: 1 0 100%;
     flex: 1 0 100%;
+}
+
+.menu-toggle {
+	display: block;
+}
+
+.site-header-menu {
+	display: none;
+	&.toggled-on {
+		display: block;
+	}
 }
 
 .scrolled {

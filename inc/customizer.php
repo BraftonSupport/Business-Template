@@ -834,7 +834,7 @@ function expanse_background_color_css() {
 
 	$css = '
 		/* Custom Page Background Color */
-		.site-header-menu.toggled-on, .no-js .site-header-menu {
+		header:not(.scrolled) .site-header-menu.toggled-on, .no-js .site-header-menu {
 			background-color: #%1$s;
 		}
 	';

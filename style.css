@@ -1711,7 +1711,6 @@ footer .container,
 
 .menu-toggle {
 	width: inherit;
-	display: block;
 	margin: 10px 0 10px auto;
 	background-color: transparent;
 	border: 1px solid #d1d1d1;
@@ -3108,7 +3107,6 @@ p > video {
 
 	.dropdown-toggle,
 	.main-navigation ul .dropdown-toggle.toggled-on,
-	.menu-toggle,
 	.site-header .social-navigation,
 	.site-footer .main-navigation {
 		display: none;

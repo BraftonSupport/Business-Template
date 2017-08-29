@@ -1132,18 +1132,15 @@ header .top p, header .top * {
       grid-template-columns: 1fr 500px 500px 1fr;
     }
     /* line 102, ../sass/partials/_1025.scss */
-    .site-footer .site-inner {
+    .site-footer .container {
+      margin: 0;
       grid-column: 2 / 4;
     }
     /* line 105, ../sass/partials/_1025.scss */
-    .site-footer .container {
-      grid-column: 2 / 4;
-    }
-    /* line 107, ../sass/partials/_1025.scss */
     .site-footer .container.footer-top .widget, .site-footer .container.footer-top .widget:last-of-type {
       margin-right: 5%;
     }
-    /* line 111, ../sass/partials/_1025.scss */
+    /* line 109, ../sass/partials/_1025.scss */
     .site-footer .site-info {
       grid-column: 1 / 5;
       grid-row: 3;

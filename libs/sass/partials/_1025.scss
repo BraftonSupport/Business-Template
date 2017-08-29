@@ -99,10 +99,8 @@
 .site-footer {
 	display: grid;
 	grid-template-columns: 1fr 500px 500px 1fr;
-	.site-inner{		
-		grid-column: 2 / 4;
-	}
 	.container {
+		margin: 0;
 		grid-column: 2 / 4;
 		&.footer-top .widget, &.footer-top .widget:last-of-type{
 			margin-right: 5%;

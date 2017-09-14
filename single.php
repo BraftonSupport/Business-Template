@@ -24,6 +24,7 @@ get_header(); ?>
 			// }
 
 			if ( is_singular( 'attachment' ) ) {
+				echo '<iframe src="'.wp_get_attachment_url().'"></iframe>';
 				// Parent post navigation.
 				the_post_navigation( array(
 					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'expanse' ),

@@ -149,6 +149,12 @@ header {
 	flex-wrap: wrap;
 }
 
+.attachment iframe {
+	width: 100%;
+	min-height: 600px;
+	border: none;
+}
+
 .shadow {
 	height: 0;
 	position: relative;

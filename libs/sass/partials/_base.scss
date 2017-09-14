@@ -43,21 +43,35 @@ header {
     flex: 1 0 30%;
 	margin: 0;
 }
+
 .nextwidget {
     -webkit-flex: 1 0 70%;
     -ms-flex: 1 0 70%;
     flex: 1 0 70%;
 }
+
 .next .site-header-menu {
 	text-align: right;
     -webkit-flex: 1 0 70%;
     -ms-flex: 1 0 70%;
     flex: 1 0 70%;
 }
+
 .below .site-header-menu {
     -webkit-flex: 1 0 100%;
     -ms-flex: 1 0 100%;
     flex: 1 0 100%;
+}
+
+.menu-toggle {
+	display: block;
+}
+
+.site-header-menu {
+	display: none;
+	&.toggled-on {
+		display: block;
+	}
 }
 
 .scrolled {
@@ -147,12 +161,6 @@ header {
 	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-}
-
-.attachment iframe {
-	width: 100%;
-	min-height: 600px;
-	border: none;
 }
 
 .shadow {
@@ -519,7 +527,6 @@ header {
 	}
 	.site-info {
 		background: rgba(0,0,0,.25);
-		color: #686868;
 		font-size: 13px;
 		font-size: 0.8125rem;
 		line-height: 1.6153846154;

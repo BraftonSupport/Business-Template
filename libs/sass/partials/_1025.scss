@@ -47,7 +47,7 @@
 
 @supports (display: grid) {
 	.site-inner {
-		margin: 0;
+		margin: 0 auto;
 	}
 	section > .site-inner {
 		margin: 0 auto;
@@ -60,7 +60,9 @@
 		display: grid;
 		grid-template-columns: 1fr 1000px 1fr;
 	}
-
+	.site-header-main {
+		grid-column: 2;
+	}
 	.site-header-main.container {
 		min-width: 1000px;
 		grid-column: 2/3;
@@ -102,7 +104,11 @@
 	display: grid;
 	grid-template-columns: 1fr 500px 500px 1fr;
 	.container {
+		margin: 0;
 		grid-column: 2 / 4;
+		&.footer-top .widget, &.footer-top .widget:last-of-type{
+			margin-right: 5%;
+		}
 	}
 	.site-info {
 		grid-column: 1 / 5;

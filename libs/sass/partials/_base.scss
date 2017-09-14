@@ -182,6 +182,12 @@ header {
 	margin-bottom: 75px;
 }
 
+.attachment iframe {
+	width: 100%;
+	min-height: 600px;
+	border: none;
+}
+
 /* Blog */
 
 .blog article,

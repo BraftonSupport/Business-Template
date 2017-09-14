@@ -12,9 +12,10 @@ $options = get_option( 'expanse_options' );
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php expanse_post_thumbnail('full'); ?>
-	<header class="entry-header">
+	<?php if ( !is_singular( 'attachment' ) ) { ?><header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
+	<?php } ?>
 
 	<footer class="entry-footer">
 		<?php expanse_entry_meta(); ?>

@@ -41,6 +41,10 @@
 	}
 }
 
+.attachment iframe {
+	min-height: 800px;
+}
+
 @supports (display: grid) {
 	.site-inner {
 		margin: 0 auto;

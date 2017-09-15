@@ -515,7 +515,7 @@ table {
 	margin: 0 0 1.75em;
 	table-layout: fixed;
 	/* Prevents HTML tables from becoming too wide */
-	width: 100%;
+	max-width: 100%;
 }
 
 caption,
@@ -866,10 +866,6 @@ a:active,
 
 .main-navigation .primary-menu {
 	border-bottom: 1px solid #d1d1d1;
-}
-
-.main-navigation .menu-item-has-children > a {
-	margin-right: 16px;
 }
 
 .dropdown-toggle {

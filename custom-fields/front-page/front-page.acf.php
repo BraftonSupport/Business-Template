@@ -343,7 +343,7 @@
 				'label' => 'Recent Posts',
 				'name' => 'recent_posts',
 				'type' => 'radio',
-				'instructions' => 'You need to turn on the extra post types <a href="themes.php?page=expanse_options#es_services">here</a> before this section works.',
+				'instructions' => 'You need to turn on the extra post types <a href="themes.php?page=businesstheme_options#es_services">here</a> before this section works.',
 				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
@@ -544,7 +544,7 @@
 				'label' => 'Recent Posts',
 				'name' => 'recent_slider_posts',
 				'type' => 'radio',
-				'instructions' => 'You need to turn on the extra post types <a href="themes.php?page=expanse_options#es_services">here</a> before this section works.',
+				'instructions' => 'You need to turn on the extra post types <a href="themes.php?page=businesstheme_options#es_services">here</a> before this section works.',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (

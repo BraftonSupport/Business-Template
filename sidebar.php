@@ -3,10 +3,10 @@
  * The template for the sidebar containing the main widget area
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Expanse 1.0
+ * @subpackage Business_Theme
+ * @since businesstheme 1.0
  */
-$options = get_option( 'expanse_options' );
+$options = get_option( 'businesstheme_options' );
 ?>
 
 <?php if (is_page_template('contact.php') && is_active_sidebar('contact-sidebar') ) {

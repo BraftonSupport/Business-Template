@@ -5,8 +5,8 @@
  * Contains the closing of the #content div and all content after
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Expanse 1.0
+ * @subpackage Business_Theme
+ * @since Business Theme 1.0
  */
 ?>
 
@@ -15,14 +15,14 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php if ( is_active_sidebar( 'footer-left' )||is_active_sidebar( 'footer-middle' )||is_active_sidebar( 'footer-right' ) ) :
 			echo '<div class="container site-inner">';
-			if ( get_theme_mod( 'expanse_logo' ) ) { ?>
+			if ( get_theme_mod( 'businesstheme_logo' ) ) { ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
 				<?php
 					// set the image url
-					$image_url = esc_url( get_theme_mod( 'expanse_logo' ) );
+					$image_url = esc_url( get_theme_mod( 'businesstheme_logo' ) );
 								 
 					// store the image ID in a var
-					$image_id = expanse_get_image_id($image_url);
+					$image_id = businesstheme_get_image_id($image_url);
 								 
 					// retrieve the thumbnail size of our image
 					$image_thumb = wp_get_attachment_image_src($image_id, 'medium'); ?>
@@ -50,11 +50,11 @@
 		<div class="site-info">
 			<?php
 				/**
-				 * Fires before the expanse footer text for footer customization.
+				 * Fires before the Business Theme footer text for footer customization.
 				 *
-				 * @since Expanse 1.0
+				 * @since Business Theme 1.0
 				 */
-				do_action( 'expanse_credits' );
+				do_action( 'businesstheme_credits' );
 			?>
 			<div class="site-inner site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></a></div>
 		</div><!-- .site-info -->

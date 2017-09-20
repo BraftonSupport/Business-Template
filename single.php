@@ -3,8 +3,8 @@
  * The template for displaying all single posts and attachments
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Expanse 1.0
+ * @subpackage Business_Theme
+ * @since businesstheme 1.0
  */
 
 get_header(); ?>
@@ -27,16 +27,16 @@ get_header(); ?>
 				echo '<iframe src="'.wp_get_attachment_url().'"></iframe>';
 				// Parent post navigation.
 				the_post_navigation( array(
-					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'expanse' ),
+					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'businesstheme' ),
 				) );
 			} elseif ( is_singular( 'post' ) ) {
 				// Previous/next post navigation.
 				the_post_navigation( array(
-					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'expanse' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Next post:', 'expanse' ) . '</span> ' .
+					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'businesstheme' ) . '</span> ' .
+						'<span class="screen-reader-text">' . __( 'Next post:', 'businesstheme' ) . '</span> ' .
 						'<span class="post-title">%title</span>',
-					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'expanse' ) . '</span> ' .
-						'<span class="screen-reader-text">' . __( 'Previous post:', 'expanse' ) . '</span> ' .
+					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'businesstheme' ) . '</span> ' .
+						'<span class="screen-reader-text">' . __( 'Previous post:', 'businesstheme' ) . '</span> ' .
 						'<span class="post-title">%title</span>',
 				) );
 			}

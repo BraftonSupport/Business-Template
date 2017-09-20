@@ -3,12 +3,12 @@
  */
 
 ( function( $ ) {
-	var style = $( '#expanse-color-scheme-css' ),
+	var style = $( '#businesstheme-color-scheme-css' ),
 		api = wp.customize;
 
 	if ( ! style.length ) {
-		style = $( 'head' ).append( '<style type="text/css" id="expanse-color-scheme-css" />' )
-		                    .find( '#expanse-color-scheme-css' );
+		style = $( 'head' ).append( '<style type="text/css" id="businesstheme-color-scheme-css" />' )
+		                    .find( '#businesstheme-color-scheme-css' );
 	}
 
 	// Site title.

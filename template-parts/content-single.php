@@ -3,27 +3,27 @@
  * The template part for displaying single posts
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Expanse 1.0
+ * @subpackage Business_Theme
+ * @since businesstheme 1.0
  */
-$options = get_option( 'expanse_options' );
+$options = get_option( 'businesstheme_options' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php expanse_post_thumbnail('full'); ?>
+	<?php businesstheme_post_thumbnail('full'); ?>
 	<?php if ( !is_singular( 'attachment' ) ) { ?><header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 	<?php } ?>
 
 	<footer class="entry-footer">
-		<?php expanse_entry_meta(); ?>
+		<?php businesstheme_entry_meta(); ?>
 		<?php
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'expanse' ),
+					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'businesstheme' ),
 					get_the_title()
 				),
 				'<span class="edit-link">',
@@ -37,11 +37,11 @@ $options = get_option( 'expanse_options' );
 			the_content();
 
 			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'expanse' ) . '</span>',
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'businesstheme' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'expanse' ) . ' </span>%',
+				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'businesstheme' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
 

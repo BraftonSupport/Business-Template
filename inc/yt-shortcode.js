@@ -1,5 +1,5 @@
 (function() {
-    tinymce.create('tinymce.plugins.expanse', {
+    tinymce.create('tinymce.plugins.businesstheme', {
         init : function(ed, url) {
             ed.addButton('Shortcodes', {
                 text: 'Shortcodes',
@@ -47,5 +47,5 @@
         // ... Hidden code
     });
     // Register plugin
-    tinymce.PluginManager.add( 'expanse', tinymce.plugins.expanse );
+    tinymce.PluginManager.add( 'businesstheme', tinymce.plugins.businesstheme );
 })();

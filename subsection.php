@@ -6,7 +6,7 @@
  * This page is supposed to be empty.
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Expanse 1.0
+ * @subpackage Business_Theme
+ * @since businesstheme 1.0
  */
 ?>

@@ -3,8 +3,8 @@
  * The template part for displaying results in search pages
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Expanse 1.0
+ * @subpackage Business_Theme
+ * @since businesstheme 1.0
  */
 ?>
 
@@ -13,19 +13,19 @@
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php expanse_post_thumbnail(); ?>
+	<?php businesstheme_post_thumbnail(); ?>
 
 	<?php echo get_the_excerpt(); ?>
 
 	<?php if ( 'post' === get_post_type() ) : ?>
 
 		<footer class="entry-footer">
-			<?php expanse_entry_meta(); ?>
+			<?php businesstheme_entry_meta(); ?>
 			<?php
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'expanse' ),
+						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'businesstheme' ),
 						get_the_title()
 					),
 					'<span class="edit-link">',
@@ -40,7 +40,7 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'expanse' ),
+					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'businesstheme' ),
 					get_the_title()
 				),
 				'<footer class="entry-footer"><span class="edit-link">',

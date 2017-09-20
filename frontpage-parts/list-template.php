@@ -3,8 +3,8 @@
  * The template used for displaying custom post type subsection of page.
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Expanse 1.0
+ * @subpackage Business_Theme
+ * @since Business Theme 1.0
  */
 if(!session_id()) session_start();
 $template_count = $_SESSION['template_count'];
@@ -160,7 +160,7 @@ if (!$url && !$bgc ) {
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Name of current post */
-				__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'expanse' ),
+				__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'businesstheme' ),
 				get_the_title()
 			),
 			'<footer class="entry-footer"><span class="edit-link">',

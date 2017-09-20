@@ -1,28 +1,28 @@
 <?php
 /**
- * Expanse Customizer functionality
+ * Business Theme Customizer functionality
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Expanse 1.0
+ * @subpackage Business_Theme
+ * @since Business Theme 1.0
  */
 
 /**
  * Sets up the WordPress core custom header and custom background features.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
- * @see expanse_header_style()
+ * @see businesstheme_header_style()
  */
-function expanse_custom_header_and_background() {
-	$color_scheme             = expanse_get_color_scheme();
+function businesstheme_custom_header_and_background() {
+	$color_scheme             = businesstheme_get_color_scheme();
 	$default_background_color = trim( $color_scheme[0], '#' );
 	$default_text_color       = trim( $color_scheme[1], '#' );
 
 	/**
-	 * Filter the arguments used when adding 'custom-background' support in Expanse.
+	 * Filter the arguments used when adding 'custom-background' support in Business Theme.
 	 *
-	 * @since Expanse 1.0
+	 * @since Business Theme 1.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-background support arguments.
@@ -30,14 +30,14 @@ function expanse_custom_header_and_background() {
 	 *     @type string $default-color Default color of the background.
 	 * }
 	 */
-	add_theme_support( 'custom-background', apply_filters( 'expanse_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'businesstheme_custom_background_args', array(
 		'default-color' => $default_background_color,
 	) ) );
 
 	/**
-	 * Filter the arguments used when adding 'custom-header' support in Expanse.
+	 * Filter the arguments used when adding 'custom-header' support in Business Theme.
 	 *
-	 * @since Expanse 1.0
+	 * @since Business Theme 1.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-header support arguments.
@@ -50,27 +50,27 @@ function expanse_custom_header_and_background() {
 	 *                                      displayed on the blog.
 	 * }
 	 */
-	add_theme_support( 'custom-header', apply_filters( 'expanse_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( 'businesstheme_custom_header_args', array(
 		'default-text-color'     => $default_text_color,
 		'width'                  => 1200,
 		'height'                 => 280,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'expanse_header_style',
+		'wp-head-callback'       => 'businesstheme_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'expanse_custom_header_and_background' );
+add_action( 'after_setup_theme', 'businesstheme_custom_header_and_background' );
 
-if ( ! function_exists( 'expanse_header_style' ) ) :
+if ( ! function_exists( 'businesstheme_header_style' ) ) :
 /**
  * Styles the header text displayed on the site.
  *
- * Create your own expanse_header_style() function to override in a child theme.
+ * Create your own businesstheme_header_style() function to override in a child theme.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
- * @see expanse_custom_header_and_background().
+ * @see businesstheme_custom_header_and_background().
  */
-function expanse_header_style() {
+function businesstheme_header_style() {
 	// If the header text option is untouched, let's bail.
 	if ( display_header_text() ) {
 		return;
@@ -78,7 +78,7 @@ function expanse_header_style() {
 
 	// If the header text has been hidden.
 	?>
-	<style type="text/css" id="expanse-header-css">
+	<style type="text/css" id="businesstheme-header-css">
 		.site-branding {
 			margin: 0 auto 0 0;
 		}
@@ -91,17 +91,17 @@ function expanse_header_style() {
 	</style>
 	<?php
 }
-endif; // expanse_header_style
+endif; // businesstheme_header_style
 
 /**
  * Adds postMessage support for site title and description for the Customizer.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
-function expanse_customize_register( $wp_customize ) {
-	$color_scheme = expanse_get_color_scheme();
+function businesstheme_customize_register( $wp_customize ) {
+	$color_scheme = businesstheme_get_color_scheme();
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -109,15 +109,15 @@ function expanse_customize_register( $wp_customize ) {
 	// Add color scheme setting and control.
 	$wp_customize->add_setting( 'color_scheme', array(
 		'default'           => 'default',
-		'sanitize_callback' => 'expanse_sanitize_color_scheme',
+		'sanitize_callback' => 'businesstheme_sanitize_color_scheme',
 		'transport'         => 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'color_scheme', array(
-		'label'    => __( 'Base Color Scheme', 'expanse' ),
+		'label'    => __( 'Base Color Scheme', 'businesstheme' ),
 		'section'  => 'colors',
 		'type'     => 'select',
-		'choices'  => expanse_get_color_scheme_choices(),
+		'choices'  => businesstheme_get_color_scheme_choices(),
 		'priority' => 1,
 	) );
 
@@ -129,7 +129,7 @@ function expanse_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'main_text_color', array(
-		'label'       => __( 'Main Text Color', 'expanse' ),
+		'label'       => __( 'Main Text Color', 'businesstheme' ),
 		'section'     => 'colors',
 	) ) );
 
@@ -144,7 +144,7 @@ function expanse_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label'       => __( 'Link Color', 'expanse' ),
+		'label'       => __( 'Link Color', 'businesstheme' ),
 		'section'     => 'colors',
 	) ) );
 
@@ -156,7 +156,7 @@ function expanse_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_hover_color', array(
-		'label'       => __( 'Link Hover Color', 'expanse' ),
+		'label'       => __( 'Link Hover Color', 'businesstheme' ),
 		'section'     => 'colors',
 	) ) );
 
@@ -168,7 +168,7 @@ function expanse_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_background_color', array(
-		'label'       => __( 'Secondary Background Color', 'expanse' ),
+		'label'       => __( 'Secondary Background Color', 'businesstheme' ),
 		'section'     => 'colors',
 	) ) );
 
@@ -180,7 +180,7 @@ function expanse_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_text_color', array(
-		'label'       => __( 'Secondary Text Color', 'expanse' ),
+		'label'       => __( 'Secondary Text Color', 'businesstheme' ),
 		'section'     => 'colors',
 	) ) );
 
@@ -192,7 +192,7 @@ function expanse_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_link_color', array(
-		'label'       => __( 'Secondary Link Color', 'expanse' ),
+		'label'       => __( 'Secondary Link Color', 'businesstheme' ),
 		'section'     => 'colors',
 	) ) );
 
@@ -204,17 +204,17 @@ function expanse_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_link_hover_color', array(
-		'label'       => __( 'Secondary Link Hover Color', 'expanse' ),
+		'label'       => __( 'Secondary Link Hover Color', 'businesstheme' ),
 		'section'     => 'colors',
 	) ) );
 
 }
-add_action( 'customize_register', 'expanse_customize_register', 11 );
+add_action( 'customize_register', 'businesstheme_customize_register', 11 );
 
 /**
- * Registers color schemes for Expanse.
+ * Registers color schemes for Business Theme.
  *
- * Can be filtered with {@see 'expanse_color_schemes'}.
+ * Can be filtered with {@see 'businesstheme_color_schemes'}.
  *
  * The order of colors in a colors array:
  * 1. Main Background Color.
@@ -226,17 +226,17 @@ add_action( 'customize_register', 'expanse_customize_register', 11 );
  * 7. Secondary Link Color.
  * 8. Secondary Link Hover Color.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @return array An associative array of color scheme options.
  */
-function expanse_get_color_schemes() {
+function businesstheme_get_color_schemes() {
 	/**
-	 * Filter the color schemes registered for use with Expanse.
+	 * Filter the color schemes registered for use with Business Theme.
 	 *
 	 * The default schemes include 'default', 'dark', 'gray', 'red', and 'blue'.
 	 *
-	 * @since Expanse 1.0
+	 * @since Business Theme 1.0
 	 *
 	 * @param array $schemes {
 	 *     Associative array of color schemes data.
@@ -251,9 +251,9 @@ function expanse_get_color_schemes() {
 	 *     }
 	 * }
 	 */
-	return apply_filters( 'expanse_color_schemes', array(
+	return apply_filters( 'businesstheme_color_schemes', array(
 		'default' => array(
-			'label'  => __( 'Default', 'expanse' ),
+			'label'  => __( 'Default', 'businesstheme' ),
 			'colors' => array(
 				'#f0f0f0',
 				'#777777',
@@ -266,7 +266,7 @@ function expanse_get_color_schemes() {
 			),
 		),
 		'dark' => array(
-			'label'  => __( 'Dark', 'expanse' ),
+			'label'  => __( 'Dark', 'businesstheme' ),
 			'colors' => array(
 				'#222222',
 				'#cccccc',
@@ -279,7 +279,7 @@ function expanse_get_color_schemes() {
 			),
 		),
 		'gray' => array(
-			'label'  => __( 'Gray', 'expanse' ),
+			'label'  => __( 'Gray', 'businesstheme' ),
 			'colors' => array(
 				'#dbe0e4',
 				'#555555',
@@ -292,7 +292,7 @@ function expanse_get_color_schemes() {
 			),
 		),
 		'red' => array(
-			'label'  => __( 'Red', 'expanse' ),
+			'label'  => __( 'Red', 'businesstheme' ),
 			'colors' => array(
 				'#eeeeee',
 				'#770000',
@@ -305,7 +305,7 @@ function expanse_get_color_schemes() {
 			),
 		),
 		'blue' => array(
-			'label'  => __( 'Blue', 'expanse' ),
+			'label'  => __( 'Blue', 'businesstheme' ),
 			'colors' => array(
 				'#cceeff',
 				'#555555',
@@ -320,19 +320,19 @@ function expanse_get_color_schemes() {
 	) );
 }
 
-if ( ! function_exists( 'expanse_get_color_scheme' ) ) :
+if ( ! function_exists( 'businesstheme_get_color_scheme' ) ) :
 /**
- * Retrieves the current Expanse color scheme.
+ * Retrieves the current Business Theme color scheme.
  *
- * Create your own expanse_get_color_scheme() function to override in a child theme.
+ * Create your own businesstheme_get_color_scheme() function to override in a child theme.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @return array An associative array of either the current or default color scheme HEX values.
  */
-function expanse_get_color_scheme() {
+function businesstheme_get_color_scheme() {
 	$color_scheme_option = get_theme_mod( 'color_scheme', 'default' );
-	$color_schemes       = expanse_get_color_schemes();
+	$color_schemes       = businesstheme_get_color_schemes();
 
 	if ( array_key_exists( $color_scheme_option, $color_schemes ) ) {
 		return $color_schemes[ $color_scheme_option ]['colors'];
@@ -340,21 +340,21 @@ function expanse_get_color_scheme() {
 
 	return $color_schemes['default']['colors'];
 }
-endif; // expanse_get_color_scheme
+endif; // businesstheme_get_color_scheme
 
-if ( ! function_exists( 'expanse_get_color_scheme_choices' ) ) :
+if ( ! function_exists( 'businesstheme_get_color_scheme_choices' ) ) :
 /**
- * Retrieves an array of color scheme choices registered for Expanse.
+ * Retrieves an array of color scheme choices registered for Business Theme.
  *
- * Create your own expanse_get_color_scheme_choices() function to override
+ * Create your own businesstheme_get_color_scheme_choices() function to override
  * in a child theme.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @return array Array of color schemes.
  */
-function expanse_get_color_scheme_choices() {
-	$color_schemes                = expanse_get_color_schemes();
+function businesstheme_get_color_scheme_choices() {
+	$color_schemes                = businesstheme_get_color_schemes();
 	$color_scheme_control_options = array();
 
 	foreach ( $color_schemes as $color_scheme => $value ) {
@@ -363,23 +363,23 @@ function expanse_get_color_scheme_choices() {
 
 	return $color_scheme_control_options;
 }
-endif; // expanse_get_color_scheme_choices
+endif; // businesstheme_get_color_scheme_choices
 
 
-if ( ! function_exists( 'expanse_sanitize_color_scheme' ) ) :
+if ( ! function_exists( 'businesstheme_sanitize_color_scheme' ) ) :
 /**
- * Handles sanitization for Expanse color schemes.
+ * Handles sanitization for Business Theme color schemes.
  *
- * Create your own expanse_sanitize_color_scheme() function to override
+ * Create your own businesstheme_sanitize_color_scheme() function to override
  * in a child theme.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @param string $value Color scheme name value.
  * @return string Color scheme name.
  */
-function expanse_sanitize_color_scheme( $value ) {
-	$color_schemes = expanse_get_color_scheme_choices();
+function businesstheme_sanitize_color_scheme( $value ) {
+	$color_schemes = businesstheme_get_color_scheme_choices();
 
 	if ( ! array_key_exists( $value, $color_schemes ) ) {
 		return 'default';
@@ -387,16 +387,16 @@ function expanse_sanitize_color_scheme( $value ) {
 
 	return $value;
 }
-endif; // expanse_sanitize_color_scheme
+endif; // businesstheme_sanitize_color_scheme
 
 /**
  * Enqueues front-end CSS for color scheme.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @see wp_add_inline_style()
  */
-function expanse_color_scheme_css() {
+function businesstheme_color_scheme_css() {
 	$color_scheme_option = get_theme_mod( 'color_scheme', 'default' );
 
 	// Don't do anything if the default color scheme is selected.
@@ -404,11 +404,11 @@ function expanse_color_scheme_css() {
 		return;
 	}
 
-	$color_scheme = expanse_get_color_scheme();
+	$color_scheme = businesstheme_get_color_scheme();
 
 	// Convert main text hex color to rgba.
-	$color_textcolor_rgb = expanse_hex2rgb( $color_scheme[1] ); //hey
-	$color_linkcolor_rgb = expanse_hex2rgb( $color_scheme[2] ); //hey
+	$color_textcolor_rgb = businesstheme_hex2rgb( $color_scheme[1] ); //hey
+	$color_linkcolor_rgb = businesstheme_hex2rgb( $color_scheme[2] ); //hey
 
 	// If the rgba values are empty return early.
 	if ( empty( $color_textcolor_rgb ) || empty( $color_linkcolor_rgb ) ) {
@@ -430,45 +430,45 @@ function expanse_color_scheme_css() {
 		'secondlink_hover_color'=> vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.75)', $color_linkcolor_rgb ), //hey
 	);
 
-	$color_scheme_css = expanse_get_color_scheme_css( $colors );
+	$color_scheme_css = businesstheme_get_color_scheme_css( $colors );
 
-	wp_add_inline_style( 'expanse-style', $color_scheme_css );
+	wp_add_inline_style( 'businesstheme-style', $color_scheme_css );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_color_scheme_css' );
+add_action( 'wp_enqueue_scripts', 'businesstheme_color_scheme_css' );
 
 /**
  * Binds the JS listener to make Customizer color_scheme control.
  *
  * Passes color scheme data as colorScheme global.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  */
-function expanse_customize_control_js() {
+function businesstheme_customize_control_js() {
 	wp_enqueue_script( 'color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150825', true );
-	wp_localize_script( 'color-scheme-control', 'colorScheme', expanse_get_color_schemes() );
+	wp_localize_script( 'color-scheme-control', 'colorScheme', businesstheme_get_color_schemes() );
 }
-add_action( 'customize_controls_enqueue_scripts', 'expanse_customize_control_js' );
+add_action( 'customize_controls_enqueue_scripts', 'businesstheme_customize_control_js' );
 
 /**
  * Binds JS handlers to make the Customizer preview reload changes asynchronously.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  */
-function expanse_customize_preview_js() {
-	wp_enqueue_script( 'expanse-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20150825', true );
+function businesstheme_customize_preview_js() {
+	wp_enqueue_script( 'businesstheme-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20150825', true );
 }
-add_action( 'customize_preview_init', 'expanse_customize_preview_js' );
+add_action( 'customize_preview_init', 'businesstheme_customize_preview_js' );
 
 /**
  * Returns CSS for the color schemes.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @param array $colors Color scheme colors.
  * @return string Color scheme CSS.
  */
 
-function expanse_get_color_scheme_css( $colors ) {
+function businesstheme_get_color_scheme_css( $colors ) {
 	$colors = wp_parse_args( $colors, array(
 		'background_color'		=> '',
 		'main_text_color'		=> '',
@@ -791,9 +791,9 @@ CSS;
  * The template generates the css dynamically for instant display in the
  * Customizer preview.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  */
-function expanse_color_scheme_css_template() {
+function businesstheme_color_scheme_css_template() {
 	$colors = array(
 		'background_color'		=> '{{ data.background_color }}',
 		'main_text_color'		=> '{{ data.main_text_color }}',
@@ -807,23 +807,23 @@ function expanse_color_scheme_css_template() {
 		'secondlink_color'		=> '{{ data.secondlink_color }}',
 	);
 	?>
-	<script type="text/html" id="tmpl-expanse-color-scheme">
-		<?php echo expanse_get_color_scheme_css( $colors ); ?>
+	<script type="text/html" id="tmpl-businesstheme-color-scheme">
+		<?php echo businesstheme_get_color_scheme_css( $colors ); ?>
 	</script>
 	<?php
 }
-add_action( 'customize_controls_print_footer_scripts', 'expanse_color_scheme_css_template' );
+add_action( 'customize_controls_print_footer_scripts', 'businesstheme_color_scheme_css_template' );
 
 
 /**
  * Enqueues front-end CSS for the background color.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @see wp_add_inline_style()
  */
-function expanse_background_color_css() {
-	$color_scheme          = expanse_get_color_scheme();
+function businesstheme_background_color_css() {
+	$color_scheme          = businesstheme_get_color_scheme();
 	$default_color         = $color_scheme[0];
 	$background_color = get_theme_mod( 'background_color', $default_color );
 
@@ -839,9 +839,9 @@ function expanse_background_color_css() {
 		}
 	';
 
-	wp_add_inline_style( 'expanse-style', sprintf( $css, $background_color ) );
+	wp_add_inline_style( 'businesstheme-style', sprintf( $css, $background_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_background_color_css', 11 );
+add_action( 'wp_enqueue_scripts', 'businesstheme_background_color_css', 11 );
 
 
 
@@ -849,12 +849,12 @@ add_action( 'wp_enqueue_scripts', 'expanse_background_color_css', 11 );
 /**
  * Enqueues front-end CSS for the main text color.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @see wp_add_inline_style()
  */
-function expanse_main_text_color_css() {
-	$color_scheme    = expanse_get_color_scheme();
+function businesstheme_main_text_color_css() {
+	$color_scheme    = businesstheme_get_color_scheme();
 	$default_color   = $color_scheme[1];
 	$main_text_color = get_theme_mod( 'main_text_color', $default_color );
 
@@ -864,7 +864,7 @@ function expanse_main_text_color_css() {
 	}
 
 	// Convert main text hex color to rgba.
-	$main_text_color_rgb = expanse_hex2rgb( $main_text_color );
+	$main_text_color_rgb = businesstheme_hex2rgb( $main_text_color );
 
 	// If the rgba values are empty return early.
 	if ( empty( $main_text_color_rgb ) ) {
@@ -964,19 +964,19 @@ function expanse_main_text_color_css() {
 		}
 	';
 
-	wp_add_inline_style( 'expanse-style', sprintf( $css, $main_text_color, $border_color ) );
+	wp_add_inline_style( 'businesstheme-style', sprintf( $css, $main_text_color, $border_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_main_text_color_css', 11 );
+add_action( 'wp_enqueue_scripts', 'businesstheme_main_text_color_css', 11 );
 
 /**
  * Enqueues front-end CSS for the link color.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @see wp_add_inline_style()
  */
-function expanse_link_color_css() {
-	$color_scheme    = expanse_get_color_scheme();
+function businesstheme_link_color_css() {
+	$color_scheme    = businesstheme_get_color_scheme();
 	$default_color   = $color_scheme[2];
 	$link_color = get_theme_mod( 'link_color', $default_color );
 
@@ -986,7 +986,7 @@ function expanse_link_color_css() {
 	}
 
 	// Convert link hex color to rgba.
-	$link_color_rgb = expanse_hex2rgb( $link_color );
+	$link_color_rgb = businesstheme_hex2rgb( $link_color );
 
 	// If the rgba values are empty return early.
 	if ( empty( $link_color_rgb ) ) {
@@ -1082,12 +1082,12 @@ function expanse_link_color_css() {
 		}
 	';
 
-	wp_add_inline_style( 'expanse-style', sprintf( $css, $link_color, $secondlink_color, $secondlink_hover_color ) );
+	wp_add_inline_style( 'businesstheme-style', sprintf( $css, $link_color, $secondlink_color, $secondlink_hover_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_link_color_css', 11 );
+add_action( 'wp_enqueue_scripts', 'businesstheme_link_color_css', 11 );
 
-function expanse_link_hover_color_css() {
-	$color_scheme    = expanse_get_color_scheme();
+function businesstheme_link_hover_color_css() {
+	$color_scheme    = businesstheme_get_color_scheme();
 	$default_color   = $color_scheme[3];
 	$link_hover_color = get_theme_mod( 'link_hover_color', $default_color );
 
@@ -1177,19 +1177,19 @@ function expanse_link_hover_color_css() {
 		}
 	';
 
-	wp_add_inline_style( 'expanse-style', sprintf( $css, $link_hover_color ) );
+	wp_add_inline_style( 'businesstheme-style', sprintf( $css, $link_hover_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_link_hover_color_css', 11 );
+add_action( 'wp_enqueue_scripts', 'businesstheme_link_hover_color_css', 11 );
 
 /**
  * Enqueues front-end CSS for the secondary background color.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @see wp_add_inline_style()
  */
-function expanse_secondary_background_color_css() {
-	$color_scheme          = expanse_get_color_scheme();
+function businesstheme_secondary_background_color_css() {
+	$color_scheme          = businesstheme_get_color_scheme();
 	$default_color         = $color_scheme[4];
 	$secondary_background_color = get_theme_mod( 'secondary_background_color', $default_color );
 
@@ -1211,20 +1211,20 @@ function expanse_secondary_background_color_css() {
 		}
 	';
 
-	wp_add_inline_style( 'expanse-style', sprintf( $css, $secondary_background_color ) );
+	wp_add_inline_style( 'businesstheme-style', sprintf( $css, $secondary_background_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_secondary_background_color_css', 11 );
+add_action( 'wp_enqueue_scripts', 'businesstheme_secondary_background_color_css', 11 );
 
 /**
  * Enqueues front-end CSS for the secondary text color.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @see wp_add_inline_style()
  */
 
-function expanse_secondary_text_color_css() {
-	$color_scheme    = expanse_get_color_scheme();
+function businesstheme_secondary_text_color_css() {
+	$color_scheme    = businesstheme_get_color_scheme();
 	$default_color   = $color_scheme[5];
 	$secondary_text_color = get_theme_mod( 'secondary_text_color', $default_color );
 
@@ -1256,20 +1256,20 @@ function expanse_secondary_text_color_css() {
 		}
 	';
 
-	wp_add_inline_style( 'expanse-style', sprintf( $css, $secondary_text_color ) );
+	wp_add_inline_style( 'businesstheme-style', sprintf( $css, $secondary_text_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_secondary_text_color_css', 11 );
+add_action( 'wp_enqueue_scripts', 'businesstheme_secondary_text_color_css', 11 );
 
 /**
  * Enqueues front-end CSS for the secondary link color.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @see wp_add_inline_style()
  */
 
-function expanse_secondary_link_color_css() {
-	$color_scheme    = expanse_get_color_scheme();
+function businesstheme_secondary_link_color_css() {
+	$color_scheme    = businesstheme_get_color_scheme();
 	$default_color   = $color_scheme[6];
 	$secondary_link_color = get_theme_mod( 'secondary_link_color', $default_color );
 
@@ -1296,20 +1296,20 @@ function expanse_secondary_link_color_css() {
 		}
 	';
 
-	wp_add_inline_style( 'expanse-style', sprintf( $css, $secondary_link_color ) );
+	wp_add_inline_style( 'businesstheme-style', sprintf( $css, $secondary_link_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_secondary_link_color_css', 11 );
+add_action( 'wp_enqueue_scripts', 'businesstheme_secondary_link_color_css', 11 );
 
 /**
  * Enqueues front-end CSS for the secondary link color.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @see wp_add_inline_style()
  */
 
-function expanse_secondary_link_hover_color_css() {
-	$color_scheme    = expanse_get_color_scheme();
+function businesstheme_secondary_link_hover_color_css() {
+	$color_scheme    = businesstheme_get_color_scheme();
 	$default_color   = $color_scheme[7];
 	$secondary_link_hover_color = get_theme_mod( 'secondary_link_hover_color', $default_color );
 
@@ -1335,6 +1335,6 @@ function expanse_secondary_link_hover_color_css() {
 		}
 	';
 
-	wp_add_inline_style( 'expanse-style', sprintf( $css, $secondary_link_hover_color ) );
+	wp_add_inline_style( 'businesstheme-style', sprintf( $css, $secondary_link_hover_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'expanse_secondary_link_hover_color_css', 11 );
+add_action( 'wp_enqueue_scripts', 'businesstheme_secondary_link_hover_color_css', 11 );

@@ -34,7 +34,7 @@ header .top p, header .top * {
 }
 /* line 35, ../sass/partials/_base.scss */
 .main-navigation .menu-item-has-children > a {
-  margin-right: 45px;
+  margin-right: 15px;
 }
 
 /* line 40, ../sass/partials/_base.scss */

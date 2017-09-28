@@ -15,7 +15,21 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php if ( is_active_sidebar( 'footer-left' )||is_active_sidebar( 'footer-middle' )||is_active_sidebar( 'footer-right' ) ) :
 			echo '<div class="container site-inner">';
-			if ( get_theme_mod( 'businesstheme_logo' ) ) { ?>
+			if ( get_theme_mod( 'businesstheme_footerlogo' ) ) { ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
+				<?php
+					// set the image url
+					$image_url = esc_url( get_theme_mod( 'businesstheme_footerlogo' ) );
+								 
+					// store the image ID in a var
+					$image_id = businesstheme_get_image_id($image_url);
+								 
+					// retrieve the thumbnail size of our image
+					$image_thumb = wp_get_attachment_image_src($image_id, 'medium'); ?>
+
+					<img src='<?php echo $image_thumb[0]; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+				</a>
+			<?php } elseif ( get_theme_mod( 'businesstheme_logo' ) ) { ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
 				<?php
 					// set the image url

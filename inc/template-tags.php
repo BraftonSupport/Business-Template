@@ -170,7 +170,11 @@ function businesstheme_post_thumbnail() {
 	?>
 
 	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
+		<?php $get_description = get_post(get_post_thumbnail_id())->post_excerpt;
+		the_post_thumbnail();
+		if(!empty($get_description)){//If description is not empty show the div
+			echo '<div class="featured_caption">' . $get_description . '</div>';
+		}; ?>
 	</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
@@ -179,7 +183,8 @@ function businesstheme_post_thumbnail() {
 		<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
 	</a>
 
-	<?php endif; // End is_singular()
+	<?php
+	endif; // End is_singular()
 }
 endif;
 if ( ! function_exists( 'businesstheme_excerpt' ) ) :

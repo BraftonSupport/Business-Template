@@ -142,6 +142,29 @@
 				'media_upload' => 'yes',
 			),
 			array (
+				'key' => 'field_5931b7574ea13',
+				'label' => 'Video Url',
+				'name' => 'video',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'visual',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'none',
+				'maxlength' => '',
+			),
+			array (
 				'key' => 'field_593825bebc0bb',
 				'label' => 'Button?',
 				'name' => 'visual_button',
@@ -172,28 +195,6 @@
 				),
 				'default_value' => '',
 				'layout' => 'horizontal',
-			),			array (
-				'key' => 'field_5931b7574ea13',
-				'label' => 'Video Url',
-				'name' => 'video',
-				'type' => 'text',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_592324b7840bb',
-							'operator' => '==',
-							'value' => 'visual',
-						),
-					),
-					'allorany' => 'all',
-				),
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'none',
-				'maxlength' => '',
 			),
 			array (
 				'key' => 'field_59234671b70d7',

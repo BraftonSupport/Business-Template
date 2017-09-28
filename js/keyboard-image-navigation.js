@@ -1,9 +1,9 @@
 /**
- * Expanse keyboard support for image navigation.
+ * businesstheme keyboard support for image navigation.
  */
 
 ( function( $ ) {
-	$( document ).on( 'keydown.expanse', function( e ) {
+	$( document ).on( 'keydown.businesstheme', function( e ) {
 		var url = false;
 
 		// Left arrow key code.

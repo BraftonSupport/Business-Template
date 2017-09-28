@@ -2,27 +2,27 @@
 /*
 Author: Yvonne Tse
 URL: http://yvonnetse.com/
-Version: Expanse 1.0
+Version: Business Theme 1.0
 */
-define("expanse", dirname(__FILE__));
+define("businesstheme", dirname(__FILE__));
 include_once get_template_directory().'/custom-fields/fields.php';
-include expanse.'/inc/themesettings.php';
-include expanse.'/inc/themewidgets.php';
-include expanse.'/inc/template-tags.php';
+include businesstheme.'/inc/themesettings.php';
+include businesstheme.'/inc/themewidgets.php';
+include businesstheme.'/inc/template-tags.php';
 
 /**
- * Expanse only works in WordPress 4.4 or later.
+ * Business Theme only works in WordPress 4.4 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-if ( ! function_exists( 'expanse_setup' ) ) :
+if ( ! function_exists( 'businesstheme_setup' ) ) :
 
 
-function expanse_setup() {
+function businesstheme_setup() {
 
-	load_theme_textdomain( 'expanse', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'businesstheme', get_template_directory() . '/languages' );
 
 	add_theme_support( 'automatic-feed-links' );
 
@@ -30,8 +30,8 @@ function expanse_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'expanse' ),
-		'social'  => __( 'Social Links Menu', 'expanse' ),
+		'primary' => __( 'Primary Menu', 'businesstheme' ),
+		'social'  => __( 'Social Links Menu', 'businesstheme' ),
 	) );
 
 	add_theme_support( 'html5', array(
@@ -54,24 +54,24 @@ function expanse_setup() {
 		'chat',
 	) );
 
-	add_editor_style( array( 'css/editor-style.css', expanse_fonts_url() ) );
+	add_editor_style( array( 'css/editor-style.css', businesstheme_fonts_url() ) );
 }
-endif; // expanse_setup
-add_action( 'after_setup_theme', 'expanse_setup' );
+endif; // businesstheme_setup
+add_action( 'after_setup_theme', 'businesstheme_setup' );
 
-function expanse_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'expanse_content_width', 840 );
+function businesstheme_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'businesstheme_content_width', 840 );
 }
-add_action( 'after_setup_theme', 'expanse_content_width', 0 );
+add_action( 'after_setup_theme', 'businesstheme_content_width', 0 );
 
 /**
  * Register widget areas.
  */
-function expanse_widgets_init() {
-	$options = get_option( 'expanse_options' );
+function businesstheme_widgets_init() {
+	$options = get_option( 'businesstheme_options' );
 	if ( !empty($options['es_home']) ) {
 		register_sidebar( array(
-			'name'		  => __( 'Home Sidebar', 'expanse' ),
+			'name'		  => __( 'Home Sidebar', 'businesstheme' ),
 			'id'			=> 'home-sidebar',
 			'description'   => 'Appears on homepage in the sidebar.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -82,7 +82,7 @@ function expanse_widgets_init() {
 	}
 	if ( !empty($options['es_page']) ) {
 		register_sidebar( array(
-			'name'		  => __( 'Pages Sidebar', 'expanse' ),
+			'name'		  => __( 'Pages Sidebar', 'businesstheme' ),
 			'id'			=> 'pages-sidebar',
 			'description'   => 'Appears on pages in the sidebar.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -93,7 +93,7 @@ function expanse_widgets_init() {
 	}
 	if ( !empty($options['es_blog']) ) {
 		register_sidebar( array(
-			'name'		  => __( 'Blog Sidebar', 'expanse' ),
+			'name'		  => __( 'Blog Sidebar', 'businesstheme' ),
 			'id'			=> 'blog-sidebar',
 			'description'   => __( 'Appears on blog and blog posts in the sidebar.' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -104,7 +104,7 @@ function expanse_widgets_init() {
 	}
 	if ( !empty($options['es_contact']) ) {
 		register_sidebar( array(
-			'name'		  => __( 'Contact Page Sidebar', 'expanse' ),
+			'name'		  => __( 'Contact Page Sidebar', 'businesstheme' ),
 			'id'			=> 'contact-sidebar',
 			'description'   => __( 'Appears on the contact page template in the sidebar.' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -115,7 +115,7 @@ function expanse_widgets_init() {
 	}
 	if ( !empty($options['es_header']) ) {
 		register_sidebar( array(
-			'name'		  => __( 'Header', 'expanse' ),
+			'name'		  => __( 'Header', 'businesstheme' ),
 			'id'			=> 'header',
 			'description'   => 'This is located in the header area. Only 1 widget pls.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -126,7 +126,7 @@ function expanse_widgets_init() {
 	}
 	if ( !empty($options['es_above']) ) {
 		register_sidebar( array(
-			'name'		  => __( 'Above Header', 'expanse' ),
+			'name'		  => __( 'Above Header', 'businesstheme' ),
 			'id'			=> 'top',
 			'description'   => 'Tippy top of the site. No more than 2 widgets pls.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -137,7 +137,7 @@ function expanse_widgets_init() {
 	}
 	if ( !empty($options['es_features']) ) {
 		register_sidebar( array(
-			'name'		  => __( 'Features', 'expanse' ),
+			'name'		  => __( 'Features', 'businesstheme' ),
 			'id'			=> 'features',
 			'description'   => 'This is located below the banner on the home page. Perfect time to break out the feature widget! Use up to 4 widgets.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -148,7 +148,7 @@ function expanse_widgets_init() {
 	}
 	if ( !empty($options['es_footer']) ) {
 		register_sidebar( array(
-			'name'		  => __( 'Footer Left Widget', 'expanse' ),
+			'name'		  => __( 'Footer Left Widget', 'businesstheme' ),
 			'id'			=> 'footer-left',
 			'description'   => 'This is located in the footer. Use only 1 widget.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -157,7 +157,7 @@ function expanse_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 		register_sidebar( array(
-			'name'		  => __( 'Footer Middle Widget', 'expanse' ),
+			'name'		  => __( 'Footer Middle Widget', 'businesstheme' ),
 			'id'			=> 'footer-middle',
 			'description'   => 'This is located in the footer. Use only 1 widget.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -166,7 +166,7 @@ function expanse_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 		register_sidebar( array(
-			'name'		  => __( 'Footer Right Widget', 'expanse' ),
+			'name'		  => __( 'Footer Right Widget', 'businesstheme' ),
 			'id'			=> 'footer-right',
 			'description'   => 'This is located in the footer. Use only 1 widget.',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -176,13 +176,13 @@ function expanse_widgets_init() {
 		) );
 	}
 }
-add_action( 'widgets_init', 'expanse_widgets_init' );
+add_action( 'widgets_init', 'businesstheme_widgets_init' );
 
 /**
  * Register Post Types.
  */
-function expanse_posttypes_init() {
-	$options = get_option( 'expanse_options' );
+function businesstheme_posttypes_init() {
+	$options = get_option( 'businesstheme_options' );
 
 	if ( !empty($options['es_services']) ) {
 		$services_labels = array(
@@ -261,7 +261,7 @@ function expanse_posttypes_init() {
 		register_post_type('testimonials', $testimonials_args);
 	}
 }
-add_action( 'widgets_init', 'expanse_posttypes_init' );
+add_action( 'widgets_init', 'businesstheme_posttypes_init' );
 
 
 /**
@@ -285,33 +285,33 @@ add_filter(
 );
 
 
-if ( ! function_exists( 'expanse_fonts_url' ) ) :
+if ( ! function_exists( 'businesstheme_fonts_url' ) ) :
 /**
- * Register Google fonts for Expanse.
+ * Register Google fonts for Business Theme.
  *
- * Create your own expanse_fonts_url() function to override in a child theme.
+ * Create your own businesstheme_fonts_url() function to override in a child theme.
  *
- * @since Expanse 1.0
+ * @since Business Theme 1.0
  *
  * @return string Google fonts URL for the theme.
  */
-function expanse_fonts_url() {
+function businesstheme_fonts_url() {
 	$fonts_url = '';
 	$fonts	 = array();
 	$subsets   = 'latin,latin-ext';
 
 	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'expanse' ) ) {
+	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'businesstheme' ) ) {
 		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
 	}
 
 	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'expanse' ) ) {
+	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'businesstheme' ) ) {
 		$fonts[] = 'Montserrat:400,700';
 	}
 
 	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'expanse' ) ) {
+	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'businesstheme' ) ) {
 		$fonts[] = 'Inconsolata:400';
 	}
 
@@ -331,43 +331,43 @@ endif;
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  */
-function expanse_javascript_detection() {
+function businesstheme_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'expanse_javascript_detection', 0 );
+add_action( 'wp_head', 'businesstheme_javascript_detection', 0 );
 
 
 /**
  * Enqueue all the things!
  */
-function expanse_enqueuingallthethings() {
+function businesstheme_enqueuingallthethings() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'expanse-fonts', expanse_fonts_url(), array(), null );
+	wp_enqueue_style( 'businesstheme-fonts', businesstheme_fonts_url(), array(), null );
 
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 	wp_enqueue_style( 'font-awesome.min', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'expanse-style', get_stylesheet_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'businesstheme-style', get_stylesheet_directory_uri() . '/style.css' );
 
 	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'expanse-ie', get_template_directory_uri() . '/css/ie.css', array( 'expanse-style' ), '20150930' );
-	wp_style_add_data( 'expanse-ie', 'conditional', 'lt IE 10' );
+	wp_enqueue_style( 'businesstheme-ie', get_template_directory_uri() . '/css/ie.css', array( 'businesstheme-style' ), '20150930' );
+	wp_style_add_data( 'businesstheme-ie', 'conditional', 'lt IE 10' );
 
 	// Load the Internet Explorer 8 specific stylesheet.
-	wp_enqueue_style( 'expanse-ie8', get_template_directory_uri() . '/css/ie8.css', array( 'expanse-style' ), '20151230' );
-	wp_style_add_data( 'expanse-ie8', 'conditional', 'lt IE 9' );
+	wp_enqueue_style( 'businesstheme-ie8', get_template_directory_uri() . '/css/ie8.css', array( 'businesstheme-style' ), '20151230' );
+	wp_style_add_data( 'businesstheme-ie8', 'conditional', 'lt IE 9' );
 
 	// Load the Internet Explorer 7 specific stylesheet.
-	wp_enqueue_style( 'expanse-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'expanse-style' ), '20150930' );
-	wp_style_add_data( 'expanse-ie7', 'conditional', 'lt IE 8' );
+	wp_enqueue_style( 'businesstheme-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'businesstheme-style' ), '20150930' );
+	wp_style_add_data( 'businesstheme-ie7', 'conditional', 'lt IE 8' );
 
 	// Load the html5 shiv.
-	wp_enqueue_script( 'expanse-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
-	wp_script_add_data( 'expanse-html5', 'conditional', 'lt IE 9' );
+	wp_enqueue_script( 'businesstheme-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
+	wp_script_add_data( 'businesstheme-html5', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( 'expanse-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151112', true );
+	wp_enqueue_script( 'businesstheme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151112', true );
 
 	// Slider
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css' );
@@ -378,28 +378,28 @@ function expanse_enqueuingallthethings() {
 	// }
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'expanse-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20151104' );
+		wp_enqueue_script( 'businesstheme-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20151104' );
 	}
 
-	wp_enqueue_script( 'expanse-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20151204', true );
+	wp_enqueue_script( 'businesstheme-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20151204', true );
 
-	wp_localize_script( 'expanse-script', 'screenReaderText', array(
-		'expand'   => __( 'expand child menu', 'expanse' ),
-		'collapse' => __( 'collapse child menu', 'expanse' ),
+	wp_localize_script( 'businesstheme-script', 'screenReaderText', array(
+		'expand'   => __( 'expand child menu', 'businesstheme' ),
+		'collapse' => __( 'collapse child menu', 'businesstheme' ),
 	) );
 
-	$options = get_option( 'expanse_options' );
+	$options = get_option( 'businesstheme_options' );
 	if ( !empty($options['stickynav']) ) {
 		wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/sticky.js', array(), '1.0.0', true );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'expanse_enqueuingallthethings' );
+add_action( 'wp_enqueue_scripts', 'businesstheme_enqueuingallthethings' );
 
 
 /**
  * Adds custom classes to the array of body classes.
  */
-function expanse_body_classes( $classes ) {
+function businesstheme_body_classes( $classes ) {
 	// Adds a class of custom-background-image to sites with a custom background image.
 	if ( get_background_image() ) {
 		$classes[] = 'custom-background-image';
@@ -431,12 +431,12 @@ function expanse_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'expanse_body_classes' );
+add_filter( 'body_class', 'businesstheme_body_classes' );
 
 /**
  * Converts a HEX value to RGB.
  */
-function expanse_hex2rgb( $color ) {
+function businesstheme_hex2rgb( $color ) {
 	$color = trim( $color, '#' );
 
 	if ( strlen( $color ) === 3 ) {
@@ -468,7 +468,7 @@ require get_template_directory() . '/inc/customizer.php';
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images
  */
-function expanse_content_image_sizes_attr( $sizes, $size ) {
+function businesstheme_content_image_sizes_attr( $sizes, $size ) {
 	$width = $size[0];
 
 	840 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
@@ -482,21 +482,21 @@ function expanse_content_image_sizes_attr( $sizes, $size ) {
 
 	return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'expanse_content_image_sizes_attr', 10 , 2 );
+add_filter( 'wp_calculate_image_sizes', 'businesstheme_content_image_sizes_attr', 10 , 2 );
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
  */
-function expanse_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+function businesstheme_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	if ( 'post-thumbnail' === $size ) {
 		is_active_sidebar( 'sidebar-1' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 60vw, (max-width: 1362px) 62vw, 840px';
 		! is_active_sidebar( 'sidebar-1' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 88vw, 1200px';
 	}
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'expanse_post_thumbnail_sizes_attr', 10 , 3 );
+add_filter( 'wp_get_attachment_image_attributes', 'businesstheme_post_thumbnail_sizes_attr', 10 , 3 );
 
-function expanse_post_thumbnail() {
+function businesstheme_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
@@ -526,13 +526,13 @@ function services_thumb() {
 /**
  * Modifies tag cloud widget arguments to have all tags in the widget same font size.
  */
-function expanse_widget_tag_cloud_args( $args ) {
+function businesstheme_widget_tag_cloud_args( $args ) {
 	$args['largest'] = 1;
 	$args['smallest'] = 1;
 	$args['unit'] = 'em';
 	return $args;
 }
-add_filter( 'widget_tag_cloud_args', 'expanse_widget_tag_cloud_args' );
+add_filter( 'widget_tag_cloud_args', 'businesstheme_widget_tag_cloud_args' );
 
 /**
  * ACF Rule Type: Parent Page Template

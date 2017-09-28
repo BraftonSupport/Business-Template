@@ -5,10 +5,10 @@
  * Displays all of the head element and everything up until the "site-content" div.
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Expanse 1.0
+ * @subpackage Business_Theme
+ * @since Business Theme 1.0
  */
-$options = get_option( 'expanse_options' );
+$options = get_option( 'businesstheme_options' );
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -52,7 +52,7 @@ echo '<script type="application/ld+json">
 if(is_single()) {
 	$content = wp_strip_all_tags(apply_filters('the_content', $post->post_content)); 
 	$excerpt = wp_strip_all_tags(apply_filters('the_excerpt', $post->post_excerpt)); 
-	$image_url = esc_url( get_theme_mod( 'expanse_logo' ) );
+	$image_url = esc_url( get_theme_mod( 'businesstheme_logo' ) );
 	$author = $post->post_author; 
 	echo '<script type="application/ld+json">
 		{ "@context": "http://schema.org",
@@ -81,7 +81,7 @@ if(is_single()) {
 
 <body <?php body_class(); ?>>
 	<div id="page" class="site">
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'expanse' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'businesstheme' ); ?></a>
 
 		<header id="masthead" class="site-header" role="banner">
 			<?php if ( is_active_sidebar( 'top' ) ) {
@@ -91,14 +91,14 @@ if(is_single()) {
 			} ?>
 			<div class="container site-inner site-header-main<?php if (!empty($options['nav'])) { echo ' '.$options['nav']; } ?>">
 				<div class="site-branding">
-					<?php if ( get_theme_mod( 'expanse_logo' ) ) { ?>
+					<?php if ( get_theme_mod( 'businesstheme_logo' ) ) { ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<?php
 							// set the image url
-							$image_url = esc_url( get_theme_mod( 'expanse_logo' ) );
+							$image_url = esc_url( get_theme_mod( 'businesstheme_logo' ) );
 						 
 							// store the image ID in a var
-							$image_id = expanse_get_image_id($image_url);
+							$image_id = businesstheme_get_image_id($image_url);
 									 
 							// retrieve the thumbnail size of our image
 							$image_thumb = wp_get_attachment_image_src($image_id, 'medium'); ?>
@@ -114,7 +114,7 @@ if(is_single()) {
 				</div><!-- .site-branding -->
 
 				<div class="nextwidget">
-					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'expanse' ); ?></button>	
+					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'businesstheme' ); ?></button>	
 					<?php if ( is_active_sidebar( 'header' ) ) {
 						dynamic_sidebar( 'header' );
 					} ?>
@@ -122,7 +122,7 @@ if(is_single()) {
 
 				<div id="site-header-menu" class="site-header-menu">
 					<?php if ( has_nav_menu( 'primary' ) ) : ?>
-						<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'expanse' ); ?>">
+						<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'businesstheme' ); ?>">
 							<?php
 								wp_nav_menu( array(
 									'theme_location' => 'primary',

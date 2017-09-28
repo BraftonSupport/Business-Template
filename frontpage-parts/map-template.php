@@ -3,8 +3,8 @@
  * The template used for displaying full subsection of page.
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Expanse 1.0
+ * @subpackage Business_Theme
+ * @since Business Theme 1.0
  */
 if(!session_id()) session_start();
 $template_count = $_SESSION['template_count'];
@@ -82,11 +82,11 @@ if ($section_class){
 	}
 
 	wp_link_pages( array(
-		'before'	  => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'expanse' ) . '</span>',
+		'before'	  => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'businesstheme' ) . '</span>',
 		'after'	   => '</div>',
 		'link_before' => '<span>',
 		'link_after'  => '</span>',
-		'pagelink'	=> '<span class="screen-reader-text">' . __( 'Page', 'expanse' ) . ' </span>%',
+		'pagelink'	=> '<span class="screen-reader-text">' . __( 'Page', 'businesstheme' ) . ' </span>%',
 		'separator'   => '<span class="screen-reader-text">, </span>',
 	) );
 	wp_reset_query();
@@ -95,7 +95,7 @@ if ($section_class){
 	<?php edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'expanse' ),
+			__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'businesstheme' ),
 			get_the_title()
 		),
 		'<footer class="entry-footer"><span class="edit-link">',

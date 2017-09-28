@@ -1021,7 +1021,7 @@
 			),
 		),
 		'options' => array (
-			'position' => 'normal',
+			'position' => 'high',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
 				0 => 'the_content',

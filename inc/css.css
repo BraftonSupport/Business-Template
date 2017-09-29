@@ -44,3 +44,8 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
 #acf-map_email, #acf-google_api, #acf-map_email3_field {
 	clear: both;
 }
+#the-list .template .dashicons {
+    font-size: 1.25em;
+    line-height: 1.45em;
+    cursor: pointer;
+}

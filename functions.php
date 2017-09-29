@@ -263,6 +263,28 @@ function businesstheme_posttypes_init() {
 }
 add_action( 'widgets_init', 'businesstheme_posttypes_init' );
 
+/**
+ * Templates on the Pages Post Type page
+ */
+function add_template_column($columns) {
+	
+	$new_column = array(
+		'template' => __('Template Used', 'Business Theme'),
+	);
+	return array_merge($columns, $new_column);
+}
+add_filter('manage_pages_columns' , 'add_template_column');
+
+function custom_page_column_content( $column_name, $post_id ) {
+	if ( $column_name == 'template' ) {
+		$template = get_post_meta( $post_id, '_wp_page_template', true );
+		echo $template;
+		if ($template == 'parent-page.php') {
+			echo '<span class="dashicons dashicons-arrow-left-alt2"></span>';
+		}
+	}
+}
+add_action( 'manage_pages_custom_column', 'custom_page_column_content', 10, 2 );
 
 /**
  * HOH custom excerpt

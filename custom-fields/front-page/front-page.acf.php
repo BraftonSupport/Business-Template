@@ -220,6 +220,28 @@
 				'maxlength' => '',
 			),
 			array (
+				'key' => 'field_59234699b70d8',
+				'label' => 'Link',
+				'name' => 'visual_button_link',
+				'type' => 'page_link',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_593825bebc0bb',
+							'operator' => '==',
+							'value' => 'Show button',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'post_type' => array (
+					0 => 'all',
+				),
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
 				'key' => 'field_59234671b70d7aw43',
 				'label' => 'Add Classes',
 				'name' => 'visual_button_classes',
@@ -241,31 +263,6 @@
 				'append' => '',
 				'formatting' => 'html',
 				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_59234699b70d8',
-				'label' => 'Link',
-				'name' => 'visual_button_link',
-				'type' => 'page_link',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_593825bebc0bb',
-							'operator' => '==',
-							'value' => 'Show button',
-						),
-					),
-					'allorany' => 'all',
-				),
-				'post_type' => array (
-					0 => 'all',
-					1 => 'post',
-					2 => 'page',
-					3 => 'attachment',
-				),
-				'allow_null' => 0,
-				'multiple' => 0,
 			),
 			array (
 				'key' => 'field_5924aaf852c2d',

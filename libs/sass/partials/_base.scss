@@ -88,7 +88,7 @@ header {
 	}
 	.main-navigation .primary-menu > li > a {
 		font-size: 13px;
-		padding: 0.65625em 3.75em 0.65625em 0.875em;
+		padding: 0.65625em .75em 0.65625em 0.875em;
 	}
 	.dropdown-toggle:after {
 		top: -4px;
@@ -529,6 +529,9 @@ header {
 .site-footer {
 	.logo {
 		margin-right: auto;
+		-webkit-flex: 0 0 50%;
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
 		img {
 			width: 75px;
 			margin-top: 10px;

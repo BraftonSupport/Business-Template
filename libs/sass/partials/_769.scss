@@ -7,6 +7,12 @@
 		font-size: .875em;
 	}
 }
+.main-navigation {
+	a {
+		line-height: 1.3125;
+		padding: 0.84375em 0;
+	}
+}
 
 .menu-toggle {
 	display: none;
@@ -38,6 +44,16 @@
 	margin-right: 4%;
 	&:last-child {
 		margin-right: 0;
+	}
+}
+
+.site-main > section:first-of-type {
+	h1 {
+		font-size: 3em;
+		line-height: 1.3em;
+	}
+	p {
+		font-size: 1.5em;
 	}
 }
 

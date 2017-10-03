@@ -24,7 +24,14 @@ get_header(); ?>
 		    'post_type' => 'page',
 		    'orderby' => 'menu_order',
 		    'order' => 'ASC',
-		    'posts_per_page' => -1
+			'posts_per_page' => -1,
+			'meta_query' => array(
+				array(
+					'key' => '_wp_page_template',
+					'value' => 'subsection.php',
+					'compare' => '='
+				)
+			),
 		);
 
 		$child_query = new WP_Query( $args );

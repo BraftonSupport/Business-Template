@@ -20,10 +20,10 @@ get_header(); ?>
 		<?php
 
 		$args = array(
-		    'post_parent' => $post->ID,
-		    'post_type' => 'page',
-		    'orderby' => 'menu_order',
-		    'order' => 'ASC',
+			'post_parent' => $post->ID,
+			'post_type' => 'page',
+			'orderby' => 'menu_order',
+			'order' => 'ASC',
 			'posts_per_page' => -1,
 			'meta_query' => array(
 				array(
@@ -31,7 +31,7 @@ get_header(); ?>
 					'value' => 'subsection.php',
 					'compare' => '='
 				)
-			),
+			)
 		);
 
 		$child_query = new WP_Query( $args );

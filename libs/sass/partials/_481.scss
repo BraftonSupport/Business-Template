@@ -12,6 +12,19 @@
     flex: 0 1 70%;
 }
 
+.page-template-parent-page {
+	.header,
+	.site-main > section:first-of-type {
+		h1 {
+			font-size: 2em;
+			line-height: 1.3em;
+		}
+		p {
+			font-size: 1.25em;
+		}
+	}
+}
+
 .slider {
 	padding: 1em 0 3em;
 }

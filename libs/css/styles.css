@@ -152,13 +152,13 @@ header .top p, header .top * {
 /* line 140, ../sass/partials/_base.scss */
 .page-template-parent-page .header h1,
 .page-template-parent-page .site-main > section:first-of-type h1 {
-  font-size: 1.15em;
+  font-size: 1.25em;
   color: #fff;
   border-bottom: 1px solid;
   display: inline-block;
   margin-bottom: .5em;
   padding-bottom: .5em;
-  line-height: 1em;
+  line-height: 1.15em;
 }
 /* line 149, ../sass/partials/_base.scss */
 .page-template-parent-page .header p,
@@ -852,12 +852,24 @@ header .top p, header .top * {
     flex: 0 1 70%;
   }
 
-  /* line 15, ../sass/partials/_481.scss */
+  /* line 18, ../sass/partials/_481.scss */
+  .page-template-parent-page .header h1,
+  .page-template-parent-page .site-main > section:first-of-type h1 {
+    font-size: 2em;
+    line-height: 1.3em;
+  }
+  /* line 22, ../sass/partials/_481.scss */
+  .page-template-parent-page .header p,
+  .page-template-parent-page .site-main > section:first-of-type p {
+    font-size: 1.25em;
+  }
+
+  /* line 28, ../sass/partials/_481.scss */
   .slider {
     padding: 1em 0 3em;
   }
 
-  /* line 19, ../sass/partials/_481.scss */
+  /* line 32, ../sass/partials/_481.scss */
   .slick h4 {
     font-weight: 700;
     text-transform: uppercase;

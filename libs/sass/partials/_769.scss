@@ -47,13 +47,16 @@
 	}
 }
 
-.site-main > section:first-of-type {
-	h1 {
-		font-size: 3em;
-		line-height: 1.3em;
-	}
-	p {
-		font-size: 1.5em;
+.page-template-parent-page {
+	.header,
+	.site-main > section:first-of-type {
+		h1 {
+			font-size: 3em;
+			line-height: 1.3em;
+		}
+		p {
+			font-size: 1.5em;
+		}
 	}
 }
 

@@ -833,13 +833,6 @@ a:active,
 	position: relative;
 }
 
-.main-navigation a {
-	display: block;
-	line-height: 1.3125;
-	outline-offset: -1px;
-	padding: 0.84375em 0;
-}
-
 .main-navigation a:hover,
 .main-navigation a:focus {
 	color: #007acc;

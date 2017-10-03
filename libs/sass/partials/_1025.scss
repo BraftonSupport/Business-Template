@@ -9,11 +9,14 @@
     font-size: 1.75rem;
     line-height: 1.25;
 }
+.scrolled .main-navigation .primary-menu > li > a {
+	font-size: 16px;
+}
 
 /* content */
 
 .site-inner {
-	max-width: 1000px;
+	max-width: 1250px;
 }
 .list .container {
 	&.count4>div {
@@ -58,13 +61,13 @@
 
 	.site-header {
 		display: grid;
-		grid-template-columns: 1fr 1000px 1fr;
+		grid-template-columns: 1fr 1250px 1fr;
 	}
 	.site-header-main {
 		grid-column: 2;
 	}
 	.site-header-main.container {
-		min-width: 1000px;
+		min-width: 1250px;
 		grid-column: 2/3;
 		display: grid;
 		grid-template-columns: 30% 70%;

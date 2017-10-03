@@ -929,24 +929,22 @@ header .top p, header .top * {
     margin-right: 0;
   }
 
-  /* line 53, ../sass/partials/_769.scss */
-  .page-template-parent-page .header h1,
-  .page-template-parent-page .site-main > section:first-of-type h1 {
+  /* line 52, ../sass/partials/_769.scss */
+  .page-template-parent-page .header h1, .page-template-parent-page .site-main > section:first-of-type h1 {
     font-size: 3em;
     line-height: 1.3em;
   }
-  /* line 57, ../sass/partials/_769.scss */
-  .page-template-parent-page .header p,
-  .page-template-parent-page .site-main > section:first-of-type p {
+  /* line 56, ../sass/partials/_769.scss */
+  .page-template-parent-page .header p, .page-template-parent-page .site-main > section:first-of-type p {
     font-size: 1.5em;
   }
 
-  /* line 63, ../sass/partials/_769.scss */
+  /* line 62, ../sass/partials/_769.scss */
   .attachment iframe {
     min-height: 700px;
   }
 
-  /* line 67, ../sass/partials/_769.scss */
+  /* line 66, ../sass/partials/_769.scss */
   .slider {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -956,7 +954,7 @@ header .top p, header .top * {
     flex-wrap: wrap;
   }
 
-  /* line 75, ../sass/partials/_769.scss */
+  /* line 74, ../sass/partials/_769.scss */
   .slick {
     max-width: 65%;
     margin: auto;
@@ -964,19 +962,19 @@ header .top p, header .top * {
     -ms-flex: 1 1 65%;
     flex: 1 1 65%;
   }
-  /* line 81, ../sass/partials/_769.scss */
+  /* line 80, ../sass/partials/_769.scss */
   .slick h4 {
     font-size: 1.25em;
   }
 
-  /* line 85, ../sass/partials/_769.scss */
+  /* line 84, ../sass/partials/_769.scss */
   .toolbar {
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
   }
 
-  /* line 90, ../sass/partials/_769.scss */
+  /* line 89, ../sass/partials/_769.scss */
   .quotes {
     margin-top: .25em;
     font-size: 12em;
@@ -989,38 +987,38 @@ header .top p, header .top * {
     position: inherit;
     z-index: inherit;
   }
-  /* line 101, ../sass/partials/_769.scss */
+  /* line 100, ../sass/partials/_769.scss */
   .quotes:first-of-type {
     text-align: right;
   }
 
   /* Service List Template */
-  /* line 109, ../sass/partials/_769.scss */
+  /* line 108, ../sass/partials/_769.scss */
   .list .container > div {
     -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
     max-width: 250px;
   }
-  /* line 115, ../sass/partials/_769.scss */
+  /* line 114, ../sass/partials/_769.scss */
   .list .container.count2 > div {
     -webkit-flex: 0 1 50%;
     -ms-flex: 0 1 50%;
     flex: 0 1 50%;
   }
-  /* line 120, ../sass/partials/_769.scss */
+  /* line 119, ../sass/partials/_769.scss */
   .list .container.count3 > div {
     -webkit-flex: 0 1 33%;
     -ms-flex: 0 1 33%;
     flex: 0 1 33%;
   }
-  /* line 125, ../sass/partials/_769.scss */
+  /* line 124, ../sass/partials/_769.scss */
   .list .container.count4 > div {
     -webkit-flex: 0 1 50%;
     -ms-flex: 0 1 50%;
     flex: 0 1 50%;
   }
-  /* line 130, ../sass/partials/_769.scss */
+  /* line 129, ../sass/partials/_769.scss */
   .list .container.count5 > div {
     -webkit-flex: 0 1 33%;
     -ms-flex: 0 1 33%;
@@ -1028,32 +1026,32 @@ header .top p, header .top * {
   }
 
   /* cta */
-  /* line 140, ../sass/partials/_769.scss */
+  /* line 139, ../sass/partials/_769.scss */
   .cta p {
     margin-right: 5%;
   }
-  /* line 143, ../sass/partials/_769.scss */
+  /* line 142, ../sass/partials/_769.scss */
   .cta .button {
     margin: 0 0 0 auto;
   }
-  /* line 146, ../sass/partials/_769.scss */
+  /* line 145, ../sass/partials/_769.scss */
   .cta .button.centered {
     margin: auto;
   }
-  /* line 149, ../sass/partials/_769.scss */
+  /* line 148, ../sass/partials/_769.scss */
   .cta .hasbutton {
     width: 75%;
   }
 
   /* Blog */
-  /* line 155, ../sass/partials/_769.scss */
+  /* line 154, ../sass/partials/_769.scss */
   .blog article,
   .archive article {
     width: 32%;
     float: left;
     margin-right: 2%;
   }
-  /* line 160, ../sass/partials/_769.scss */
+  /* line 159, ../sass/partials/_769.scss */
   .blog article .post-thumbnail,
   .archive article .post-thumbnail {
     float: none;
@@ -1062,14 +1060,14 @@ header .top p, header .top * {
   }
 
   /* Footer */
-  /* line 170, ../sass/partials/_769.scss */
+  /* line 169, ../sass/partials/_769.scss */
   .site-footer .widget {
     margin-right: 2%;
     -webkit-flex: 0 1 32%;
     -ms-flex: 0 1 32%;
     flex: 0 1 32%;
   }
-  /* line 175, ../sass/partials/_769.scss */
+  /* line 174, ../sass/partials/_769.scss */
   .site-footer .widget:last-of-type {
     margin: 0 0 0 auto;
     -webkit-flex: 0 1 20%;

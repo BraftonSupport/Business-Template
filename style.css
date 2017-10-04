@@ -3635,7 +3635,6 @@ p > video {
 	.row .fourth, .row .third, .row .half, .row .twothirds, .row .threefourths { width: 100%; margin-right: 0; }
 	.site-info .dropdown-toggle { height: 30px; }
 	.site-footer .social-navigation li { float: right; }
-	.site-footer .site-title { float:left; width: 50%; }
 }
 
 @media (max-width: 736px) {

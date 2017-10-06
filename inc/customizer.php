@@ -701,15 +701,16 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a,
 	header .top a,
 	.site-footer a,
-	.social-navigation a {
+	.social-navigation a,
+	.social-navigation a:hover,
+	.social-navigation a:hover::before {
 		color: {$colors['secondary_link_color']};
 	}
 
 	.simple .entry-footer a:hover,
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a:hover,
 	header .top a:hover,
-	.site-footer a:hover,
-	.social-navigation a:hover {
+	.site-footer a:hover{
 		color: {$colors['secondary_link_hover_color']};
 	}
 
@@ -1289,7 +1290,8 @@ function businesstheme_secondary_link_color_css() {
 		header .top a,
 		.social-navigation a,
 		.site-footer a,
-		.social-navigation a {
+		.social-navigation a:hover,
+		.social-navigation a:hover::before {
 			color: %1$s;
 		}
 	';
@@ -1327,8 +1329,7 @@ function businesstheme_secondary_link_hover_color_css() {
 		.simple .entry-footer a:hover,
 		body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a:hover,
 		header .top a:hover,
-		.site-footer a:hover,
-		.social-navigation a:hover {
+		.site-footer a:hover{
 			color: %1$s;
 		}
 	';

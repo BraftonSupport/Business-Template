@@ -608,7 +608,7 @@ header .top p, header .top * {
 }
 /* line 533, ../sass/partials/_base.scss */
 .site-footer .logo img {
-  width: 75px;
+  max-height: 50px;
   margin-top: 10px;
 }
 /* line 538, ../sass/partials/_base.scss */

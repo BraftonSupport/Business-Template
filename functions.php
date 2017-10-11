@@ -286,6 +286,9 @@ function custom_page_column_content( $column_name, $post_id ) {
 }
 add_action( 'manage_pages_custom_column', 'custom_page_column_content', 10, 2 );
 
+// Adding excerpts to pages
+add_post_type_support( 'page', 'excerpt' );
+
 /**
  * HOH custom excerpt
  */

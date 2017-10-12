@@ -3335,9 +3335,6 @@ p > video {
 	.compact {
 		max-width: 75%;
 	}
-	.row .container {
-		max-width: 1000px;
-	}
 
 	.image-navigation {
 		margin-bottom: 3.230769231em;

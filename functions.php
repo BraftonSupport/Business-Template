@@ -591,6 +591,7 @@ function ea_acf_rule_values_parent_page_template( $choices ) {
 	return $choices;
 }
 add_filter( 'acf/location/rule_values/parent_page_template', 'ea_acf_rule_values_parent_page_template' );
+
 /**
  * ACF Rule Match: Parent Page Template
  *

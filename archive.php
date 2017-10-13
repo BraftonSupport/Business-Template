@@ -16,7 +16,7 @@
  * @since Business Theme 1.0
  */
 $id = get_the_ID();
-$shadow = get_field('banner_image', $id);
+$bg = get_field('banner_image', $id);
 get_header();
 
 if ($bg) {

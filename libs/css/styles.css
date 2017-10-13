@@ -1153,127 +1153,131 @@ header .top p, header .top * {
   }
 
   /* line 22, ../sass/partials/_1025.scss */
+  .list .container > div {
+    max-width: 350px;
+  }
+  /* line 25, ../sass/partials/_1025.scss */
   .list .container.count4 > div {
     -webkit-flex: 0 1 24%;
     -ms-flex: 0 1 24%;
     flex: 0 1 24%;
   }
-  /* line 27, ../sass/partials/_1025.scss */
+  /* line 30, ../sass/partials/_1025.scss */
   .list .container.count5 > div {
     -webkit-flex: 0 1 19%;
     -ms-flex: 0 1 19%;
     flex: 0 1 19%;
   }
 
-  /* line 33, ../sass/partials/_1025.scss */
+  /* line 36, ../sass/partials/_1025.scss */
   .quotes {
     margin-top: .35em;
     font-size: 18em;
   }
 
-  /* line 37, ../sass/partials/_1025.scss */
+  /* line 40, ../sass/partials/_1025.scss */
   .slick {
     max-width: 70%;
     -webkit-flex: 1 1 70%;
     -ms-flex: 1 1 70%;
     flex: 1 1 70%;
   }
-  /* line 42, ../sass/partials/_1025.scss */
+  /* line 45, ../sass/partials/_1025.scss */
   .slick h4 {
     font-size: 1.5em;
   }
 
-  /* line 47, ../sass/partials/_1025.scss */
+  /* line 50, ../sass/partials/_1025.scss */
   .attachment iframe {
     min-height: 800px;
   }
 
   @supports (display: grid) {
-    /* line 52, ../sass/partials/_1025.scss */
+    /* line 55, ../sass/partials/_1025.scss */
     .site-inner {
       margin: 0 auto;
     }
 
-    /* line 55, ../sass/partials/_1025.scss */
+    /* line 58, ../sass/partials/_1025.scss */
     section > .site-inner {
       margin: 0 auto;
     }
 
-    /* line 58, ../sass/partials/_1025.scss */
+    /* line 61, ../sass/partials/_1025.scss */
     .top {
       grid-column: 1/5;
     }
 
-    /* line 62, ../sass/partials/_1025.scss */
+    /* line 65, ../sass/partials/_1025.scss */
     .site-header {
       display: grid;
       grid-template-columns: 1fr 1000px 1fr;
     }
 
-    /* line 66, ../sass/partials/_1025.scss */
+    /* line 69, ../sass/partials/_1025.scss */
     .site-header-main {
       grid-column: 2;
     }
 
-    /* line 69, ../sass/partials/_1025.scss */
+    /* line 72, ../sass/partials/_1025.scss */
     .site-header-main.container {
       min-width: 1000px;
       grid-column: 2/3;
       display: grid;
       grid-template-columns: 30% 70%;
     }
-    /* line 74, ../sass/partials/_1025.scss */
+    /* line 77, ../sass/partials/_1025.scss */
     .site-header-main.container .site-branding {
       grid-column: 1;
     }
-    /* line 77, ../sass/partials/_1025.scss */
+    /* line 80, ../sass/partials/_1025.scss */
     .site-header-main.container.next .site-branding {
       grid-row: 1/3;
     }
-    /* line 80, ../sass/partials/_1025.scss */
+    /* line 83, ../sass/partials/_1025.scss */
     .site-header-main.container .nextwidget {
       grid-column: 2;
     }
 
-    /* line 85, ../sass/partials/_1025.scss */
+    /* line 88, ../sass/partials/_1025.scss */
     .next .site-header-menu {
       grid-column: 2;
     }
 
-    /* line 88, ../sass/partials/_1025.scss */
+    /* line 91, ../sass/partials/_1025.scss */
     .below .site-header-menu {
       grid-column: 1/3;
     }
 
-    /* line 94, ../sass/partials/_1025.scss */
+    /* line 97, ../sass/partials/_1025.scss */
     .scrolled .below .site-header-menu {
       grid-column: 2;
       grid-row: 1;
     }
-    /* line 98, ../sass/partials/_1025.scss */
+    /* line 101, ../sass/partials/_1025.scss */
     .scrolled .site-header-main.container.next .site-branding {
       grid-row: 1;
     }
-    /* line 101, ../sass/partials/_1025.scss */
+    /* line 104, ../sass/partials/_1025.scss */
     .scrolled .next .site-header-menu {
       grid-row: 1;
     }
 
-    /* line 106, ../sass/partials/_1025.scss */
+    /* line 109, ../sass/partials/_1025.scss */
     .site-footer {
       display: grid;
       grid-template-columns: 1fr 500px 500px 1fr;
     }
-    /* line 109, ../sass/partials/_1025.scss */
+    /* line 112, ../sass/partials/_1025.scss */
     .site-footer .container {
       margin: 0;
       grid-column: 2 / 4;
     }
-    /* line 112, ../sass/partials/_1025.scss */
+    /* line 115, ../sass/partials/_1025.scss */
     .site-footer .container.footer-top .widget, .site-footer .container.footer-top .widget:last-of-type {
       margin-right: 5%;
     }
-    /* line 116, ../sass/partials/_1025.scss */
+    /* line 119, ../sass/partials/_1025.scss */
     .site-footer .site-info {
       grid-column: 1 / 5;
       grid-row: 3;

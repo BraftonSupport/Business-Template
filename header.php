@@ -138,13 +138,24 @@ if(is_single()) {
 			</div><!-- .site-header-main -->
 		</header>
 
-<?php if ($bg) { ?>
-	<header class="page-header visual"<?php echo ' style="background-image:url('.$bg.');"';?>>
-		<?php
-			the_archive_title( '<h1 class="page-title">', '</h1>' );
-			the_archive_description( '<div class="taxonomy-description">', '</div>' );
-		?>
-	</header><!-- .page-header -->
-<?php } ?>
+		<?php if ( $bg && is_post_type_archive() ) { ?>
+			<header class="page-header visual"<?php echo ' style="background-image:url('.$bg.');"';?>>
+				<?php
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
+		<?php } ?>
+		<?php if (is_home() && get_option('page_for_posts') ) {
+			$img = wp_get_attachment_image_src(get_post_thumbnail_id(get_option('page_for_posts')),'full'); 
+			$featured_image = $img[0]; ?>
+			
+			<header class="page-header visual"<?php echo ' style="background-image:url('.$featured_image.');"';?>>
+				<?php
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
+		} ?>
 
 		<div id="content" class="site-content<?php if ( !is_page_template( 'parent-page.php' ) || is_home() || is_archive() || is_single() ) {echo ' site-inner';} ?>">

@@ -289,6 +289,19 @@ add_action( 'manage_pages_custom_column', 'custom_page_column_content', 10, 2 );
 // Adding excerpts to pages
 add_post_type_support( 'page', 'excerpt' );
 
+// changing the archive title
+add_filter( 'get_the_archive_title', function ($title) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>' ;
+	}
+	return $title;
+});
+
+
 /**
  * HOH custom excerpt
  */
@@ -629,7 +642,7 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
  * Function for ommiting sections from search and only returning the parent
  */
 
- function post_res($posts, $query){
+function post_res($posts, $query){
 	$required_fields = array( //array of fields to check for to determine if this is a section page
 		'subsections_templates'
 	);
@@ -653,7 +666,7 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
  }
  add_filter('posts_results', 'post_res', 10, 2);
 
- // adding dropdown for subsection templates
+// adding dropdown for subsection templates
  	register_field_group(array (
 		'id' => 'acf_subsections',
 		'title' => 'Subsections',

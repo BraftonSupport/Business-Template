@@ -15,7 +15,8 @@
  * @subpackage Business_Theme
  * @since Business Theme 1.0
  */
-$bg = get_post_meta( get_queried_object_id(), 'banner_image', true );
+$id = get_the_ID();
+$shadow = get_field('banner_image', $id);
 get_header();
 
 if ($bg) {

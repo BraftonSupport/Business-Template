@@ -20,7 +20,7 @@ get_header();
 
 if ($bg) {
 ?>
-	<header class="page-header visual">
+	<header class="page-header visual"<?php echo ' style="background-image:url('.$bg.');"';?>>
 		<?php
 			the_archive_title( '<h1 class="page-title">', '</h1>' );
 			the_archive_description( '<div class="taxonomy-description">', '</div>' );

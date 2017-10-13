@@ -166,6 +166,21 @@ header {
 		}
 	}
 }
+.page-header.visual {
+    background-size: cover;
+    background-position: center;
+    padding: 75px 0;
+    color: #fff;
+	margin-top: 25px;
+	h1 {
+		font-size: 3em;
+		line-height: 1.3em;
+		border-bottom: 1px solid;
+		display: inline-block;
+		margin-bottom: .5em;
+		padding-bottom: .5em;
+	}
+}
 
 .site-inner {
 	margin: auto;

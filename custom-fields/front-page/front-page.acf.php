@@ -337,6 +337,34 @@
 				'max' => 5,
 			),
 			array (
+				'key' => 'field_59e12f72f80f8',
+				'label' => 'taxonomy',
+				'name' => 'taxonomy',
+				'type' => 'taxonomy',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5924aaf852c2d',
+							'operator' => '==',
+							'value' => 'choose',
+						),
+						array (
+							'field' => 'field_593ed342a9ba0',
+							'operator' => '==',
+							'value' => 'choose',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'taxonomy' => 'category',
+				'field_type' => 'checkbox',
+				'allow_null' => 0,
+				'load_save_terms' => 0,
+				'return_format' => 'id',
+				'multiple' => 0,
+			),
+			array (
 				'key' => 'field_5924ab7daa9e7',
 				'label' => 'Recent Posts',
 				'name' => 'recent_posts',

@@ -24,26 +24,31 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
 #features img { max-width: 100%; height: auto; display: block; }
 /*#features .hide { display: none; }*/
 
-/* ACF */
+/* ACF map */
+#acf-map_address_2 {
+    padding: 0;
+}
+
 #acf-map_address_2 label, #acf-map_address_3 label {
 	display: none;
 }
-#acf-map_phone_field, #acf-map_email2_field, #acf-map_email3_field {
+#acf-map_phone_field, #acf-map_email2_field, #acf-map_email3_field, #acf-map_phone_2, #acf-map_phone_3, #acf-map_phone_4 {
     float: left;
     width: 49%;
 }
-
-#acf-map_other_phone, #acf-map_email2, #acf-map_email3 {
+#acf-map_other_phone, #acf-map_email2, #acf-map_email3, #acf-map_phone_2_number, #acf-map_phone_3_number, #acf-map_phone_4_number {
     float: right;
     width: 49%;
 }
-#acf-map_other_phone label, #acf-map_email2 label, #acf-map_email3 label {
+#acf-map_other_phone label, #acf-map_email2 label, #acf-map_email3 label, #acf-map_phone_2_number label, #acf-map_phone_3_number label, #acf-map_phone_4_number label {
 	color: #f1f1f1;
     text-shadow: none;
 }
-#acf-map_email, #acf-google_api, #acf-map_email3_field {
+#acf-map_email, #acf-google_api, #acf-map_email3_field, #acf-map_phone_2, #acf-map_phone_3, #acf-map_phone_4 {
 	clear: both;
 }
+
+
 #the-list .template .dashicons {
     font-size: 1.25em;
     line-height: 1.45em;

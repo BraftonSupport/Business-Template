@@ -549,12 +549,13 @@ header {
 		-ms-flex: 0 0 50%;
 		flex: 0 0 50%;
 		img {
-			max-height: 50px;
+			max-height: 35px;
 			margin-top: 10px;
 		}
 	}
 	.social-navigation {
 		margin-left: auto;
+		margin-right: auto;
 	}
 	.container {
 		-webkit-flex-wrap: wrap;

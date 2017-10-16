@@ -138,7 +138,7 @@ if(is_single()) {
 			</div><!-- .site-header-main -->
 		</header>
 
-		<?php if ( $bg && is_post_type_archive() ) { ?>
+		<?php if ( $bg && is_archive() ) { ?>
 			<header class="page-header visual"<?php echo ' style="background-image:url('.$bg.');"';?>>
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );

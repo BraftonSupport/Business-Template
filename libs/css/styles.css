@@ -630,20 +630,21 @@ header .top p, header .top * {
 }
 /* line 551, ../sass/partials/_base.scss */
 .site-footer .logo img {
-  max-height: 50px;
+  max-height: 35px;
   margin-top: 10px;
 }
 /* line 556, ../sass/partials/_base.scss */
 .site-footer .social-navigation {
   margin-left: auto;
+  margin-right: auto;
 }
-/* line 559, ../sass/partials/_base.scss */
+/* line 560, ../sass/partials/_base.scss */
 .site-footer .container {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 564, ../sass/partials/_base.scss */
+/* line 565, ../sass/partials/_base.scss */
 .site-footer .site-info {
   background: rgba(0, 0, 0, 0.25);
   font-size: 13px;
@@ -655,27 +656,27 @@ header .top p, header .top * {
   font-weight: 400;
   width: 100%;
 }
-/* line 575, ../sass/partials/_base.scss */
+/* line 576, ../sass/partials/_base.scss */
 .site-footer .site-title {
   margin: auto;
   padding: 5px 0;
   font-size: 12px;
 }
-/* line 580, ../sass/partials/_base.scss */
+/* line 581, ../sass/partials/_base.scss */
 .site-footer .widget {
   margin-bottom: 10px;
   -webkit-flex: 1 0 100%;
   -ms-flex: 1 0 100%;
   flex: 1 0 100%;
 }
-/* line 586, ../sass/partials/_base.scss */
+/* line 587, ../sass/partials/_base.scss */
 .site-footer .widget-title {
   margin-bottom: 0;
   border-bottom: 1px solid;
   display: inline-block;
 }
 
-/* line 593, ../sass/partials/_base.scss */
+/* line 594, ../sass/partials/_base.scss */
 .menu-social-media-container {
   margin: auto;
   -webkit-flex: 0 0 50%;
@@ -683,24 +684,24 @@ header .top p, header .top * {
   flex: 0 0 50%;
 }
 
-/* line 600, ../sass/partials/_base.scss */
+/* line 601, ../sass/partials/_base.scss */
 .social-navigation {
   list-style: none;
   text-align: right;
   margin: 1em 0 0 0;
 }
-/* line 604, ../sass/partials/_base.scss */
+/* line 605, ../sass/partials/_base.scss */
 .social-navigation li {
   display: inline-block;
   overflow: hidden;
   height: 45px;
   width: 45px;
 }
-/* line 609, ../sass/partials/_base.scss */
+/* line 610, ../sass/partials/_base.scss */
 .social-navigation li:last-of-type a {
   margin-right: 0;
 }
-/* line 613, ../sass/partials/_base.scss */
+/* line 614, ../sass/partials/_base.scss */
 .social-navigation a {
   display: block;
   height: 0;
@@ -709,7 +710,7 @@ header .top p, header .top * {
   position: relative;
   overflow: hidden;
 }
-/* line 620, ../sass/partials/_base.scss */
+/* line 621, ../sass/partials/_base.scss */
 .social-navigation a:before {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -728,146 +729,146 @@ header .top p, header .top * {
   top: 0;
   left: 0;
 }
-/* line 631, ../sass/partials/_base.scss */
+/* line 632, ../sass/partials/_base.scss */
 .social-navigation a[href*="codepen.io"]:before {
   content: "\f216";
 }
-/* line 634, ../sass/partials/_base.scss */
+/* line 635, ../sass/partials/_base.scss */
 .social-navigation a[href*="digg.com"]:before {
   content: "\f221";
 }
-/* line 637, ../sass/partials/_base.scss */
+/* line 638, ../sass/partials/_base.scss */
 .social-navigation a[href*="dribbble.com"]:before {
   content: "\f201";
 }
-/* line 640, ../sass/partials/_base.scss */
+/* line 641, ../sass/partials/_base.scss */
 .social-navigation a[href*="dropbox.com"]:before {
   content: "\f225";
 }
-/* line 644, ../sass/partials/_base.scss */
+/* line 645, ../sass/partials/_base.scss */
 .social-navigation a[href*="facebook.com"]:hover:before {
   background: #3b5998;
   border-color: #3b5998;
 }
-/* line 648, ../sass/partials/_base.scss */
+/* line 649, ../sass/partials/_base.scss */
 .social-navigation a[href*="facebook.com"]:before {
   content: "\f204";
 }
-/* line 652, ../sass/partials/_base.scss */
+/* line 653, ../sass/partials/_base.scss */
 .social-navigation a[href*="flickr.com"]:before {
   content: "\f211";
 }
-/* line 655, ../sass/partials/_base.scss */
+/* line 656, ../sass/partials/_base.scss */
 .social-navigation a[href*="foursquare.com"]:before {
   content: "\f226";
 }
-/* line 659, ../sass/partials/_base.scss */
+/* line 660, ../sass/partials/_base.scss */
 .social-navigation a[href*="plus.google.com"]:hover:before {
   background: #dd4b39;
   border-color: #dd4b39;
 }
-/* line 663, ../sass/partials/_base.scss */
+/* line 664, ../sass/partials/_base.scss */
 .social-navigation a[href*="plus.google.com"]:before {
   content: "\f206";
 }
-/* line 667, ../sass/partials/_base.scss */
+/* line 668, ../sass/partials/_base.scss */
 .social-navigation a[href*="github.com"]:before {
   content: "\f200";
 }
-/* line 670, ../sass/partials/_base.scss */
+/* line 671, ../sass/partials/_base.scss */
 .social-navigation a[href*="instagram.com"]:before {
   content: "\f215";
 }
-/* line 674, ../sass/partials/_base.scss */
+/* line 675, ../sass/partials/_base.scss */
 .social-navigation a[href*="linkedin.com"]:hover:before {
   background: #007bb5;
   border-color: #007bb5;
 }
-/* line 678, ../sass/partials/_base.scss */
+/* line 679, ../sass/partials/_base.scss */
 .social-navigation a[href*="linkedin.com"]:before {
   content: "\f207";
 }
-/* line 683, ../sass/partials/_base.scss */
+/* line 684, ../sass/partials/_base.scss */
 .social-navigation a[href*="pinterest.com"]:hover:before {
   background: #cb2027;
   border-color: #cb2027;
 }
-/* line 687, ../sass/partials/_base.scss */
+/* line 688, ../sass/partials/_base.scss */
 .social-navigation a[href*="pinterest.com"]:before {
   content: "\f210";
 }
-/* line 691, ../sass/partials/_base.scss */
+/* line 692, ../sass/partials/_base.scss */
 .social-navigation a[href*="getpocket.com"]:before {
   content: "\f224";
 }
-/* line 694, ../sass/partials/_base.scss */
+/* line 695, ../sass/partials/_base.scss */
 .social-navigation a[href*="polldaddy.com"]:before {
   content: "\f217";
 }
-/* line 697, ../sass/partials/_base.scss */
+/* line 698, ../sass/partials/_base.scss */
 .social-navigation a[href*="reddit.com"]:before {
   content: "\f222";
 }
-/* line 700, ../sass/partials/_base.scss */
+/* line 701, ../sass/partials/_base.scss */
 .social-navigation a[href*="stumbleupon.com"]:before {
   content: "\f223";
 }
-/* line 704, ../sass/partials/_base.scss */
+/* line 705, ../sass/partials/_base.scss */
 .social-navigation a[href*="tumblr.com"]:hover:before {
   background: #35465c;
   border-color: #35465c;
 }
-/* line 708, ../sass/partials/_base.scss */
+/* line 709, ../sass/partials/_base.scss */
 .social-navigation a[href*="tumblr.com"]:before {
   content: "\f214";
 }
-/* line 713, ../sass/partials/_base.scss */
+/* line 714, ../sass/partials/_base.scss */
 .social-navigation a[href*="twitter.com"]:hover:before {
   background: #55acee;
   border-color: #55acee;
 }
-/* line 717, ../sass/partials/_base.scss */
+/* line 718, ../sass/partials/_base.scss */
 .social-navigation a[href*="twitter.com"]:before {
   content: "\f202";
 }
-/* line 721, ../sass/partials/_base.scss */
+/* line 722, ../sass/partials/_base.scss */
 .social-navigation a[href*="vimeo.com"]:before {
   content: "\f212";
 }
-/* line 724, ../sass/partials/_base.scss */
+/* line 725, ../sass/partials/_base.scss */
 .social-navigation a[href*="wordpress.com"]:before, .social-navigation a[href*="wordpress.org"]:before {
   content: "\f205";
 }
-/* line 729, ../sass/partials/_base.scss */
+/* line 730, ../sass/partials/_base.scss */
 .social-navigation a[href*="youtube.com"]:hover:before {
   background: #FF0000;
   border-color: #FF0000;
 }
-/* line 733, ../sass/partials/_base.scss */
+/* line 734, ../sass/partials/_base.scss */
 .social-navigation a[href*="youtube.com"]:before {
   content: "\f213";
 }
-/* line 737, ../sass/partials/_base.scss */
+/* line 738, ../sass/partials/_base.scss */
 .social-navigation a[href*="mailto:"]:before {
   content: "\f410";
 }
-/* line 740, ../sass/partials/_base.scss */
+/* line 741, ../sass/partials/_base.scss */
 .social-navigation a[href*="spotify.com"]:before {
   content: "\f515";
 }
-/* line 743, ../sass/partials/_base.scss */
+/* line 744, ../sass/partials/_base.scss */
 .social-navigation a[href*="twitch.tv"]:before {
   content: "\f516";
 }
-/* line 746, ../sass/partials/_base.scss */
+/* line 747, ../sass/partials/_base.scss */
 .social-navigation a[href$="/feed/"]:before {
   content: "\f413";
 }
-/* line 749, ../sass/partials/_base.scss */
+/* line 750, ../sass/partials/_base.scss */
 .social-navigation a[href*="path.com"]:before {
   content: "\f219";
 }
-/* line 752, ../sass/partials/_base.scss */
+/* line 753, ../sass/partials/_base.scss */
 .social-navigation a[href*="skype.com"]:before {
   content: "\f220";
 }
@@ -942,6 +943,11 @@ header .top p, header .top * {
   .slick h4 {
     font-weight: 700;
     text-transform: uppercase;
+  }
+
+  /* line 38, ../sass/partials/_481.scss */
+  .site-footer .social-navigation {
+    margin-right: 0;
   }
 }
 @media only screen and (min-width: 769px) {

@@ -110,20 +110,27 @@ header {
  * 11.0 - Content
  */
 
-.header {
-  margin-top: 25px;
-  padding: 75px 0;
-  text-align: center;
-  background-position: center; 
-  background-size: cover; 
-}
-
-.page .entry-footer {
-	display: block;
-	clear: both;
+.header, .page-header.visual {
+	color: #fff;
+	margin-top: 25px;
+	padding: 75px 0;
 	text-align: center;
+	background-position: center; 
+	background-size: cover; 
 }
-
+.page-header.visual {
+	h1 {
+		font-size: 3em;
+		line-height: 1.3em;
+		border-bottom: 1px solid;
+		display: inline-block;
+		margin-bottom: .5em;
+		padding-bottom: .5em;
+	}
+	p {
+		font-size: 1.5em;
+	}
+}
 .page-template-parent-page {
 	&.has-sidebar .content-area {
 		float: none;
@@ -145,6 +152,12 @@ header {
 			font-size: 1.5em;
 		}
 	}
+}
+
+.page .entry-footer {
+	display: block;
+	clear: both;
+	text-align: center;
 }
 
 .site-inner {

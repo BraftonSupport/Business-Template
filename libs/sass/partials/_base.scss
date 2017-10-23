@@ -167,9 +167,6 @@ header {
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#1a000000',GradientType=1 );
 		}
 	}
-	.site-main > section.list + section.list {
-		padding-top: 0;
-	}
 }
 .container { 
 	-webkit-flex-wrap: wrap;
@@ -496,7 +493,7 @@ header {
 	}
 	> div {
 		max-width: 350px;
-		margin: 2% auto;
+		margin: 0 auto 2%;
 		img {
 			margin-bottom: 15px;
 		}

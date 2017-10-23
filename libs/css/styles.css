@@ -183,7 +183,7 @@ header .top p, header .top * {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#1a000000',GradientType=1 );
 }
 /* line 167, ../sass/partials/_base.scss */
-.page-template-parent-page .site-main > section + section.list {
+.page-template-parent-page .site-main > section.list + section.list {
   padding-top: 0;
 }
 

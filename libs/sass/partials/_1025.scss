@@ -9,6 +9,9 @@
     font-size: 1.75rem;
     line-height: 1.25;
 }
+.scrolled .main-navigation .primary-menu > li > a {
+	font-size: 16px;
+}
 
 /* content */
 
@@ -16,6 +19,9 @@
 	max-width: 1000px;
 }
 .list .container {
+	> div {
+		max-width: 350px;
+	}
 	&.count4>div {
 		-webkit-flex: 0 1 24%;
 		-ms-flex: 0 1 24%;

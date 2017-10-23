@@ -1,4 +1,7 @@
 .site-branding {
+	-webkit-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
 	margin: 0;
 	text-align: left;
 }
@@ -9,6 +12,19 @@
     flex: 0 1 70%;
 }
 
+.page-template-parent-page {
+	.header,
+	.site-main > section:first-of-type {
+		h1 {
+			font-size: 2em;
+			line-height: 1.3em;
+		}
+		p {
+			font-size: 1.25em;
+		}
+	}
+}
+
 .slider {
 	padding: 1em 0 3em;
 }
@@ -16,5 +32,10 @@
 	h4 {
 		font-weight: 700;
 		text-transform: uppercase;
+	}
+}
+.site-footer {
+	.social-navigation {
+		margin-right: 0;
 	}
 }

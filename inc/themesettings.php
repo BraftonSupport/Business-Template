@@ -251,6 +251,14 @@ function businesstheme_site_options( $wp_customize ) {
 	'section'  => 'title_tagline',
 	'settings' => 'businesstheme_logo',
 	) ) );
+
+	$wp_customize->add_setting( 'businesstheme_footerlogo' );
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'businesstheme_footerlogo', array(
+	'label' => __( 'Logo in the Footer' ),
+	'section'  => 'title_tagline',
+	'settings' => 'businesstheme_footerlogo',
+	) ) );
 }
 
 add_action('customize_register', 'businesstheme_site_options');

@@ -833,13 +833,6 @@ a:active,
 	position: relative;
 }
 
-.main-navigation a {
-	display: block;
-	line-height: 1.3125;
-	outline-offset: -1px;
-	padding: 0.84375em 0;
-}
-
 .main-navigation a:hover,
 .main-navigation a:focus {
 	color: #007acc;
@@ -2136,18 +2129,18 @@ body:not(.search-results) .entry-summary > :last-child,
 	margin-bottom: 0.5384615385em;
 	text-transform: uppercase;
 }
-
+/* 
 .ssb-social { height: 30px; line-height: 30px; margin-bottom: 15px; }
 .ssb-social span { font-size: 80%; margin: 0 10px; text-transform: uppercase; }
 .ssb-social a { text-align: center; padding: 4px 0; }
 .ssb-social a:hover { text-align: center; color: #fff; padding: 4px 0; color: #fff; }
-.ssb-social a i { width: 30px; }
-.ssb-social .ssb-facebook:hover { background: #3b5998; }
+.ssb-social a i { width: 30px; } */
+/* .social-navigation .ssb-facebook:hover { background: #3b5998; }
 .ssb-social .ssb-twitter:hover { background: #55acee; }
 .ssb-social .ssb-googleplus:hover { background: #dd4b39; }
 .ssb-social .ssb-linked:hover { background: #007bb5; }
 .ssb-social .ssb-pinterest:hover { background: #cb2027; }
-.ssb-social .ssb-email:hover { background: rgba(0,0,0, .15); }
+.ssb-social .ssb-email:hover { background: rgba(0,0,0, .15); } */
 
 /**
  * IE8 and earlier will drop any block with CSS3 selectors.
@@ -2615,7 +2608,6 @@ p > video {
 }
 
 .wp-caption .wp-caption-text {
-	color: #686868;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-style: italic;
@@ -3086,6 +3078,7 @@ p > video {
 	.main-navigation .menu-item-has-children > a:after {
 		content: "\f431";
 		position: absolute;
+		top: 12px;
 	}
 
 	.main-navigation ul ul .menu-item-has-children > a {
@@ -3342,9 +3335,6 @@ p > video {
 
 	.compact {
 		max-width: 75%;
-	}
-	.row .container {
-		max-width: 1000px;
 	}
 
 	.image-navigation {
@@ -3643,7 +3633,6 @@ p > video {
 	.row .fourth, .row .third, .row .half, .row .twothirds, .row .threefourths { width: 100%; margin-right: 0; }
 	.site-info .dropdown-toggle { height: 30px; }
 	.site-footer .social-navigation li { float: right; }
-	.site-footer .site-title { float:left; width: 50%; }
 }
 
 @media (max-width: 736px) {

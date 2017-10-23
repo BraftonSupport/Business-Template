@@ -602,7 +602,6 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	.entry-footer a:hover,
 	.entry-footer a:focus,
 	.sticky-post,
-	.taxonomy-description,
 	.entry-caption,
 	.comment-metadata,
 	.pingback .edit-link,
@@ -613,7 +612,6 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	.comment-awaiting-moderation,
 	.logged-in-as,
 	.form-allowed-tags,
-	.wp-caption .wp-caption-text,
 	.gallery-caption,
 	.widecolumn label,
 	.widecolumn .mu_register label,
@@ -702,15 +700,16 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a,
 	header .top a,
 	.site-footer a,
-	.social-navigation a {
+	.social-navigation a,
+	.social-navigation a:hover,
+	.social-navigation a:hover::before {
 		color: {$colors['secondary_link_color']};
 	}
 
 	.simple .entry-footer a:hover,
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a:hover,
 	header .top a:hover,
-	.site-footer a:hover,
-	.social-navigation a:hover {
+	.site-footer a:hover{
 		color: {$colors['secondary_link_hover_color']};
 	}
 
@@ -1111,7 +1110,6 @@ function businesstheme_link_hover_color_css() {
 		.site-description,
 		.author-bio,
 		.sticky-post,
-		.taxonomy-description,
 		.entry-caption,
 		.comment-metadata,
 		.pingback .edit-link,
@@ -1122,7 +1120,6 @@ function businesstheme_link_hover_color_css() {
 		.comment-awaiting-moderation,
 		.logged-in-as,
 		.form-allowed-tags,
-		.wp-caption .wp-caption-text,
 		.gallery-caption,
 		.widecolumn label,
 		.widecolumn .mu_register label,
@@ -1291,7 +1288,8 @@ function businesstheme_secondary_link_color_css() {
 		header .top a,
 		.social-navigation a,
 		.site-footer a,
-		.social-navigation a {
+		.social-navigation a:hover,
+		.social-navigation a:hover::before {
 			color: %1$s;
 		}
 	';
@@ -1329,8 +1327,7 @@ function businesstheme_secondary_link_hover_color_css() {
 		.simple .entry-footer a:hover,
 		body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a:hover,
 		header .top a:hover,
-		.site-footer a:hover,
-		.social-navigation a:hover {
+		.site-footer a:hover{
 			color: %1$s;
 		}
 	';

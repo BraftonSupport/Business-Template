@@ -142,6 +142,29 @@
 				'media_upload' => 'yes',
 			),
 			array (
+				'key' => 'field_5931b7574ea13',
+				'label' => 'Video Url',
+				'name' => 'video',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '==',
+							'value' => 'visual',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'none',
+				'maxlength' => '',
+			),
+			array (
 				'key' => 'field_593825bebc0bb',
 				'label' => 'Button?',
 				'name' => 'visual_button',
@@ -172,28 +195,6 @@
 				),
 				'default_value' => '',
 				'layout' => 'horizontal',
-			),			array (
-				'key' => 'field_5931b7574ea13',
-				'label' => 'Video Url',
-				'name' => 'video',
-				'type' => 'text',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_592324b7840bb',
-							'operator' => '==',
-							'value' => 'visual',
-						),
-					),
-					'allorany' => 'all',
-				),
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'none',
-				'maxlength' => '',
 			),
 			array (
 				'key' => 'field_59234671b70d7',
@@ -219,6 +220,28 @@
 				'maxlength' => '',
 			),
 			array (
+				'key' => 'field_59234699b70d8',
+				'label' => 'Link',
+				'name' => 'visual_button_link',
+				'type' => 'page_link',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_593825bebc0bb',
+							'operator' => '==',
+							'value' => 'Show button',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'post_type' => array (
+					0 => 'all',
+				),
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
 				'key' => 'field_59234671b70d7aw43',
 				'label' => 'Add Classes',
 				'name' => 'visual_button_classes',
@@ -240,31 +263,6 @@
 				'append' => '',
 				'formatting' => 'html',
 				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_59234699b70d8',
-				'label' => 'Link',
-				'name' => 'visual_button_link',
-				'type' => 'page_link',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_593825bebc0bb',
-							'operator' => '==',
-							'value' => 'Show button',
-						),
-					),
-					'allorany' => 'all',
-				),
-				'post_type' => array (
-					0 => 'all',
-					1 => 'post',
-					2 => 'page',
-					3 => 'attachment',
-				),
-				'allow_null' => 0,
-				'multiple' => 0,
 			),
 			array (
 				'key' => 'field_5924aaf852c2d',
@@ -337,6 +335,34 @@
 					2 => 'post_title',
 				),
 				'max' => 5,
+			),
+			array (
+				'key' => 'field_59e12f72f80f8',
+				'label' => 'taxonomy',
+				'name' => 'taxonomy',
+				'type' => 'taxonomy',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5924aaf852c2d',
+							'operator' => '==',
+							'value' => 'choose',
+						),
+						array (
+							'field' => 'field_593ed342a9ba0',
+							'operator' => '==',
+							'value' => 'choose',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'taxonomy' => 'category',
+				'field_type' => 'checkbox',
+				'allow_null' => 0,
+				'load_save_terms' => 0,
+				'return_format' => 'id',
+				'multiple' => 0,
 			),
 			array (
 				'key' => 'field_5924ab7daa9e7',
@@ -659,7 +685,7 @@
 			),
 			array (
 				'key' => 'field_594032598fab4',
-				'label' => 'Address Line 1',
+				'label' => 'Address',
 				'name' => 'map_address_1',
 				'type' => 'text',
 				'conditional_logic' => array (
@@ -750,10 +776,10 @@
 				'maxlength' => '',
 			),
 			array (
-				'key' => 'field_594c32277eab3',
-				'label' => 'Toll Free',
-				'name' => 'map_tollfree',
-				'type' => 'text',
+				'key' => 'field_59e4ec2c4bbcd',
+				'label' => 'More phone numbers?',
+				'name' => 'more_phone',
+				'type' => 'checkbox',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -765,8 +791,76 @@
 					),
 					'allorany' => 'all',
 				),
+				'choices' => array (
+					'More' => 'More',
+				),
 				'default_value' => '',
-				'placeholder' => '',
+				'layout' => 'horizontal',
+			),
+			array (
+				'key' => 'field_594c32277eab3',
+				'label' => 'Phone 2',
+				'name' => 'map_phone_2',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_59e4ec2c4bbcd',
+							'operator' => '==',
+							'value' => 'More',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => 'Toll Free',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_59e4ea88454fd',
+				'label' => 'Phone 2 Number',
+				'name' => 'map_phone_2_number',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_59e4ec2c4bbcd',
+							'operator' => '==',
+							'value' => 'More',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '123-123-1234',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_59e4eaea454ff',
+				'label' => 'Phone 3',
+				'name' => 'map_phone_3',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_59e4ec2c4bbcd',
+							'operator' => '==',
+							'value' => 'More',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => 'Fax',
 				'prepend' => '',
 				'append' => '',
 				'formatting' => 'html',
@@ -774,22 +868,22 @@
 			),
 			array (
 				'key' => 'field_594c323f7eab4',
-				'label' => 'Fax',
-				'name' => 'map_fax',
+				'label' => 'Phone 3 Number',
+				'name' => 'map_phone_3_number',
 				'type' => 'text',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_592324b7840bb',
+							'field' => 'field_59e4ec2c4bbcd',
 							'operator' => '==',
-							'value' => 'map',
+							'value' => 'More',
 						),
 					),
 					'allorany' => 'all',
 				),
 				'default_value' => '',
-				'placeholder' => '',
+				'placeholder' => '123-123-1234',
 				'prepend' => '',
 				'append' => '',
 				'formatting' => 'html',
@@ -797,16 +891,16 @@
 			),
 			array (
 				'key' => 'field_594c324b7eab5',
-				'label' => 'Phone Other',
-				'name' => 'map_phone_field',
+				'label' => 'Phone 4',
+				'name' => 'map_phone_4',
 				'type' => 'text',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_592324b7840bb',
+							'field' => 'field_59e4ec2c4bbcd',
 							'operator' => '==',
-							'value' => 'map',
+							'value' => 'More',
 						),
 					),
 					'allorany' => 'all',
@@ -820,22 +914,22 @@
 			),
 			array (
 				'key' => 'field_594c32647eab6',
-				'label' => 'Phone Other Phone',
-				'name' => 'map_other_phone',
+				'label' => 'Phone 4 Number',
+				'name' => 'map_phone_4_number',
 				'type' => 'text',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_592324b7840bb',
+							'field' => 'field_59e4ec2c4bbcd',
 							'operator' => '==',
-							'value' => 'map',
+							'value' => 'More',
 						),
 					),
 					'allorany' => 'all',
 				),
 				'default_value' => '',
-				'placeholder' => '',
+				'placeholder' => '123-123-1234',
 				'prepend' => '',
 				'append' => '',
 				'formatting' => 'html',
@@ -858,13 +952,13 @@
 					'allorany' => 'all',
 				),
 				'default_value' => '',
-				'placeholder' => '',
+				'placeholder' => 'info@website.com',
 				'prepend' => '',
 				'append' => '',
 			),
 			array (
 				'key' => 'field_594c32e3805a6',
-				'label' => 'Email 2 Field',
+				'label' => 'Email 2',
 				'name' => 'map_email2_field',
 				'type' => 'text',
 				'conditional_logic' => array (
@@ -879,7 +973,7 @@
 					'allorany' => 'all',
 				),
 				'default_value' => '',
-				'placeholder' => 'Label',
+				'placeholder' => 'Sales',
 				'prepend' => '',
 				'append' => '',
 				'formatting' => 'html',
@@ -902,7 +996,7 @@
 					'allorany' => 'all',
 				),
 				'default_value' => '',
-				'placeholder' => '',
+				'placeholder' => 'sales@website.com',
 				'prepend' => '',
 				'append' => '',
 			),
@@ -923,7 +1017,7 @@
 					'allorany' => 'all',
 				),
 				'default_value' => '',
-				'placeholder' => 'Label',
+				'placeholder' => 'Support',
 				'prepend' => '',
 				'append' => '',
 				'formatting' => 'html',
@@ -946,7 +1040,7 @@
 					'allorany' => 'all',
 				),
 				'default_value' => '',
-				'placeholder' => '',
+				'placeholder' => 'support@website.com',
 				'prepend' => '',
 				'append' => '',
 			),
@@ -1021,7 +1115,7 @@
 			),
 		),
 		'options' => array (
-			'position' => 'normal',
+			'position' => 'high',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
 				0 => 'the_content',

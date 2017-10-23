@@ -3078,7 +3078,6 @@ p > video {
 	.main-navigation .menu-item-has-children > a:after {
 		content: "\f431";
 		position: absolute;
-		top: 12px;
 	}
 
 	.main-navigation ul ul .menu-item-has-children > a {

@@ -100,7 +100,7 @@ if ($section_class){
 		'pagelink'	=> '<span class="screen-reader-text">' . __( 'Page', 'businesstheme' ) . ' </span>%',
 		'separator'   => '<span class="screen-reader-text">, </span>',
 	) );
-	wp_reset_query(); 
+	wp_reset_query();
 	?>
 
 	<?php edit_post_link(

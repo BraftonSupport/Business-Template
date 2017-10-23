@@ -166,6 +166,9 @@ header {
 			background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%);
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#1a000000',GradientType=1 );
 		}
+		+ section.list {
+			padding-top: 0;
+		}
 	}
 }
 .container { 
@@ -493,7 +496,7 @@ header {
 	}
 	> div {
 		max-width: 350px;
-		margin: 0 auto 2%;
+		margin: 30px auto;
 		img {
 			margin-bottom: 15px;
 		}

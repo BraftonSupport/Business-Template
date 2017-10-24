@@ -771,16 +771,12 @@ a:active,
 	padding: 3px 0;
 }
 
-.scrolled img.site-title { max-width: 25px; height: auto; }
 .scrolled .site-title { display: block; font-size: 16px; }
 
-.scrolled .site-description { display: none; }
 .scrolled .main-navigation .menu-main-menu-container { margin-top: 6px; }
 .scrolled .main-navigation a { font-size: 12px; }
 
 .scrolled .menu-item-has-children > a:after { top: inherit; }
-
-.site-icon { display: none; }
 
 
 .site-header-main .widget {

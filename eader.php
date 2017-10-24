@@ -94,26 +94,32 @@ if(is_single()) {
 			} ?>
 			<div class="container site-inner site-header-main<?php if (!empty($options['nav'])) { echo ' '.$options['nav']; } ?>">
 				<div class="site-branding">
-					<?php if ( get_theme_mod( 'businesstheme_logo' ) ) { ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php
-							// set the image url
-							$image_url = esc_url( get_theme_mod( 'businesstheme_logo' ) );
-						 
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php   $footerlogo = get_theme_mod( 'businesstheme_footerlogo' );
+								$headerlogo = get_theme_mod( 'businesstheme_logo' );
+					
+						if ( $footerlogo || $headerlogo ) {
+							if ( $footerlogo ) {
+								// set the image url
+								$image_url = esc_url( $footerlogo );
+							} elseif ( $headerlogo ) {
+								// set the image url
+								$image_url = esc_url( $headerlogo );
+							}
 							// store the image ID in a var
 							$image_id = businesstheme_get_image_id($image_url);
-									 
 							// retrieve the thumbnail size of our image
 							$image_thumb = wp_get_attachment_image_src($image_id, 'medium'); ?>
-
+					
 							<img src='<?php echo $image_thumb[0]; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title">
-							<?php if ( has_site_icon() ){ ?>
-								<img src='<?php echo get_site_icon_url( 32 ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-icon">
-							<?php } ?>
-						</a>
-					<?php } else { ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php }	?>
+					
+							<?php //if ( has_site_icon() ){ ?>
+								<!-- <img src='<?php //echo get_site_icon_url( 32 ); ?>' alt='<?php //echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-icon"> -->
+							<?php //} ?>
+						<?php } else { ?>
+							<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+						<?php }	?>
+					</a>
 				</div><!-- .site-branding -->
 
 				<div class="nextwidget">

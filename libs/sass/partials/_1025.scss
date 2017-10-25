@@ -3,8 +3,9 @@
 	a {
 		padding: 0.25em 0.75em;
 	}
-	ul ul {
+	ul ul a {
 		min-width: 200px;
+		display: block;
 	}
 	.primary-menu > li > a {
 		padding: 0.65625em 0 0 0.875em;

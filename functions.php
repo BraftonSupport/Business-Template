@@ -718,29 +718,36 @@ function post_res($posts, $query){
 		),
 		'menu_order' => 0,
 	));
-	//hides content on parent page
-	// register_field_group(array (
-	// 	'id' => 'acf_parent',
-	// 	'title' => 'parent',
-	// 	'fields' => array (
-	// 	),
-	// 	'location' => array (
-	// 		array (
-	// 			array (
-	// 				'param' => 'page_template',
-	// 				'operator' => '==',
-	// 				'value' => 'parent-page.php',
-	// 				'order_no' => 0,
-	// 				'group_no' => 0,
-	// 			),
-	// 		),
-	// 	),
-	// 	'options' => array (
-	// 		'position' => 'normal',
-	// 		'layout' => 'no_box',
-	// 		'hide_on_screen' => array (
-	// 			0 => 'the_content',
-	// 		),
-	// 	),
-	// 	'menu_order' => 0,
-	// ));
+	register_field_group(array (
+		'id' => 'acf_featured-image',
+		'title' => 'Featured Image',
+		'fields' => array (
+			array (
+				'key' => 'field_59f0fd34ba529',
+				'label' => 'Thumbnail',
+				'name' => 'thumbnail',
+				'type' => 'image',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'ef_media',
+					'operator' => '==',
+					'value' => 'all',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'side',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));

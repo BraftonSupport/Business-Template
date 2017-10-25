@@ -3265,8 +3265,7 @@ p > video {
 	}
 
 	.widget input[type="search"].search-field {
-		width: -webkit-calc(100% - 35px);
-		width: calc(100% - 35px);
+		max-width: 300px;
 	}
 
 	.widget .search-submit:before {

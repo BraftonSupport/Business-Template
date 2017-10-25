@@ -3002,7 +3002,6 @@ p > video {
 	.main-navigation a {
 		outline-offset: -8px;
 		white-space: nowrap;
-		padding: 0.65625em 0.875em;
 	}
 	.main-navigation .primary-menu > li > a {
 		padding: 0.65625em 0 0 0.875em;
@@ -3061,7 +3060,7 @@ p > video {
 	.main-navigation li:hover > ul,
 	.main-navigation li.focus > ul {
 		left: auto;
-		right: -1px;
+		right: -3px;
 	}
 
 	.main-navigation ul ul li:hover > ul,
@@ -3265,8 +3264,7 @@ p > video {
 	}
 
 	.widget input[type="search"].search-field {
-		width: -webkit-calc(100% - 35px);
-		width: calc(100% - 35px);
+		max-width: 300px;
 	}
 
 	.widget .search-submit:before {

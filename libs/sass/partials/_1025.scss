@@ -1,8 +1,16 @@
 /* header */
-.main-navigation .primary-menu > li > a {
-    padding: 0.65625em 0 0 0.875em;
-    font-size: 16px;
-	font-size: 1rem;
+.main-navigation {
+	a {
+		padding: 0.25em 0.75em;
+	}
+	ul ul {
+		min-width: 200px;
+	}
+	.primary-menu > li > a {
+		padding: 0.65625em 0 0 0.875em;
+		font-size: 16px;
+		font-size: 1rem;
+	}
 }
 .site-title {
     font-size: 28px;
@@ -10,7 +18,8 @@
     line-height: 1.25;
 }
 .scrolled .main-navigation .primary-menu > li > a {
-	font-size: 16px;
+	font-size: 15px;
+	padding: 0.65625em 0.875em;
 }
 
 /* content */

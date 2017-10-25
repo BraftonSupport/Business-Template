@@ -29,6 +29,7 @@ header {
 .main-navigation {
 	ul ul a {
 		font-size: 15px;
+		line-height: 2em;
 	}
 	.menu-item-has-children > a {
 		margin-right: 45px;
@@ -120,7 +121,7 @@ header {
 		flex: 0 1 auto;
 	}
 	+ .site-content {
-		margin-top: 150px;
+		margin-top: 125px;
 	}
 }
 

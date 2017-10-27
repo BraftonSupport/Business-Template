@@ -18,24 +18,61 @@ This is where you change the basic info of your site. You can find this page und
 * Shortcode Guide correct but incomplete.
 
 
-### Quickstart ###
-Note: Doesn't work locally, I dunno.
+### Building a Page ###
+Note: Images doesn't work locally yet.
 
 How to build a page:
-1. Build out a parent page using the parent template.
-2. Build a child page with the parent page as parent and using the subsection template.
+1. Add a New Page, set template to Parent page, publish.
+2. To add a new subsection to the page, Add a New Page, set template to Subsection page, with the page in step 1 as parent.
   * There are 7 types of subsections:
-    1. Visual (banner)
+    1. Visual (banner)    
     2. Services or List
     3. Validation (slider)
-    4. Half
+    4. Half ( half image and half text )
     5. Full
     6. CTA
     7. Map
-  * Select a color or a Featured Image to use as the background of a section. The Visual subsection can also use a video url as the background.
   * You can change the order the subsections appear in the page attributes.
-  * The tracking doesn't work. ¯\\(•_•)/¯
 
+
+### Explaining the Subsections ###
+* On the sidebar on the right, you can change the background, text color, whether or not it has a shadow to separate it from the next subsection. You can also add a class to every subsection. Select a color or a Featured Image to use as the background of a section.
+* If you don't choose a background color or image, the subsection will have a slight gradient on it by default.
+* The tracking doesn't work yet. ¯\\(•_•)/¯
+
+Steps to building out the **Visual** Subsection:
+1. Enter title (something like "banner" would do, to describe which part of the page it is.)
+2. From the Front page subsections dropdown, pick Visual.
+3. To show a title, click the Show Title checkbox to add Title.
+4. To add a paragraph, use the Intro Text.
+5. To add a video background, put the url of the video in the Video Url.
+6. Click Show Button to add a button.
+    * Add Text to the button
+    * Choose the Link where the button goes to.
+    * Optional: adding classes to the button.
+The text should be automatically centered.
+
+Options unique to **Services or List** Subsection:
+1. Type - You can *Choose* from a list of posts (which includes pages, blog posts, media, and other custom post types) or a number of *Recent* posts from a post type.
+2. If you picked Choose, you can choose up to 5 pages, posts, etc.
+3. Recent would show recent posts of that particular post type. You can also change the number of posts shown.
+4. Show - you can change which shows up from the posts: including Featured Image, Title, Excerpt, and Read More button. There is also a choice to round the featured image.
+
+**Validation** Subsection:
+This is similar to the Services subsection but with less options. These show up as a slider.
+
+**Half** Subsection:
+Choose an Image, Text Position, Text.
+
+**Full** Subsection:
+This is just a full width text block. Unlike the Visual subsection text is not centered.
+
+**CTA** Subsection:
+This is is similar to the Visual subsection but the button is to the side if there is a title or intro text.
+
+**Map** Subsection:
+Adding an address will also add a map. It does require a Google API Key to work though.
+You can add extra phone numbers and emails as necessary.
 
 ### Extras ###
 

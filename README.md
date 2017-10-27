@@ -33,12 +33,20 @@ How to build a page:
     7. Map
   * Select a color or a Featured Image to use as the background of a section. The Visual subsection can also use a video url as the background.
   * You can change the order the subsections appear in the page attributes.
-  * Pdfs can have featured images that will show up when they are added to the List subsection.
-  * Categories can have banners, when you edit the category there's an option to add a featured image.
-  * The tracking doesn't work. I don't even know why thats an option.
+  * The tracking doesn't work. ¯\\(•_•)/¯
 
-#### How to add Social Media in the footer: ####
-Just start adding them as custom links and make the Display Location as Social Links Menu.
+
+### Extras ###
+
+**How to add Social Media in the footer:**
+* Just start adding them as custom links and make the Display Location as Social Links Menu.
+
+**Custom Widgets:**
+* Contact Info, and Headlines on Homepage  
+
+**Featured Images**
+* Pdfs can have featured images that will show up when they are added to the List subsection.
+* Categories can have banners, when you edit the category there's an option to add a featured image.
 
 
 ### Who do I talk to? ###

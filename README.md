@@ -20,6 +20,7 @@ This is where you change the basic info of your site. You can find this page und
 
 ### Quickstart ###
 Note: Doesn't work locally, I dunno.
+
 How to build a page:
 1. Build out a parent page using the parent template.
 2. Build a child page with the parent page as parent and using the subsection template.

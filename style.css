@@ -776,8 +776,7 @@ a:active,
 .scrolled .main-navigation .menu-main-menu-container { margin-top: 6px; }
 .scrolled .main-navigation a { font-size: 12px; }
 
-.scrolled .menu-item-has-children > a:after { top: inherit; }
-
+.site-icon { display: none; }
 
 .site-header-main .widget {
 	margin-bottom: 0;

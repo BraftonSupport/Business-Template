@@ -1,17 +1,3 @@
-@mixin border-radius($radius) {
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
-	-ms-border-radius: $radius;
-	border-radius: $radius;
-}
-@mixin transition($args...) {
-	-webkit-transition: $args;
-	-moz-transition: $args;
-	-ms-transition: $args;
-	-o-transition: $args;
-	transition: $args;
-}
-
 /* Typography */
 section:not(.widget_hoh) ul:not(.slick-dots):not(.gform_fields) {
 	list-style: none;
@@ -20,7 +6,10 @@ section:not(.widget_hoh) ul:not(.slick-dots):not(.gform_fields) {
 		display: inline-block;
 		font: normal normal normal .95em/1.95 FontAwesome;
 		margin-right: 15px;
-		@include transition(all .25s ease-in-out);
+		-webkit-transition: all .25s ease-in-out;
+		-moz-transition: all .25s ease-in-out;
+		-o-transition: all .25s ease-in-out;
+		transition: all .25s ease-in-out;
 	}
 	li:hover:before {
 		margin-right: 10px;
@@ -38,16 +27,9 @@ header {
 	}
 }
 .main-navigation {
-	a {
-		display: block;
-		outline-offset: -1px;
-		line-height: 1;
-		padding: 0.75em 0;
-	}
 	ul ul a {
-		white-space: normal;
-		width: 17em;
 		font-size: 15px;
+		line-height: 2em;
 	}
 	.menu-item-has-children > a {
 		margin-right: 45px;
@@ -61,6 +43,9 @@ header {
 }
 
 .site-branding {
+    -webkit-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
 	margin: auto;
 	text-align: center;
 }
@@ -68,10 +53,7 @@ header {
 .nextwidget {
     -webkit-flex: 1 0 70%;
     -ms-flex: 1 0 70%;
-	flex: 1 0 70%;
-	.search-form input {
-		max-width: 325px;
-	}
+    flex: 1 0 70%;
 }
 
 .next .site-header-menu {
@@ -87,12 +69,15 @@ header {
     flex: 1 0 100%;
 }
 
+.site-title.second {
+	display: none;
+}
+
 .menu-toggle {
 	display: block;
 }
 
 .site-header-menu {
-	grid-column: 2;
 	display: none;
 	&.toggled-on {
 		display: block;
@@ -100,18 +85,29 @@ header {
 }
 
 .scrolled {
+	.site-title.first {
+		display: none;
+	}
+	.site-title.second {
+		display: block;
+	}
+	img.site-title {
+		max-width: 200px;
+		max-height: 20px;
+		height: auto;
+		width: auto;
+	}
 	.site-branding {
 		float: left;
 		margin: 3px auto 3px 0;
 	}
-	.main-navigation .primary-menu > li a {
+	.main-navigation .primary-menu > li > a {
 		font-size: 13px;
-		padding: 0.65625em .75em 0.65625em 0.875em;
 	}
 	.dropdown-toggle:after {
 		top: -4px;
 	}
-	.top, .nextwidget section {
+	.site-description, .top, .nextwidget section {
 		display: none;
 	}
 	.site-header-menu {
@@ -124,54 +120,24 @@ header {
 		-ms-flex: 0 1 auto;
 		flex: 0 1 auto;
 	}
+	+ .site-content {
+		margin-top: 125px;
+	}
 }
 
 /**
  * 11.0 - Content
  */
 
-.header {
-  margin-top: 25px;
-  padding: 75px 0;
-  text-align: center;
-  background-position: center; 
-  background-size: cover; 
-}
-
-.page .entry-footer {
-	display: block;
-	clear: both;
+.header, .page-header.visual {
+	color: #fff;
+	margin-top: 25px;
+	padding: 75px 0;
 	text-align: center;
-}
-
-.page-template-parent-page {
-	&.has-sidebar .content-area {
-		float: none;
-		margin-right: 0;
-		width: 100%;
-	}
-	.header,
-	.site-main > section:first-of-type {
-		h1 {
-			font-size: 1.25em;
-			color: #fff;
-			border-bottom: 1px solid;
-			display: inline-block;
-			margin-bottom: .5em;
-			padding-bottom: .5em;
-			line-height: 1.15em;
-		}
-		p {
-			font-size: 1em;
-		}
-	}
+	background-position: center; 
+	background-size: cover; 
 }
 .page-header.visual {
-    background-size: cover;
-    background-position: center;
-    padding: 75px 0;
-    color: #fff;
-	margin-top: 25px;
 	h1 {
 		font-size: 3em;
 		line-height: 1.3em;
@@ -183,6 +149,34 @@ header {
 	p {
 		font-size: 1.5em;
 	}
+}
+.page-template-parent-page {
+	&.has-sidebar .content-area {
+		float: none;
+		margin-right: 0;
+		width: 100%;
+	}
+	.header,
+	.site-main > section:first-of-type {
+		h1 {
+			font-size: 3em;
+			color: #fff;
+			border-bottom: 1px solid;
+			display: inline-block;
+			margin-bottom: .5em;
+			padding-bottom: .5em;
+			line-height: 1.3em;
+		}
+		p {
+			font-size: 1.5em;
+		}
+	}
+}
+
+.page .entry-footer {
+	display: block;
+	clear: both;
+	text-align: center;
 }
 
 .site-inner {
@@ -201,6 +195,9 @@ header {
 			background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%);
 			background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%);
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#1a000000',GradientType=1 );
+		}
+		&.list + section.list {
+			padding-top: 0;
 		}
 	}
 }
@@ -270,6 +267,20 @@ header {
 .post-thumbnail {
 	max-height: 150px;
 	overflow: hidden;
+}
+
+.ctaimage {
+	background: url(http://design.brafton.com/ketch/wp-content/uploads/2017/06/cta.jpg) center;
+	background-size: cover;
+	display: block;
+	padding: 15px;
+	text-align: center;
+	font-size: 1.5em;
+	color: #fff;
+	opacity: .85;
+	&:hover {
+		opacity:1;
+	}
 }
 
 /* Widget */
@@ -381,7 +392,7 @@ header {
 }
 
 .round {
-	@include border-radius(50%);
+	border-radius: 50%;
 }
 
 /**
@@ -437,11 +448,14 @@ header {
 	cursor: pointer;
 	background: #000;
 	color: #fff;
-	@include border-radius(50%);
+	border-radius: 50%;
 	opacity: .25;
 	width: 32px;
 	height: 32px;
-	@include transition(all .25s ease-in-out);
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 	&:hover {
 		opacity: 1;
 	}
@@ -461,7 +475,7 @@ header {
 		display: inline;
 	}
 	button {
-		@include border-radius(50%);
+		border-radius: 50%;
 		padding: 0;
 		margin: 0 10px;
 		height: 10px;
@@ -469,7 +483,10 @@ header {
 		font-size: 0;
 		line-height: 0;
 		opacity: .25;
-		@include transition(all .25s ease-in-out);
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
 		&:hover {
 			opacity: 1;
 		}
@@ -509,7 +526,7 @@ header {
 	}
 	> div {
 		max-width: 350px;
-		margin: 0 auto 30px;
+		margin: 30px auto;
 		img {
 			margin-bottom: 15px;
 		}
@@ -545,17 +562,13 @@ header {
 .site-footer {
 	.logo {
 		margin-right: auto;
-		-webkit-flex: 0 0 50%;
-		-ms-flex: 0 0 50%;
-		flex: 0 0 50%;
 		img {
-			max-height: 35px;
+			width: 75px;
 			margin-top: 10px;
 		}
 	}
 	.social-navigation {
 		margin-left: auto;
-		margin-right: auto;
 	}
 	.container {
 		-webkit-flex-wrap: wrap;
@@ -579,7 +592,7 @@ header {
 		font-size: 12px;
 	}
 	.widget {
-		margin-bottom: 10px;
+		margin-bottom: 0;
 		-webkit-flex: 1 0 100%;
 		-ms-flex: 1 0 100%;
 		flex: 1 0 100%;
@@ -597,32 +610,28 @@ header {
 	-ms-flex: 0 0 50%;
 	flex: 0 0 50%;
 }
-
 .social-navigation {
-	list-style: none;
-	text-align: right;
-	margin: 1em 0 0 0;
+		list-style: none;
+		text-align: right;
+		margin: 1em 0 0 0;
+
 	li {
 		display: inline-block;
 		overflow: hidden;
-		height: 45px;
-		width: 45px;
-		&:last-of-type a {
+		height: 20px;
+		width: 30px;
+		&:last-of-type a{
 			margin-right: 0;
 		}
 	}
 	a {
 		display: block;
-		height: 0;
-		width: 0;
-		padding: 40px;
+		height: 40px;
 		position: relative;
+		width: 40px;
+		padding: 20px;
 		overflow: hidden;
 		&:before {
-			@include border-radius(50%);
-			@include transition(all .25s ease-in-out);
-			border: 2px solid;
-			padding: 10px;
 			content: "\f415";
 			font-size: 24px;
 			position: absolute;
@@ -641,14 +650,8 @@ header {
 		&[href*="dropbox.com"]:before {
 			content: "\f225";
 		}
-		&[href*="facebook.com"]{
-			&:hover:before {
-				background: #3b5998;
-				border-color: #3b5998;
-			}
-			&:before {
-				content: "\f204";
-			}
+		&[href*="facebook.com"]:before {
+			content: "\f203";
 		}
 		&[href*="flickr.com"]:before {
 			content: "\f211";
@@ -656,14 +659,8 @@ header {
 		&[href*="foursquare.com"]:before {
 			content: "\f226";
 		}
-		&[href*="plus.google.com"]{
-			&:hover:before {
-				background: #dd4b39;
-				border-color: #dd4b39;
-			}
-			&:before {
-				content: "\f206";
-			}
+		&[href*="plus.google.com"]:before {
+			content: "\f206";
 		}
 		&[href*="github.com"]:before {
 			content: "\f200";
@@ -671,23 +668,11 @@ header {
 		&[href*="instagram.com"]:before {
 			content: "\f215";
 		}
-		&[href*="linkedin.com"] {
-			&:hover:before {
-				background: #007bb5;
-				border-color: #007bb5;
-			}
-			&:before {
-				content: "\f207";
-			}
+		&[href*="linkedin.com"]:before {
+			content: "\f208";
 		}
-		&[href*="pinterest.com"] {
-			&:hover:before {
-				background: #cb2027;
-				border-color: #cb2027;
-			}
-			&:before {
-				content: "\f210";
-			}
+		&[href*="pinterest.com"]:before {
+			content: "\f210";
 		}
 		&[href*="getpocket.com"]:before {
 			content: "\f224";
@@ -701,23 +686,11 @@ header {
 		&[href*="stumbleupon.com"]:before {
 			content: "\f223";
 		}
-		&[href*="tumblr.com"] {
-			&:hover:before {
-				background: #35465c;
-				border-color: #35465c;
-			}
-			&:before {
-				content: "\f214";
-			}
+		&[href*="tumblr.com"]:before {
+			content: "\f214";
 		}
-		&[href*="twitter.com"] {
-			&:hover:before {
-				background: #55acee;
-				border-color: #55acee;
-			}
-			&:before {
-				content: "\f202";
-			}
+		&[href*="twitter.com"]:before {
+			content: "\f202";
 		}
 		&[href*="vimeo.com"]:before {
 			content: "\f212";
@@ -726,14 +699,8 @@ header {
 		&[href*="wordpress.org"]:before {
 			content: "\f205";
 		}
-		&[href*="youtube.com"]{
-			&:hover:before {
-				background: #FF0000;
-				border-color: #FF0000;
-			}
-			&:before {
-				content: "\f213";
-			}
+		&[href*="youtube.com"]:before {
+			content: "\f213";
 		}
 		&[href*="mailto:"]:before {
 			content: "\f410";

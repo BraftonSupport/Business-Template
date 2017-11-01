@@ -877,7 +877,7 @@ a:active,
 	position: relative;
 	width: 36px;
 	left: -8px;
-	top: 2px;
+	top: -6px;
 }
 
 .dropdown-toggle:hover,

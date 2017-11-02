@@ -64,6 +64,7 @@ if (!$url && !$bgc ) {
 				<?php if ( $featured ){
 					?>
 					<div class="list-featured-image"><?php
+					$pdfimg = get_field('thumbnail', $post)['sizes']['mediumsquared'];
 					if ( has_post_thumbnail( $post ) ){
 						echo '<a href="'.get_permalink($post->ID).'">';
 						if ( $circle ) {
@@ -72,11 +73,17 @@ if (!$url && !$bgc ) {
 							echo get_the_post_thumbnail( $post, 'mediumsquared' );
 						}
 						echo '</a>';
-					} elseif ( wp_attachment_is_image( $post ) ) {
+					} elseif ( wp_attachment_is_image( $post ) ) { 
 						if ( $circle ) {
 							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'" class="round">';
 						} else {
 							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'">';
+						}
+					} elseif ($pdfimg) {
+						if ( $circle ) {
+							echo '<img src="'.$pdfimg.'" class="round">';
+						} else {
+							echo '<img src="'.$pdfimg.'">';
 						}
 					}
 					?></div><?php

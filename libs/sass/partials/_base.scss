@@ -29,6 +29,7 @@ header {
 .main-navigation {
 	ul ul a {
 		font-size: 15px;
+		line-height: 2em;
 	}
 	.menu-item-has-children > a {
 		margin-right: 45px;
@@ -68,6 +69,10 @@ header {
     flex: 1 0 100%;
 }
 
+.site-title.second {
+	display: none;
+}
+
 .menu-toggle {
 	display: block;
 }
@@ -80,18 +85,26 @@ header {
 }
 
 .scrolled {
+	.site-title.first {
+		display: none;
+	}
+	.site-title.second {
+		display: block;
+	}
+	img.site-title {
+		max-width: 200px;
+		max-height: 20px;
+		height: auto;
+		width: auto;
+	}
 	.site-branding {
 		float: left;
 		margin: 3px auto 3px 0;
 	}
 	.main-navigation .primary-menu > li > a {
 		font-size: 13px;
-		padding: 0.65625em 3.75em 0.65625em 0.875em;
 	}
-	.dropdown-toggle:after {
-		top: -4px;
-	}
-	.top, .nextwidget section {
+	.site-description, .top, .nextwidget section {
 		display: none;
 	}
 	.site-header-menu {
@@ -104,26 +117,36 @@ header {
 		-ms-flex: 0 1 auto;
 		flex: 0 1 auto;
 	}
+	+ .site-content {
+		margin-top: 125px;
+	}
 }
 
 /**
  * 11.0 - Content
  */
 
-.header {
-  margin-top: 25px;
-  padding: 75px 0;
-  text-align: center;
-  background-position: center; 
-  background-size: cover; 
-}
-
-.page .entry-footer {
-	display: block;
-	clear: both;
+.header, .page-header.visual {
+	color: #fff;
+	margin-top: 25px;
+	padding: 75px 0;
 	text-align: center;
+	background-position: center; 
+	background-size: cover; 
 }
-
+.page-header.visual {
+	h1 {
+		font-size: 3em;
+		line-height: 1.3em;
+		border-bottom: 1px solid;
+		display: inline-block;
+		margin-bottom: .5em;
+		padding-bottom: .5em;
+	}
+	p {
+		font-size: 1.5em;
+	}
+}
 .page-template-parent-page {
 	&.has-sidebar .content-area {
 		float: none;
@@ -145,6 +168,12 @@ header {
 			font-size: 1.5em;
 		}
 	}
+}
+
+.page .entry-footer {
+	display: block;
+	clear: both;
+	text-align: center;
 }
 
 .site-inner {

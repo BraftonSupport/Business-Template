@@ -87,9 +87,9 @@ if ($section_class){
 			echo '<p><strong>'.$email3_field.':</strong><br/><a href="mailto:'.$email3.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email3.'</a></p>';
 		}
 		echo '</div><iframe src="//www.google.com/maps/embed/v1/place?q='.$address1;
-			if ( $address2 ) { echo ', '.$address2; }
-			if ( $address3 ) { echo ', '.$address3; }
-		echo $address3.'&zoom=12&key='.$api.'" class="half" style="border:none;"></iframe></div>';
+			if ( $address2 ) { echo ' '.$address2; }
+			if ( $address3 ) { echo ' '.$address3; }
+		echo '&zoom=12&key='.$api.'" class="half" style="border:none;"></iframe></div>';
 	}
 
 	wp_link_pages( array(

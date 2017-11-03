@@ -699,6 +699,7 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a,
 	header .top a,
 	.site-header.scrolled .primary-menu > li > a,
+	.scrolled .dropdown-toggle:after,
 	.site-footer a,
 	.social-navigation a,
 	.social-navigation a:hover,
@@ -1288,7 +1289,8 @@ function businesstheme_secondary_link_color_css() {
 		.site-footer a,
 		.social-navigation a:hover,
 		.social-navigation a:hover::before,
-		.site-header.scrolled .primary-menu > li > a {
+		.site-header.scrolled .primary-menu > li > a,
+		.scrolled .dropdown-toggle:after {
 			color: %1$s;
 		}
 	';

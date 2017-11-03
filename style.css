@@ -862,7 +862,6 @@ a:active,
 	border-radius: 0;
 	color: #1a1a1a;
 	content: "";
-	height: 36px;
 	padding: 0;
 	position: absolute;
 	right: 0;
@@ -1696,9 +1695,6 @@ footer .container,
 .menu-toggle {
 	width: inherit;
 	margin: 10px 0 10px auto;
-	background-color: transparent;
-	border: 1px solid #d1d1d1;
-	color: #1a1a1a;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	padding: 0.769230769em;

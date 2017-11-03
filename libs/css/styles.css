@@ -59,7 +59,12 @@ header .top p, header .top * {
   flex: 1 0 70%;
 }
 
-/* line 59, ../sass/partials/_base.scss */
+/* line 58, ../sass/partials/_base.scss */
+.site-header .next a {
+  display: inline-block;
+}
+
+/* line 61, ../sass/partials/_base.scss */
 .next .site-header-menu {
   text-align: right;
   -webkit-flex: 1 0 70%;
@@ -67,53 +72,53 @@ header .top p, header .top * {
   flex: 1 0 70%;
 }
 
-/* line 66, ../sass/partials/_base.scss */
+/* line 68, ../sass/partials/_base.scss */
 .below .site-header-menu {
   -webkit-flex: 1 0 100%;
   -ms-flex: 1 0 100%;
   flex: 1 0 100%;
 }
 
-/* line 72, ../sass/partials/_base.scss */
+/* line 74, ../sass/partials/_base.scss */
 .site-title.second {
   display: none;
 }
 
-/* line 76, ../sass/partials/_base.scss */
+/* line 78, ../sass/partials/_base.scss */
 .menu-toggle {
   display: block;
 }
 
-/* line 80, ../sass/partials/_base.scss */
+/* line 82, ../sass/partials/_base.scss */
 .site-header-menu {
   display: none;
 }
-/* line 82, ../sass/partials/_base.scss */
+/* line 84, ../sass/partials/_base.scss */
 .site-header-menu.toggled-on {
   display: block;
 }
 
-/* line 88, ../sass/partials/_base.scss */
+/* line 90, ../sass/partials/_base.scss */
 .scrolled .site-title.first {
   display: none;
 }
-/* line 91, ../sass/partials/_base.scss */
+/* line 93, ../sass/partials/_base.scss */
 .scrolled .site-title.second {
   display: block;
 }
-/* line 94, ../sass/partials/_base.scss */
+/* line 96, ../sass/partials/_base.scss */
 .scrolled img.site-title {
   max-width: 200px;
   max-height: 20px;
   height: auto;
   width: auto;
 }
-/* line 100, ../sass/partials/_base.scss */
+/* line 102, ../sass/partials/_base.scss */
 .scrolled .site-branding {
   float: left;
   margin: 3px auto 3px 0;
 }
-/* line 104, ../sass/partials/_base.scss */
+/* line 106, ../sass/partials/_base.scss */
 .scrolled .main-navigation .primary-menu > li > a {
   font-size: 13px;
 }

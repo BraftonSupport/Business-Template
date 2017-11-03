@@ -55,7 +55,9 @@ header {
     -ms-flex: 1 0 70%;
     flex: 1 0 70%;
 }
-
+.site-header .next a {
+	display: inline-block;
+}
 .next .site-header-menu {
 	text-align: right;
     -webkit-flex: 1 0 70%;

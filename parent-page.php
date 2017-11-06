@@ -1,7 +1,7 @@
 <?php
 if(!session_id()) session_start();
 /**
-* Template Name: Parent page
+* Template Name: Parent
  * The template for displaying pages
  *
  * This is the template that displays all pages by default.

@@ -20,7 +20,7 @@
 					'allorany' => 'all',
 				),
 				'choices' => array (
-					'Show Title?' => 'Show Title?',
+					'Show Title?' => '',
 				),
 				'default_value' => '',
 				'layout' => 'horizontal',
@@ -117,6 +117,28 @@
 				'layout' => 'horizontal',
 			),
 			array (
+				'key' => 'field_5a021f1733871',
+				'label' => 'Show Intro Text',
+				'name' => 'show_intro_title',
+				'type' => 'checkbox',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_592324b7840bb',
+							'operator' => '!=',
+							'value' => 'map',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'choices' => array (
+					'Show Intro?' => '',
+				),
+				'default_value' => '',
+				'layout' => 'horizontal',
+			),
+			array (
 				'key' => 'field_59234d988808d',
 				'label' => 'Intro Text',
 				'name' => 'visual_intro_text',
@@ -125,14 +147,9 @@
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_592324b7840bb',
-							'operator' => '!=',
-							'value' => 'half',
-						),
-						array (
-							'field' => 'field_592324b7840bb',
-							'operator' => '!=',
-							'value' => 'map',
+							'field' => 'field_5a021f1733871',
+							'operator' => '==',
+							'value' => 'Show Intro?',
 						),
 					),
 					'allorany' => 'all',
@@ -456,11 +473,35 @@
 				'layout' => 'horizontal',
 			),
 			array (
+				'key' => 'field_5a0224c5da7db',
+				'label' => 'Image Size',
+				'name' => 'image_size',
+				'type' => 'select',
+				'choices' => array (
+					'thumbnail' => 'Thumbnail',
+					'mediumsquared' => 'Square (best size if you wanted rounded images)',
+					'full' => 'Uncropped (best for awards)',
+				),
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_59246b6966665',
+							'operator' => '==',
+							'value' => 'featured',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => 'square',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
 				'key' => 'field_59249d29a5510',
-				'label' => 'Extra Text',
+				'label' => 'Closing Text',
 				'name' => 'extra_text',
 				'type' => 'true_false',
-				'instructions' => 'Extra paragraph underneath posts.',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -477,7 +518,7 @@
 			),
 			array (
 				'key' => 'field_59249e39a5511',
-				'label' => 'Text Underneath',
+				'label' => 'Text underneath the list',
 				'name' => 'text_underneath',
 				'type' => 'wysiwyg',
 				'conditional_logic' => array (
@@ -659,19 +700,9 @@
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_592324b7840bb',
-							'operator' => '!=',
-							'value' => 'half',
-						),
-						array (
-							'field' => 'field_592324b7840bb',
-							'operator' => '!=',
-							'value' => 'slider',
-						),
-						array (
-							'field' => 'field_592324b7840bb',
-							'operator' => '!=',
-							'value' => 'map',
+							'field' => 'field_593825bebc0bb',
+							'operator' => '==',
+							'value' => 'Show button',
 						),
 					),
 					'allorany' => 'all',

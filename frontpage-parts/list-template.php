@@ -32,6 +32,7 @@ $custom_show = get_field('custom_show');
 	if( $custom_show && in_array('title', $custom_show) ) { $titlepost = 1; } else { $titlepost = 0; }
 	if( $custom_show && in_array('excerpt', $custom_show) ) { $excerpt = 1; } else { $excerpt = 0; }
 	if( $custom_show && in_array('button', $custom_show) ) { $button = 1; } else { $button = 0; }
+	$image_size = get_field('image_size');
 
 $extra_text = get_field('extra_text');
 $text_underneath = get_field('text_underneath');
@@ -64,20 +65,20 @@ if (!$url && !$bgc ) {
 				<?php if ( $featured ){
 					?>
 					<div class="list-featured-image"><?php
-					$pdfimg = get_field('thumbnail', $post)['sizes']['mediumsquared'];
+					$pdfimg = get_field('thumbnail', $post)['sizes'][$image_size];
 					if ( has_post_thumbnail( $post ) ){
 						echo '<a href="'.get_permalink($post->ID).'">';
 						if ( $circle ) {
-							echo get_the_post_thumbnail( $post, 'mediumsquared', array( 'class' => 'round' ) );
+							echo get_the_post_thumbnail( $post, $image_size, array( 'class' => 'round' ) );
 						} else {
-							echo get_the_post_thumbnail( $post, 'mediumsquared' );
+							echo get_the_post_thumbnail( $post, $image_size );
 						}
 						echo '</a>';
 					} elseif ( wp_attachment_is_image( $post ) ) { 
 						if ( $circle ) {
-							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'" class="round">';
+							echo '<img src="'.wp_get_attachment_image_src( $post, $image_size, true )[0].'" class="round">';
 						} else {
-							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'">';
+							echo '<img src="'.wp_get_attachment_image_src( $post, $image_size, true )[0].'">';
 						}
 					} elseif ($pdfimg) {
 						if ( $circle ) {

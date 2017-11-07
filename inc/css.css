@@ -1,4 +1,4 @@
-/* -- Uhh.. --*/
+/* -- This is stuff for the admin side of things --*/
 
 pre { padding: 0 25px 10px; width: 100%;
     white-space: pre-wrap;       /* Since CSS 2.1 */
@@ -48,6 +48,28 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
 	clear: both;
 }
 
+/* all them checkboxes for the subsections --------- */
+
+#acf-visual_intro_text {
+    clear: both;
+}
+
+#acf-show_title{
+    margin-top: -40px;
+}
+
+#acf-visual_intro_text .label,
+#acf-text_underneath .label,
+#acf-subsection_title .label {
+    display: none;
+}
+
+#acf-show_intro_title,
+#acf-subsections_templates,
+#acf-show_title,
+#acf-extra_text {
+    padding-bottom: 0;
+}
 
 #the-list .template .dashicons {
     font-size: 1.25em;

@@ -9,7 +9,6 @@ include_once get_template_directory().'/custom-fields/fields.php';
 include businesstheme.'/inc/themesettings.php';
 include businesstheme.'/inc/themewidgets.php';
 include businesstheme.'/inc/template-tags.php';
-
 /**
  * Business Theme only works in WordPress 4.4 or later.
  */
@@ -17,9 +16,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
+add_theme_support('post-thumbnails');
+
 if ( ! function_exists( 'businesstheme_setup' ) ) :
-
-
 function businesstheme_setup() {
 
 	load_theme_textdomain( 'businesstheme', get_template_directory() . '/languages' );
@@ -278,9 +277,12 @@ add_filter('manage_pages_columns' , 'add_template_column');
 function custom_page_column_content( $column_name, $post_id ) {
 	if ( $column_name == 'template' ) {
 		$template = get_post_meta( $post_id, '_wp_page_template', true );
-		echo $template;
+		$subtemplate = get_field('subsections_templates', $post_id );
 		if ($template == 'parent-page.php') {
+			echo $template;
 			echo '<span class="dashicons dashicons-arrow-left-alt2"></span>';
+		} elseif ($template == 'subsection.php') {
+			echo $subtemplate;
 		}
 	}
 }

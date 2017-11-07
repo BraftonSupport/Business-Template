@@ -41,7 +41,7 @@ if (!$url && !$bgc ) {
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
-	?>"><div class="site-inner">
+	?>">
 
 	<?php if ( $video ) {
 		if (strpos($video, 'youtube.com') == true || strpos($video, '.webm') == false && strpos($video, '.mp4') == false) {
@@ -88,7 +88,8 @@ if (!$url && !$bgc ) {
 				<source src="<?php echo $vidstring; ?>.mp4" type="video/mp4">
 			</video>
 		<?php }
-	} ?>
+	} ?><div class="site-inner">
+	
 	<?php
 	if ( $title ) { echo $titletext; }
 	if ( $visual_intro_text ) { echo $visual_intro_text; }

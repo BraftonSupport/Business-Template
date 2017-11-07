@@ -675,7 +675,7 @@ function post_res($posts, $query){
 		'fields' => array (
 			array (
 				'key' => 'field_592324b7840bb',
-				'label' => 'Front page subsections',
+				'label' => 'Subsection',
 				'name' => 'subsections_templates',
 				'type' => 'select',
 				'instructions' => 'Pick a template.',

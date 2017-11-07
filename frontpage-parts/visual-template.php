@@ -56,7 +56,7 @@ if (!$url && !$bgc ) {
 			  var player;
 			  player = new YT.Player('video', {
 			    videoId: '<?php echo $videoid; ?>', // YouTube Video ID
-			    width: 1250,               // Player width (in px)
+			    width: 1000,               // Player width (in px)
 			    height: 750,              // Player height (in px)
 			    playerVars: {
 			      autoplay: 1,        // Auto-play the video on load

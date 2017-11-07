@@ -56,8 +56,8 @@ if (!$url && !$bgc ) {
 			  var player;
 			  player = new YT.Player('video', {
 			    videoId: '<?php echo $videoid; ?>', // YouTube Video ID
-			    width: 450,               // Player width (in px)
-			    height: 250,              // Player height (in px)
+			    width: 1250,               // Player width (in px)
+			    height: 750,              // Player height (in px)
 			    playerVars: {
 			      autoplay: 1,        // Auto-play the video on load
 			      controls: 1,        // Show pause/play buttons in player
@@ -65,6 +65,8 @@ if (!$url && !$bgc ) {
 			      modestbranding: 1,  // Hide the Youtube Logo
 			      loop: 1,            // Run the video in a loop
 			      fs: 1,              // Hide the full screen button
+			      rel: 0,
+			      playsinline: 1,
 			      cc_load_policy: 1, // Hide closed captions
 			      iv_load_policy: 3,  // Hide the Video Annotations
 			      autohide: 0         // Hide video controls when playing

@@ -308,25 +308,27 @@ header {
 /* visual Template*/
 #video {
 	position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 600px;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+video#video {
 	top: 15%;
-	left: 50%;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	z-index: -100;
-	-ms-transform: translateX(-50%) translateY(-50%);
-	-moz-transform: translateX(-50%) translateY(-50%);
-	-webkit-transform: translateX(-50%) translateY(-50%);
-	transform: translateX(-50%) translateY(-50%);
+    height: auto;
 }
 
 .visual {
 	text-align: center;
 	overflow: hidden;
-	&:first-of-type .site-inner {
-		padding: 25px 0;
-	}
+	position: relative;
 	#vidpause {
 		display: none;
 	}

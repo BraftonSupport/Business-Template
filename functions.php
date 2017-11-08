@@ -291,27 +291,16 @@ add_action( 'manage_pages_custom_column', 'custom_page_column_content', 10, 2 );
 add_post_type_support( 'page', 'excerpt' );
 
 // Adding back thumbnail support and changing name
-// add_theme_support('post-thumbnails');
+add_theme_support('post-thumbnails');
 
 // changing "Featured image" to "Background Image"
-
-	function change_featured_image_text( $content ) {
-		global $post;
-		if ( 'subsection.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-			$content = str_replace( 'Remove featured image', __( 'Remove background image', 'business' ), $content );
-			$content = str_replace( 'Set featured image', __( 'Set background image', 'business' ), $content );
-			return $content;
-		}
+function replace_featured_image_box() {
+	if ( strpos(get_page_template_slug($post_id),'subsection.php') !== false ) {
+		remove_meta_box( 'postimagediv', 'page', 'side' );  
+		add_meta_box('postimagediv', __('Background Image'), 'post_thumbnail_meta_box', 'page', 'side', 'low');  
 	}
-	add_filter( 'admin_post_thumbnail_html', 'change_featured_image_text');
-	function replace_featured_image_box() {
-		global $post;
-		if ( 'subsection.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) {
-			remove_meta_box( 'postimagediv', 'page', 'side' );  
-			add_meta_box('postimagediv', __('Background Image'), 'post_thumbnail_meta_box', 'page', 'side', 'low');  
-		}
-	}
-	add_action('do_meta_boxes', 'replace_featured_image_box');
+}
+add_action('do_meta_boxes', 'replace_featured_image_box');
 
 
 // exclude subsections from seo yoast
@@ -328,6 +317,7 @@ function set_noindex_nofollow($post_id){
     }
 }       
 add_action( 'save_post', 'set_noindex_nofollow' );
+
 
 // changing the archive title
 add_filter( 'get_the_archive_title', function ($title) {

@@ -6,14 +6,16 @@ pre { padding: 0 25px 10px; width: 100%;
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
-    }
+}
 .short { max-width: 75%; }
 
 .customize-control-site_icon .thumbnail-image { max-width: 100px; max-height: 100px; }
 
 select + .floatimg { display:none; position:absolute; top: 34%; right: 10%;  }
+label + .floatimg { display:none; }
 
 select:hover + .floatimg { display: block; }
+label:hover + .floatimg { display: inline; }
 
 .widget-inside .wp-color-result { margin: 10px 6px -6px 6px; }
 

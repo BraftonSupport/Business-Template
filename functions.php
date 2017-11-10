@@ -16,8 +16,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-add_theme_support('post-thumbnails');
-
 if ( ! function_exists( 'businesstheme_setup' ) ) :
 function businesstheme_setup() {
 
@@ -35,8 +33,8 @@ function businesstheme_setup() {
 
 	add_theme_support( 'html5', array(
 		'search-form',
-		'comment-form',
-		'comment-list',
+		// 'comment-form',
+		// 'comment-list',
 		'gallery',
 		'caption',
 	) );
@@ -279,17 +277,46 @@ function custom_page_column_content( $column_name, $post_id ) {
 		$template = get_post_meta( $post_id, '_wp_page_template', true );
 		$subtemplate = get_field('subsections_templates', $post_id );
 		if ($template == 'parent-page.php') {
-			echo $template;
-			echo '<span class="dashicons dashicons-arrow-left-alt2"></span>';
+			echo '<a>Parent page<span class="dashicons dashicons-arrow-left-alt2"></span></a>';
 		} elseif ($template == 'subsection.php') {
-			echo $subtemplate;
+			echo $subtemplate.' subsection';
 		}
 	}
 }
 add_action( 'manage_pages_custom_column', 'custom_page_column_content', 10, 2 );
 
+
 // Adding excerpts to pages
 add_post_type_support( 'page', 'excerpt' );
+
+// Adding back thumbnail support and changing name
+add_theme_support('post-thumbnails');
+
+// changing "Featured image" to "Background Image"
+function replace_featured_image_box() {
+	if ( strpos(get_page_template_slug($post_id),'subsection.php') !== false ) {
+		remove_meta_box( 'postimagediv', 'page', 'side' );  
+		add_meta_box('postimagediv', __('Background Image'), 'post_thumbnail_meta_box', 'page', 'side', 'low');  
+	}
+}
+add_action('do_meta_boxes', 'replace_featured_image_box');
+
+
+// exclude subsections from seo yoast
+function set_noindex_nofollow($post_id){
+    // if ( wp_is_post_revision( $post_id ) ) return;
+
+    if ( strpos(get_page_template_slug($post_id),'subsection.php') !== false){ 
+        add_action( 'wpseo_saved_postdata', function() use ( $post_id ) { 
+            update_post_meta( $post_id, '_yoast_wpseo_meta-robots-noindex', '1' );
+            update_post_meta( $post_id, '_yoast_wpseo_meta-robots-nofollow', '1' );
+        }, 999 );
+    }else{
+        return;
+    }
+}       
+add_action( 'save_post', 'set_noindex_nofollow' );
+
 
 // changing the archive title
 add_filter( 'get_the_archive_title', function ($title) {
@@ -675,7 +702,7 @@ function post_res($posts, $query){
 		'fields' => array (
 			array (
 				'key' => 'field_592324b7840bb',
-				'label' => 'Front page subsections',
+				'label' => 'Subsection',
 				'name' => 'subsections_templates',
 				'type' => 'select',
 				'instructions' => 'Pick a template.',

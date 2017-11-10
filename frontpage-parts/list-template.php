@@ -103,7 +103,7 @@ if ( $other && in_array('fullscreen', $other) ) {
 					?></a></h3>
 				<?php }
 				if ( $excerpt ){
-					$content= get_post_field('post_content', $post);
+					$content= get_post_field('post_excerpt', $post);
 					$the_excerpt= substr($content,0,strpos($content,'.')+1);
 					if (strlen($the_excerpt) > 125){
 						echo '<p>'.implode(' ', array_slice(explode(' ', strip_tags($the_excerpt)), 0, 15)).'...</p>';

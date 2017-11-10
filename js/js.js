@@ -16,14 +16,12 @@ jQuery(document).ready(function($){
 	// 	$( 'p:last-of-type #set-post-thumbnail' ).text('Set featured image'); 
 	// });
 
-	// $( "td.template:contains('parent')" ).css( "background", "red" );
-
-	$("td.template:contains('parent')").parent().addClass('parent');
-	$("td.template:not(:empty):not(:contains('parent'))").parent().addClass('subsection').hide();
+	$("td.template:not(:empty):not(:contains('Parent'))").parent().addClass('subsection').hide();
+	$("td.template:contains('Parent')").parent().addClass('parent');
 	$("td.template:empty").parent().addClass('default');
 
-	$("td.template .dashicons").click(function() {
-		console.log( $(this).parents('tr') );
-		$(this).parents('tr').nextUntil('tr.parent, tr.default').toggle();
+	$("td.template a").click(function() {
+		$(this).children('span').toggleClass('open');
+		$(this).parents('tr').nextUntil('tr.parent, tr.default').toggle('slide');
 	});
 });

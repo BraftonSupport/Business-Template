@@ -26,7 +26,6 @@ $visual_button = get_field('visual_button');
 $visual_button_text = get_field('visual_button_text');
 $visual_button_link = get_field('visual_button_link');
 $visual_button_class = get_field('visual_button_classes');
-
 $tracking = get_field('tracking');
 
 $classes = array('cta');
@@ -36,7 +35,9 @@ if ($section_class){
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
-
+if ( $other && in_array('fullscreen', $other) ) {
+	$classes[] = "fullscreen";
+}
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }

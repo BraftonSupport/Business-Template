@@ -278,7 +278,7 @@ function custom_page_column_content( $column_name, $post_id ) {
 		$subtemplate = get_field('subsections_templates', $post_id );
 		if ($template == 'parent-page.php') {
 			echo $template;
-			echo '<span class="dashicons dashicons-arrow-left-alt2"></span>';
+			echo '<a class="dashicons dashicons-arrow-left-alt2"></a>';
 		} elseif ($template == 'subsection.php') {
 			echo $subtemplate;
 		}

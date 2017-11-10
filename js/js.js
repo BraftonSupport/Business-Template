@@ -23,6 +23,7 @@ jQuery(document).ready(function($){
 	$("td.template:empty").parent().addClass('default');
 
 	$("td.template .dashicons").click(function() {
-		$(this).parent('tr').nextUntil('.parent, .default').toggle();
+		console.log( $(this).parents('tr') );
+		$(this).parents('tr').nextUntil('tr.parent, tr.default').toggle();
 	});
 });

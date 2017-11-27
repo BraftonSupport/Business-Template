@@ -55,22 +55,22 @@ header {
 }
 
 .nextwidget {
-    -webkit-flex: 1 0 70%;
-    -ms-flex: 1 0 70%;
-    flex: 1 0 70%;
+	-webkit-flex: 1 0 70%;
+	-ms-flex: 1 0 70%;
+	flex: 1 0 70%;
 }
 
 .next .site-header-menu {
 	text-align: right;
-    -webkit-flex: 1 0 70%;
-    -ms-flex: 1 0 70%;
-    flex: 1 0 70%;
+	-webkit-flex: 1 0 70%;
+	-ms-flex: 1 0 70%;
+	flex: 1 0 70%;
 }
 
 .below .site-header-menu {
-    -webkit-flex: 1 0 100%;
-    -ms-flex: 1 0 100%;
-    flex: 1 0 100%;
+	-webkit-flex: 1 0 100%;
+	-ms-flex: 1 0 100%;
+	flex: 1 0 100%;
 }
 
 .menu-toggle {
@@ -358,6 +358,17 @@ header {
 	text-align: center;
 	h1 {
 		margin-bottom: 1em;
+	}
+}
+.list-item {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	.button {
+		margin: auto auto 0 auto;
 	}
 }
 

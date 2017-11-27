@@ -460,7 +460,21 @@ video#video {
   margin-bottom: 1em;
 }
 
-/* line 401, ../sass/partials/_base.scss */
+/* line 400, ../sass/partials/_base.scss */
+.list-item {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+/* line 407, ../sass/partials/_base.scss */
+.list-item .button {
+  margin: auto auto 0 auto;
+}
+
+/* line 412, ../sass/partials/_base.scss */
 .round {
   border-radius: 50%;
 }
@@ -468,12 +482,12 @@ video#video {
 /**
  * 11.32 - Slider Template
  */
-/* line 409, ../sass/partials/_base.scss */
+/* line 420, ../sass/partials/_base.scss */
 .slider {
   padding: 1em 0;
 }
 
-/* line 413, ../sass/partials/_base.scss */
+/* line 424, ../sass/partials/_base.scss */
 .quotes {
   font-size: 6em;
   line-height: 0;
@@ -482,22 +496,22 @@ video#video {
   opacity: .2;
   font-family: Times, serif;
 }
-/* line 423, ../sass/partials/_base.scss */
+/* line 434, ../sass/partials/_base.scss */
 .quotes:last-of-type {
   right: 0;
 }
 
-/* line 428, ../sass/partials/_base.scss */
+/* line 439, ../sass/partials/_base.scss */
 .slick h4 {
   font-weight: 400;
   text-transform: inherit;
 }
-/* line 432, ../sass/partials/_base.scss */
+/* line 443, ../sass/partials/_base.scss */
 .slick .slick-slide:focus {
   outline: none;
 }
 
-/* line 438, ../sass/partials/_base.scss */
+/* line 449, ../sass/partials/_base.scss */
 .toolbar {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -511,7 +525,7 @@ video#video {
   margin-top: 15px;
 }
 
-/* line 451, ../sass/partials/_base.scss */
+/* line 462, ../sass/partials/_base.scss */
 .fa.slick-arrow {
   padding: 0 0 0 9px;
   margin: 0 5px;
@@ -528,11 +542,11 @@ video#video {
   -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-/* line 466, ../sass/partials/_base.scss */
+/* line 477, ../sass/partials/_base.scss */
 .fa.slick-arrow:hover {
   opacity: 1;
 }
-/* line 469, ../sass/partials/_base.scss */
+/* line 480, ../sass/partials/_base.scss */
 .fa.slick-arrow.fa-angle-right {
   -webkit-order: 3;
   -ms-flex-order: 3;
@@ -540,17 +554,17 @@ video#video {
   padding: 0 0 0 12px;
 }
 
-/* line 477, ../sass/partials/_base.scss */
+/* line 488, ../sass/partials/_base.scss */
 .slick-dots {
   list-style: none;
   margin: 0;
   line-height: 0;
 }
-/* line 481, ../sass/partials/_base.scss */
+/* line 492, ../sass/partials/_base.scss */
 .slick-dots li {
   display: inline;
 }
-/* line 484, ../sass/partials/_base.scss */
+/* line 495, ../sass/partials/_base.scss */
 .slick-dots button {
   border-radius: 50%;
   padding: 0;
@@ -565,59 +579,59 @@ video#video {
   -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-/* line 497, ../sass/partials/_base.scss */
+/* line 508, ../sass/partials/_base.scss */
 .slick-dots button:hover {
   opacity: 1;
 }
 
 /* Service List Template */
-/* line 505, ../sass/partials/_base.scss */
+/* line 516, ../sass/partials/_base.scss */
 .list .container {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
 }
-/* line 509, ../sass/partials/_base.scss */
+/* line 520, ../sass/partials/_base.scss */
 .list .container.count1 > div {
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
 }
-/* line 514, ../sass/partials/_base.scss */
+/* line 525, ../sass/partials/_base.scss */
 .list .container.count2 > div {
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
 }
-/* line 519, ../sass/partials/_base.scss */
+/* line 530, ../sass/partials/_base.scss */
 .list .container.count3 > div {
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
 }
-/* line 524, ../sass/partials/_base.scss */
+/* line 535, ../sass/partials/_base.scss */
 .list .container.count4 > div {
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
 }
-/* line 529, ../sass/partials/_base.scss */
+/* line 540, ../sass/partials/_base.scss */
 .list .container.count5 > div {
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
 }
-/* line 534, ../sass/partials/_base.scss */
+/* line 545, ../sass/partials/_base.scss */
 .list .container > div {
   max-width: 350px;
   margin: 30px auto;
 }
-/* line 537, ../sass/partials/_base.scss */
+/* line 548, ../sass/partials/_base.scss */
 .list .container > div img {
   margin-bottom: 15px;
 }
 
-/* line 543, ../sass/partials/_base.scss */
+/* line 554, ../sass/partials/_base.scss */
 .list-template.recent-posts {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -626,7 +640,7 @@ video#video {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 550, ../sass/partials/_base.scss */
+/* line 561, ../sass/partials/_base.scss */
 .list-template.recent-posts a.button {
   margin: auto auto 0 auto;
   -webkit-align-self: flex-end;
@@ -637,7 +651,7 @@ video#video {
   align-items: stretch;
 }
 
-/* line 560, ../sass/partials/_base.scss */
+/* line 571, ../sass/partials/_base.scss */
 .list-post-featured-image {
   overflow: hidden;
   -webkit-flex: 1 1 100%;
@@ -646,26 +660,26 @@ video#video {
 }
 
 /* Footer */
-/* line 570, ../sass/partials/_base.scss */
+/* line 581, ../sass/partials/_base.scss */
 .site-footer .logo {
   margin-right: auto;
 }
-/* line 572, ../sass/partials/_base.scss */
+/* line 583, ../sass/partials/_base.scss */
 .site-footer .logo img {
   width: 75px;
   margin-top: 10px;
 }
-/* line 577, ../sass/partials/_base.scss */
+/* line 588, ../sass/partials/_base.scss */
 .site-footer .social-navigation {
   margin-left: auto;
 }
-/* line 580, ../sass/partials/_base.scss */
+/* line 591, ../sass/partials/_base.scss */
 .site-footer .container {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 585, ../sass/partials/_base.scss */
+/* line 596, ../sass/partials/_base.scss */
 .site-footer .site-info {
   background: rgba(0, 0, 0, 0.25);
   font-size: 13px;
@@ -677,27 +691,27 @@ video#video {
   font-weight: 400;
   width: 100%;
 }
-/* line 596, ../sass/partials/_base.scss */
+/* line 607, ../sass/partials/_base.scss */
 .site-footer .site-title {
   margin: auto;
   padding: 5px 0;
   font-size: 12px;
 }
-/* line 601, ../sass/partials/_base.scss */
+/* line 612, ../sass/partials/_base.scss */
 .site-footer .widget {
   margin-bottom: 0;
   -webkit-flex: 1 0 100%;
   -ms-flex: 1 0 100%;
   flex: 1 0 100%;
 }
-/* line 607, ../sass/partials/_base.scss */
+/* line 618, ../sass/partials/_base.scss */
 .site-footer .widget-title {
   margin-bottom: 0;
   border-bottom: 1px solid;
   display: inline-block;
 }
 
-/* line 614, ../sass/partials/_base.scss */
+/* line 625, ../sass/partials/_base.scss */
 .menu-social-media-container {
   margin: auto;
   -webkit-flex: 0 0 50%;
@@ -705,24 +719,24 @@ video#video {
   flex: 0 0 50%;
 }
 
-/* line 620, ../sass/partials/_base.scss */
+/* line 631, ../sass/partials/_base.scss */
 .social-navigation {
   list-style: none;
   text-align: right;
   margin: 1em 0 0 0;
 }
-/* line 625, ../sass/partials/_base.scss */
+/* line 636, ../sass/partials/_base.scss */
 .social-navigation li {
   display: inline-block;
   overflow: hidden;
   height: 20px;
   width: 30px;
 }
-/* line 630, ../sass/partials/_base.scss */
+/* line 641, ../sass/partials/_base.scss */
 .social-navigation li:last-of-type a {
   margin-right: 0;
 }
-/* line 634, ../sass/partials/_base.scss */
+/* line 645, ../sass/partials/_base.scss */
 .social-navigation a {
   display: block;
   height: 40px;
@@ -731,7 +745,7 @@ video#video {
   padding: 20px;
   overflow: hidden;
 }
-/* line 641, ../sass/partials/_base.scss */
+/* line 652, ../sass/partials/_base.scss */
 .social-navigation a:before {
   content: "\f415";
   font-size: 24px;
@@ -739,111 +753,111 @@ video#video {
   top: 0;
   left: 0;
 }
-/* line 648, ../sass/partials/_base.scss */
+/* line 659, ../sass/partials/_base.scss */
 .social-navigation a[href*="codepen.io"]:before {
   content: "\f216";
 }
-/* line 651, ../sass/partials/_base.scss */
+/* line 662, ../sass/partials/_base.scss */
 .social-navigation a[href*="digg.com"]:before {
   content: "\f221";
 }
-/* line 654, ../sass/partials/_base.scss */
+/* line 665, ../sass/partials/_base.scss */
 .social-navigation a[href*="dribbble.com"]:before {
   content: "\f201";
 }
-/* line 657, ../sass/partials/_base.scss */
+/* line 668, ../sass/partials/_base.scss */
 .social-navigation a[href*="dropbox.com"]:before {
   content: "\f225";
 }
-/* line 660, ../sass/partials/_base.scss */
+/* line 671, ../sass/partials/_base.scss */
 .social-navigation a[href*="facebook.com"]:before {
   content: "\f203";
 }
-/* line 663, ../sass/partials/_base.scss */
+/* line 674, ../sass/partials/_base.scss */
 .social-navigation a[href*="flickr.com"]:before {
   content: "\f211";
 }
-/* line 666, ../sass/partials/_base.scss */
+/* line 677, ../sass/partials/_base.scss */
 .social-navigation a[href*="foursquare.com"]:before {
   content: "\f226";
 }
-/* line 669, ../sass/partials/_base.scss */
+/* line 680, ../sass/partials/_base.scss */
 .social-navigation a[href*="plus.google.com"]:before {
   content: "\f206";
 }
-/* line 672, ../sass/partials/_base.scss */
+/* line 683, ../sass/partials/_base.scss */
 .social-navigation a[href*="github.com"]:before {
   content: "\f200";
 }
-/* line 675, ../sass/partials/_base.scss */
+/* line 686, ../sass/partials/_base.scss */
 .social-navigation a[href*="instagram.com"]:before {
   content: "\f215";
 }
-/* line 678, ../sass/partials/_base.scss */
+/* line 689, ../sass/partials/_base.scss */
 .social-navigation a[href*="linkedin.com"]:before {
   content: "\f208";
 }
-/* line 681, ../sass/partials/_base.scss */
+/* line 692, ../sass/partials/_base.scss */
 .social-navigation a[href*="pinterest.com"]:before {
   content: "\f210";
 }
-/* line 684, ../sass/partials/_base.scss */
+/* line 695, ../sass/partials/_base.scss */
 .social-navigation a[href*="getpocket.com"]:before {
   content: "\f224";
 }
-/* line 687, ../sass/partials/_base.scss */
+/* line 698, ../sass/partials/_base.scss */
 .social-navigation a[href*="polldaddy.com"]:before {
   content: "\f217";
 }
-/* line 690, ../sass/partials/_base.scss */
+/* line 701, ../sass/partials/_base.scss */
 .social-navigation a[href*="reddit.com"]:before {
   content: "\f222";
 }
-/* line 693, ../sass/partials/_base.scss */
+/* line 704, ../sass/partials/_base.scss */
 .social-navigation a[href*="stumbleupon.com"]:before {
   content: "\f223";
 }
-/* line 696, ../sass/partials/_base.scss */
+/* line 707, ../sass/partials/_base.scss */
 .social-navigation a[href*="tumblr.com"]:before {
   content: "\f214";
 }
-/* line 699, ../sass/partials/_base.scss */
+/* line 710, ../sass/partials/_base.scss */
 .social-navigation a[href*="twitter.com"]:before {
   content: "\f202";
 }
-/* line 702, ../sass/partials/_base.scss */
+/* line 713, ../sass/partials/_base.scss */
 .social-navigation a[href*="vimeo.com"]:before {
   content: "\f212";
 }
-/* line 705, ../sass/partials/_base.scss */
+/* line 716, ../sass/partials/_base.scss */
 .social-navigation a[href*="wordpress.com"]:before, .social-navigation a[href*="wordpress.org"]:before {
   content: "\f205";
 }
-/* line 709, ../sass/partials/_base.scss */
+/* line 720, ../sass/partials/_base.scss */
 .social-navigation a[href*="youtube.com"]:before {
   content: "\f213";
 }
-/* line 712, ../sass/partials/_base.scss */
+/* line 723, ../sass/partials/_base.scss */
 .social-navigation a[href*="mailto:"]:before {
   content: "\f410";
 }
-/* line 715, ../sass/partials/_base.scss */
+/* line 726, ../sass/partials/_base.scss */
 .social-navigation a[href*="spotify.com"]:before {
   content: "\f515";
 }
-/* line 718, ../sass/partials/_base.scss */
+/* line 729, ../sass/partials/_base.scss */
 .social-navigation a[href*="twitch.tv"]:before {
   content: "\f516";
 }
-/* line 721, ../sass/partials/_base.scss */
+/* line 732, ../sass/partials/_base.scss */
 .social-navigation a[href$="/feed/"]:before {
   content: "\f413";
 }
-/* line 724, ../sass/partials/_base.scss */
+/* line 735, ../sass/partials/_base.scss */
 .social-navigation a[href*="path.com"]:before {
   content: "\f219";
 }
-/* line 727, ../sass/partials/_base.scss */
+/* line 738, ../sass/partials/_base.scss */
 .social-navigation a[href*="skype.com"]:before {
   content: "\f220";
 }

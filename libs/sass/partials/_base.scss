@@ -397,6 +397,17 @@ video#video {
 		margin-bottom: 1em;
 	}
 }
+.list-item {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	.button {
+		margin: auto auto 0 auto;
+	}
+}
 
 .round {
 	border-radius: 50%;

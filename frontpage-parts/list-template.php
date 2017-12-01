@@ -108,7 +108,7 @@ if ( $other && in_array('fullscreen', $other) ) {
 					if (strlen($the_excerpt) > 125){
 						echo '<p>'.implode(' ', array_slice(explode(' ', strip_tags($the_excerpt)), 0, 15)).'...</p>';
 					} else {
-						echo '<p>'.strip_tags($content).'</p>';
+						echo '<p>'.strip_tags($the_excerpt).'</p>';
 					}
 				}
 				if ( $button ){ ?>

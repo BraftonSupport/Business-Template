@@ -140,7 +140,7 @@ header .top p, header .top * {
 }
 /* line 122, ../sass/partials/_base.scss */
 .scrolled + .site-content {
-  margin-top: 125px;
+  padding-top: 125px;
 }
 
 /**

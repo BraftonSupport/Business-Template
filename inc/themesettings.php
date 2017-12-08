@@ -35,7 +35,7 @@ function row_shortcode( $atts , $content = null ) {
 			if ( !empty( $a['bg-image'] ) ) {
 				$html.= 'background-image:url('. esc_attr($a['bg-image']).');background-position: center; -webkit-align-self: stretch; -ms-flex-item-align: stretch; align-self: stretch;';
 			}
-			if ( !empty( $a['padding'] || $a['padding'] == '0' ) ) {
+			if ( !empty( $a['padding'] ) || $a['padding'] == '0' ) {
 				$html.= 'padding:'. esc_attr($a['padding']).';';
 			}
 		if ( !empty( $a['bg-color'] ) || !empty( $a['color'] ) || !empty( $a['bg-image'] ) || !empty( $a['padding'] ) || $a['padding'] == '0' ) {

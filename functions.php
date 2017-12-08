@@ -303,20 +303,23 @@ add_action('do_meta_boxes', 'replace_featured_image_box');
 
 
 // exclude subsections from seo yoast
-function set_noindex_nofollow($post_id){
-    // if ( wp_is_post_revision( $post_id ) ) return;
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+// check for plugin using plugin name
+if ( is_plugin_active( 'plugins/wordpress-seo/wp-seo.php' ) ) {
+	function set_noindex_nofollow($post_id){
+		// if ( wp_is_post_revision( $post_id ) ) return;
 
-    if ( strpos(get_page_template_slug($post_id),'subsection.php') !== false){ 
-        add_action( 'wpseo_saved_postdata', function() use ( $post_id ) { 
-            update_post_meta( $post_id, '_yoast_wpseo_meta-robots-noindex', '1' );
-            update_post_meta( $post_id, '_yoast_wpseo_meta-robots-nofollow', '1' );
-        }, 999 );
-    }else{
-        return;
-    }
-}       
-add_action( 'save_post', 'set_noindex_nofollow' );
-
+		if ( strpos(get_page_template_slug($post_id),'subsection.php') !== false){ 
+			add_action( 'wpseo_saved_postdata', function() use ( $post_id ) { 
+				update_post_meta( $post_id, '_yoast_wpseo_meta-robots-noindex', '1' );
+				update_post_meta( $post_id, '_yoast_wpseo_meta-robots-nofollow', '1' );
+			}, 999 );
+		}else{
+			return;
+		}
+	}       
+	add_action( 'save_post', 'set_noindex_nofollow' );
+}
 
 // changing the archive title
 add_filter( 'get_the_archive_title', function ($title) {

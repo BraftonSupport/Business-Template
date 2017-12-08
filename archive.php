@@ -15,22 +15,22 @@
  * @subpackage Business_Theme
  * @since Business Theme 1.0
  */
-
+$category_id = 'category_' . get_queried_object_id();
+$bg = get_field( 'banner_image', $category_id );
 get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
+		<?php if ( have_posts() ) :
+			if (!$bg) { ?>
+				<header class="page-header">
+					<?php
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					?>
+				</header><!-- .page-header -->
+			<?php }
 			// Start the Loop.
 			while ( have_posts() ) : the_post();
 

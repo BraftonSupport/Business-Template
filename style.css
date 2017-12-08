@@ -313,8 +313,8 @@ h6 {
 	text-rendering: optimizeLegibility;
 }
 
-p:not(:last-of-type) {
-	margin: 0 0 1em;
+p {
+	margin: .25em 0 1.25em;
 }
 
 dfn,
@@ -771,17 +771,12 @@ a:active,
 	padding: 3px 0;
 }
 
-.scrolled img.site-title { max-width: 25px; height: auto; }
 .scrolled .site-title { display: block; font-size: 16px; }
 
-.scrolled .site-description { display: none; }
 .scrolled .main-navigation .menu-main-menu-container { margin-top: 6px; }
 .scrolled .main-navigation a { font-size: 12px; }
 
-.scrolled .menu-item-has-children > a:after { top: inherit; }
-
 .site-icon { display: none; }
-
 
 .site-header-main .widget {
 	margin-bottom: 0;
@@ -867,7 +862,6 @@ a:active,
 	border-radius: 0;
 	color: #1a1a1a;
 	content: "";
-	height: 36px;
 	padding: 0;
 	position: absolute;
 	right: 0;
@@ -882,7 +876,7 @@ a:active,
 	position: relative;
 	width: 36px;
 	left: -8px;
-	top: 2px;
+	top: -6px;
 }
 
 .dropdown-toggle:hover,
@@ -1701,9 +1695,6 @@ footer .container,
 .menu-toggle {
 	width: inherit;
 	margin: 10px 0 10px auto;
-	background-color: transparent;
-	border: 1px solid #d1d1d1;
-	color: #1a1a1a;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	padding: 0.769230769em;
@@ -2129,18 +2120,18 @@ body:not(.search-results) .entry-summary > :last-child,
 	margin-bottom: 0.5384615385em;
 	text-transform: uppercase;
 }
-
+/* 
 .ssb-social { height: 30px; line-height: 30px; margin-bottom: 15px; }
 .ssb-social span { font-size: 80%; margin: 0 10px; text-transform: uppercase; }
 .ssb-social a { text-align: center; padding: 4px 0; }
 .ssb-social a:hover { text-align: center; color: #fff; padding: 4px 0; color: #fff; }
-.ssb-social a i { width: 30px; }
-.ssb-social .ssb-facebook:hover { background: #3b5998; }
+.ssb-social a i { width: 30px; } */
+/* .social-navigation .ssb-facebook:hover { background: #3b5998; }
 .ssb-social .ssb-twitter:hover { background: #55acee; }
 .ssb-social .ssb-googleplus:hover { background: #dd4b39; }
 .ssb-social .ssb-linked:hover { background: #007bb5; }
 .ssb-social .ssb-pinterest:hover { background: #cb2027; }
-.ssb-social .ssb-email:hover { background: rgba(0,0,0, .15); }
+.ssb-social .ssb-email:hover { background: rgba(0,0,0, .15); } */
 
 /**
  * IE8 and earlier will drop any block with CSS3 selectors.
@@ -3006,7 +2997,6 @@ p > video {
 	.main-navigation a {
 		outline-offset: -8px;
 		white-space: nowrap;
-		padding: 0.65625em 0.875em;
 	}
 	.main-navigation .primary-menu > li > a {
 		padding: 0.65625em 0 0 0.875em;
@@ -3065,7 +3055,7 @@ p > video {
 	.main-navigation li:hover > ul,
 	.main-navigation li.focus > ul {
 		left: auto;
-		right: -1px;
+		right: -3px;
 	}
 
 	.main-navigation ul ul li:hover > ul,
@@ -3269,8 +3259,7 @@ p > video {
 	}
 
 	.widget input[type="search"].search-field {
-		width: -webkit-calc(100% - 35px);
-		width: calc(100% - 35px);
+		max-width: 300px;
 	}
 
 	.widget .search-submit:before {
@@ -3334,9 +3323,6 @@ p > video {
 
 	.compact {
 		max-width: 75%;
-	}
-	.row .container {
-		max-width: 1000px;
 	}
 
 	.image-navigation {

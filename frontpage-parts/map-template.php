@@ -9,9 +9,10 @@
 if(!session_id()) session_start();
 $template_count = $_SESSION['template_count'];
 $id = get_the_ID();
+$number = $id;
 
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
-$shadow = get_field('shadow', $id);
+$other = get_field('other', $id);
 $section_class = get_field('section_class', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
@@ -21,10 +22,12 @@ $address2 = get_field('map_address_2');
 $address3 = get_field('map_address_3');
 
 $phone = get_field('map_phone');
-$tollfree = get_field('map_tollfree');
-$fax = get_field('map_fax');
-$other_phone_label = get_field('map_phone_field');
-$other_phone = get_field('map_other_phone');
+$phone_2_label = get_field('map_phone_2');
+$phone_2_number = get_field('map_phone_2_number');
+$phone_3_label = get_field('map_phone_3');
+$phone_3_number = get_field('map_phone_3_number');
+$phone_4_label = get_field('map_phone_4');
+$phone_4_number = get_field('map_phone_4_number');
 
 $email = get_field('map_email');
 $email2_field = get_field('map_email2_field');
@@ -35,11 +38,14 @@ $email3 = get_field('map_email3');
 $api = get_field('google_api');
 
 $classes = array('map');
+if ($section_class){
+	$classes[] = $section_class;
+}
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
-if ($section_class){
-	$classes[] = $section_class;
+if ( $other && in_array('fullscreen', $other) ) {
+	$classes[] = "fullscreen";
 }
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
@@ -60,14 +66,22 @@ if ($section_class){
 				echo '<br/>'.$address3;
 			}
 			echo '</p>';
+
+			$phone_2_label = get_field('map_phone_2');
+			$phone_2_number = get_field('map_phone_2_number');
+			$phone_3_label = get_field('map_phone_3');
+			$phone_3_number = get_field('map_phone_3_number');
+			$phone_4_label = get_field('map_phone_4');
+			$phone_4_number = get_field('map_phone_4_number');
+
 		} if ( $phone ) {
 			echo '<p><strong>Phone:</strong><br/><a href="tel:'.$phone.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone.'</a></p>';
-		} if ( $tollfree ) {
-			echo '<p><strong>Toll Free:</strong><br/><a href="tel:'.$tollfree.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$tollfree.'</a></p>';
-		} if ( $fax ) {
-			echo '<p><strong>Fax:</strong><br/><a href="tel:'.$fax.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$fax.'</a></p>';
-		} if ( $other_phone ) {
-			echo '<p><strong>'.$other_phone_label.':</strong><br/><a href="tel:'.$other_phone.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$other_phone.'</a></p>';
+		} if ( $phone_2_number ) {
+			echo '<p><strong>'.$phone_2_label.':</strong><br/><a href="tel:'.$phone_2_number.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone_2_number.'</a></p>';
+		} if ( $phone_3_number ) {
+			echo '<p><strong>'.$phone_3_label.':</strong><br/><a href="tel:'.$phone_3_number.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone_3_number.'</a></p>';
+		} if ( $phone_4_number ) {
+			echo '<p><strong>'.$phone_4_label.':</strong><br/><a href="tel:'.$phone_4_number.'"><i class="fa fa-phone" aria-hidden="true"></i> '.$phone_4_number.'</a></p>';
 		} if ( $email ) {
 			echo '<p><strong>Email:</strong><br/><a href="mailto:'.$email.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email.'</a></p>';
 		} if ( $email2 ) {
@@ -76,9 +90,9 @@ if ($section_class){
 			echo '<p><strong>'.$email3_field.':</strong><br/><a href="mailto:'.$email3.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email3.'</a></p>';
 		}
 		echo '</div><iframe src="//www.google.com/maps/embed/v1/place?q='.$address1;
-			if ( $address2 ) { echo ', '.$address2; }
-			if ( $address3 ) { echo ', '.$address3; }
-		echo $address3.'&zoom=12&key='.$api.'" class="half" style="border:none;"></iframe></div>';
+			if ( $address2 ) { echo ' '.$address2; }
+			if ( $address3 ) { echo ' '.$address3; }
+		echo '&zoom=12&key='.$api.'" class="half" style="border:none;"></iframe></div>';
 	}
 
 	wp_link_pages( array(
@@ -100,7 +114,7 @@ if ($section_class){
 		),
 		'<footer class="entry-footer"><span class="edit-link">',
 		'</span></footer><!-- .entry-footer -->',
-		$id
+		$number
 	); ?>
 </div></section><!-- section -->
-<?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>
+<?php if ( $other && in_array('shadow', $other) ) { echo '<div class="shadow"></div>'; } ?>

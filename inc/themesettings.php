@@ -545,72 +545,72 @@ function businesstheme_default_options() {
 		$options = get_option( 'businesstheme_options' );
 
 		$ssbutton = $options['ssbutton'];
-			$html .= '<input type="checkbox" id="ssbutton" name="businesstheme_options[ssbutton]"';
+			$html .= '<label><input type="checkbox" id="ssbutton" name="businesstheme_options[ssbutton]"';
 			if ($ssbutton) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Social Share Buttons?<p class="ss" style="display:none">';
+			$html .= '> Social Share Buttons?</label> <div class="floatimg"><label>These are not links to your social media, these are for people to share a particular article or page on their own social media profiles.</label></div><p class="ss" style="display:none">';
 
 			$ss_on = $options['ss_on'];
-				$html .= '<input type="radio" value="onpost" name="businesstheme_options[ss_on]"';
+				$html .= '<label><input type="radio" value="onpost" name="businesstheme_options[ss_on]"';
 				if ($ss_on==="onpost") {
 					$html .= 'checked';
 				}
-				$html .= '> On Post &nbsp; &nbsp;';
+				$html .= '> On Post</label> &nbsp; &nbsp;';
 
-				$html .= '<input type="radio" value="onexcerpt" name="businesstheme_options[ss_on]"';
+				$html .= '<label><input type="radio" value="onexcerpt" name="businesstheme_options[ss_on]"';
 				if ($ss_on==="onexcerpt") {
 					$html .= 'checked';
 				}
-				$html .= '> On Excerpt &nbsp; &nbsp;';
+				$html .= '> On Excerpt</label> &nbsp; &nbsp;';
 
-				$html .= '<input type="radio" value="all" name="businesstheme_options[ss_on]"';
+				$html .= '<label><input type="radio" value="all" name="businesstheme_options[ss_on]"';
 				if ($ss_on==="all") {
 					$html .= 'checked="checked"';
 				}
-				$html .= '> On All<br/>';
+				$html .= '> On All</label><br/>';
 
 		$facebook = $options['ss_fb'];
-			$html .= ' <input type="checkbox" id="ss_fb" name="businesstheme_options[ss_fb]"';
+			$html .= '<label><input type="checkbox" id="ss_fb" name="businesstheme_options[ss_fb]"';
 			if ($facebook) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Facebook? &nbsp; &nbsp;';
+			$html .= '> Facebook?</label> &nbsp; &nbsp;';
 
 		$twitter = $options['ss_tw'];
-			$html .= ' <input type="checkbox" id="ss_tw" name="businesstheme_options[ss_tw]"';
+			$html .= '<label><input type="checkbox" id="ss_tw" name="businesstheme_options[ss_tw]"';
 			if ($twitter) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Twitter? &nbsp; &nbsp;';
+			$html .= '> Twitter?</label> &nbsp; &nbsp;';
 
 		$gplus = $options['ss_gp'];
-			$html .= ' <input type="checkbox" id="ss_gp" name="businesstheme_options[ss_gp]"';
+			$html .= '<label><input type="checkbox" id="ss_gp" name="businesstheme_options[ss_gp]"';
 			if ($gplus) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Google+? &nbsp; &nbsp;';
+			$html .= '> Google+?</label> &nbsp; &nbsp;';
 
 		$linkedin = $options['ss_li'];
-			$html .= ' <input type="checkbox" id="ss_li" name="businesstheme_options[ss_li]"';
+			$html .= '<label><input type="checkbox" id="ss_li" name="businesstheme_options[ss_li]"';
 			if ($linkedin) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> LinkedIn? &nbsp; &nbsp;';
+			$html .= '> LinkedIn?</label> &nbsp; &nbsp;';
 
 		$pinterest = $options['ss_pin'];
-			$html .= ' <input type="checkbox" id="ss_pin" name="businesstheme_options[ss_pin]"';
+			$html .= '<label><input type="checkbox" id="ss_pin" name="businesstheme_options[ss_pin]"';
 			if ($pinterest) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Pinterest? &nbsp; &nbsp;';
+			$html .= '> Pinterest?</label> &nbsp; &nbsp;';
 
 		$email = $options['ss_email'];
-			$html .= ' <input type="checkbox" id="ss_email" name="businesstheme_options[ss_email]"';
+			$html .= '<label><input type="checkbox" id="ss_email" name="businesstheme_options[ss_email]"';
 			if ($email) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Email?</p>';
+			$html .= '> Email?</label></p>';
 		echo $html;
 	}
 
@@ -620,95 +620,95 @@ function businesstheme_default_options() {
 		$html .'You want extra widget areas with that?';
 
 		$home = $options['es_home'];
-			$html .= '<p><input type="checkbox" id="es_home" name="businesstheme_options[es_home]"';
+			$html .= '<p><label><input type="checkbox" id="es_home" name="businesstheme_options[es_home]"';
 			if ($home) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Home Sidebar &nbsp; &nbsp;';
+			$html .= '> Home Sidebar</label> &nbsp; &nbsp;';
 
 		$page = $options['es_page'];
-			$html .= ' <input type="checkbox" id="es_page" name="businesstheme_options[es_page]"';
+			$html .= '<label><input type="checkbox" id="es_page" name="businesstheme_options[es_page]"';
 			if ($page) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Page Sidebar &nbsp; &nbsp;';
+			$html .= '> Page Sidebar</label> &nbsp; &nbsp;';
 
 		$blog = $options['es_blog'];
-			$html .= ' <input type="checkbox" id="es_blog" name="businesstheme_options[es_blog]"';
+			$html .= '<label><input type="checkbox" id="es_blog" name="businesstheme_options[es_blog]"';
 			if ($blog) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Blog Sidebar &nbsp; &nbsp;';
+			$html .= '> Blog Sidebar</label> &nbsp; &nbsp;';
 
 		$contact = $options['es_contact'];
-			$html .= ' <input type="checkbox" id="es_contact" name="businesstheme_options[es_contact]"';
+			$html .= '<label><input type="checkbox" id="es_contact" name="businesstheme_options[es_contact]"';
 			if ($contact) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Contact Sidebar</p><p>';
+			$html .= '> Contact Sidebar</label></p><p>';
 
 		$above = $options['es_above'];
-			$html .= ' <input type="checkbox" id="es_above" name="businesstheme_options[es_above]"';
+			$html .= '<label><input type="checkbox" id="es_above" name="businesstheme_options[es_above]"';
 			if ($above) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Above the Header &nbsp; &nbsp; &nbsp;';
+			$html .= '> Above the Header</label> &nbsp; &nbsp; &nbsp;';
 
 		$header = $options['es_header'];
-			$html .= ' <input type="checkbox" id="es_header" name="businesstheme_options[es_header]"';
+			$html .= '<label><input type="checkbox" id="es_header" name="businesstheme_options[es_header]"';
 			if ($header) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Header &nbsp; &nbsp; &nbsp;';
+			$html .= '> Header</label> &nbsp; &nbsp; &nbsp;';
 
 		$features = $options['es_features'];
-			$html .= ' <input type="checkbox" id="es_features" name="businesstheme_options[es_features]"';
+			$html .= '<label><input type="checkbox" id="es_features" name="businesstheme_options[es_features]"';
 			if ($features) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Features Widget Area &nbsp; &nbsp; &nbsp;';
+			$html .= '> Features Widget Area</label> &nbsp; &nbsp; &nbsp;';
 
 		$footer = $options['es_footer'];
-			$html .= ' <input type="checkbox" id="es_footer" name="businesstheme_options[es_footer]"';
+			$html .= '<label><input type="checkbox" id="es_footer" name="businesstheme_options[es_footer]"';
 			if ($footer) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Footer Widget Area</p>';
+			$html .= '> Footer Widget Area</label></p>';
 		echo $html;
 	}
 
 	function businesstheme_extra_posttypes_callback() {
-		$options = get_option( 'businesstheme_options' );
+		$options = get_option( 'businesstheme_options' ); 
 
 		$html .'More Post Types';
 
 		$services = $options['es_services'];
-			$html .= '<p><input type="checkbox" id="es_services" name="businesstheme_options[es_services]"';
+			$html .= '<p><label><input type="checkbox" id="es_services" name="businesstheme_options[es_services]"';
 			if ($services) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Services &nbsp; &nbsp;';
+			$html .= '> Services</label> &nbsp; &nbsp;';
 
 		$team = $options['es_team'];
-			$html .= '<input type="checkbox" id="es_team" name="businesstheme_options[es_team]"';
+			$html .= '<label><input type="checkbox" id="es_team" name="businesstheme_options[es_team]"';
 			if ($team) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Team &nbsp; &nbsp;';
+			$html .= '> Team</label> &nbsp; &nbsp;';
 
 		$events = $options['es_events'];
-			$html .= ' <input type="checkbox" id="es_events" name="businesstheme_options[es_events]"';
+			$html .= '<label><input type="checkbox" id="es_events" name="businesstheme_options[es_events]"';
 			if ($events) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Events &nbsp; &nbsp;';
+			$html .= '> Events</label> &nbsp; &nbsp;';
 
 		$testimonials = $options['es_testimonials'];
-			$html .= ' <input type="checkbox" id="es_testimonials" name="businesstheme_options[es_testimonials]"';
+			$html .= '<label><input type="checkbox" id="es_testimonials" name="businesstheme_options[es_testimonials]"';
 			if ($testimonials) {
 				$html .= 'checked="checked"';
 			}
-			$html .= '> Testimonials</p>';
+			$html .= '> Testimonials</label></p>';
 		echo $html;
 	}
 

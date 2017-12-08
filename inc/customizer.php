@@ -602,7 +602,6 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	.entry-footer a:hover,
 	.entry-footer a:focus,
 	.sticky-post,
-	.taxonomy-description,
 	.entry-caption,
 	.comment-metadata,
 	.pingback .edit-link,
@@ -661,7 +660,6 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	blockquote cite,
 	blockquote small,
 	.main-navigation a,
-	.menu-toggle,
 	.dropdown-toggle,
 	.widget-title a,
 	.site-branding .site-title a,
@@ -700,16 +698,18 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	.simple .entry-footer a,
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a,
 	header .top a,
+	.scrolled .dropdown-toggle:after,
 	.site-footer a,
-	.social-navigation a {
+	.social-navigation a,
+	.social-navigation a:hover,
+	.social-navigation a:hover::before {
 		color: {$colors['secondary_link_color']};
 	}
 
 	.simple .entry-footer a:hover,
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a:hover,
 	header .top a:hover,
-	.site-footer a:hover,
-	.social-navigation a:hover {
+	.site-footer a:hover{
 		color: {$colors['secondary_link_hover_color']};
 	}
 
@@ -725,7 +725,6 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	input[type="email"],
 	input[type="url"],
 	input[type="password"],
-	input[type="search"],
 	select,
 	textarea,
 	.main-navigation li,
@@ -879,7 +878,6 @@ function businesstheme_main_text_color_css() {
 		blockquote cite,
 		blockquote small,
 		.main-navigation a,
-		.menu-toggle,
 		.dropdown-toggle,
 		.post-navigation a,
 		.widget-title a,
@@ -919,7 +917,6 @@ function businesstheme_main_text_color_css() {
 		input[type="email"],
 		input[type="url"],
 		input[type="password"],
-		input[type="search"],
 		select,
 		textarea,
 		.main-navigation li,
@@ -1110,7 +1107,6 @@ function businesstheme_link_hover_color_css() {
 		.site-description,
 		.author-bio,
 		.sticky-post,
-		.taxonomy-description,
 		.entry-caption,
 		.comment-metadata,
 		.pingback .edit-link,
@@ -1289,7 +1285,9 @@ function businesstheme_secondary_link_color_css() {
 		header .top a,
 		.social-navigation a,
 		.site-footer a,
-		.social-navigation a {
+		.social-navigation a:hover,
+		.social-navigation a:hover::before,
+		.scrolled .dropdown-toggle:after {
 			color: %1$s;
 		}
 	';
@@ -1327,8 +1325,7 @@ function businesstheme_secondary_link_hover_color_css() {
 		.simple .entry-footer a:hover,
 		body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a:hover,
 		header .top a:hover,
-		.site-footer a:hover,
-		.social-navigation a:hover {
+		.site-footer a:hover{
 			color: %1$s;
 		}
 	';

@@ -9,7 +9,6 @@ include_once get_template_directory().'/custom-fields/fields.php';
 include businesstheme.'/inc/themesettings.php';
 include businesstheme.'/inc/themewidgets.php';
 include businesstheme.'/inc/template-tags.php';
-
 /**
  * Business Theme only works in WordPress 4.4 or later.
  */
@@ -18,8 +17,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 }
 
 if ( ! function_exists( 'businesstheme_setup' ) ) :
-
-
 function businesstheme_setup() {
 
 	load_theme_textdomain( 'businesstheme', get_template_directory() . '/languages' );
@@ -36,8 +33,8 @@ function businesstheme_setup() {
 
 	add_theme_support( 'html5', array(
 		'search-form',
-		'comment-form',
-		'comment-list',
+		// 'comment-form',
+		// 'comment-list',
 		'gallery',
 		'caption',
 	) );
@@ -278,13 +275,61 @@ add_filter('manage_pages_columns' , 'add_template_column');
 function custom_page_column_content( $column_name, $post_id ) {
 	if ( $column_name == 'template' ) {
 		$template = get_post_meta( $post_id, '_wp_page_template', true );
-		echo $template;
+		$subtemplate = get_field('subsections_templates', $post_id );
 		if ($template == 'parent-page.php') {
-			echo '<span class="dashicons dashicons-arrow-left-alt2"></span>';
+			echo '<a>Parent page<span class="dashicons dashicons-arrow-left-alt2"></span></a>';
+		} elseif ($template == 'subsection.php') {
+			echo $subtemplate.' subsection';
 		}
 	}
 }
 add_action( 'manage_pages_custom_column', 'custom_page_column_content', 10, 2 );
+
+
+// Adding excerpts to pages
+add_post_type_support( 'page', 'excerpt' );
+
+// Adding back thumbnail support and changing name
+add_theme_support('post-thumbnails');
+
+// changing "Featured image" to "Background Image"
+function replace_featured_image_box() {
+	if ( strpos(get_page_template_slug($post_id),'subsection.php') !== false ) {
+		remove_meta_box( 'postimagediv', 'page', 'side' );  
+		add_meta_box('postimagediv', __('Background Image'), 'post_thumbnail_meta_box', 'page', 'side', 'low');  
+	}
+}
+add_action('do_meta_boxes', 'replace_featured_image_box');
+
+
+// exclude subsections from seo yoast
+function set_noindex_nofollow($post_id){
+    // if ( wp_is_post_revision( $post_id ) ) return;
+
+    if ( strpos(get_page_template_slug($post_id),'subsection.php') !== false){ 
+        add_action( 'wpseo_saved_postdata', function() use ( $post_id ) { 
+            update_post_meta( $post_id, '_yoast_wpseo_meta-robots-noindex', '1' );
+            update_post_meta( $post_id, '_yoast_wpseo_meta-robots-nofollow', '1' );
+        }, 999 );
+    }else{
+        return;
+    }
+}       
+add_action( 'save_post', 'set_noindex_nofollow' );
+
+
+// changing the archive title
+add_filter( 'get_the_archive_title', function ($title) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>' ;
+	}
+	return $title;
+});
+
 
 /**
  * HOH custom excerpt
@@ -586,6 +631,7 @@ function ea_acf_rule_values_parent_page_template( $choices ) {
 	return $choices;
 }
 add_filter( 'acf/location/rule_values/parent_page_template', 'ea_acf_rule_values_parent_page_template' );
+
 /**
  * ACF Rule Match: Parent Page Template
  *
@@ -623,7 +669,7 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
  * Function for ommiting sections from search and only returning the parent
  */
 
- function post_res($posts, $query){
+function post_res($posts, $query){
 	$required_fields = array( //array of fields to check for to determine if this is a section page
 		'subsections_templates'
 	);
@@ -647,14 +693,14 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
  }
  add_filter('posts_results', 'post_res', 10, 2);
 
- // adding dropdown for subsection templates
+// adding dropdown for subsection templates
  	register_field_group(array (
 		'id' => 'acf_subsections',
 		'title' => 'Subsections',
 		'fields' => array (
 			array (
 				'key' => 'field_592324b7840bb',
-				'label' => 'Front page subsections',
+				'label' => 'Subsection',
 				'name' => 'subsections_templates',
 				'type' => 'select',
 				'instructions' => 'Pick a template.',
@@ -699,29 +745,36 @@ add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_p
 		),
 		'menu_order' => 0,
 	));
-	//hides content on parent page
-	// register_field_group(array (
-	// 	'id' => 'acf_parent',
-	// 	'title' => 'parent',
-	// 	'fields' => array (
-	// 	),
-	// 	'location' => array (
-	// 		array (
-	// 			array (
-	// 				'param' => 'page_template',
-	// 				'operator' => '==',
-	// 				'value' => 'parent-page.php',
-	// 				'order_no' => 0,
-	// 				'group_no' => 0,
-	// 			),
-	// 		),
-	// 	),
-	// 	'options' => array (
-	// 		'position' => 'normal',
-	// 		'layout' => 'no_box',
-	// 		'hide_on_screen' => array (
-	// 			0 => 'the_content',
-	// 		),
-	// 	),
-	// 	'menu_order' => 0,
-	// ));
+	register_field_group(array (
+		'id' => 'acf_featured-image',
+		'title' => 'Featured Image',
+		'fields' => array (
+			array (
+				'key' => 'field_59f0fd34ba529',
+				'label' => 'Thumbnail',
+				'name' => 'thumbnail',
+				'type' => 'image',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'ef_media',
+					'operator' => '==',
+					'value' => 'all',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'side',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));

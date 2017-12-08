@@ -698,7 +698,6 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	.simple .entry-footer a,
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a,
 	header .top a,
-	.site-header.scrolled .primary-menu > li > a,
 	.scrolled .dropdown-toggle:after,
 	.site-footer a,
 	.social-navigation a,
@@ -708,7 +707,6 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	}
 
 	.simple .entry-footer a:hover,
-	.site-header.scrolled .primary-menu > li > a:hover,
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a:hover,
 	header .top a:hover,
 	.site-footer a:hover{
@@ -1289,7 +1287,6 @@ function businesstheme_secondary_link_color_css() {
 		.site-footer a,
 		.social-navigation a:hover,
 		.social-navigation a:hover::before,
-		.site-header.scrolled .primary-menu > li > a,
 		.scrolled .dropdown-toggle:after {
 			color: %1$s;
 		}
@@ -1328,8 +1325,7 @@ function businesstheme_secondary_link_hover_color_css() {
 		.simple .entry-footer a:hover,
 		body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a:hover,
 		header .top a:hover,
-		.site-footer a:hover,
-		.site-header.scrolled .primary-menu > li > a:hover {
+		.site-footer a:hover{
 			color: %1$s;
 		}
 	';

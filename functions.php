@@ -294,17 +294,15 @@ function excerpt($limit) {
 }
 
 
-add_filter(
-	'the_excerpt',
-	function ($excerpt) {
-		$excerpt= substr($excerpt,0,strpos($excerpt,'.')+1);
-		if (strlen($excerpt) > 125){
-			return implode(' ', array_slice(explode(' ', strip_tags($excerpt)), 0, 15)).'...';
-		} else {
-			return strip_tags($excerpt);
-		}
+function new_excerpt( $excerpt ){
+	$excerpt= substr($excerpt,0,strpos($excerpt,'.')+1);
+	if (strlen($excerpt) > 125){
+		return implode(' ', array_slice(explode(' ', strip_tags($excerpt)), 0, 15)).'...';
+	} else {
+		return strip_tags($excerpt);
 	}
-);
+}
+add_filter( 'the_excerpt', 'new_excerpt', 10, 1 );
 
 
 if ( ! function_exists( 'businesstheme_fonts_url' ) ) :

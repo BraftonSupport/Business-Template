@@ -1,5 +1,6 @@
 # README #
 Version 1.1.1
+Works on PHP 5.6
 
 ### Business Theme Options ###
 This is where you change the basic info of your site. You can find this page under Appearance -> Business Theme.  

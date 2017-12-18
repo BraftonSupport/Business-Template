@@ -6,17 +6,7 @@ jQuery(document).ready(function($){
 		$(".ss").toggle("slow");
 	});
 
-	//this doesn't work
-	// if( $( '#page_template' ).val() == 'subsection.php'){
-	// 	$( '#remove-post-thumbnail' ).text('Remove background image'); 
-	// 	$( 'p:last-of-type #set-post-thumbnail' ).text('Set background image');
-	// }
-	// $( '#page_template' ).on('change', function() {
-	// 	$( '#remove-post-thumbnail' ).text('Remove featured image'); 
-	// 	$( 'p:last-of-type #set-post-thumbnail' ).text('Set featured image'); 
-	// });
-
-	$("td.template:not(:empty):not(:contains('Parent'))").parent().addClass('subsection').hide();
+	$("td.template:not(:empty):not(:contains('Parent'))").parent().addClass('subsection');
 	$("td.template:contains('Parent')").parent().addClass('parent');
 	$("td.template:empty").parent().addClass('default');
 

@@ -279,7 +279,7 @@ function custom_page_column_content( $column_name, $post_id ) {
 		if ($template == 'parent-page.php') {
 			echo '<a>Parent page<span class="dashicons dashicons-arrow-left-alt2"></span></a>';
 		} elseif ($template == 'subsection.php') {
-			echo $subtemplate.' subsection';
+			echo $subtemplate.' subsection <span class="number">'. wp_get_post_parent_id( $post_ID ).'</span>';
 		}
 	}
 }
@@ -342,17 +342,15 @@ function excerpt($limit) {
 }
 
 
-add_filter(
-	'the_excerpt',
-	function ($excerpt) {
-		$excerpt= substr($excerpt,0,strpos($excerpt,'.')+1);
-		if (strlen($excerpt) > 125){
-			return implode(' ', array_slice(explode(' ', strip_tags($excerpt)), 0, 15)).'...';
-		} else {
-			return strip_tags($excerpt);
-		}
+function new_excerpt( $excerpt ){
+	$excerpt= substr($excerpt,0,strpos($excerpt,'.')+1);
+	if (strlen($excerpt) > 125){
+		return implode(' ', array_slice(explode(' ', strip_tags($excerpt)), 0, 15)).'...';
+	} else {
+		return strip_tags($excerpt);
 	}
-);
+}
+add_filter( 'the_excerpt', 'new_excerpt', 10, 1 );
 
 
 if ( ! function_exists( 'businesstheme_fonts_url' ) ) :

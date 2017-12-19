@@ -18,6 +18,14 @@
 	}
 }
 
+.scrolled .below .site-header-menu {
+	text-align: right;
+	margin: 0 0 0 auto;
+	-webkit-flex: 0 1 auto;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+}
+
 .menu-toggle {
 	display: none;
 }

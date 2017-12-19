@@ -159,10 +159,12 @@ if(is_single()) {
 			$featured_image = $img[0]; ?>
 			
 			<header class="page-header visual"<?php echo ' style="background-image:url('.$featured_image.');"';?>>
-			<?php
-				echo '<h1>'.get_the_title( get_option( "page_for_posts" ) ).'</h1>';
-				echo '<p>'.get_the_excerpt( get_option( "page_for_posts" ) ).'</p>';
-			?>
+				<div class="site-inner">
+				<?php
+					echo '<h1>'.get_the_title( get_option( "page_for_posts" ) ).'</h1>';
+					echo '<p>'.get_the_excerpt( get_option( "page_for_posts" ) ).'</p>';
+				?>
+				</div>
 		</header><!-- .page-header -->
 		<?php } ?>
 

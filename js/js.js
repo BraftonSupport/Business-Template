@@ -16,7 +16,6 @@ jQuery(document).ready(function($){
 	// 	$( 'p:last-of-type #set-post-thumbnail' ).text('Set featured image'); 
 	// });
 
-
 	$("td.template:contains('subsection')").parent().addClass('subsection').hide();
 	$("td.template:contains('Parent')").parent().addClass('parent');
 	$("td.template:empty").parent().addClass('default');

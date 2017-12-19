@@ -16,12 +16,22 @@ jQuery(document).ready(function($){
 	// 	$( 'p:last-of-type #set-post-thumbnail' ).text('Set featured image'); 
 	// });
 
-	$("td.template:not(:empty):not(:contains('Parent'))").parent().addClass('subsection').hide();
+
+	$("td.template:contains('subsection')").parent().addClass('subsection').hide();
 	$("td.template:contains('Parent')").parent().addClass('parent');
 	$("td.template:empty").parent().addClass('default');
 
+	$("td.template:contains('subsection')").each(function( index ) {
+		var number = $( this ).children('.number').text();
+		$( this ).parent().addClass('parent-'+number);
+	});
+
 	$("td.template a").click(function() {
 		$(this).children('span').toggleClass('open');
-		$(this).parents('tr').nextUntil('tr.parent, tr.default').toggle('slide');
+		var tr = $(this).parents('tr');
+		var parent = tr.attr('id');
+		var parentid = parent.replace('post-', '');
+
+		$('tr.parent-'+parentid).toggle('slide');
 	});
 });

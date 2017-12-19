@@ -279,7 +279,7 @@ function custom_page_column_content( $column_name, $post_id ) {
 		if ($template == 'parent-page.php') {
 			echo '<a>Parent page<span class="dashicons dashicons-arrow-left-alt2"></span></a>';
 		} elseif ($template == 'subsection.php') {
-			echo $subtemplate.' subsection';
+			echo $subtemplate.' subsection <span class="number">'. wp_get_post_parent_id( $post_ID ).'</span>';
 		}
 	}
 }

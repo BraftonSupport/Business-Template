@@ -41,15 +41,10 @@ function businesstheme_entry_meta() {
 		businesstheme_entry_taxonomies();
 	}
 
-	$options = get_option( 'businesstheme_options' );
-	if ( isset($options['ssbutton']) && $options['ssbutton']=="on" ) {
+	$social_share_buttons = get_field('social_share_buttons', 'option');
+	if ( $social_share_buttons=="on" ) {
 		social_sharing_buttons();
 	}
-	// if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-	// 	echo '<span class="comments-link">';
-	// 	comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'businesstheme' ), get_the_title() ) );
-	// 	echo '</span>';
-	// }
 }
 endif;
 
@@ -59,8 +54,8 @@ endif;
  * What it says on the tin.
  */
 if (!function_exists( 'social_sharing_buttons' ) ) :
-	$options = get_option( 'businesstheme_options' );
-	if ( isset($options['ssbutton']) && $options['ssbutton']=="on" ) {
+	$social_share_buttons = get_field('social_share_buttons', 'option');
+	if ( $social_share_buttons=="on" ) {
 		function social_sharing_buttons() {
 			// Get current page URL 
 			$ssbURL = get_permalink();
@@ -80,16 +75,16 @@ if (!function_exists( 'social_sharing_buttons' ) ) :
 
 			// Add sharing button at the end of page/page content
 			$variable .= '<span class="ssb-social"><span class="ssb-text">Social Share: </span>';
-			$options = get_option( 'businesstheme_options' );
-			if ( $options['ss_fb'] ) { $variable .= '<a class="ssb-facebook" href="'.$facebookURL.'" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>'; }
-			if ( $options['ss_tw'] ) { $variable .= '<a class="ssb-twitter" href="'. $twitterURL .'" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>'; }
-			if ( $options['ss_gp'] ) { $variable .= '<a class="ssb-googleplus" href="'.$googleURL.'" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>'; }
-			if ( $options['ss_li'] ) { $variable .= '<a class="ssb-linked" href="'.$linkedURL.'" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>'; }
-			if ( $options['ss_pin'] ) { $variable .= '<a class="ssb-pinterest" href="'.$pinterestURL.'" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>'; }
-			if ( $options['ss_email'] ) { $variable .= '<a class="ssb-email" href="mailto:?subject=I wanted you to see this site&amp;body='.$ssbURL.'"><i class="fa fa-envelope" aria-hidden="true"></i></a>'; }
+			$social_media = get_field('social_media', 'option');
+			if ( in_array('facebook', $social_media) ) { $variable .= '<a class="ssb-facebook" href="'.$facebookURL.'" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>'; }
+			if ( in_array('twitter', $social_media) ) { $variable .= '<a class="ssb-twitter" href="'. $twitterURL .'" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>'; }
+			if ( in_array('google', $social_media) ) { $variable .= '<a class="ssb-googleplus" href="'.$googleURL.'" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>'; }
+			if ( in_array('linkedin', $social_media) ) { $variable .= '<a class="ssb-linked" href="'.$linkedURL.'" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>'; }
+			if ( in_array('pinterest', $social_media) ) { $variable .= '<a class="ssb-pinterest" href="'.$pinterestURL.'" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>'; }
+			if ( in_array('email', $social_media) ) { $variable .= '<a class="ssb-email" href="mailto:?subject=I wanted you to see this site&amp;body='.$ssbURL.'"><i class="fa fa-envelope" aria-hidden="true"></i></a>'; }
 			$variable .= '</span>';
-
-			if ( is_single() && $options['ss_on']=="onpost" || !is_single() && $options['ss_on']=="onexcerpt" || $options['ss_on']=="all" ){
+			$ss_button_location = get_field('ss_button_location', 'option');
+			if ( is_single() && $ss_button_location=="post" || !is_single() && $ss_button_location=="excerpt" || $ss_button_location=="all" ){
 				echo $variable;
 			}
 		}

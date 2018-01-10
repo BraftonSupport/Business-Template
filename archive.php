@@ -23,7 +23,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) :
-			if (!$bg) { ?>
+			if (!$bg) { ?>One of this isn't correct. (check header.php)
 				<header class="page-header">
 					<?php
 						the_archive_title( '<h1 class="page-title">', '</h1>' );

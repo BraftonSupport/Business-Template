@@ -6,14 +6,9 @@
  * @subpackage Business_Theme
  * @since businesstheme 1.0
  */
-$options = get_option( 'businesstheme_options' );
-$blog = $options['blog_layout'];
 $thumbnail = get_the_post_thumbnail_url();
 ?>
-<article id="post-<?php the_ID(); ?>"<?php post_class($blog); if ($blog=="rich") { ?> style="background-image: url(<?php echo $thumbnail; ?>);"<?php } ?>>
-
-	<?php if ($blog!=="rich") { businesstheme_post_thumbnail(); } ?>
-
+<article id="post-<?php the_ID(); ?>"<?php //post_class($blog); if ($blog=="rich") { ?> style="background-image: url(<?php echo $thumbnail; ?>);"<?php } ?>>
 	<header class="entry-header">
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 			<span class="sticky-post"><?php _e( 'Featured', 'businesstheme' ); ?></span>

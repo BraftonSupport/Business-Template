@@ -6,7 +6,7 @@
  * @subpackage Business_Theme
  * @since businesstheme 1.0
  */
-$options = get_option( 'businesstheme_options' );
+$related_posts = get_field('related_posts', 'option');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -51,15 +51,8 @@ $options = get_option( 'businesstheme_options' );
 		?>
 	</div><!-- .entry-content -->
 
-
-<?php if ( $options['related_posts']=="below" ) :
-	echo '<div class="latest';
-	if ( $options['featured_style']=="icon" ) {
-		echo ' icon';
-	} else {
-		echo ' roll';
-	}
-	echo '">';
+<?php if ( $related_posts ) :
+	echo '<div class="latest">';
 ?>
 	<h3>Related Posts</h3>
 	<div class="post">
@@ -74,9 +67,7 @@ $options = get_option( 'businesstheme_options' );
 				while ($my_query->have_posts()) : $my_query->the_post();
 				$url = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'thumbnail' );
 				echo '<a href="' . get_the_permalink() . '" title="'.get_the_title().'">';
-					if ( $options['featured_style']=="rollover" ) {
-						echo '<div class="thumb" style="background-image: url('.$url[0].')"></div>';
-					} else if ( get_post_thumbnail_id( get_the_ID() ) ) {
+					if ( get_post_thumbnail_id( get_the_ID() ) ) {
 						echo '<div class="thumb"><img src="'.$url[0].'" alt="'.get_the_title().'"></div>';
 					}
 					echo '<h5>'.get_the_title().'<br/><span class="tiny">'.get_the_date('M j, Y').'</span></h5>';
@@ -87,6 +78,5 @@ $options = get_option( 'businesstheme_options' );
 	</div>
 </div>
 <?php endif; ?>
-
 
 </article><!-- #post-## -->

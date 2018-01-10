@@ -2,8 +2,19 @@
 /*
 Author: Yvonne Tse
 URL: http://yvonnetse.com/
-Version: Business Theme 1.0
+Version: Business Theme 2.1.0
 */
+
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+}
+
 define("businesstheme", dirname(__FILE__));
 include_once get_template_directory().'/custom-fields/fields.php';
 include businesstheme.'/inc/themesettings.php';
@@ -64,114 +75,53 @@ add_action( 'after_setup_theme', 'businesstheme_content_width', 0 );
 /**
  * Register widget areas.
  */
+
 function businesstheme_widgets_init() {
-	$options = get_option( 'businesstheme_options' );
-	if ( !empty($options['es_home']) ) {
-		register_sidebar( array(
-			'name'		  => __( 'Home Sidebar', 'businesstheme' ),
-			'id'			=> 'home-sidebar',
-			'description'   => 'Appears on homepage in the sidebar.',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-	}
-	if ( !empty($options['es_page']) ) {
-		register_sidebar( array(
-			'name'		  => __( 'Pages Sidebar', 'businesstheme' ),
-			'id'			=> 'pages-sidebar',
-			'description'   => 'Appears on pages in the sidebar.',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-	}
-	if ( !empty($options['es_blog']) ) {
-		register_sidebar( array(
-			'name'		  => __( 'Blog Sidebar', 'businesstheme' ),
-			'id'			=> 'blog-sidebar',
-			'description'   => __( 'Appears on blog and blog posts in the sidebar.' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-	}
-	if ( !empty($options['es_contact']) ) {
-		register_sidebar( array(
-			'name'		  => __( 'Contact Page Sidebar', 'businesstheme' ),
-			'id'			=> 'contact-sidebar',
-			'description'   => __( 'Appears on the contact page template in the sidebar.' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-	}
-	if ( !empty($options['es_header']) ) {
-		register_sidebar( array(
-			'name'		  => __( 'Header', 'businesstheme' ),
-			'id'			=> 'header',
-			'description'   => 'This is located in the header area. Only 1 widget pls.',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-	}
-	if ( !empty($options['es_above']) ) {
-		register_sidebar( array(
-			'name'		  => __( 'Above Header', 'businesstheme' ),
-			'id'			=> 'top',
-			'description'   => 'Tippy top of the site. No more than 2 widgets pls.',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<p>',
-			'after_title'   => '</p>',
-		) );
-	}
-	if ( !empty($options['es_features']) ) {
-		register_sidebar( array(
-			'name'		  => __( 'Features', 'businesstheme' ),
-			'id'			=> 'features',
-			'description'   => 'This is located below the banner on the home page. Perfect time to break out the feature widget! Use up to 4 widgets.',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-	}
-	if ( !empty($options['es_footer']) ) {
-		register_sidebar( array(
-			'name'		  => __( 'Footer Left Widget', 'businesstheme' ),
-			'id'			=> 'footer-left',
-			'description'   => 'This is located in the footer. Use only 1 widget.',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-		register_sidebar( array(
-			'name'		  => __( 'Footer Middle Widget', 'businesstheme' ),
-			'id'			=> 'footer-middle',
-			'description'   => 'This is located in the footer. Use only 1 widget.',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-		register_sidebar( array(
-			'name'		  => __( 'Footer Right Widget', 'businesstheme' ),
-			'id'			=> 'footer-right',
-			'description'   => 'This is located in the footer. Use only 1 widget.',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
-	}
+
+	$widgetareas = get_field('extra_widget_areas', 'option');
+	if( $widgetareas ):
+		foreach( $widgetareas as $widgetarea ):
+			if ( $widgetarea == 'footer' ) {
+				register_sidebar( array(
+					'name'		  => __( 'Footer Left Widget', 'businesstheme' ),
+					'id'			=> 'footer-left',
+					'description'   => 'This is located in the footer. Use only 1 widget.',
+					'before_widget' => '<section id="%1$s" class="widget %2$s">',
+					'after_widget'  => '</section>',
+					'before_title'  => '<h3 class="widget-title">',
+					'after_title'   => '</h3>',
+				) );
+				register_sidebar( array(
+					'name'		  => __( 'Footer Middle Widget', 'businesstheme' ),
+					'id'			=> 'footer-middle',
+					'description'   => 'This is located in the footer. Use only 1 widget.',
+					'before_widget' => '<section id="%1$s" class="widget %2$s">',
+					'after_widget'  => '</section>',
+					'before_title'  => '<h3 class="widget-title">',
+					'after_title'   => '</h3>',
+				) );
+				register_sidebar( array(
+					'name'		  => __( 'Footer Right Widget', 'businesstheme' ),
+					'id'			=> 'footer-right',
+					'description'   => 'This is located in the footer. Use only 1 widget.',
+					'before_widget' => '<section id="%1$s" class="widget %2$s">',
+					'after_widget'  => '</section>',
+					'before_title'  => '<h3 class="widget-title">',
+					'after_title'   => '</h3>',
+				) );
+			} else {
+				register_sidebar( array(
+					'name'		  => __( $widgetarea.' Sidebar', 'businesstheme' ),
+					'id'			=> $widgetarea.'-sidebar',
+					'description'   => $widgetarea.' widget area.',
+					'before_widget' => '<section id="%1$s" class="widget %2$s">',
+					'after_widget'  => '</section>',
+					'before_title'  => '<h3 class="widget-title">',
+					'after_title'   => '</h3>',
+				) );
+			}
+		endforeach;
+	endif;
 }
 add_action( 'widgets_init', 'businesstheme_widgets_init' );
 
@@ -179,147 +129,37 @@ add_action( 'widgets_init', 'businesstheme_widgets_init' );
  * Register Post Types.
  */
 function businesstheme_posttypes_init() {
-	$options = get_option( 'businesstheme_options' );
+	// check if the repeater field has rows of data
+	if( have_rows('extra_post_types', 'option') ):
 
-	if ( !empty($options['es_services']) ) {
-		$services_labels = array(
-			'name'				=> 'Services',
-			'singular_name'		=> 'Service',
-			'menu_name'			=> 'Services',
-			'add_new_item'		=> 'Add New Service',
-		);
-		$services_args = array(
-			'labels'			=> $services_labels,
-			'menu_icon'			=> 'dashicons-star-filled',
-			'public'			=> true,
-			'capability_type'	=> 'page',
-			'taxonomies'		=> array('services'),
-			'has_archive'		=> true,
-			'hierarchical'		=> true,
-			'supports'			=> array( 'title', 'page-attributes', 'editor', 'thumbnail', 'revisions' )
-		);
-		register_post_type('services', $services_args);
-	}
+		// loop through the rows of data
+		while ( have_rows('extra_post_types', 'option') ) : the_row();
+			// display a sub field value
+			$extra_post_type = get_sub_field('post_type', 'option');
 
-	if ( !empty($options['es_team']) ) {
-		$team_labels = array(
-			'name'				=> 'Team',
-			'singular_name'		=> 'Team Member',
-			'menu_name'			=> 'Team',
-			'add_new_item'		=> 'Add New Team Member'
-		);
-		$team_args = array(
-			'labels'			=> $team_labels,
-			'menu_icon'			=> 'dashicons-groups',
-			'public'			=> true,
-			'capability_type'	=> 'page',
-			'taxonomies'		=> array('team'),
-			'has_archive'		=> true,
-			'supports'			=> array( 'title', 'editor', 'thumbnail', 'revisions' )
-		);
-		register_post_type('team', $team_args);
-	}
-
-	if ( !empty($options['es_events']) ) {
-		$events_labels = array(
-			'name'				=> 'Events',
-			'singular_name'		=> 'Event',
-			'menu_name'			=> 'Events',
-			'add_new_item'		=> 'Add New Event'
-		);
-		$events_args = array(
-			'labels'			=> $events_labels,
-			'menu_icon'			=> 'dashicons-calendar',
-			'public'			=> true,
-			'capability_type'	=> 'post',
-			'taxonomies'		=> array('events'),
-			'has_archive'		=> true,
-			'supports'			=> array( 'title', 'editor', 'thumbnail', 'revisions' )
-		);
-		register_post_type('events', $events_args);
-	}
-
-	if ( !empty($options['es_testimonials']) ) {
-		$testimonials_labels = array(
-			'name'				=> 'Testimonials',
-			'singular_name'		=> 'Testimonial',
-			'menu_name'			=> 'Testimonials',
-			'add_new_item'		=> 'Add New Testimonials'
-		);
-		$testimonials_args = array(
-			'labels'			=> $testimonials_labels,
-			'menu_icon'			=> 'dashicons-format-chat',
-			'public'			=> true,
-			'capability_type'	=> 'post',
-			'taxonomies'		=> array('testimonials'),
-			'has_archive'		=> true,
-			'supports'			=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' )
-		);
-		register_post_type('testimonials', $testimonials_args);
-	}
+			$posttypes_labels = array(
+				'name'				=> $extra_post_type.'s',
+				'singular_name'		=> $extra_post_type,
+				'menu_name'			=> $extra_post_type.'s',
+				'add_new_item'		=> 'Add New '.$extra_post_type,
+			);
+			$posttypes_args = array(
+				'labels'			=> $posttypes_labels,
+				'menu_icon'			=> 'dashicons-star-filled',
+				'public'			=> true,
+				'capability_type'	=> 'page',
+				'has_archive'		=> true,
+				'hierarchical'		=> true,
+				'supports'			=> array( 'title', 'page-attributes', 'excerpt', 'editor', 'thumbnail', 'revisions' )
+			);
+			register_post_type($extra_post_type, $posttypes_args);
+		endwhile;
+	endif;
 }
 add_action( 'widgets_init', 'businesstheme_posttypes_init' );
 
-/**
- * Templates on the Pages Post Type page
- */
-function add_template_column($columns) {
-	
-	$new_column = array(
-		'template' => __('Template Used', 'Business Theme'),
-	);
-	return array_merge($columns, $new_column);
-}
-add_filter('manage_pages_columns' , 'add_template_column');
-
-function custom_page_column_content( $column_name, $post_id ) {
-	if ( $column_name == 'template' ) {
-		$template = get_post_meta( $post_id, '_wp_page_template', true );
-		$subtemplate = get_field('subsections_templates', $post_id );
-		if ($template == 'parent-page.php') {
-			echo '<a>Parent page<span class="dashicons dashicons-arrow-left-alt2"></span></a>';
-		} elseif ($template == 'subsection.php') {
-			echo $subtemplate.' subsection <span class="number">'. wp_get_post_parent_id( $post_ID ).'</span>';
-		}
-	}
-}
-add_action( 'manage_pages_custom_column', 'custom_page_column_content', 10, 2 );
-
-
-// Adding excerpts to pages
-add_post_type_support( 'page', 'excerpt' );
-
 // Adding back thumbnail support and changing name
 add_theme_support('post-thumbnails');
-
-// changing "Featured image" to "Background Image"
-function replace_featured_image_box() {
-	if ( strpos(get_page_template_slug($post_id),'subsection.php') !== false ) {
-		remove_meta_box( 'postimagediv', 'page', 'side' );  
-		add_meta_box('postimagediv', __('Background Image'), 'post_thumbnail_meta_box', 'page', 'side', 'low');  
-	}
-}
-add_action('do_meta_boxes', 'replace_featured_image_box');
-
-
-// exclude subsections from seo yoast
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-// check for plugin using plugin name
-if ( is_plugin_active( 'plugins/wordpress-seo/wp-seo.php' ) ) {
-	function set_noindex_nofollow($post_id){
-		// if ( wp_is_post_revision( $post_id ) ) return;
-
-		if ( strpos(get_page_template_slug($post_id),'subsection.php') !== false){ 
-			add_action( 'wpseo_saved_postdata', function() use ( $post_id ) { 
-				update_post_meta( $post_id, '_yoast_wpseo_meta-robots-noindex', '1' );
-				update_post_meta( $post_id, '_yoast_wpseo_meta-robots-nofollow', '1' );
-			}, 999 );
-		}else{
-			return;
-		}
-	}       
-	add_action( 'save_post', 'set_noindex_nofollow' );
-}
 
 // changing the archive title
 add_filter( 'get_the_archive_title', function ($title) {
@@ -441,10 +281,6 @@ function businesstheme_enqueuingallthethings() {
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css' );
 	wp_enqueue_script( 'slick.min', get_template_directory_uri() . '/js/slick.min.js', array(), '1', true );
 
-	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-	// 	wp_enqueue_script( 'comment-reply' );
-	// }
-
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'businesstheme-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20151104' );
 	}
@@ -456,8 +292,8 @@ function businesstheme_enqueuingallthethings() {
 		'collapse' => __( 'collapse child menu', 'businesstheme' ),
 	) );
 
-	$options = get_option( 'businesstheme_options' );
-	if ( !empty($options['stickynav']) ) {
+	$sticky_nav = get_field('sticky_nav', 'option');
+	if ( $sticky_nav ) {
 		wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/sticky.js', array(), '1.0.0', true );
 	}
 }
@@ -590,7 +426,6 @@ function services_thumb() {
     add_image_size( 'mediumsquared', 300, 300, true ); // (cropped)
 }
 
-
 /**
  * Modifies tag cloud widget arguments to have all tags in the widget same font size.
  */
@@ -601,183 +436,3 @@ function businesstheme_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'businesstheme_widget_tag_cloud_args' );
-
-/**
- * ACF Rule Type: Parent Page Template
- *
- * @author Bill Erickson
- * @see http://www.billerickson.net/acf-custom-location-rules
- *
- * @param array $choices, all of the available rule types
- * @return array
- */
-function ea_acf_rule_type_parent_page_template( $choices ) {
-	$choices['Page']['parent_page_template'] = 'Parent Page Template';
-	return $choices;
-}
-add_filter( 'acf/location/rule_types', 'ea_acf_rule_type_parent_page_template' );
-
-/**
- * ACF Rule Values: Parent Page Template
- *
- * @author Bill Erickson
- * @see http://www.billerickson.net/acf-custom-location-rules
- *
- * @param array $choices, available rule values for this type
- * @return array
- */
-function ea_acf_rule_values_parent_page_template( $choices ) {
-	$templates = get_page_templates();
-	foreach($templates as $k => $v) {
-		$choices[$v] = $k;
-	}
-	return $choices;
-}
-add_filter( 'acf/location/rule_values/parent_page_template', 'ea_acf_rule_values_parent_page_template' );
-
-/**
- * ACF Rule Match: Parent Page Template
- *
- * @author Bill Erickson
- * @see http://www.billerickson.net/acf-custom-location-rules
- *
- * @param boolean $match, whether the rule matches (true/false)
- * @param array $rule, the current rule you're matching. Includes 'param', 'operator' and 'value' parameters
- * @param array $options, data about the current edit screen (post_id, page_template...)
- * @return boolean $match
- */
-function ea_acf_rule_match_parent_page_template( $match, $rule, $options ) {
-	
-	if ( ! $options['post_id'] || 'page' !== get_post_type( $options['post_id'] ) )
-		return false;
-		
-	$parent = get_post( $options['post_id'] )->post_parent;
-	if( empty( $parent ) )
-		return false;
-		
-	$is_template_match = $rule['value'] == get_page_template_slug( $parent );
-	
-	if ( '==' == $rule['operator'] ) { 
-		$match = $is_template_match;
-	
-	} elseif ( '!=' == $rule['operator'] ) {
-		$match = ! $is_template_match;
-	}
-	
-	return $match;
-}
-add_filter( 'acf/location/rule_match/parent_page_template', 'ea_acf_rule_match_parent_page_template', 10, 3 );
-
-/*
- * Function for ommiting sections from search and only returning the parent
- */
-
-function post_res($posts, $query){
-	$required_fields = array( //array of fields to check for to determine if this is a section page
-		'subsections_templates'
-	);
-	 if($query->is_search()){ //Is this a search query
-		 for($i=0;$i<count($posts);$i++){
-			 $post = $posts[$i];
-			if($post->post_parent){ //Does this post have a parent
-				//Query for value of the template field
-				$meta = get_post_meta($post->ID);
-				
-				if(array_intersect_key($meta, array_flip($required_fields))){ //is this a section page
-					$parent = get_post($post->post_parent);				
-					$parent->post_excerpt = $post->excerpt;
-					$posts[$i] = $parent;	
-				}
-			}
-		 }
-		//replace the content of the post parent with the child content that match the search term
-	 }
-	 return $posts;
- }
- add_filter('posts_results', 'post_res', 10, 2);
-
-// adding dropdown for subsection templates
- 	register_field_group(array (
-		'id' => 'acf_subsections',
-		'title' => 'Subsections',
-		'fields' => array (
-			array (
-				'key' => 'field_592324b7840bb',
-				'label' => 'Subsection',
-				'name' => 'subsections_templates',
-				'type' => 'select',
-				'instructions' => 'Pick a template.',
-				'choices' => array (
-					'visual' => 'Visual',
-					'list' => 'Services or List',
-					'slider' => 'Validation',
-					'half' => 'Half',
-					'full' => 'Full',
-					'cta' => 'CTA',
-					'map' => 'Map',
-				),
-				'default_value' => '',
-				'allow_null' => 1,
-				'multiple' => 0,
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'page_type',
-					'operator' => '==',
-					'value' => 'child',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'subsection.php',
-					'order_no' => 1,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'acf_after_title',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-				0 => 'the_content',
-			),
-		),
-		'menu_order' => 0,
-	));
-	register_field_group(array (
-		'id' => 'acf_featured-image',
-		'title' => 'Featured Image',
-		'fields' => array (
-			array (
-				'key' => 'field_59f0fd34ba529',
-				'label' => 'Thumbnail',
-				'name' => 'thumbnail',
-				'type' => 'image',
-				'save_format' => 'object',
-				'preview_size' => 'thumbnail',
-				'library' => 'all',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'ef_media',
-					'operator' => '==',
-					'value' => 'all',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'side',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));

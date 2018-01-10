@@ -1,12 +1,71 @@
+/* -- Sidebar fella -- */
+
+.postbox-container .inside .acf-field {
+    width: 100%!important;
+}
+.postbox-container .inside > .acf-field > .acf-label {
+    display: none;
+}
+.postbox-container .inside > .acf-field {
+    padding: 0;
+}
+.postbox-container .inside .acf-input .acf-fields.-border {
+    border: none;
+}
+.acf-field-5a4d42b4ce417 {
+    clear: both!important;
+}
+
+
+/* -- Main layout fella -- */
+/* -- When you sass this out, play with darken and saturation -- */
+#acf_after_title-sortables .postbox .layout:first-child {
+    background: rgba(127,0,0,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(2) {
+    background: rgba(0,127,0,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(3) {
+    background: rgba(0,0,127,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(4) {
+    background: rgba(127,127,0,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(5) {
+    background: rgba(127,0,127,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(6) {
+    background: rgba(0,127,127,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(7) {
+    background: rgba(127,0,0,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(8) {
+    background: rgba(0,127,0,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(9) {
+    background: rgba(0,0,127,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(10) {
+    background: rgba(127,127,0,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(11) {
+    background: rgba(127,0,127,.1)
+}
+#acf_after_title-sortables .postbox .layout:nth-child(12) {
+    background: rgba(0,127,127,.1)
+}
+
+
 /* -- This is stuff for the admin side of things -- */
 
-pre { padding: 0 25px 10px; width: 100%;
+/*pre { padding: 0 25px 10px; width: 100%;
     white-space: pre-wrap;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
-}
+/*    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+/*    white-space: -pre-wrap;      /* Opera 4-6 */
+/*    white-space: -o-pre-wrap;    /* Opera 7 */
+/*    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+/*}
 .short { max-width: 75%; }
 
 .customize-control-site_icon .thumbnail-image { max-width: 100px; max-height: 100px; }
@@ -27,7 +86,7 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
 /*#features .hide { display: none; }*/
 
 /* ACF map ----------------------------------------- */
-#acf-map_address_2 {
+/*#acf-map_address_2 {
     padding: 0;
 }
 
@@ -52,7 +111,7 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
 
 /* all them checkboxes for the subsections --------- */
 
-#acf-visual_intro_text {
+/*#acf-visual_intro_text {
     clear: both;
 }
 
@@ -75,7 +134,7 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
 
 /* Page list --------------------------------------- */
 
-#the-list .template a {
+/*#the-list .template a {
     cursor: pointer;
 }
 #the-list tr:hover td, #the-list tr:hover th {
@@ -87,7 +146,7 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
 /* #the-list tr.parent {
     background: #f1f1f1;
 } */
-.dashicons {
+/*.dashicons {
     font-size: 1.25em;
     line-height: 1.45em;
 	-webkit-transition: all .35s ease-in-out;
@@ -99,4 +158,4 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
     -ms-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
-}
+}*/

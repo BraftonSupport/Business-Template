@@ -8,9 +8,9 @@
  * @subpackage Business_Theme
  * @since Business Theme 1.0
  */
-$options = get_option( 'businesstheme_options' );
-$category_id = 'category_' . get_queried_object_id();
-$bg = get_field( 'banner_image', $category_id );
+$nav = get_field('navigation_bar_position', 'option');
+$ga = get_field('google_analytics', 'option');
+
 get_header();
 
 ?><!DOCTYPE html>
@@ -25,7 +25,7 @@ get_header();
 	<?php wp_head(); ?>
 
 <?php
-if ( $options['ga'] ) : ?>
+if ( $ga ) : ?>
 	<!-- Google Analytics -->
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,7 +33,7 @@ if ( $options['ga'] ) : ?>
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		  ga('create', '<?php echo $options['ga']; ?>', 'auto');
+		  ga('create', '<?php echo $ga; ?>', 'auto');
 		  ga('send', 'pageview');
 		</script>
 	<!-- End Google Analytics -->
@@ -92,7 +92,7 @@ if(is_single()) {
 				dynamic_sidebar( 'top' );
 				echo '</div></div>';
 			} ?>
-			<div class="container site-inner site-header-main<?php if (!empty($options['nav'])) { echo ' '.$options['nav']; } ?>">
+			<div class="container site-inner site-header-main<?php if ($nav) { echo ' '.$nav; } ?>">
 				<div class="site-branding">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<?php $logo1 = get_theme_mod( 'businesstheme_logo' );
@@ -146,7 +146,7 @@ if(is_single()) {
 			</div><!-- .site-header-main -->
 		</header>
 
-		<?php if ( $bg && is_archive() ) { ?>
+		<?php if ( $bg && is_archive() ) { ?>One of this isn't correct. (check archive.php)
 			<header class="page-header visual"<?php echo ' style="background-image:url('.$bg.');"';?>>
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );

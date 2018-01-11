@@ -13,7 +13,7 @@ $titletext = ($sectionrow==0)?'<h1>'.get_sub_field('title').'</h1>':'<h2>'.get_s
 $tagline = get_sub_field('tagline');
 $button = get_sub_field('button');
 $style = get_sub_field('style');
-$classes = array('visual');
+$classes = array('validation');
 if ($style['class']){
 	$classes[] = $section_class;
 }

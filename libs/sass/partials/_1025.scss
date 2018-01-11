@@ -29,19 +29,19 @@
 	max-width: 1000px;
 }
 .list .container {
-	> div {
-		max-width: 350px;
-	}
-	&.count4>div {
-		-webkit-flex: 0 1 24%;
-		-ms-flex: 0 1 24%;
-		flex: 0 1 24%;
-	}
-	&.count5>div {
-		-webkit-flex: 0 1 19%;
-		-ms-flex: 0 1 19%;
-		flex: 0 1 19%;
-	}
+	// > div {
+	// 	max-width: 350px;
+	// }
+	// &.count4>div {
+	// 	-webkit-flex: 0 1 24%;
+	// 	-ms-flex: 0 1 24%;
+	// 	flex: 0 1 24%;
+	// }
+	// &.count5>div {
+	// 	-webkit-flex: 0 1 19%;
+	// 	-ms-flex: 0 1 19%;
+	// 	flex: 0 1 19%;
+	// }
 }
 .quotes {
 	margin-top: .35em;

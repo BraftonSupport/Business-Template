@@ -1,4 +1,5 @@
 <?php
+if(!session_id()) session_start();
 /**
  * The template for displaying pages
  *
@@ -64,43 +65,39 @@ get_header(); ?>
 			<source src="<?php echo $vidstring; ?>.mp4" type="video/mp4">
 		</video>
 	<?php }
-} ?>
-
+}
+?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
+
+		<?php // check if the flexible content field has rows of data
+		if( have_rows('content') ):
+			// loop through the rows of data
+			$sectionrow=0;
+			while ( have_rows('content') ) : the_row();
+				if( get_row_layout() == 'visual' ):
+					get_template_part( 'template-parts/content', 'visual' );
+				elseif( get_row_layout() == 'list' ): 
+					get_template_part( 'template-parts/content', 'list' );
+				elseif( get_row_layout() == 'validation' ):
+					get_template_part( 'template-parts/content', 'validation' );
+				elseif( get_row_layout() == 'row' ): 
+					get_template_part( 'template-parts/content', 'row' );
+				elseif( get_row_layout() == 'cta' ): 
+					get_template_part( 'template-parts/content', 'cta' );
+				elseif( get_row_layout() == 'map' ):
+					get_template_part( 'template-parts/content', 'map' );
+				endif;
+				$sectionrow++;
+			endwhile;
+		endif; ?>
+
 		<section class="<?php if ( $class ) { echo $class; } if ( $other && in_array('full', $other) ) { echo ' full'; } ?>"
 			style="<?php
 			if ( $bg ) { echo 'background-color: ' . $bg . ';'; }
 			if ( $color ) { echo 'color: ' . $color . ';'; }
 			?>" >
-<?php
-// check if the flexible content field has rows of data
-if( have_rows('content') ):
-	// loop through the rows of data
-	$i=0;
-	while ( have_rows('content') ) : the_row();
-		if( get_row_layout() == 'visual' ):
-			// the_sub_field('text');
-			echo $i.'<br/>';
-		elseif( get_row_layout() == 'list' ): 
-			// $file = get_sub_field('file');
-			echo $i.'<br/>';
-		elseif( get_row_layout() == 'validation' ):
-			// the_sub_field('text');
-			echo $i.'<br/>';
-		elseif( get_row_layout() == 'row' ): 
-			// $file = get_sub_field('file');
-			echo $i.'<br/>';
-		elseif( get_row_layout() == 'cta' ): 
-			// $file = get_sub_field('file');
-			echo $i.'<br/>';
-		elseif( get_row_layout() == 'map' ):
-			// the_sub_field('text');
-			echo $i.'<br/>';
-		endif;
-		$i++;
-	endwhile;
-endif;
+		<?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();
 

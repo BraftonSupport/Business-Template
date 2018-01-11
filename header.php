@@ -82,7 +82,7 @@ if(is_single()) {
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php if ( have_rows('content') ): body_class( 'parent-template' ); else: body_class(); endif; ?>>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'businesstheme' ); ?></a>
 
@@ -168,4 +168,4 @@ if(is_single()) {
 		</header><!-- .page-header -->
 		<?php } ?>
 
-		<div id="content" class="site-content<?php if ( !is_page_template( 'parent-page.php' ) || is_home() || is_archive() || is_single() ) {echo ' site-inner';} ?>">
+		<div id="content" class="site-content<?php if ( !have_rows('content') || is_home() || is_archive() || is_single() ) {echo ' site-inner';} ?>">

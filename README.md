@@ -1,8 +1,9 @@
 # README #
-Version 1.1.1
+Version 2.0
 Works on PHP 5.6
 
 ### Business Theme Options ###
+Note to self: rewrite everything.
 This is where you change the basic info of your site. You can find this page under Appearance -> Business Theme.  
 
 1. The first three options: the position of the navigation bar, whether or not it is sticky, and adding google analytics.

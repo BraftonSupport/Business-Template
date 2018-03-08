@@ -580,6 +580,9 @@ video#video {
 	}
 	.social-navigation {
 		margin-left: auto;
+		a {
+			color: #fff;
+		}
 	}
 	.container {
 		-webkit-flex-wrap: wrap;
@@ -625,26 +628,24 @@ video#video {
 		list-style: none;
 		text-align: right;
 		margin: 1em 0 0 0;
-
 	li {
 		display: inline-block;
 		overflow: hidden;
-		height: 20px;
-		width: 30px;
-		&:last-of-type a{
+		height: 24px;
+		width: 35px;
+		&:last-of-type a {
 			margin-right: 0;
 		}
 	}
 	a {
 		display: block;
-		height: 40px;
 		position: relative;
-		width: 40px;
 		padding: 20px;
-		overflow: hidden;
+		&:hover:before {
+			background:#fff;
+			border-radius: 4px;
+		}
 		&:before {
-			content: "\f415";
-			font-size: 24px;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -661,8 +662,13 @@ video#video {
 		&[href*="dropbox.com"]:before {
 			content: "\f225";
 		}
-		&[href*="facebook.com"]:before {
-			content: "\f203";
+		&[href*="facebook.com"]{
+			&:hover {
+				color: #3B5998;
+			}
+			&:before {
+				content: "\f203";
+			}
 		}
 		&[href*="flickr.com"]:before {
 			content: "\f211";
@@ -679,8 +685,13 @@ video#video {
 		&[href*="instagram.com"]:before {
 			content: "\f215";
 		}
-		&[href*="linkedin.com"]:before {
+		&[href*="linkedin.com"]{
+			&:hover {
+				color: #0077B5;
+			}
+			&:before {
 			content: "\f208";
+			}
 		}
 		&[href*="pinterest.com"]:before {
 			content: "\f210";
@@ -700,8 +711,13 @@ video#video {
 		&[href*="tumblr.com"]:before {
 			content: "\f214";
 		}
-		&[href*="twitter.com"]:before {
-			content: "\f202";
+		&[href*="twitter.com"]{
+			&:hover {
+				color: #0084b4;
+			}
+			&:before {
+				content: "\f202";
+			}
 		}
 		&[href*="vimeo.com"]:before {
 			content: "\f212";
@@ -710,8 +726,13 @@ video#video {
 		&[href*="wordpress.org"]:before {
 			content: "\f205";
 		}
-		&[href*="youtube.com"]:before {
-			content: "\f213";
+		&[href*="youtube.com"]{
+			&:hover {
+				color: #ff0000;
+			}
+			&:before {
+				content: "\f213";
+			}
 		}
 		&[href*="mailto:"]:before {
 			content: "\f410";

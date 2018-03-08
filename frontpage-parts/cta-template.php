@@ -18,8 +18,8 @@ $section_class = get_field('section_class', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
-$title = get_field('show_title');
-$titletext = ($template_count==0)?'<h1>'.get_field('subsection_title').'</h1>':'<h2>'.get_field('subsection_title').'</h2>';
+
+$titletext = ($template_count==0)?'<h1>'.get_field('subsection_title').'</h1>':'<h2>'.get_field('subsection_title').'</h2>';$title = get_field('show_title');
 $visual_intro_text = get_field('visual_intro_text');
 
 $visual_button = get_field('visual_button');

@@ -285,6 +285,9 @@ a:hover, a:focus, a:active { color: #00b1dd; }
 	vertical-align: top;
 }
 
+.social-navigation a:before {
+	font-size: 24px;
+}
 
 /**
  * 3.0 - Typography
@@ -2121,18 +2124,6 @@ body:not(.search-results) .entry-summary > :last-child,
 	margin-bottom: 0.5384615385em;
 	text-transform: uppercase;
 }
-/* 
-.ssb-social { height: 30px; line-height: 30px; margin-bottom: 15px; }
-.ssb-social span { font-size: 80%; margin: 0 10px; text-transform: uppercase; }
-.ssb-social a { text-align: center; padding: 4px 0; }
-.ssb-social a:hover { text-align: center; color: #fff; padding: 4px 0; color: #fff; }
-.ssb-social a i { width: 30px; } */
-/* .social-navigation .ssb-facebook:hover { background: #3b5998; }
-.ssb-social .ssb-twitter:hover { background: #55acee; }
-.ssb-social .ssb-googleplus:hover { background: #dd4b39; }
-.ssb-social .ssb-linked:hover { background: #007bb5; }
-.ssb-social .ssb-pinterest:hover { background: #cb2027; }
-.ssb-social .ssb-email:hover { background: rgba(0,0,0, .15); } */
 
 /**
  * IE8 and earlier will drop any block with CSS3 selectors.

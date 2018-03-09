@@ -181,7 +181,10 @@ header {
 
 .page-template-parent-page {
 	.site-main > section {
-		padding: 75px 0;
+		padding: 35px 0;
+		&:first-of-type {
+			padding: 100px 0;
+		}
 		&.gradient {
 			background: -moz-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%);
 			background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%);
@@ -566,6 +569,17 @@ video#video {
 	-webkit-flex: 1 1 100%;
 	-ms-flex: 1 1 100%;
 	flex: 1 1 100%;
+}
+
+/* Section classes */
+.thin {
+	padding: 15px 0;
+}
+.wide {
+	padding: 75px 0;
+}
+.compact .container {
+	max-width: 100%;
 }
 
 /* Footer */

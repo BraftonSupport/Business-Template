@@ -61,6 +61,10 @@
 	min-height: 800px;
 }
 
+.compact .container {
+	max-width: 55%;
+}
+
 @supports (display: grid) {
 	.site-inner {
 		margin: 0 auto;

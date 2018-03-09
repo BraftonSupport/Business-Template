@@ -1665,9 +1665,7 @@ footer .container,
 	width: 74.5%
 }
 
-.compact {
-	max-width: 100%;
-}
+
 .third, .fourth, .twothirds, .threefourths {
 	margin-right: 2%;
 }
@@ -3313,10 +3311,6 @@ p > video {
 
 @media screen and (min-width: 61.5625em) {
 
-	.compact {
-		max-width: 75%;
-	}
-
 	.image-navigation {
 		margin-bottom: 3.230769231em;
 	}
@@ -3473,9 +3467,7 @@ p > video {
  */
 
 @media screen and (min-width: 75em) {
-	.compact {
-		max-width: 55%;
-	}
+
 	body:not(.search-results) .entry-summary {
 		font-size: 23px;
 		font-size: 1.4375rem;

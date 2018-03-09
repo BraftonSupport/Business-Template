@@ -14,20 +14,13 @@ $options = get_option( 'businesstheme_options' );
 	</div><!-- .site-content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php if ( is_active_sidebar( 'footer-left' )||is_active_sidebar( 'footer-middle' )||is_active_sidebar( 'footer-right' ) ) :
-			echo '<div class="container site-inner">';
-			if ( get_theme_mod( 'businesstheme_footerlogo' ) ) { ?>
+		<div class="container site-inner">
+			<?php if ( get_theme_mod( 'businesstheme_footerlogo' ) ) { ?>
 				<?php
 					// set the image url
-					$image_url = esc_url( get_theme_mod( 'businesstheme_footerlogo' ) );
-								 
-					// store the image ID in a var
-					$image_id = businesstheme_get_image_id($image_url);
-								 
-					// retrieve the thumbnail size of our image
-					$image_thumb = wp_get_attachment_image_src($image_id, 'medium'); ?>
+					$image_url = esc_url( get_theme_mod( 'businesstheme_footerlogo' ) );?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
-					<img src='<?php echo $image_thumb[0]; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+					<img src='<?php echo $image_url; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
 				</a>
 			<?php }
 
@@ -35,9 +28,9 @@ $options = get_option( 'businesstheme_options' );
 				'theme_location' => 'social',
 				'menu_class'     => 'social-navigation',
 				'container'=> '',
-			) );
-			echo '</div>';
-			
+			) ); ?>
+		</div>
+		<?php if ( is_active_sidebar( 'footer-left' )||is_active_sidebar( 'footer-middle' )||is_active_sidebar( 'footer-right' ) ) :
 			echo '<div class="container site-inner">';
 			dynamic_sidebar( 'footer-left' );
 			dynamic_sidebar( 'footer-middle' );

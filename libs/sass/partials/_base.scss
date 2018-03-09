@@ -1,4 +1,21 @@
+/* Search Form */
+
+input[type="search"].search-field {
+	border-radius: 2px 0 0 2px;
+	width: 100%;
+	max-width: 350px;
+}
+
+
 /* Typography */
+
+p {
+	margin: .25em 0 1.25em;
+	&:last-child {
+		margin-bottom: 1.75em;
+	}
+}
+
 section:not(.widget_hoh) ul:not(.slick-dots):not(.gform_fields) {
 	list-style: none;
 	li:before {
@@ -43,9 +60,10 @@ header {
 }
 
 .site-branding {
-    -webkit-flex: 0 0 30%;
-    -ms-flex: 0 0 30%;
-    flex: 0 0 30%;
+	-webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+	max-width: 300px;
 	margin: auto;
 	text-align: center;
 }
@@ -151,7 +169,7 @@ header {
 	.header,
 	.site-main > section:first-of-type {
 		h1 {
-			font-size: 3em;
+			font-size: 1.5em;
 			color: #fff;
 			border-bottom: 1px solid;
 			display: inline-block;
@@ -160,7 +178,7 @@ header {
 			line-height: 1.3em;
 		}
 		p {
-			font-size: 1.5em;
+			font-size: 1.15em;
 		}
 	}
 }
@@ -286,6 +304,7 @@ header {
 }
 
 /* Widget */
+
 .widget_hoh {
 	ul {
 		list-style: none;
@@ -416,17 +435,16 @@ video#video {
 .slider {
 	padding: 1em 0;
 }
-
+.slick-slider {
+	margin-bottom: 1.5em;
+}
 .quotes {
-	font-size: 6em;
+	font-size: 4em;
 	line-height: 0;
 	position: absolute;
 	z-index: -9999;
-	opacity: .2;
+	opacity: .1;
 	font-family: Times, serif;
-	&:first-of-type {
-
-	}
 	&:last-of-type {
 		right: 0;
 	}
@@ -513,34 +531,10 @@ video#video {
 	-webkit-align-items: stretch;
 	-ms-flex-align: stretch;
 	align-items: stretch;
-	&.count1>div {
-		-webkit-flex: 0 1 100%;
-		-ms-flex: 0 1 100%;
-		flex: 0 1 100%;
-	}
-	&.count2>div {
-		-webkit-flex: 0 1 100%;
-		-ms-flex: 0 1 100%;
-		flex: 0 1 100%;
-	}
-	&.count3>div {
-		-webkit-flex: 0 1 100%;
-		-ms-flex: 0 1 100%;
-		flex: 0 1 100%;
-	}
-	&.count4>div {
-		-webkit-flex: 0 1 100%;
-		-ms-flex: 0 1 100%;
-		flex: 0 1 100%;
-	}
-	&.count5>div {
-		-webkit-flex: 0 1 100%;
-		-ms-flex: 0 1 100%;
-		flex: 0 1 100%;
-	}
 	> div {
-		max-width: 350px;
+		max-width: 300px;
 		margin: 30px auto;
+		padding: 0 10px;
 		img {
 			margin-bottom: 15px;
 		}
@@ -577,9 +571,6 @@ video#video {
 }
 .wide {
 	padding: 75px 0;
-}
-.compact .container {
-	max-width: 100%;
 }
 
 /* Footer */
@@ -618,12 +609,6 @@ video#video {
 		margin: auto;
 		padding: 5px 0;
 		font-size: 12px;
-	}
-	.widget {
-		margin-bottom: 0;
-		-webkit-flex: 1 0 100%;
-		-ms-flex: 1 0 100%;
-		flex: 1 0 100%;
 	}
 	.widget-title {
 		margin-bottom: 0;

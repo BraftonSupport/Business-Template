@@ -79,6 +79,16 @@
 	min-height: 700px;
 }
 
+/* Service List Template */
+
+.list .container {
+	> div {
+	max-width: 300px;
+   }
+}
+
+/* Validation Template */
+
 .slider {
 	display: -ms-flexbox;
 	display: -webkit-flex;
@@ -104,7 +114,7 @@
 }
 .quotes {
 	margin-top: .25em;
-	font-size: 12em;
+	font-size: 5em;
 	-webkit-flex: 0 0 10%;
 	-ms-flex: 0 0 10%;
 	flex: 0 0 10%;
@@ -117,38 +127,6 @@
 		text-align: right;
 	}
 }
-
-/* Service List Template */
-
-.list .container {
-	 > div {
-	-webkit-flex: 0 1 auto;
-	-ms-flex: 0 1 auto;
-	flex: 0 1 auto;
-	max-width: 250px;
-	}
-	&.count2>div {
-		-webkit-flex: 0 1 50%;
-		-ms-flex: 0 1 50%;
-		flex: 0 1 50%;
-	}
-	&.count3>div {
-		-webkit-flex: 0 1 33%;
-		-ms-flex: 0 1 33%;
-		flex: 0 1 33%;
-	}
-	&.count4>div {
-		-webkit-flex: 0 1 50%;
-		-ms-flex: 0 1 50%;
-		flex: 0 1 50%;
-	}
-	&.count5>div {
-		-webkit-flex: 0 1 33%;
-		-ms-flex: 0 1 33%;
-		flex: 0 1 19%;
-	}
-}
-
 
 /* cta */
 .cta {

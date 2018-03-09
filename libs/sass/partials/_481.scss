@@ -1,8 +1,9 @@
 .site-branding {
+	padding-right: 10px;
 	-webkit-flex: 0 0 30%;
     -ms-flex: 0 0 30%;
     flex: 0 0 30%;
-	margin: 0;
+	margin: 1.6em auto 0 0;
 	text-align: left;
 }
 
@@ -25,8 +26,21 @@
 	}
 }
 
+/* Service List Template */
+
+.list .container {
+	> div {
+	max-width: 225px;
+   -webkit-flex: 0 1 auto;
+   -ms-flex: 0 1 auto;
+   flex: 0 1 auto;
+   }
+}
+
+/* Validation Template */
+
 .slider {
-	padding: 1em 0 3em;
+	padding: 1em 0;
 }
 .slick {
 	h4 {
@@ -34,6 +48,19 @@
 		text-transform: uppercase;
 	}
 }
+
+
+/* Widget */
+
+aside, section {
+	-webkit-flex: 1 0 0;
+	-ms-flex: 1 0 0;
+	flex: 1 0 0;
+}
+
+
+/* Footer */
+
 .site-footer {
 	.social-navigation {
 		margin-right: 0;

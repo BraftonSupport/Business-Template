@@ -1,4 +1,21 @@
+/* Search Form */
+
+input[type="search"].search-field {
+	border-radius: 2px 0 0 2px;
+	width: 100%;
+	max-width: 350px;
+}
+
+
 /* Typography */
+
+p {
+	margin: .25em 0 1.25em;
+	&:last-child {
+		margin-bottom: 1.75em;
+	}
+}
+
 section:not(.widget_hoh) ul:not(.slick-dots):not(.gform_fields) {
 	list-style: none;
 	li:before {
@@ -43,9 +60,10 @@ header {
 }
 
 .site-branding {
-    -webkit-flex: 0 0 30%;
-    -ms-flex: 0 0 30%;
-    flex: 0 0 30%;
+	-webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+	max-width: 300px;
 	margin: auto;
 	text-align: center;
 }
@@ -151,7 +169,7 @@ header {
 	.header,
 	.site-main > section:first-of-type {
 		h1 {
-			font-size: 3em;
+			font-size: 1.5em;
 			color: #fff;
 			border-bottom: 1px solid;
 			display: inline-block;
@@ -160,7 +178,7 @@ header {
 			line-height: 1.3em;
 		}
 		p {
-			font-size: 1.5em;
+			font-size: 1.15em;
 		}
 	}
 }
@@ -181,7 +199,10 @@ header {
 
 .page-template-parent-page {
 	.site-main > section {
-		padding: 75px 0;
+		padding: 35px 0;
+		&:first-of-type {
+			padding: 100px 0;
+		}
 		&.gradient {
 			background: -moz-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%);
 			background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%);
@@ -283,6 +304,7 @@ header {
 }
 
 /* Widget */
+
 .widget_hoh {
 	ul {
 		list-style: none;
@@ -413,17 +435,16 @@ video#video {
 .slider {
 	padding: 1em 0;
 }
-
+.slick-slider {
+	margin-bottom: 1.5em;
+}
 .quotes {
-	font-size: 6em;
+	font-size: 4em;
 	line-height: 0;
 	position: absolute;
 	z-index: -9999;
-	opacity: .2;
+	opacity: .1;
 	font-family: Times, serif;
-	&:first-of-type {
-
-	}
 	&:last-of-type {
 		right: 0;
 	}
@@ -510,34 +531,10 @@ video#video {
 	-webkit-align-items: stretch;
 	-ms-flex-align: stretch;
 	align-items: stretch;
-	&.count1>div {
-		-webkit-flex: 0 1 100%;
-		-ms-flex: 0 1 100%;
-		flex: 0 1 100%;
-	}
-	&.count2>div {
-		-webkit-flex: 0 1 100%;
-		-ms-flex: 0 1 100%;
-		flex: 0 1 100%;
-	}
-	&.count3>div {
-		-webkit-flex: 0 1 100%;
-		-ms-flex: 0 1 100%;
-		flex: 0 1 100%;
-	}
-	&.count4>div {
-		-webkit-flex: 0 1 100%;
-		-ms-flex: 0 1 100%;
-		flex: 0 1 100%;
-	}
-	&.count5>div {
-		-webkit-flex: 0 1 100%;
-		-ms-flex: 0 1 100%;
-		flex: 0 1 100%;
-	}
 	> div {
-		max-width: 350px;
+		max-width: 300px;
 		margin: 30px auto;
+		padding: 0 10px;
 		img {
 			margin-bottom: 15px;
 		}
@@ -568,6 +565,14 @@ video#video {
 	flex: 1 1 100%;
 }
 
+/* Section classes */
+.thin {
+	padding: 15px 0;
+}
+.wide {
+	padding: 75px 0;
+}
+
 /* Footer */
 
 .site-footer {
@@ -580,6 +585,9 @@ video#video {
 	}
 	.social-navigation {
 		margin-left: auto;
+		a {
+			color: #fff;
+		}
 	}
 	.container {
 		-webkit-flex-wrap: wrap;
@@ -602,12 +610,6 @@ video#video {
 		padding: 5px 0;
 		font-size: 12px;
 	}
-	.widget {
-		margin-bottom: 0;
-		-webkit-flex: 1 0 100%;
-		-ms-flex: 1 0 100%;
-		flex: 1 0 100%;
-	}
 	.widget-title {
 		margin-bottom: 0;
 		border-bottom: 1px solid;
@@ -625,26 +627,24 @@ video#video {
 		list-style: none;
 		text-align: right;
 		margin: 1em 0 0 0;
-
 	li {
 		display: inline-block;
 		overflow: hidden;
-		height: 20px;
-		width: 30px;
-		&:last-of-type a{
+		height: 24px;
+		width: 35px;
+		&:last-of-type a {
 			margin-right: 0;
 		}
 	}
 	a {
 		display: block;
-		height: 40px;
 		position: relative;
-		width: 40px;
 		padding: 20px;
-		overflow: hidden;
+		&:hover:before {
+			background:#fff;
+			border-radius: 4px;
+		}
 		&:before {
-			content: "\f415";
-			font-size: 24px;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -661,8 +661,13 @@ video#video {
 		&[href*="dropbox.com"]:before {
 			content: "\f225";
 		}
-		&[href*="facebook.com"]:before {
-			content: "\f203";
+		&[href*="facebook.com"]{
+			&:hover {
+				color: #3B5998;
+			}
+			&:before {
+				content: "\f203";
+			}
 		}
 		&[href*="flickr.com"]:before {
 			content: "\f211";
@@ -679,8 +684,13 @@ video#video {
 		&[href*="instagram.com"]:before {
 			content: "\f215";
 		}
-		&[href*="linkedin.com"]:before {
+		&[href*="linkedin.com"]{
+			&:hover {
+				color: #0077B5;
+			}
+			&:before {
 			content: "\f208";
+			}
 		}
 		&[href*="pinterest.com"]:before {
 			content: "\f210";
@@ -700,8 +710,13 @@ video#video {
 		&[href*="tumblr.com"]:before {
 			content: "\f214";
 		}
-		&[href*="twitter.com"]:before {
-			content: "\f202";
+		&[href*="twitter.com"]{
+			&:hover {
+				color: #0084b4;
+			}
+			&:before {
+				content: "\f202";
+			}
 		}
 		&[href*="vimeo.com"]:before {
 			content: "\f212";
@@ -710,8 +725,13 @@ video#video {
 		&[href*="wordpress.org"]:before {
 			content: "\f205";
 		}
-		&[href*="youtube.com"]:before {
-			content: "\f213";
+		&[href*="youtube.com"]{
+			&:hover {
+				color: #ff0000;
+			}
+			&:before {
+				content: "\f213";
+			}
 		}
 		&[href*="mailto:"]:before {
 			content: "\f410";

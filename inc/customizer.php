@@ -699,17 +699,14 @@ function businesstheme_get_color_scheme_css( $colors ) {
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a,
 	header .top a,
 	.scrolled .dropdown-toggle:after,
-	.site-footer a,
-	.social-navigation a,
-	.social-navigation a:hover,
-	.social-navigation a:hover::before {
+	.site-footer a {
 		color: {$colors['secondary_link_color']};
 	}
 
 	.simple .entry-footer a:hover,
 	body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a:hover,
 	header .top a:hover,
-	.site-footer a:hover{
+	.site-footer a:hover {
 		color: {$colors['secondary_link_hover_color']};
 	}
 
@@ -1143,8 +1140,6 @@ function businesstheme_link_hover_color_css() {
 		.comment-reply-link,
 		.comment-reply-link:hover,
 		.comment-reply-link:focus,
-		.social-navigation a:hover:before,
-		.social-navigation a:focus:before,
 		.required{
 			color: %1$s;
 		}
@@ -1239,8 +1234,7 @@ function businesstheme_secondary_text_color_css() {
 		.secondary,
 		.site-footer,
 		.simple .entry-footer a,
-		body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a,
-		.social-navigation a {
+		body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a {
 			color: %1$s;
 		}
 
@@ -1283,10 +1277,7 @@ function businesstheme_secondary_link_color_css() {
 		.simple .entry-footer a,
 		body:not(.search-results) article:first-of-type:not(.type-page).simple .entry-footer a,
 		header .top a,
-		.social-navigation a,
 		.site-footer a,
-		.social-navigation a:hover,
-		.social-navigation a:hover::before,
 		.scrolled .dropdown-toggle:after {
 			color: %1$s;
 		}

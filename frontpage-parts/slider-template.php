@@ -60,7 +60,8 @@ if ( $other && in_array('fullscreen', $other) ) {
 							$company = get_field('company', $post);
 							$location = get_field('location', $post);
 							$website = get_field('website', $post);
-							$excerpt= get_the_excerpt();
+							$my_post = get_post( $post );
+							$excerpt= $my_post->post_content;
 
 							echo '<h4>';
 							if (strlen($excerpt) > 135){
@@ -68,13 +69,14 @@ if ( $other && in_array('fullscreen', $other) ) {
 							} else {
 								echo strip_tags($excerpt);
 							}
-							echo '</h4><p class="testimonial-meta">';
+							echo '</h4>';
+							if ( $name || $position || $company || $location || $website) { echo '<p class="testimonial-meta">'; }
 							if ($name) { echo '<span class="testimonial-name">'.$name.'</span>'; }
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }
 							if ($location) { echo '<span class="testimonial-location">'.$location.'</span>'; }
 							if ($website) { echo '<br/><a href="http://'.$website.'" target="_blank"><span class="testimonial-website">'.$website.'</span></a>'; }
-							echo '</p>';
+							if ( $name || $position || $company || $location || $website) { echo '</p>'; }
 
 						if ( $slider_button ){ ?>
 							<a href="<?php echo get_permalink($post->ID); ?>" class="button">Read More</a>
@@ -103,13 +105,14 @@ if ( $other && in_array('fullscreen', $other) ) {
 							} else {
 								echo strip_tags($excerpt);
 							}
-							echo '</h4><p class="testimonial-meta">';
+							echo '</h4>';
+							if ( $name || $position || $company || $location || $website) { echo '<p class="testimonial-meta">'; }
 							if ($name) { echo '<span class="testimonial-name">'.$name.'</span>'; }
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }
 							if ($location) { echo '<span class="testimonial-location">'.$location.'</span>'; }
 							if ($website) { echo '<br/><a href="http://'.$website.'" target="_blank"><span class="testimonial-website">'.$website.'</span></a>'; }
-							echo '</p>';
+							if ( $name || $position || $company || $location || $website) { echo '</p>'; }
 
 					if ( $slider_button ){ ?>
 						<a href="<?php echo get_permalink(); ?>" class="button">Read More</a>

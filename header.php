@@ -11,7 +11,8 @@
 $options = get_option( 'businesstheme_options' );
 $category_id = 'category_' . get_queried_object_id();
 $bg = get_field( 'banner_image', $category_id );
-$blog_page_id = get_option( "page_for_posts" );
+get_header();
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -96,13 +97,26 @@ if(is_single()) {
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<?php $logo1 = get_theme_mod( 'businesstheme_logo' );
 						$logo2 = get_theme_mod( 'businesstheme_footerlogo' );
+						// set the image url
+						$image_url1 = esc_url( $logo1 );
+						// store the image ID in a var
+						$image_id1 = businesstheme_get_image_id($image_url1);
+						// retrieve the thumbnail size of our image
+						$image_thumb1 = wp_get_attachment_image_src($image_id1, 'medium');
+
+						// set the image url
+						$image_url2 = esc_url( $logo2 );
+						// store the image ID in a var
+						$image_id2 = businesstheme_get_image_id($image_url2);
+						// retrieve the thumbnail size of our image
+						$image_thumb2 = wp_get_attachment_image_src($image_id2, 'medium'); 
 
 					if ( $logo1 && $logo2 ) {?>
-						<img src='<?php echo $logo1; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title first">
-						<img src='<?php echo $logo2; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title second">
+						<img src='<?php echo $image_thumb1[0]; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title first">
+						<img src='<?php echo $image_thumb2[0]; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title second">
 					<?php }
 					elseif ($logo1) { ?>
-						<img src='<?php echo $logo1; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title">
+						<img src='<?php echo $image_thumb1[0]; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title">
 					<?php }
 					else { ?>
 						<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
@@ -111,10 +125,10 @@ if(is_single()) {
 				</div><!-- .site-branding -->
 
 				<div class="nextwidget">
+					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'businesstheme' ); ?></button>	
 					<?php if ( is_active_sidebar( 'header' ) ) {
 						dynamic_sidebar( 'header' );
 					} ?>
-					<button id="menu-toggle" class="menu-toggle"><?php _e( '<i class="fa fa-bars"></i>', 'businesstheme' ); ?></button>	
 				</div>
 
 				<div id="site-header-menu" class="site-header-menu">
@@ -140,19 +154,15 @@ if(is_single()) {
 				?>
 			</header><!-- .page-header -->
 		<?php } ?>
-		<?php if (is_home() ) {
-			$img = wp_get_attachment_image_src(get_post_thumbnail_id($blog_page_id),'full'); 
+		<?php if (is_home() && get_option('page_for_posts') ) {
+			$img = wp_get_attachment_image_src(get_post_thumbnail_id(get_option('page_for_posts')),'full'); 
 			$featured_image = $img[0]; ?>
 			
-			<header class="page-header<?php if ($featured_image) {echo ' visual" style="background-image:url('.$featured_image.');'; }?>">
-				<div class="site-inner">
-				<?php
-					echo '<h1>'.get_the_title( $blog_page_id ).'</h1>';
-					if ( has_excerpt($blog_page_id) ){
-						echo '<p>'.get_the_excerpt( $blog_page_id ).'</p>';	
-					}
-				?>
-				</div>
+			<header class="page-header visual"<?php echo ' style="background-image:url('.$featured_image.');"';?>>
+			<?php
+				echo '<h1>'.get_the_title( get_option( "page_for_posts" ) ).'</h1>';
+				echo '<p>'.get_the_excerpt( get_option( "page_for_posts" ) ).'</p>';
+			?>
 		</header><!-- .page-header -->
 		<?php } ?>
 

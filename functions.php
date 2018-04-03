@@ -10,7 +10,7 @@ include businesstheme.'/inc/themesettings.php';
 include businesstheme.'/inc/themewidgets.php';
 include businesstheme.'/inc/template-tags.php';
 
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails', array( 'post', 'page' )  ); 
 
 /**
  * Business Theme only works in WordPress 4.4 or later.

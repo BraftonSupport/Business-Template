@@ -1,8 +1,17 @@
 /* header */
-.main-navigation .primary-menu > li > a {
-    padding: 0.65625em 0 0 0.875em;
-    font-size: 16px;
-	font-size: 1rem;
+.main-navigation {
+	a {
+		padding: 0.25em 0.75em;
+	}
+	ul ul a {
+		min-width: 200px;
+		display: block;
+	}
+	.primary-menu > li > a {
+		padding: 0.65625em 0 0 0.875em;
+		font-size: 16px;
+		font-size: 1rem;
+	}
 }
 .site-title {
     font-size: 28px;
@@ -10,7 +19,8 @@
     line-height: 1.25;
 }
 .scrolled .main-navigation .primary-menu > li > a {
-	font-size: 16px;
+	font-size: 15px;
+	padding: 0.65625em 0.875em;
 }
 
 /* content */
@@ -35,7 +45,7 @@
 }
 .quotes {
 	margin-top: .35em;
-	font-size: 18em;
+	font-size: 6em;
 }
 .slick {
 	max-width: 70%;
@@ -49,6 +59,10 @@
 
 .attachment iframe {
 	min-height: 800px;
+}
+
+.compact .container {
+	max-width: 55%;
 }
 
 @supports (display: grid) {
@@ -79,6 +93,7 @@
 		}
 		&.next .site-branding {
 			grid-row: 1/3;
+			margin-top: 7%;
 		}
 		.nextwidget {
 			grid-column: 2;
@@ -100,6 +115,7 @@
 	}
 	.site-header-main.container.next .site-branding {
 		grid-row: 1;
+		margin: auto 0;
 	}
 	.next .site-header-menu{
 		grid-row: 1;

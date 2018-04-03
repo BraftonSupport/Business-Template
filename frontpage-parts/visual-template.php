@@ -12,7 +12,7 @@ $id = get_the_ID();
 $number = $id;
 
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
-$shadow = get_field('shadow', $id);
+$other = get_field('other', $id);
 $section_class = get_field('section_class', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
@@ -27,8 +27,8 @@ $visual_button = get_field('visual_button');
 $visual_button_text = get_field('visual_button_text');
 $visual_button_link = get_field('visual_button_link');
 $visual_button_class = get_field('visual_button_classes');
-
 $tracking = get_field('tracking');
+
 $classes = array('visual');
 if ($section_class){
 	$classes[] = $section_class;
@@ -36,12 +36,15 @@ if ($section_class){
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
+if ( $other && in_array('fullscreen', $other) ) {
+	$classes[] = "fullscreen";
+}
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
 	if ( !empty($bgc) && !$video ) { echo ' background-color:'. $bgc .';'; }
 	if ( !empty($tc) ) { echo ' color:'. $tc .';'; }
-	?>"><div class="site-inner">
+	?>">
 
 	<?php if ( $video ) {
 		if (strpos($video, 'youtube.com') == true || strpos($video, '.webm') == false && strpos($video, '.mp4') == false) {
@@ -56,8 +59,8 @@ if (!$url && !$bgc ) {
 			  var player;
 			  player = new YT.Player('video', {
 			    videoId: '<?php echo $videoid; ?>', // YouTube Video ID
-			    width: 450,               // Player width (in px)
-			    height: 250,              // Player height (in px)
+			    width: 1000,               // Player width (in px)
+			    height: 750,              // Player height (in px)
 			    playerVars: {
 			      autoplay: 1,        // Auto-play the video on load
 			      controls: 1,        // Show pause/play buttons in player
@@ -65,6 +68,8 @@ if (!$url && !$bgc ) {
 			      modestbranding: 1,  // Hide the Youtube Logo
 			      loop: 1,            // Run the video in a loop
 			      fs: 1,              // Hide the full screen button
+			      rel: 0,
+			      playsinline: 1,
 			      cc_load_policy: 1, // Hide closed captions
 			      iv_load_policy: 3,  // Hide the Video Annotations
 			      autohide: 0         // Hide video controls when playing
@@ -86,7 +91,8 @@ if (!$url && !$bgc ) {
 				<source src="<?php echo $vidstring; ?>.mp4" type="video/mp4">
 			</video>
 		<?php }
-	} ?>
+	} ?><div class="site-inner">
+	
 	<?php
 	if ( $title ) { echo $titletext; }
 	if ( $visual_intro_text ) { echo $visual_intro_text; }
@@ -116,7 +122,7 @@ if (!$url && !$bgc ) {
 		$number
 	); ?>
 </div></section><!-- section -->
-<?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>
+<?php if ( $other && in_array('shadow', $other) ) { echo '<div class="shadow"></div>'; } ?>
 <?php if ( $video ) { ?>
 	<script>
 	var vid = document.getElementById("bgvid"),

@@ -12,7 +12,7 @@ $id = get_the_ID();
 $number = $id;
 
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
-$shadow = get_field('shadow', $id);
+$other = get_field('other', $id);
 $section_class = get_field('section_class', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
@@ -38,11 +38,14 @@ $email3 = get_field('map_email3');
 $api = get_field('google_api');
 
 $classes = array('map');
+if ($section_class){
+	$classes[] = $section_class;
+}
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
-if ($section_class){
-	$classes[] = $section_class;
+if ( $other && in_array('fullscreen', $other) ) {
+	$classes[] = "fullscreen";
 }
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
@@ -87,9 +90,9 @@ if ($section_class){
 			echo '<p><strong>'.$email3_field.':</strong><br/><a href="mailto:'.$email3.'"><i class="fa fa-envelope" aria-hidden="true"></i> '.$email3.'</a></p>';
 		}
 		echo '</div><iframe src="//www.google.com/maps/embed/v1/place?q='.$address1;
-			if ( $address2 ) { echo ', '.$address2; }
-			if ( $address3 ) { echo ', '.$address3; }
-		echo $address3.'&zoom=12&key='.$api.'" class="half" style="border:none;"></iframe></div>';
+			if ( $address2 ) { echo ' '.$address2; }
+			if ( $address3 ) { echo ' '.$address3; }
+		echo '&zoom=12&key='.$api.'" class="half" style="border:none;"></iframe></div>';
 	}
 
 	wp_link_pages( array(
@@ -114,4 +117,4 @@ if ($section_class){
 		$number
 	); ?>
 </div></section><!-- section -->
-<?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>
+<?php if ( $other && in_array('shadow', $other) ) { echo '<div class="shadow"></div>'; } ?>

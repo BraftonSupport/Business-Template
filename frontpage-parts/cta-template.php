@@ -13,20 +13,19 @@ $id = get_the_ID();
 
 $number = $id;
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
-$shadow = get_field('shadow', $id);
+$other = get_field('other', $id);
 $section_class = get_field('section_class', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
 
-$title = get_field('show_title');
-$titletext = ($template_count==0)?'<h1>'.get_field('subsection_title').'</h1>':'<h2>'.get_field('subsection_title').'</h2>';
+
+$titletext = ($template_count==0)?'<h1>'.get_field('subsection_title').'</h1>':'<h2>'.get_field('subsection_title').'</h2>';$title = get_field('show_title');
 $visual_intro_text = get_field('visual_intro_text');
 
 $visual_button = get_field('visual_button');
 $visual_button_text = get_field('visual_button_text');
 $visual_button_link = get_field('visual_button_link');
 $visual_button_class = get_field('visual_button_classes');
-
 $tracking = get_field('tracking');
 
 $classes = array('cta');
@@ -36,7 +35,9 @@ if ($section_class){
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
-
+if ( $other && in_array('fullscreen', $other) ) {
+	$classes[] = "fullscreen";
+}
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) && !$video ) { echo 'background-image: url('. $url .');'; }
@@ -81,4 +82,4 @@ if (!$url && !$bgc ) {
 		'</span></footer><!-- .entry-footer -->',
 		$number
 	); ?></section><!-- section -->
-<?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>
+<?php if ( $other && in_array('shadow', $other) ) { echo '<div class="shadow"></div>'; } ?>

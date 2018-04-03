@@ -12,7 +12,7 @@ $id = get_the_ID();
 
 $number = $id;
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
-$shadow = get_field('shadow', $id);
+$other = get_field('other', $id);
 $section_class = get_field('section_class', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
@@ -32,9 +32,11 @@ $custom_show = get_field('custom_show');
 	if( $custom_show && in_array('title', $custom_show) ) { $titlepost = 1; } else { $titlepost = 0; }
 	if( $custom_show && in_array('excerpt', $custom_show) ) { $excerpt = 1; } else { $excerpt = 0; }
 	if( $custom_show && in_array('button', $custom_show) ) { $button = 1; } else { $button = 0; }
+	$image_size = get_field('image_size');
 
 $extra_text = get_field('extra_text');
 $text_underneath = get_field('text_underneath');
+
 $tracking = get_field('tracking');
 $classes = array('list');
 if ($section_class){
@@ -42,6 +44,9 @@ if ($section_class){
 }
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
+}
+if ( $other && in_array('fullscreen', $other) ) {
+	$classes[] = "fullscreen";
 }
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
@@ -64,19 +69,26 @@ if (!$url && !$bgc ) {
 				<?php if ( $featured ){
 					?>
 					<div class="list-featured-image"><?php
+					$pdfimg = get_field('thumbnail', $post)['sizes'][$image_size];
 					if ( has_post_thumbnail( $post ) ){
 						echo '<a href="'.get_permalink($post->ID).'">';
 						if ( $circle ) {
-							echo get_the_post_thumbnail( $post, 'mediumsquared', array( 'class' => 'round' ) );
+							echo get_the_post_thumbnail( $post, $image_size, array( 'class' => 'round' ) );
 						} else {
-							echo get_the_post_thumbnail( $post, 'mediumsquared' );
+							echo get_the_post_thumbnail( $post, $image_size );
 						}
 						echo '</a>';
-					} elseif ( wp_attachment_is_image( $post ) ) {
+					} elseif ( wp_attachment_is_image( $post ) ) { 
 						if ( $circle ) {
-							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'" class="round">';
+							echo '<img src="'.wp_get_attachment_image_src( $post, $image_size, true )[0].'" class="round">';
 						} else {
-							echo '<img src="'.wp_get_attachment_image_src( $post, 'mediumsquared', true )[0].'">';
+							echo '<img src="'.wp_get_attachment_image_src( $post, $image_size, true )[0].'">';
+						}
+					} elseif ($pdfimg) {
+						if ( $circle ) {
+							echo '<img src="'.$pdfimg.'" class="round">';
+						} else {
+							echo '<img src="'.$pdfimg.'">';
 						}
 					}
 					?></div><?php
@@ -91,7 +103,7 @@ if (!$url && !$bgc ) {
 					?></a></h3>
 				<?php }
 				if ( $excerpt ){
-					$content= get_post_field('post_content', $post);
+					$content= get_post_field('post_excerpt', $post->ID);
 					$the_excerpt= substr($content,0,strpos($content,'.')+1);
 					if (strlen($the_excerpt) > 125){
 						echo '<p>'.implode(' ', array_slice(explode(' ', strip_tags($the_excerpt)), 0, 15)).'...</p>';
@@ -169,4 +181,4 @@ if (!$url && !$bgc ) {
 		);
 	?>
 </div></section><!-- section -->
-<?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>
+<?php if ( $other && in_array('shadow', $other) ) { echo '<div class="shadow"></div>'; } ?>

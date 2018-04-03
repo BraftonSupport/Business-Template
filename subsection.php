@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Subsection page
+* Template Name: Subsection
  * The template for displaying subsection pages
  *
  * This page is supposed to be empty.

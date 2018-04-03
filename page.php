@@ -14,7 +14,7 @@
 $color = get_post_meta( get_queried_object_id(), 'textcolor', true );
 $class = get_post_meta( get_queried_object_id(), 'class', true );
 $bg = get_post_meta( get_queried_object_id(), 'bgcolor', true );
-$shadow = get_post_meta( get_queried_object_id(), 'shadow', true );
+$other = get_post_meta( get_queried_object_id(), 'other', true );
 get_header(); ?>
 
 <div id="primary" class="content-area">
@@ -34,7 +34,7 @@ get_header(); ?>
 			// End of the loop.
 		endwhile;
 		?>
-			<?php if ( $shadow ) { echo '<hr class="shadow"/>'; } ?>
+		<?php if ( $other && in_array('shadow', $other) ) { echo '<hr class="shadow"/>'; } ?>
 		</section>
 
 	</main><!-- .site-main -->

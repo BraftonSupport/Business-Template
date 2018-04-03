@@ -11,8 +11,7 @@
 $options = get_option( 'businesstheme_options' );
 $category_id = 'category_' . get_queried_object_id();
 $bg = get_field( 'banner_image', $category_id );
-get_header();
-
+$blog_page_id = get_option( "page_for_posts" );
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -94,33 +93,28 @@ if(is_single()) {
 			} ?>
 			<div class="container site-inner site-header-main<?php if (!empty($options['nav'])) { echo ' '.$options['nav']; } ?>">
 				<div class="site-branding">
-					<?php if ( get_theme_mod( 'businesstheme_logo' ) ) { ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php
-							// set the image url
-							$image_url = esc_url( get_theme_mod( 'businesstheme_logo' ) );
-						 
-							// store the image ID in a var
-							$image_id = businesstheme_get_image_id($image_url);
-									 
-							// retrieve the thumbnail size of our image
-							$image_thumb = wp_get_attachment_image_src($image_id, 'medium'); ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php $logo1 = get_theme_mod( 'businesstheme_logo' );
+						$logo2 = get_theme_mod( 'businesstheme_footerlogo' );
 
-							<img src='<?php echo $image_thumb[0]; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title">
-							<?php if ( has_site_icon() ){ ?>
-								<img src='<?php echo get_site_icon_url( 32 ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-icon">
-							<?php } ?>
-						</a>
-					<?php } else { ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php }	?>
+					if ( $logo1 && $logo2 ) {?>
+						<img src='<?php echo $logo1; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title first">
+						<img src='<?php echo $logo2; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title second">
+					<?php }
+					elseif ($logo1) { ?>
+						<img src='<?php echo $logo1; ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="site-title">
+					<?php }
+					else { ?>
+						<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+					<?php } ?>
+				</a>
 				</div><!-- .site-branding -->
 
 				<div class="nextwidget">
-					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'businesstheme' ); ?></button>	
 					<?php if ( is_active_sidebar( 'header' ) ) {
 						dynamic_sidebar( 'header' );
 					} ?>
+					<button id="menu-toggle" class="menu-toggle"><?php _e( '<i class="fa fa-bars"></i>', 'businesstheme' ); ?></button>	
 				</div>
 
 				<div id="site-header-menu" class="site-header-menu">
@@ -142,20 +136,28 @@ if(is_single()) {
 			<header class="page-header visual"<?php echo ' style="background-image:url('.$bg.');"';?>>
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					the_archive_description( '<p>', '</p>' );
 				?>
 			</header><!-- .page-header -->
 		<?php } ?>
-		<?php if (is_home() && get_option('page_for_posts') ) {
-			$img = wp_get_attachment_image_src(get_post_thumbnail_id(get_option('page_for_posts')),'full'); 
+		<?php if (is_home() ) {
+			$img = wp_get_attachment_image_src(get_post_thumbnail_id($blog_page_id),'full'); 
 			$featured_image = $img[0]; ?>
 			
-			<header class="page-header visual"<?php echo ' style="background-image:url('.$featured_image.');"';?>>
+			<header class="page-header<?php if ($featured_image) {echo ' visual" style="background-image:url('.$featured_image.');'; }?>">
+				<div class="site-inner">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					echo '<h1>'.get_the_title( $blog_page_id ).'</h1>';
+					if ( has_excerpt($blog_page_id) ){
+						echo '<p>'.get_the_excerpt( $blog_page_id ).'</p>';	
+					}
 				?>
+<<<<<<< HEAD
 			</header><!-- .page-header -->
+=======
+				</div>
+		</header><!-- .page-header -->
+>>>>>>> 9736bf3b8d8c56f1c080e8efa3f917be51795c25
 		<?php } ?>
 
 		<div id="content" class="site-content<?php if ( !is_page_template( 'parent-page.php' ) || is_home() || is_archive() || is_single() ) {echo ' site-inner';} ?>">

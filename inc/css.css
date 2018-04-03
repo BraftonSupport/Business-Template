@@ -1,4 +1,4 @@
-/* -- Uhh.. --*/
+/* -- This is stuff for the admin side of things -- */
 
 pre { padding: 0 25px 10px; width: 100%;
     white-space: pre-wrap;       /* Since CSS 2.1 */
@@ -6,14 +6,16 @@ pre { padding: 0 25px 10px; width: 100%;
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
-    }
+}
 .short { max-width: 75%; }
 
 .customize-control-site_icon .thumbnail-image { max-width: 100px; max-height: 100px; }
 
 select + .floatimg { display:none; position:absolute; top: 34%; right: 10%;  }
+label + .floatimg { display:none; }
 
 select:hover + .floatimg { display: block; }
+label:hover + .floatimg { display: inline; }
 
 .widget-inside .wp-color-result { margin: 10px 6px -6px 6px; }
 
@@ -24,7 +26,7 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
 #features img { max-width: 100%; height: auto; display: block; }
 /*#features .hide { display: none; }*/
 
-/* ACF map */
+/* ACF map ----------------------------------------- */
 #acf-map_address_2 {
     padding: 0;
 }
@@ -48,9 +50,53 @@ textarea.title { resize: none; white-space: nowrap; overflow: hidden; }
 	clear: both;
 }
 
+/* all them checkboxes for the subsections --------- */
 
-#the-list .template .dashicons {
+#acf-visual_intro_text {
+    clear: both;
+}
+
+#acf-show_title{
+    margin-top: -40px;
+}
+
+#acf-visual_intro_text .label,
+#acf-text_underneath .label,
+#acf-subsection_title .label {
+    display: none;
+}
+
+#acf-show_intro_title,
+#acf-subsections_templates,
+#acf-show_title,
+#acf-extra_text {
+    padding-bottom: 0;
+}
+
+/* Page list --------------------------------------- */
+
+#the-list .template a {
+    cursor: pointer;
+}
+#the-list tr:hover td, #the-list tr:hover th {
+    background: #ececec;
+}
+#the-list span.number {
+    display: none;
+}
+/* #the-list tr.parent {
+    background: #f1f1f1;
+} */
+.dashicons {
     font-size: 1.25em;
     line-height: 1.45em;
-    cursor: pointer;
+	-webkit-transition: all .35s ease-in-out;
+	-moz-transition: all .35s ease-in-out;
+	-o-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+}
+.dashicons.open {
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
 }

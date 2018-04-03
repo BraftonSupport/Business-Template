@@ -13,7 +13,7 @@ $id = get_the_ID();
 $number = $id;
 
 $url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), "full" )[0];
-$shadow = get_field('shadow', $id);
+$other = get_field('other', $id);
 $section_class = get_field('section_class', $id);
 $bgc = get_field('background_color', $id);
 $tc = get_field('text_color', $id);
@@ -36,6 +36,9 @@ if ($section_class){
 if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
+if ( $other && in_array('fullscreen', $other) ) {
+	$classes[] = "fullscreen";
+}
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> style="<?php
 	if ( !empty($url) ) { echo 'background-image: url('. $url .');'; }
@@ -57,7 +60,8 @@ if (!$url && !$bgc ) {
 							$company = get_field('company', $post);
 							$location = get_field('location', $post);
 							$website = get_field('website', $post);
-							$excerpt= get_the_excerpt();
+							$my_post = get_post( $post );
+							$excerpt= $my_post->post_content;
 
 							echo '<h4>';
 							if (strlen($excerpt) > 135){
@@ -65,13 +69,14 @@ if (!$url && !$bgc ) {
 							} else {
 								echo strip_tags($excerpt);
 							}
-							echo '</h4><p class="testimonial-meta">';
+							echo '</h4>';
+							if ( $name || $position || $company || $location || $website) { echo '<p class="testimonial-meta">'; }
 							if ($name) { echo '<span class="testimonial-name">'.$name.'</span>'; }
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }
 							if ($location) { echo '<span class="testimonial-location">'.$location.'</span>'; }
 							if ($website) { echo '<br/><a href="http://'.$website.'" target="_blank"><span class="testimonial-website">'.$website.'</span></a>'; }
-							echo '</p>';
+							if ( $name || $position || $company || $location || $website) { echo '</p>'; }
 
 						if ( $slider_button ){ ?>
 							<a href="<?php echo get_permalink($post->ID); ?>" class="button">Read More</a>
@@ -100,13 +105,14 @@ if (!$url && !$bgc ) {
 							} else {
 								echo strip_tags($excerpt);
 							}
-							echo '</h4><p class="testimonial-meta">';
+							echo '</h4>';
+							if ( $name || $position || $company || $location || $website) { echo '<p class="testimonial-meta">'; }
 							if ($name) { echo '<span class="testimonial-name">'.$name.'</span>'; }
 							if ($position) { echo '<span class="testimonial-position">'.$position.'</span>'; }
 							if ($company) { echo '<span class="testimonial-company">'.$company.'</span>'; }
 							if ($location) { echo '<span class="testimonial-location">'.$location.'</span>'; }
 							if ($website) { echo '<br/><a href="http://'.$website.'" target="_blank"><span class="testimonial-website">'.$website.'</span></a>'; }
-							echo '</p>';
+							if ( $name || $position || $company || $location || $website) { echo '</p>'; }
 
 					if ( $slider_button ){ ?>
 						<a href="<?php echo get_permalink(); ?>" class="button">Read More</a>
@@ -136,4 +142,4 @@ if (!$url && !$bgc ) {
 		);
 	?>
 </section><!-- section -->
-<?php if ( $shadow ) { echo '<div class="shadow"></div>'; } ?>
+<?php if ( $other && in_array('shadow', $other) ) { echo '<div class="shadow"></div>'; } ?>

@@ -992,7 +992,7 @@ video#video {
   }
   /* line 15, ../sass/partials/_769.scss */
   .main-navigation .menu-item-has-children > a:after {
-    top: 5px;
+    top: 15px;
   }
 
   /* line 21, ../sass/partials/_769.scss */

@@ -698,6 +698,8 @@ function post_res($posts, $query){
  }
  add_filter('posts_results', 'post_res', 10, 2);
 
+require_once ABSPATH . 'wp-content/plugins/advanced-custom-fields-pro/acf.php';
+if(function_exists("register_field_group")){
 // adding dropdown for subsection templates
  	register_field_group(array (
 		'id' => 'acf_subsections',
@@ -783,3 +785,4 @@ function post_res($posts, $query){
 		),
 		'menu_order' => 0,
 	));
+}

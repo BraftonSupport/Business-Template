@@ -1,6 +1,6 @@
 <?php
 
-require_once ABSPATH . 'wp-content/plugins/advanced-custom-fields/acf.php';
+require_once ABSPATH . 'wp-content/plugins/advanced-custom-fields-pro/acf.php';
 if(function_exists("register_field_group"))
 {
     $dir = dirname(__FILE__);

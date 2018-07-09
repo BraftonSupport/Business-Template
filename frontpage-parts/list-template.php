@@ -71,7 +71,7 @@ if ( $other && in_array('fullscreen', $other) ) {
 					<div class="list-featured-image"><?php
 					$pdfimg = get_field('thumbnail', $post)['sizes'][$image_size];
 					if ( has_post_thumbnail( $post ) ){
-						echo '<a href="'.get_permalink($post->ID).'">';
+						echo '<a href="'.get_permalink($post->ID).'" title="'.$titlestring.'">';
 						if ( $circle ) {
 							echo get_the_post_thumbnail( $post, $image_size, array( 'class' => 'round' ) );
 						} else {

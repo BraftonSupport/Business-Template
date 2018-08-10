@@ -34,7 +34,7 @@ $classes = array('halfnhalf');
 if ($section_class){
 	$classes[] = $section_class;
 }
-if (!$url && !$bgc ) {
+if (!$url && !$bgc && !$url ) {
 	$classes[] = "gradient";
 }
 if ( $other && in_array('fullscreen', $other) ) {

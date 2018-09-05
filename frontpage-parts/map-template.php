@@ -41,7 +41,7 @@ $classes = array('map');
 if ($section_class){
 	$classes[] = $section_class;
 }
-if (!$url && !$bgc && !$url ) {
+if (!$url && !$bgc ) {
 	$classes[] = "gradient";
 }
 if ( $other && in_array('fullscreen', $other) ) {

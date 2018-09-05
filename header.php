@@ -150,7 +150,7 @@ if(is_single()) {
 			<header class="page-header visual"<?php echo ' style="background-image:url('.$bg.');"';?>>
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					if (the_archive_description()): the_archive_description( '<p>', '</p>' ); endif;
+					if (get_the_archive_description()): the_archive_description( '<p>', '</p>' ); endif;
 				?>
 			</header><!-- .page-header -->
 		<?php } ?>
@@ -160,8 +160,9 @@ if(is_single()) {
 			
 			<header class="page-header visual"<?php echo ' style="background-image:url('.$featured_image.');"';?>>
 			<?php
-				echo '<h1>'.get_the_title( get_option( "page_for_posts" ) ).'</h1>';
-				if(get_the_excerpt( get_option( "page_for_posts" ) )): echo '<p>'.get_the_excerpt( get_option( "page_for_posts" ) ).'</p>'; endif;
+				$blogid= get_option( "page_for_posts" );
+				echo '<h1>'.get_the_title( $blogid ).'</h1>';
+				if(has_excerpt($blogid)): echo '<p>'.get_the_excerpt( $blogid ).'</p>'; endif;
 			?>
 		</header><!-- .page-header -->
 		<?php } ?>

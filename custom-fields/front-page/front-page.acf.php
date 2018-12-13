@@ -53,7 +53,7 @@
 				'label' => 'Text',
 				'name' => 'half_text',
 				'type' => 'wysiwyg',
-				'required' => 1,
+				'required' => 0,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -74,7 +74,7 @@
 				'label' => 'Image',
 				'name' => 'half_image',
 				'type' => 'image',
-				'required' => 1,
+				'required' => 0,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -313,7 +313,7 @@
 				'name' => 'custom_post',
 				'type' => 'relationship',
 				'instructions' => 'Choose up to 5.',
-				'required' => 1,
+				'required' => 0,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -387,7 +387,7 @@
 				'name' => 'recent_posts',
 				'type' => 'radio',
 				'instructions' => 'You need to turn on the extra post types <a href="themes.php?page=businesstheme_options#es_services">here</a> before this section works.',
-				'required' => 1,
+				'required' => 0,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -450,7 +450,7 @@
 				'label' => 'Show',
 				'name' => 'custom_show',
 				'type' => 'checkbox',
-				'required' => 1,
+				'required' => 0,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -571,7 +571,7 @@
 				'name' => 'custom_slider_post',
 				'type' => 'relationship',
 				'instructions' => 'For best results, choose 3.',
-				'required' => 1,
+				'required' => 0,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -1081,7 +1081,7 @@
 				'name' => 'google_api',
 				'type' => 'text',
 				'instructions' => 'Go to <a href="https://developers.google.com/maps/documentation/embed/" target="_blank">this page</a> and get yourself a key. Select a new project then click "Enable API". Copy and paste the result here. It is free and takes less than a minute.',
-				'required' => 1,
+				'required' => 0,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
